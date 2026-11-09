@@ -1,0 +1,19 @@
+name: Connect bot
+
+# Points the Telegram bot at its webhook so it answers /start and /today instantly.
+# Run once after deploying bot/ to Vercel (Actions → Connect bot → Run workflow, paste the URL).
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "Webhook URL, e.g. https://morning-edition-bot.vercel.app/api/telegram"
+        required: true
+
+jobs:
+  connect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: python3 notify.py --set-webhook "${{ inputs.url }}"
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}

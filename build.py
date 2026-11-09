@@ -35,6 +35,7 @@ from jinja2 import Environment, FileSystemLoader
 from markupsafe import Markup
 from PIL import Image
 
+import notify
 from translate import Translator
 
 ROOT = Path(__file__).parent
@@ -857,6 +858,10 @@ def main() -> None:
         "pdfs": {lang: pdfs[lang] for lang in cfg.get("print", {}).get("send", []) if lang in pdfs},
     }
     (BUILD / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2))
+    # The bot answers /start with this, any time of day (bot/api/telegram.js).
+    site_url = cfg["paper"].get("site_url")
+    (SITE / "telegram.json").write_text(json.dumps({"date": today.isoformat(), "text": notify.message(summary, site_url)},
+                                                   ensure_ascii=False))
 
     print(f"Edition No. {number}: {len(top)} top stories, {len(cards) - len(top)} in sections, from {len(stories)} "
           f"headlines by {len(all_sources)} outlets · languages: {', '.join(languages)} · PDFs: {', '.join(pdfs) or 'none'}")

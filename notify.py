@@ -91,24 +91,31 @@ def main() -> None:
     if "--chat-id" in sys.argv:
         show_chat_ids(token)
         return
-    chat_id = os.environ.get("TELEGRAM_CHAT_ID")
-    if not chat_id:
+    if "--set-webhook" in sys.argv:
+        url = sys.argv[sys.argv.index("--set-webhook") + 1]
+        telegram(token, "setWebhook", {"url": url, "allowed_updates": ["message"]})
+        telegram(token, "setMyCommands", {"commands": [{"command": "today", "description": "Today’s paper"}]})
+        print(f"Bot now answers through {url}")
+        return
+    # one or more readers, comma-separated
+    readers = [c.strip() for c in os.environ.get("TELEGRAM_CHAT_ID", "").split(",") if c.strip()]
+    if not readers:
         print("TELEGRAM_CHAT_ID is not set — skipping Telegram.")
         return
 
     summary = json.loads(SUMMARY.read_text())
     url = os.environ.get("PAGE_URL")
     preview = {"url": url, "prefer_large_media": True} if url else {"is_disabled": True}
-    telegram(token, "sendMessage", {
-        "chat_id": chat_id, "text": message(summary, url), "parse_mode": "HTML", "link_preview_options": preview,
-    })
-    print(f"Sent to Telegram chat {chat_id}.")
     names = {"en": "English", "kk": "Қазақша", "zh": "中文"}
-    for lang, pdf in (summary.get("pdfs") or {}).items():
-        stamp = summary["date"].split(", ", 1)[-1].replace(" ", "-")
-        send_pdf(token, chat_id, Path(pdf), f"Morning-Edition-{stamp}-{lang}.pdf",
-                 f"🖨 Today’s paper to print · {names.get(lang, lang)}")
-        print(f"Sent the {lang} PDF.")
+    stamp = summary["date"].split(", ", 1)[-1].replace(" ", "-")
+    for i, chat_id in enumerate(readers, 1):
+        telegram(token, "sendMessage", {
+            "chat_id": chat_id, "text": message(summary, url), "parse_mode": "HTML", "link_preview_options": preview,
+        })
+        for lang, pdf in (summary.get("pdfs") or {}).items():
+            send_pdf(token, chat_id, Path(pdf), f"Morning-Edition-{stamp}-{lang}.pdf",
+                     f"🖨 Today’s paper to print · {names.get(lang, lang)}")
+        print(f"Sent the paper and {len(summary.get('pdfs') or {})} PDF(s) to reader {i} of {len(readers)}.")
 
 
 if __name__ == "__main__":

@@ -7,6 +7,7 @@
 [paper]
 name = "The Morning Edition"
 edition = "Edinburgh"
+site_url = "https://takky19ima.github.io/morning-edition/"
 founded = 2026-11-09        # edition No. 1
 timezone = "Europe/London"  # the reader's time: dates and "built at" use it
 max_age_hours = 30          # ignore stories older than this (sections can override)
