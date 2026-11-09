@@ -71,6 +71,8 @@ def message(s: dict, url: str | None) -> str:
             lines.append(f'{i}. <a href="{e(t["link"], quote=True)}">{e(t["title"])}</a> — {e(t["source"])}')
     if url:
         lines += ["", f'<a href="{e(url, quote=True)}">Read today’s paper →</a>']
+        if "zh" in (s.get("pdfs") or {}):
+            lines.append(f'<a href="{e(url, quote=True)}zh/">中文版 →</a>')
     wish = s.get("wish") or {}
     if wish.get("text"):
         lines += ["", f"💛 {e(wish['text'])}"]

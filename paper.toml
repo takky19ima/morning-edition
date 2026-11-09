@@ -18,7 +18,7 @@ languages = ["en", "kk", "zh"]   # web editions: English, Kazakh, Chinese (machi
 # A printable PDF (A4, like a real paper) with longer excerpts and QR codes to the full stories.
 # It goes to Telegram only — the articles' text isn't published on the website.
 languages = ["en", "kk", "zh"]
-send = ["en"]               # which PDFs Telegram gets each morning
+send = ["en", "zh"]         # which PDFs Telegram gets each morning
 
 [reader]
 name = "KK"
