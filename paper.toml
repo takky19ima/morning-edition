@@ -1,0 +1,194 @@
+# Settings for the daily paper. Edit freely — the next edition picks changes up.
+#
+# A feed is either an outlet's own RSS:   { source = "BBC", url = "https://..." }
+# or a Google News search:                { google = "Edinburgh when:1d" }
+# (Google News searches use the same syntax as news.google.com; "when:1d" = last 24 hours.)
+
+[paper]
+name = "The Morning Edition"
+edition = "Edinburgh"
+founded = 2026-11-09        # edition No. 1
+timezone = "Europe/London"  # the reader's time: dates and "built at" use it
+max_age_hours = 30          # ignore stories older than this (sections can override)
+top_stories = 5             # front page: the stories covered by the most outlets
+archive_days = 60           # keep this many past editions online
+languages = ["en", "kk", "zh"]   # web editions: English, Kazakh, Chinese (machine-translated)
+
+[print]
+# A printable PDF (A4, like a real paper) with longer excerpts and QR codes to the full stories.
+# It goes to Telegram only — the articles' text isn't published on the website.
+languages = ["en", "kk", "zh"]
+send = ["en"]               # which PDFs Telegram gets each morning
+
+[reader]
+name = "KK"
+greeting = "Қайырлы таң"           # "Good morning", above the quote of the day
+signoff = "Күнің сәтті өтсін!"     # "Have a good day!", under the wish at the end
+
+# Weather: where the reader lives first, home second.
+[[places]]
+city = "Edinburgh"
+role = "Here"
+latitude = 55.9533
+longitude = -3.1883
+
+[[places]]
+city = "Astana"
+role = "Home"
+latitude = 51.1694
+longitude = 71.4491
+utc_offset = 5              # for the live clock (Kazakhstan has no summer time)
+
+[rates]
+# Official National Bank of Kazakhstan rates, in tenge. The first one is shown big.
+currencies = ["GBP", "USD", "EUR", "RUB", "CNY"]
+
+[[sections]]
+id = "edinburgh"
+local = true                # local outlets don't decide the front page
+title = "Edinburgh & Scotland"
+color = "#0065bd"
+limit = 7
+max_age_hours = 36
+feeds = [
+  { source = "Edinburgh Evening News", url = "https://www.edinburghnews.scotsman.com/rss" },
+  { source = "Edinburgh Live", url = "https://www.edinburghlive.co.uk/news/?service=rss" },
+  { source = "BBC", url = "https://feeds.bbci.co.uk/news/scotland/edinburgh_east_and_fife/rss.xml" },
+  { source = "BBC", url = "https://feeds.bbci.co.uk/news/scotland/rss.xml" },
+  { source = "STV News", url = "https://news.stv.tv/feed" },
+  { source = "City of Edinburgh Council", url = "https://www.edinburgh.gov.uk/rss/news" },
+  { google = "Edinburgh when:1d" },
+]
+
+[[sections]]
+id = "whats-on"
+local = true                # local outlets don't decide the front page
+title = "What’s on"
+color = "#b0306a"
+skip_topics = ["Politics", "Justice", "Conflict"]   # news, not events
+limit = 6
+max_age_hours = 96
+feeds = [
+  { source = "Edinburgh Evening News", url = "https://www.edinburghnews.scotsman.com/whats-on/rss" },
+  { source = "The Scotsman", url = "https://www.scotsman.com/whats-on/rss" },
+  { source = "The Scotsman", url = "https://www.scotsman.com/arts-and-culture/rss" },
+  { google = "Edinburgh (\"things to do\" OR \"this weekend\" OR \"what's on\") when:4d" },
+  { google = "Edinburgh (festival OR exhibition OR concert OR gig OR theatre OR market) when:3d" },
+]
+
+[[sections]]
+id = "kazakhstan"
+title = "Kazakhstan"
+color = "#00a3c4"
+limit = 7
+max_age_hours = 36
+feeds = [
+  { source = "The Astana Times", url = "https://astanatimes.com/feed/" },
+  { source = "The Times of Central Asia", url = "https://timesca.com/feed/" },
+  { google = "Kazakhstan when:1d" },
+  { google = "Kazakhstan (Britain OR UK OR British OR Scotland) when:7d" },
+]
+
+[[sections]]
+id = "world"
+title = "World"
+color = "#3d4db7"
+limit = 7
+feeds = [
+  { source = "BBC", url = "https://feeds.bbci.co.uk/news/world/rss.xml" },
+  { source = "The Guardian", url = "https://www.theguardian.com/world/rss" },
+  { source = "Al Jazeera", url = "https://www.aljazeera.com/xml/rss/all.xml" },
+  { source = "NPR", url = "https://feeds.npr.org/1004/rss.xml" },
+  { source = "France 24", url = "https://www.france24.com/en/rss" },
+  { source = "DW", url = "https://rss.dw.com/rdf/rss-en-world" },
+  { source = "Sky News", url = "https://feeds.skynews.com/feeds/rss/world.xml" },
+  { source = "CNBC", url = "https://www.cnbc.com/id/100727362/device/rss/rss.html" },
+]
+
+[[sections]]
+id = "economy"
+title = "Economy"
+color = "#1e7d4f"
+
+  [[sections.desks]]
+  title = "Kazakhstan"
+  flag = "🇰🇿"
+  limit = 4
+  max_age_hours = 48
+  feeds = [
+    { source = "The Astana Times", url = "https://astanatimes.com/category/business/feed/" },
+    { google = "Kazakhstan (economy OR tenge OR \"National Bank\" OR inflation OR budget OR investment) when:2d" },
+  ]
+
+  [[sections.desks]]
+  title = "United Kingdom"
+  flag = "🇬🇧"
+  limit = 4
+  feeds = [
+    { source = "BBC", url = "https://feeds.bbci.co.uk/news/business/rss.xml" },
+    { source = "The Guardian", url = "https://www.theguardian.com/uk/business/rss" },
+    { google = "UK economy when:1d" },
+  ]
+
+  [[sections.desks]]
+  title = "United States"
+  flag = "🇺🇸"
+  limit = 4
+  feeds = [
+    { source = "CNBC", url = "https://www.cnbc.com/id/20910258/device/rss/rss.html" },
+    { source = "NPR", url = "https://feeds.npr.org/1017/rss.xml" },
+    { google = "(\"Federal Reserve\" OR inflation OR \"jobs report\" OR tariffs OR \"stock market\") when:1d" },
+    { google = "US economy when:1d" },
+  ]
+
+  [[sections.desks]]
+  title = "Europe"
+  flag = "🇪🇺"
+  limit = 4
+  feeds = [
+    { source = "Euronews", url = "https://www.euronews.com/rss?level=vertical&name=business" },
+    { google = "(eurozone economy OR ECB OR \"European economy\") when:1d" },
+  ]
+
+[[sections]]
+id = "policy"
+title = "Policy & New Laws"
+color = "#7a4bc2"
+
+  [[sections.desks]]
+  title = "Kazakhstan"
+  flag = "🇰🇿"
+  limit = 4
+  max_age_hours = 48
+  feeds = [
+    { google = "Kazakhstan (law OR decree OR bill OR Tokayev OR parliament OR Mazhilis OR Senate OR government OR ministry) when:2d" },
+  ]
+
+  [[sections.desks]]
+  title = "UK, Scotland & visas"
+  flag = "🇬🇧"
+  limit = 4
+  feeds = [
+    { source = "BBC", url = "https://feeds.bbci.co.uk/news/politics/rss.xml" },
+    { source = "BBC", url = "https://feeds.bbci.co.uk/news/scotland/scotland_politics/rss.xml" },
+    { source = "The Guardian", url = "https://www.theguardian.com/politics/rss" },
+    { google = "(\"UK visa\" OR \"immigration rules\" OR \"Home Office\" OR \"skilled worker\" OR \"graduate visa\") when:2d" },
+  ]
+
+  [[sections.desks]]
+  title = "United States"
+  flag = "🇺🇸"
+  limit = 4
+  feeds = [
+    { source = "NPR", url = "https://feeds.npr.org/1014/rss.xml" },
+    { google = "(\"new law\" OR \"executive order\" OR \"new rule\") United States when:1d" },
+  ]
+
+  [[sections.desks]]
+  title = "Europe"
+  flag = "🇪🇺"
+  limit = 4
+  feeds = [
+    { source = "Politico Europe", url = "https://www.politico.eu/feed/" },
+    { google = "(\"European Commission\" OR \"EU law\" OR \"new EU rules\") when:1d" },
+  ]

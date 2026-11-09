@@ -1,0 +1,45 @@
+# The good-day wish at the end of the paper: one wish per day plus a tip from
+# Edinburgh's forecast. Add, remove or rewrite anything here.
+
+wishes = [
+  "May today be kind to you — and may the queue at the coffee place be short.",
+  "Wishing you a calm, bright day. Whatever is on your list today, you’ve got this.",
+  "Here’s to one small, unexpected good thing today — and to noticing it when it happens.",
+  "May the buses come on time and the wind blow in the right direction for once.",
+  "A little reminder: you’re doing better than you think. Have a good one.",
+  "Hope today brings good news, good food and at least one good laugh.",
+  "Edinburgh is lucky to have you in it today. Make it a nice one.",
+  "May your tea stay warm and your inbox stay quiet.",
+  "Wishing you the kind of day that ends with “that went well”.",
+  "Be gentle with yourself today — and treat yourself to something nice on the way home.",
+  "Hope you find a moment today to just stop, breathe and enjoy the view.",
+  "Sending a little bit of Kazakh sunshine your way — Edinburgh could use it.",
+  "May everything you start today go smoothly, and everything hard turn out easier than expected.",
+  "Have a brilliant day. And if it isn’t brilliant, there’s always tomorrow’s paper.",
+  "Hope someone makes you smile today, for no reason at all.",
+  "Wishing you a good day, a good lunch and a good evening to look forward to.",
+  "Today’s forecast: a hundred per cent chance of you doing great.",
+  "May today feel as warm as a cup of milky tea at a family dastarkhan.",
+  "Whatever today brings, remember how far you’ve come — all the way from the steppe to the Scottish hills.",
+  "Hope the day goes so well you’ll want to call home just to tell someone about it.",
+  "Here’s to small victories: a finished task, a kind word, a free seat on the bus.",
+  "Take a deep breath of that fresh Scottish air — and have a wonderful day.",
+  "May your plans work out and your surprises be the nice kind.",
+  "Wishing you focus in the morning, energy in the afternoon and peace in the evening.",
+  "Go easy, smile often, and don’t forget to eat something proper today.",
+  "Have the kind of day you’d want to read about in tomorrow’s paper.",
+  "May today bring you a little closer to something you’ve been hoping for.",
+  "If no one has said it yet today: good morning — you’ve got this.",
+  "Wishing you warm hands, a warm heart and a warm place to come home to.",
+  "May your day be like a good dombra tune — light, bright and full of life.",
+]
+
+[tips]
+rain = "Rain on the way — take an umbrella and the good waterproof boots."
+storm = "Stormy weather today — maybe one for staying in with a book."
+snow = "Snow in the forecast — almost like home, just wetter."
+wind = "It’s a windy one — hold on to your umbrella (and your hat)."
+cold = "It’s properly cold — scarf, gloves, the full Astana kit."
+fog = "Haar over the city this morning — the famous Edinburgh sea fog. Mind your step."
+sun = "Some sunshine today — perfect for a walk through the Meadows or up Calton Hill."
+mild = "Grey but dry — a good day for a walk along the Water of Leith."

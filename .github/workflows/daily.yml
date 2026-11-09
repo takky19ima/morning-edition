@@ -1,0 +1,58 @@
+name: Daily paper
+
+on:
+  schedule:
+    - cron: "40 5 * * *"     # 05:40 UTC = 05:40 in Edinburgh in winter, 06:40 in summer. GitHub may start it 5–30 min late.
+  workflow_dispatch:          # "Run workflow" button for an extra edition
+
+permissions:
+  contents: write             # save the edition to the archive
+  pages: write
+  id-token: write
+
+concurrency:
+  group: daily-paper
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Build today's edition       # web in three languages + print PDFs (Chrome comes with the runner)
+        run: python build.py
+
+      # Committing the edition keeps the archive (and the translation cache) and keeps GitHub
+      # from pausing the schedule (it does that to repos with no activity for 60 days).
+      - name: Save to archive
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs cache
+          git commit -m "Edition $(date -u +%F)" || echo "Nothing new to save"
+          git push
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs
+      - id: deploy
+        uses: actions/deploy-pages@v4
+
+      - name: Send to Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PAGE_URL: ${{ steps.deploy.outputs.page_url }}
+        run: python notify.py

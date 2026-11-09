@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="{{ html_lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ paper.name }} — {{ edition.short }}</title>
+<meta name="description" content="{{ top[0].title if top else paper.name }}">
+<meta property="og:title" content="{{ paper.name }} · {{ edition.long }}">
+<meta property="og:description" content="{{ top|map(attribute='title')|join(' · ') if top else paper.name }}">
+{% if top and top[0].image %}<meta property="og:image" content="{{ top[0].image }}">{% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400;1,6..72,500&family=PT+Sans:wght@400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia{% if lang == 'zh' %}&family=Noto+Sans+SC:wght@400;700&family=Noto+Serif+SC:wght@400;600;700{% endif %}&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f4f1ea; --card: #ffffff; --ink: #16161a; --ink-2: #45454f; --ink-3: #686872;
+  --line: #e4dfd4; --rule: #16161a;
+  --shadow: 0 1px 2px rgb(20 20 30 / .06), 0 6px 20px rgb(20 20 30 / .05);
+  --gold: #f2b705; --sky: #00a3c4; --saltire: #0065bd; --top: #c8102e;
+  --live: #d0021b; --amber: #e8890c; --green: #1e8e5a;
+  --serif: "Newsreader", "PT Serif", Georgia, "Times New Roman", serif;
+  --sans: "Libre Franklin", "PT Sans", "Helvetica Neue", Arial, sans-serif;
+  --black: "UnifrakturMaguntia", "Old English Text MT", Georgia, serif;
+  --mix: #000; --mix-ink: 72%; --mix-soft: 11%; --q-gold: 26%; --q-sky: 16%;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111114; --card: #1b1b20; --ink: #ecebe6; --ink-2: #c4c3bd; --ink-3: #9a99a1;
+    --line: #2d2d34; --rule: #ecebe6; --shadow: 0 1px 2px rgb(0 0 0 / .4);
+    --mix: #fff; --mix-ink: 58%; --mix-soft: 22%; --q-gold: 13%; --q-sky: 14%; color-scheme: dark;
+  }
+}
+/* Kazakh needs Cyrillic letters Newsreader doesn't have; Chinese needs CJK fonts */
+html[lang="kk"] { --serif: "PT Serif", Georgia, serif; --sans: "PT Sans", Arial, sans-serif; }
+html[lang^="zh"] { --serif: "Noto Serif SC", "Songti SC", serif; --sans: "Noto Sans SC", "PingFang SC", sans-serif; }
+html[lang^="zh"] .label, html[lang^="zh"] .badge, html[lang^="zh"] .topic { letter-spacing: .04em; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 64px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.5 var(--serif); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid var(--saltire); outline-offset: 2px; border-radius: 2px; }
+.page { max-width: 1200px; margin: 0 auto; padding: 0 16px 56px; }
+.label { font: 700 11px/1.4 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+/* every coloured block sets --c; these derive readable text and soft fills from it */
+[style*="--c"] { --c-ink: color-mix(in srgb, var(--c) var(--mix-ink), var(--mix)); --c-soft: color-mix(in srgb, var(--c) var(--mix-soft), var(--card)); }
+
+/* masthead */
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; color: var(--ink-2); }
+.langs { display: flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--card); box-shadow: var(--shadow); }
+.langs a { padding: 5px 12px; border-radius: 999px; font: 600 13px/1.3 var(--sans); color: var(--ink-2); }
+.langs a[aria-current] { background: var(--ink); color: var(--bg); }
+.mast { display: grid; align-items: center; gap: 16px; padding: 22px 0 14px; }
+.mast h1 { margin: 0; text-align: center; font: 400 clamp(36px, 11vw, 60px)/1.05 var(--black); }
+.ear { display: none; border: 1px solid var(--rule); padding: 8px 10px; font: 13px/1.4 var(--sans); color: var(--ink-2); }
+.ear b { display: block; color: var(--ink); margin-bottom: 2px; }
+@media (min-width: 640px) { .mast h1 { font-size: min(9vw, 96px); white-space: nowrap; } }
+@media (min-width: 1100px) {
+  .mast { grid-template-columns: 180px 1fr 180px; }
+  .mast h1 { font-size: min(6vw, 80px); }
+  .ear { display: block; }
+}
+.band { display: grid; gap: 2px; padding: 8px 0; text-align: center; border-top: 3px double var(--rule); border-bottom: 1px solid var(--rule); }
+.band .date { font: italic 500 20px/1.3 var(--serif); }
+.band .label { color: var(--ink-2); }
+@media (min-width: 720px) {
+  .band { grid-template-columns: 1fr auto 1fr; align-items: center; }
+  .band > :first-child { text-align: left; }
+  .band > :last-child { text-align: right; }
+}
+nav.index { position: sticky; top: 0; z-index: 5; display: flex; gap: 8px; padding: 10px 16px; margin: 0 -16px; overflow-x: auto; scrollbar-width: none; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+nav.index::-webkit-scrollbar { display: none; }
+@media (min-width: 900px) { nav.index { justify-content: center; } }
+.pill { flex: none; padding: 7px 12px; border-radius: 999px; background: var(--c-soft); color: var(--c-ink); white-space: nowrap; }
+.pill:hover { background: var(--c); color: #fff; }
+
+/* quote of the day */
+.quote { position: relative; overflow: hidden; margin-top: 18px; padding: 26px 22px 24px; border-radius: 14px; background: linear-gradient(135deg, color-mix(in srgb, var(--gold) var(--q-gold), var(--card)), color-mix(in srgb, var(--sky) var(--q-sky), var(--card))); }
+.quote::before { content: "“"; position: absolute; right: 22px; top: 10px; font: 700 180px/.8 var(--serif); color: var(--gold); opacity: .45; pointer-events: none; }
+.greet { display: flex; align-items: center; gap: 8px; margin: 0 0 14px; font: 700 13px/1.3 var(--sans); }
+.greet svg { width: 22px; height: 22px; color: #b88a00; }
+.quote .label { color: var(--ink-2); margin-bottom: 8px; }
+.quote .orig { margin: 0 0 4px; font: italic 500 20px/1.35 var(--serif); color: var(--ink-2); }
+.quote blockquote { margin: 0; max-width: 34ch; font: 500 clamp(25px, 3.4vw, 32px)/1.25 var(--serif); letter-spacing: -.01em; text-wrap: balance; }
+.quote .cite { margin: 12px 0 0; font: 13px/1.4 var(--sans); color: var(--ink-2); }
+.quote .cite b { color: var(--ink); }
+
+/* today: weather here, home, money */
+.today { display: grid; gap: 14px; margin-top: 14px; }
+@media (min-width: 760px) { .today { grid-template-columns: 1.35fr 1fr; } .today .money { grid-column: 1 / -1; } }
+@media (min-width: 1080px) { .today { grid-template-columns: 1.4fr 1fr 1fr; } .today .money { grid-column: auto; } }
+.panel { background: var(--card); border-radius: 14px; box-shadow: var(--shadow); padding: 0 18px 18px; overflow: hidden; }
+.panel > .label { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 12px; margin: 0 -18px 14px; padding: 12px 18px; background: var(--c-soft); color: var(--c-ink); }
+.panel > .label span:last-child { color: var(--ink-3); font-weight: 600; }
+.wi { width: 22px; height: 22px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.wi .occ { fill: var(--card); }
+.wi.big { width: 56px; height: 56px; stroke-width: 1.2; color: var(--c-ink); }
+.wx-now { display: flex; align-items: center; gap: 14px; }
+.wx-temp { font: 700 50px/1 var(--serif); }
+.wx-label { font: italic 20px/1.3 var(--serif); color: var(--ink-2); }
+.wx-facts { margin: 12px 0 14px; font: 13px/1.6 var(--sans); color: var(--ink-2); }
+.wx-days { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+.wx-days li { display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 12px 4px 0; font: 13px/1.3 var(--sans); text-align: center; }
+.wx-days li + li { border-left: 1px solid var(--line); }
+.wx-days .r { color: var(--ink-3); }
+.clock { font: 700 50px/1 var(--serif); font-variant-numeric: tabular-nums; }
+.ahead { margin: 4px 0 14px; font: 13px/1.4 var(--sans); color: var(--ink-2); }
+.home-wx { display: flex; align-items: center; gap: 12px; padding-top: 12px; border-top: 1px solid var(--line); font: 13px/1.5 var(--sans); color: var(--ink-2); }
+.home-wx .wi { width: 36px; height: 36px; color: var(--c-ink); }
+.home-wx b { display: block; font: 700 20px/1.2 var(--serif); color: var(--ink); }
+.big-rate { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; font: 700 40px/1.1 var(--serif); font-variant-numeric: tabular-nums; }
+.big-rate span { white-space: nowrap; }
+.big-rate small { font: 600 13px/1.4 var(--sans); }
+.cross { margin: 6px 0 12px; font: 13px/1.4 var(--sans); color: var(--ink-2); }
+.fx { width: 100%; border-collapse: collapse; font: 13px/1.3 var(--sans); font-variant-numeric: tabular-nums; }
+.fx th, .fx td { padding: 7px 0; border-top: 1px solid var(--line); }
+.fx th { text-align: left; font-weight: 700; }
+.fx th span { font-weight: 400; color: var(--ink-3); margin-left: 6px; }
+.fx td { text-align: right; padding-left: 10px; white-space: nowrap; }
+.fx .v { font: 700 16px/1.2 var(--serif); }
+.up { color: var(--live); } .down { color: var(--green); } .flat { color: var(--ink-3); }
+@media (prefers-color-scheme: dark) { .up { color: #ff7a7a; } .down { color: #6fd39c; } }
+.note { margin: 10px 0 0; font: 13px/1.4 var(--sans); color: var(--ink-3); }
+
+/* cards */
+.card { display: flex; flex-direction: column; background: var(--card); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+.media { display: block; position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--c-soft); }
+.media img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.card:hover .media img { transform: scale(1.03); }
+.tile { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; padding: 12px 14px; color: #fff; background: radial-gradient(circle at 85% 15%, color-mix(in srgb, var(--c) 55%, #fff) 0 18%, transparent 19%), linear-gradient(135deg, var(--c), color-mix(in srgb, var(--c) 55%, #000)); }
+.tile b { font: italic 600 20px/1.15 var(--serif); }
+.tile span { font: 700 11px/1.4 var(--sans); letter-spacing: .12em; text-transform: uppercase; opacity: .85; }
+.body { display: flex; flex-direction: column; gap: 8px; padding: 14px 16px 16px; flex: 1; }
+.tags { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 7px; border-radius: 4px; font: 800 11px/1.3 var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+.b-live, .b-breaking { background: var(--live); color: #fff; }
+.b-live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: pulse 1.4s ease-in-out infinite; }
+.b-developing { background: var(--amber); color: #221400; }
+.b-new { background: color-mix(in srgb, var(--green) var(--mix-soft), var(--card)); color: color-mix(in srgb, var(--green) var(--mix-ink), var(--mix)); }
+.b-opinion { background: color-mix(in srgb, #7a4bc2 var(--mix-soft), var(--card)); color: color-mix(in srgb, #7a4bc2 var(--mix-ink), var(--mix)); }
+.b-analysis, .b-explainer { background: color-mix(in srgb, #3d4db7 var(--mix-soft), var(--card)); color: color-mix(in srgb, #3d4db7 var(--mix-ink), var(--mix)); }
+@keyframes pulse { 50% { opacity: .25; } }
+@media (prefers-reduced-motion: reduce) { .b-live::before { animation: none; } .media img { transition: none; } }
+.topic { font: 700 11px/1.3 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--c-ink); }
+.hl { margin: 0; font: 700 20px/1.2 var(--serif); letter-spacing: -.005em; text-wrap: balance; }
+.hl a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .15em; }
+.dek { margin: 0; color: var(--ink-2); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+.meta { margin: auto 0 0; padding-top: 4px; font: 13px/1.4 var(--sans); color: var(--ink-3); }
+.meta b { color: var(--c-ink); font-weight: 700; }
+
+/* compact row: headline left, square picture right */
+.row { flex-direction: row-reverse; align-items: flex-start; gap: 12px; padding: 14px 0; background: none; border-radius: 0; box-shadow: none; overflow: visible; border-top: 1px solid var(--line); }
+.row .media { flex: none; width: 84px; aspect-ratio: 1; border-radius: 8px; }
+.row .tile { padding: 8px; justify-content: center; align-items: center; }
+.row .tile b { font-size: 25px; }
+.row .tile span { display: none; }
+.row .body { padding: 0; gap: 5px; }
+.row .hl { font-size: 16px; line-height: 1.3; }
+.row .dek { display: none; }
+
+/* front page */
+.front { display: grid; gap: 18px; margin-top: 28px; }
+.lead .media { aspect-ratio: 3 / 2; }
+.lead .body { padding: 18px 20px 20px; gap: 10px; }
+.lead .hl { font: 800 clamp(32px, 4.4vw, 50px)/1.05 var(--serif); letter-spacing: -.015em; }
+.lead .dek { font-size: 20px; line-height: 1.45; -webkit-line-clamp: 4; }
+.also { margin: 0; padding-top: 10px; border-top: 1px solid var(--line); font: 13px/1.5 var(--sans); color: var(--ink-3); }
+.side { background: var(--card); border-radius: 12px; box-shadow: var(--shadow); padding: 4px 18px; }
+.side .row:first-child { border-top: 0; }
+.side-head { padding: 14px 0 2px; color: var(--c-ink); }
+@media (min-width: 900px) { .front { grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr); align-items: start; } }
+
+/* sections */
+.section { margin-top: 56px; }
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 18px; padding-top: 10px; border-top: 4px solid var(--c); }
+.sec-head h2 { margin: 0; font: 800 32px/1.1 var(--serif); letter-spacing: -.01em; color: var(--c-ink); }
+.sec-head .label { color: var(--ink-3); }
+.feature { margin-bottom: 18px; }
+.feature .hl { font-size: 32px; line-height: 1.12; }
+.feature .body { padding: 18px 20px 20px; gap: 10px; }
+@media (min-width: 820px) {
+  .feature { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+  .feature .media { aspect-ratio: auto; min-height: 320px; }
+  .feature .body { padding: 26px 28px; justify-content: center; }
+}
+.grid { display: grid; gap: 18px; }
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 639px) {
+  /* phones: everything after the feature becomes a light list instead of stacked cards */
+  .grid { gap: 0; background: var(--card); border-radius: 12px; box-shadow: var(--shadow); padding: 0 16px; }
+  .grid .card { flex-direction: row-reverse; align-items: flex-start; gap: 12px; padding: 14px 0; background: none; border-radius: 0; box-shadow: none; overflow: visible; border-top: 1px solid var(--line); }
+  .grid .card:first-child { border-top: 0; }
+  .grid .media { flex: none; width: 84px; aspect-ratio: 1; border-radius: 8px; }
+  .grid .tile { padding: 8px; justify-content: center; align-items: center; }
+  .grid .tile b { font-size: 25px; }
+  .grid .tile span { display: none; }
+  .grid .body { padding: 0; gap: 5px; }
+  .grid .hl { font-size: 16px; line-height: 1.3; }
+  .grid .dek { display: none; }
+}
+.desks { display: grid; gap: 18px; }
+@media (min-width: 820px) { .desks { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.desk { background: var(--card); border-radius: 12px; box-shadow: var(--shadow); overflow: hidden; }
+.desk-title { display: flex; align-items: center; gap: 8px; margin: 0; padding: 12px 16px; background: var(--c-soft); color: var(--c-ink); }
+.desk-title .flag { font-size: 20px; line-height: 1; letter-spacing: 0; }
+.desk > .card:first-of-type { border-radius: 0; box-shadow: none; }
+.desk .rows { padding: 0 16px 4px; }
+.empty { margin: 0; padding: 16px; font-style: italic; color: var(--ink-3); }
+
+/* the wish */
+.wish { position: relative; overflow: hidden; margin-top: 64px; padding: 40px 24px 36px; border-radius: 18px; text-align: center; background: linear-gradient(160deg, color-mix(in srgb, #ff9a62 30%, var(--card)), color-mix(in srgb, var(--gold) 30%, var(--card)) 55%, color-mix(in srgb, var(--sky) 20%, var(--card))); }
+.wish .sun { width: 64px; height: 64px; color: #c98a00; }
+.wish h2 { margin: 10px 0 12px; font: italic 600 clamp(32px, 5vw, 50px)/1.1 var(--serif); letter-spacing: -.01em; }
+.wish p { margin: 0 auto; max-width: 40ch; }
+.wish .text { font: 400 20px/1.5 var(--serif); }
+.wish .tip { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; padding: 8px 14px; border-radius: 999px; background: color-mix(in srgb, var(--card) 70%, transparent); font: 600 13px/1.4 var(--sans); max-width: none; text-align: left; }
+.wish .signoff { margin-top: 18px; font: italic 500 25px/1.3 var(--serif); color: var(--ink-2); }
+
+/* footer */
+.foot { display: grid; gap: 24px; margin-top: 56px; padding-top: 18px; border-top: 3px double var(--rule); font: 13px/1.6 var(--sans); color: var(--ink-2); }
+@media (min-width: 760px) { .foot { grid-template-columns: 1fr 2fr; gap: 40px; } }
+.foot .label { color: var(--ink); margin: 0 0 8px; }
+.foot p { margin: 0 0 8px; }
+.past { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.past a, .foot summary { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: .2em; cursor: pointer; }
+
+@media print {
+  body { background: #fff; }
+  nav.index, .foot { display: none; }
+  .card, .desk, .panel { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+}
+</style>
+</head>
+<body>
+{% macro tile(s) %}<span class="tile" aria-hidden="true"><b>{{ s.source }}</b></span>{% endmacro %}
+{% macro media(s) %}
+<a class="media" href="{{ s.link }}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+  {% if s.image %}<img src="{{ s.image }}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>{{ s.source|e }}</b>'}))">{% else %}{{ tile(s) }}{% endif %}
+</a>
+{% endmacro %}
+{% macro tags(s, extra=none) %}
+{% if extra or s.badges or s.topic %}<div class="tags">{% if extra %}<span class="badge b-breaking">{{ extra }}</span>{% endif %}{% for cls, text in s.badges %}<span class="badge b-{{ cls }}">{{ t(text) }}</span>{% endfor %}{% if s.topic %}<span class="topic">{{ t(s.topic) }}</span>{% endif %}</div>{% endif %}
+{% endmacro %}
+{% macro meta(s) %}<p class="meta">{{ s.source }}{% if s.published %} · {{ ago(s.published) }}{% endif %}{% if s.coverage > 1 %} · <b>{{ s.coverage }} {{ t('outlets') }}</b>{% endif %}</p>{% endmacro %}
+{% macro story(s, cls='') %}
+<article class="card {{ cls }}">
+  {{ media(s) }}
+  <div class="body">
+    {{ tags(s) }}
+    <h3 class="hl"><a href="{{ s.link }}" target="_blank" rel="noopener">{{ s.title }}</a></h3>
+    {% if s.summary %}<p class="dek">{{ s.summary }}</p>{% endif %}
+    {{ meta(s) }}
+  </div>
+</article>
+{% endmacro %}
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><path id="cloud" d="M7 15h10a3.5 3.5 0 0 0 .4-6.98A5 5 0 0 0 7.6 9.1 3 3 0 0 0 7 15z"/></defs>
+  <symbol id="w-clear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5V5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></symbol>
+  <symbol id="w-partly" viewBox="0 0 24 24"><circle cx="8.5" cy="8" r="3"/><path d="M8.5 2.5v1.2M3 8h1.2M4.6 4.1l.9.9M12.4 4.1l-.9.9"/><use href="#cloud" class="occ" transform="translate(1 4)"/></symbol>
+  <symbol id="w-cloudy" viewBox="0 0 24 24"><use href="#cloud" transform="translate(0 3)"/></symbol>
+  <symbol id="w-fog" viewBox="0 0 24 24"><path d="M4 8h16M6 12h12M4 16h16M8 20h8"/></symbol>
+  <symbol id="w-rain" viewBox="0 0 24 24"><use href="#cloud"/><path d="M9 18l-1 2.5M13 18l-1 2.5M17 18l-1 2.5"/></symbol>
+  <symbol id="w-snow" viewBox="0 0 24 24"><use href="#cloud"/><path d="M8.5 18.5h.01M12.5 18.5h.01M16.5 18.5h.01M10.5 21h.01M14.5 21h.01" stroke-width="2.2"/></symbol>
+  <symbol id="w-storm" viewBox="0 0 24 24"><use href="#cloud"/><path d="M12.5 15.5l-2 3.5h3l-2 3.5"/></symbol>
+  <symbol id="sun" viewBox="0 0 64 64"><circle cx="32" cy="32" r="11" fill="currentColor" stroke="none"/><g stroke="currentColor" stroke-width="2.5" stroke-linecap="round">{% for a in range(0, 360, 30) %}<path d="M32 9v7" transform="rotate({{ a }} 32 32)"/>{% endfor %}</g></symbol>
+</svg>
+{% set here = places[0] if places else none %}
+{% set home = places[1] if places|length > 1 else none %}
+<div class="page">
+
+<header>
+  <div class="topbar">
+    <span class="label">{{ t(paper.edition) }} · {{ t('edition') }}</span>
+    {% if switcher|length > 1 %}
+    <nav class="langs" aria-label="Language">
+      {% for code, name in switcher %}<a href="{{ root }}{{ '' if code == 'en' else code ~ '/' }}index.html" hreflang="{{ code }}"{% if code == lang %} aria-current="page"{% endif %}>{{ name }}</a>{% endfor %}
+    </nav>
+    {% endif %}
+  </div>
+  <div class="mast">
+    <div class="ear"><b>{{ t('motto') }}</b>{{ t('motto_sub') }}</div>
+    <h1><a href="{{ home }}index.html">{{ paper.name }}</a></h1>
+    <div class="ear">
+      {% if here %}<b>{{ t(here.city) }}: {{ here.now }}, {{ t(here.label)|lower }}</b>{{ t('Today') }} {{ here.days[0].hi }} / {{ here.days[0].lo }}{% if home %} · {{ t(home.city) }} {{ home.now }}{% endif %}{% else %}<b>{{ edition.short }}</b>{% endif %}
+    </div>
+  </div>
+  <div class="band">
+    <span class="label">{{ t('No.') }} {{ edition.number }}</span>
+    <span class="date">{{ edition.long }}</span>
+    <span class="label">{% if here %}{{ t(here.city) }} {{ here.now }}{% if home %} · {{ t(home.city) }} {{ home.now }}{% endif %}{% endif %}</span>
+  </div>
+  <nav class="index label" aria-label="Sections">
+    {% if top %}<a class="pill" style="--c: var(--top)" href="#top">{{ t('Top stories') }}</a>{% endif %}
+    {% for sec in sections %}<a class="pill" style="--c: {{ sec.color }}" href="#{{ sec.id }}">{{ t(sec.title) }}</a>{% endfor %}
+  </nav>
+</header>
+
+<main>
+{% if quote %}
+  <section class="quote" aria-label="{{ t('Quote of the day') }}">
+    {% if reader_name %}<p class="greet"><svg aria-hidden="true"><use href="#sun"/></svg>{{ reader.greeting ~ ', ' if reader.greeting }}{{ reader_name }}!</p>{% endif %}
+    <div class="label">{{ t('Quote of the day') }}</div>
+    {% if quote.original %}<p class="orig" lang="kk">{{ quote.original }}</p>{% endif %}
+    <blockquote>“{% for line in quote.text.split(' / ') %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}”</blockquote>
+    <p class="cite">— <b>{{ t(quote.author) }}</b>{% if quote.source %}, <i>{{ quote.source }}</i>{% endif %}</p>
+  </section>
+{% endif %}
+
+{% if places or rates %}
+  <section class="today" id="today" aria-label="{{ t('Weather') }}">
+    {% if here %}
+    <div class="panel" style="--c: var(--saltire)">
+      <div class="label"><span>{{ t(here.role) }} · {{ t(here.city) }}</span><span>{{ t('Sunrise') }} {{ here.sunrise }} · {{ t('Sunset') }} {{ here.sunset }}</span></div>
+      <div class="wx-now">
+        <svg class="wi big" aria-hidden="true"><use href="#w-{{ here.kind }}"/></svg>
+        <div><div class="wx-temp">{{ here.now }}</div><div class="wx-label">{{ t(here.label) }}</div></div>
+      </div>
+      <p class="wx-facts">{{ t('Feels like') }} {{ here.feels }} · {{ t('Wind') }} {{ here.wind }} {{ t('m/s') }} · {{ t('Humidity') }} {{ here.humidity }}%</p>
+      <ol class="wx-days">
+        {% for d in here.days %}
+        <li>
+          <span class="label">{{ t('Today') if loop.first else weekday(d.date) }}</span>
+          <svg class="wi" role="img" aria-label="{{ t(d.label) }}"><use href="#w-{{ d.kind }}"/></svg>
+          <span><b>{{ d.hi }}</b> {{ d.lo }}</span>
+          <span class="r">{{ d.rain }}% {{ t('rain') }}</span>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+    {% endif %}
+    {% if home %}
+    <div class="panel" style="--c: var(--sky)"{% if home.utc_offset is not none %} data-offset="{{ home.utc_offset }}"{% endif %}>
+      <div class="label"><span>{{ t(home.role) }} · {{ t(home.city) }}</span><span>{{ t('Local time') }}</span></div>
+      <div class="clock">{{ home_time }}</div>
+      {% if home_diff is not none %}<p class="ahead">{% if home_diff > 0 %}{{ t('{h} h ahead of {city}', h='%g'|format(home_diff), city=t(here.city)) }}{% elif home_diff < 0 %}{{ t('{h} h behind {city}', h='%g'|format(-home_diff), city=t(here.city)) }}{% else %}{{ t('Same time') }}{% endif %}</p>{% endif %}
+      <div class="home-wx">
+        <svg class="wi" aria-hidden="true"><use href="#w-{{ home.kind }}"/></svg>
+        <div><b>{{ home.now }} · {{ t(home.label) }}</b>{{ t('Today') }} {{ home.days[0].hi }} / {{ home.days[0].lo }} · {{ t('Wind') }} {{ home.wind }} {{ t('m/s') }}</div>
+      </div>
+    </div>
+    {% endif %}
+    {% if rates %}
+    {% set lead_rate = rates.rows[0] %}
+    <div class="panel money" style="--c: var(--green)">
+      <div class="label"><span>{{ t('Tenge · official rate') }}</span><span>{{ rates.on }}</span></div>
+      <div class="big-rate"><span>{{ lead_rate.symbol }}1 = {{ '%.2f'|format(lead_rate.value) }} ₸</span> <small class="{{ lead_rate.dir }}">{{ {'up': '▲', 'down': '▼', 'flat': '–'}[lead_rate.dir] }} {{ lead_rate.change }}</small></div>
+      {% if rates.cross %}<p class="cross">{{ lead_rate.symbol }}1 = {% for sym, v in rates.cross %}{{ sym }}{{ '%.2f'|format(v) }}{% if not loop.last %} · {% endif %}{% endfor %}</p>{% endif %}
+      <table class="fx">
+        {% for r in rates.rows[1:] %}
+        <tr>
+          <th scope="row">{% if r.per > 1 %}{{ r.per }} {% endif %}{{ r.code }}<span>{{ t(r.name) }}</span></th>
+          <td class="v">{{ '%.2f'|format(r.value) }} ₸</td>
+          <td class="{{ r.dir }}">{{ {'up': '▲', 'down': '▼', 'flat': '–'}[r.dir] }} {{ r.change }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      <p class="note">{{ t('National Bank of Kazakhstan') }}</p>
+    </div>
+    {% endif %}
+  </section>
+{% endif %}
+
+{% if top %}
+  {% set lead = top[0] %}
+  <section class="front" id="top" style="--c: var(--top)" aria-label="{{ t('Top stories') }}">
+    <article class="card lead">
+      {{ media(lead) }}
+      <div class="body">
+        {{ tags(lead, t('Top story')) }}
+        <h2 class="hl"><a href="{{ lead.link }}" target="_blank" rel="noopener">{{ lead.title }}</a></h2>
+        {% if lead.summary %}<p class="dek">{{ lead.summary }}</p>{% endif %}
+        {{ meta(lead) }}
+        {% if lead.others %}<p class="also">{{ t('Also reported by') }} {{ lead.others[:6]|join(', ') }}{% if lead.others|length > 6 %} {{ t('and {n} more', n=lead.others|length - 6) }}{% endif %}.</p>{% endif %}
+      </div>
+    </article>
+    <div class="side">
+      <div class="side-head label">{{ t('Also big today') }}</div>
+      {% for s in top[1:] %}{{ story(s, 'row') }}{% endfor %}
+    </div>
+  </section>
+{% endif %}
+
+{% for sec in sections %}
+  <section class="section" id="{{ sec.id }}" style="--c: {{ sec.color }}">
+    {% set count = sec.stories|length if sec.stories is defined else sec.desks|sum(attribute='stories', start=[])|length %}
+    <header class="sec-head"><h2>{{ t(sec.title) }}</h2><span class="label">{{ count }} {{ t('story' if count == 1 else 'stories') }}</span></header>
+    {% if sec.desks %}
+    <div class="desks">
+      {% for d in sec.desks %}
+      <div class="desk">
+        <h3 class="desk-title label">{% if d.flag %}<span class="flag" aria-hidden="true">{{ d.flag }}</span>{% endif %}{{ t(d.title) }}</h3>
+        {% if d.stories %}
+          {{ story(d.stories[0]) }}
+          {% if d.stories|length > 1 %}<div class="rows">{% for s in d.stories[1:] %}{{ story(s, 'row') }}{% endfor %}</div>{% endif %}
+        {% else %}<p class="empty">{{ t('A quiet day — nothing new here.') }}</p>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% elif sec.stories %}
+    {{ story(sec.stories[0], 'feature') }}
+    {% if sec.stories|length > 1 %}<div class="grid">{% for s in sec.stories[1:] %}{{ story(s) }}{% endfor %}</div>{% endif %}
+    {% else %}
+    <p class="empty">{{ t('A quiet day — nothing new here.') }}</p>
+    {% endif %}
+  </section>
+{% endfor %}
+
+{% if reader_name and wish.text %}
+  <section class="wish" aria-label="{{ t('Have a lovely day, {name}', name=reader_name) }}">
+    <svg class="sun" aria-hidden="true"><use href="#sun"/></svg>
+    <h2>{{ t('Have a lovely day, {name}', name=reader_name) }}</h2>
+    <p class="text">{{ wish.text }}</p>
+    {% if wish.tip %}<p class="tip">{% if here %}<svg class="wi" aria-hidden="true"><use href="#w-{{ here.days[0].kind }}"/></svg>{% endif %}{{ wish.tip }}</p>{% endif %}
+    {% if reader.signoff %}<p class="signoff" lang="kk">{{ reader.signoff }}</p>{% endif %}
+  </section>
+{% endif %}
+</main>
+
+<footer class="foot">
+  <div>
+    <h4 class="label">{{ t('Past editions') }}</h4>
+    {% if past %}
+    <ul class="past">{% for d in past %}<li><a href="{{ home }}archive/{{ d.isoformat() }}.html">{{ long_date(d) }}</a></li>{% endfor %}</ul>
+    {% else %}<p>{{ t('This is the first edition.') }}</p>{% endif %}
+  </div>
+  <div>
+    <h4 class="label">{{ t('About this paper') }}</h4>
+    <p>{{ t('about', time=edition.built, city=t(paper.edition)) }}</p>
+    <details><summary>{{ t('sources', n=sources|length) }}</summary><p>{{ sources|join(', ') }}</p></details>
+  </div>
+</footer>
+
+</div>
+<script>
+// Live clock for home: keeps ticking after the page was built.
+document.querySelectorAll('[data-offset]').forEach(function (panel) {
+  var clock = panel.querySelector('.clock');
+  function tick() { clock.textContent = new Date(Date.now() + Number(panel.dataset.offset) * 36e5).toISOString().slice(11, 16); }
+  tick();
+  setInterval(tick, 20000);
+});
+</script>
+</body>
+</html>

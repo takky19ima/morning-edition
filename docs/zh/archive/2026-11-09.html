@@ -1,0 +1,1082 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Morning Edition — 11月9日</title>
+<meta name="description" content="英伟达首席执行官黄仁勋成为外国情报目标后展开调查">
+<meta property="og:title" content="The Morning Edition · 2026年11月9日 星期一">
+<meta property="og:description" content="英伟达首席执行官黄仁勋成为外国情报目标后展开调查 · 法国指责伊朗革命卫队对超市冰箱进行网络攻击 · 拉塞尔·布兰德因强奸和性侵犯被判入狱十多年 · 欧洲不顾克里姆林宫的反对，参加美国斡旋的阿布扎比乌克兰谈判 · 强硬派特朗普助手斯蒂芬·米勒接任白宫办公厅主任">
+<meta property="og:image" content="https://i.guim.co.uk/img/media/3fc6a5d68684a58fece0294bce9094ed76072ecd/2488_14_5430_4347/master/5430.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=479082a01b7c472e474af2b77df4e1a8"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400;1,6..72,500&family=PT+Sans:wght@400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&family=Noto+Sans+SC:wght@400;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f4f1ea; --card: #ffffff; --ink: #16161a; --ink-2: #45454f; --ink-3: #686872;
+  --line: #e4dfd4; --rule: #16161a;
+  --shadow: 0 1px 2px rgb(20 20 30 / .06), 0 6px 20px rgb(20 20 30 / .05);
+  --gold: #f2b705; --sky: #00a3c4; --saltire: #0065bd; --top: #c8102e;
+  --live: #d0021b; --amber: #e8890c; --green: #1e8e5a;
+  --serif: "Newsreader", "PT Serif", Georgia, "Times New Roman", serif;
+  --sans: "Libre Franklin", "PT Sans", "Helvetica Neue", Arial, sans-serif;
+  --black: "UnifrakturMaguntia", "Old English Text MT", Georgia, serif;
+  --mix: #000; --mix-ink: 72%; --mix-soft: 11%; --q-gold: 26%; --q-sky: 16%;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111114; --card: #1b1b20; --ink: #ecebe6; --ink-2: #c4c3bd; --ink-3: #9a99a1;
+    --line: #2d2d34; --rule: #ecebe6; --shadow: 0 1px 2px rgb(0 0 0 / .4);
+    --mix: #fff; --mix-ink: 58%; --mix-soft: 22%; --q-gold: 13%; --q-sky: 14%; color-scheme: dark;
+  }
+}
+/* Kazakh needs Cyrillic letters Newsreader doesn't have; Chinese needs CJK fonts */
+html[lang="kk"] { --serif: "PT Serif", Georgia, serif; --sans: "PT Sans", Arial, sans-serif; }
+html[lang^="zh"] { --serif: "Noto Serif SC", "Songti SC", serif; --sans: "Noto Sans SC", "PingFang SC", sans-serif; }
+html[lang^="zh"] .label, html[lang^="zh"] .badge, html[lang^="zh"] .topic { letter-spacing: .04em; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 64px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.5 var(--serif); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid var(--saltire); outline-offset: 2px; border-radius: 2px; }
+.page { max-width: 1200px; margin: 0 auto; padding: 0 16px 56px; }
+.label { font: 700 11px/1.4 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+/* every coloured block sets --c; these derive readable text and soft fills from it */
+[style*="--c"] { --c-ink: color-mix(in srgb, var(--c) var(--mix-ink), var(--mix)); --c-soft: color-mix(in srgb, var(--c) var(--mix-soft), var(--card)); }
+
+/* masthead */
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; color: var(--ink-2); }
+.langs { display: flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--card); box-shadow: var(--shadow); }
+.langs a { padding: 5px 12px; border-radius: 999px; font: 600 13px/1.3 var(--sans); color: var(--ink-2); }
+.langs a[aria-current] { background: var(--ink); color: var(--bg); }
+.mast { display: grid; align-items: center; gap: 16px; padding: 22px 0 14px; }
+.mast h1 { margin: 0; text-align: center; font: 400 clamp(36px, 11vw, 60px)/1.05 var(--black); }
+.ear { display: none; border: 1px solid var(--rule); padding: 8px 10px; font: 13px/1.4 var(--sans); color: var(--ink-2); }
+.ear b { display: block; color: var(--ink); margin-bottom: 2px; }
+@media (min-width: 640px) { .mast h1 { font-size: min(9vw, 96px); white-space: nowrap; } }
+@media (min-width: 1100px) {
+  .mast { grid-template-columns: 180px 1fr 180px; }
+  .mast h1 { font-size: min(6vw, 80px); }
+  .ear { display: block; }
+}
+.band { display: grid; gap: 2px; padding: 8px 0; text-align: center; border-top: 3px double var(--rule); border-bottom: 1px solid var(--rule); }
+.band .date { font: italic 500 20px/1.3 var(--serif); }
+.band .label { color: var(--ink-2); }
+@media (min-width: 720px) {
+  .band { grid-template-columns: 1fr auto 1fr; align-items: center; }
+  .band > :first-child { text-align: left; }
+  .band > :last-child { text-align: right; }
+}
+nav.index { position: sticky; top: 0; z-index: 5; display: flex; gap: 8px; padding: 10px 16px; margin: 0 -16px; overflow-x: auto; scrollbar-width: none; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+nav.index::-webkit-scrollbar { display: none; }
+@media (min-width: 900px) { nav.index { justify-content: center; } }
+.pill { flex: none; padding: 7px 12px; border-radius: 999px; background: var(--c-soft); color: var(--c-ink); white-space: nowrap; }
+.pill:hover { background: var(--c); color: #fff; }
+
+/* quote of the day */
+.quote { position: relative; overflow: hidden; margin-top: 18px; padding: 26px 22px 24px; border-radius: 14px; background: linear-gradient(135deg, color-mix(in srgb, var(--gold) var(--q-gold), var(--card)), color-mix(in srgb, var(--sky) var(--q-sky), var(--card))); }
+.quote::before { content: "“"; position: absolute; right: 22px; top: 10px; font: 700 180px/.8 var(--serif); color: var(--gold); opacity: .45; pointer-events: none; }
+.greet { display: flex; align-items: center; gap: 8px; margin: 0 0 14px; font: 700 13px/1.3 var(--sans); }
+.greet svg { width: 22px; height: 22px; color: #b88a00; }
+.quote .label { color: var(--ink-2); margin-bottom: 8px; }
+.quote .orig { margin: 0 0 4px; font: italic 500 20px/1.35 var(--serif); color: var(--ink-2); }
+.quote blockquote { margin: 0; max-width: 34ch; font: 500 clamp(25px, 3.4vw, 32px)/1.25 var(--serif); letter-spacing: -.01em; text-wrap: balance; }
+.quote .cite { margin: 12px 0 0; font: 13px/1.4 var(--sans); color: var(--ink-2); }
+.quote .cite b { color: var(--ink); }
+
+/* today: weather here, home, money */
+.today { display: grid; gap: 14px; margin-top: 14px; }
+@media (min-width: 760px) { .today { grid-template-columns: 1.35fr 1fr; } .today .money { grid-column: 1 / -1; } }
+@media (min-width: 1080px) { .today { grid-template-columns: 1.4fr 1fr 1fr; } .today .money { grid-column: auto; } }
+.panel { background: var(--card); border-radius: 14px; box-shadow: var(--shadow); padding: 0 18px 18px; overflow: hidden; }
+.panel > .label { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 12px; margin: 0 -18px 14px; padding: 12px 18px; background: var(--c-soft); color: var(--c-ink); }
+.panel > .label span:last-child { color: var(--ink-3); font-weight: 600; }
+.wi { width: 22px; height: 22px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.wi .occ { fill: var(--card); }
+.wi.big { width: 56px; height: 56px; stroke-width: 1.2; color: var(--c-ink); }
+.wx-now { display: flex; align-items: center; gap: 14px; }
+.wx-temp { font: 700 50px/1 var(--serif); }
+.wx-label { font: italic 20px/1.3 var(--serif); color: var(--ink-2); }
+.wx-facts { margin: 12px 0 14px; font: 13px/1.6 var(--sans); color: var(--ink-2); }
+.wx-days { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+.wx-days li { display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 12px 4px 0; font: 13px/1.3 var(--sans); text-align: center; }
+.wx-days li + li { border-left: 1px solid var(--line); }
+.wx-days .r { color: var(--ink-3); }
+.clock { font: 700 50px/1 var(--serif); font-variant-numeric: tabular-nums; }
+.ahead { margin: 4px 0 14px; font: 13px/1.4 var(--sans); color: var(--ink-2); }
+.home-wx { display: flex; align-items: center; gap: 12px; padding-top: 12px; border-top: 1px solid var(--line); font: 13px/1.5 var(--sans); color: var(--ink-2); }
+.home-wx .wi { width: 36px; height: 36px; color: var(--c-ink); }
+.home-wx b { display: block; font: 700 20px/1.2 var(--serif); color: var(--ink); }
+.big-rate { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; font: 700 40px/1.1 var(--serif); font-variant-numeric: tabular-nums; }
+.big-rate span { white-space: nowrap; }
+.big-rate small { font: 600 13px/1.4 var(--sans); }
+.cross { margin: 6px 0 12px; font: 13px/1.4 var(--sans); color: var(--ink-2); }
+.fx { width: 100%; border-collapse: collapse; font: 13px/1.3 var(--sans); font-variant-numeric: tabular-nums; }
+.fx th, .fx td { padding: 7px 0; border-top: 1px solid var(--line); }
+.fx th { text-align: left; font-weight: 700; }
+.fx th span { font-weight: 400; color: var(--ink-3); margin-left: 6px; }
+.fx td { text-align: right; padding-left: 10px; white-space: nowrap; }
+.fx .v { font: 700 16px/1.2 var(--serif); }
+.up { color: var(--live); } .down { color: var(--green); } .flat { color: var(--ink-3); }
+@media (prefers-color-scheme: dark) { .up { color: #ff7a7a; } .down { color: #6fd39c; } }
+.note { margin: 10px 0 0; font: 13px/1.4 var(--sans); color: var(--ink-3); }
+
+/* cards */
+.card { display: flex; flex-direction: column; background: var(--card); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+.media { display: block; position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--c-soft); }
+.media img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.card:hover .media img { transform: scale(1.03); }
+.tile { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; padding: 12px 14px; color: #fff; background: radial-gradient(circle at 85% 15%, color-mix(in srgb, var(--c) 55%, #fff) 0 18%, transparent 19%), linear-gradient(135deg, var(--c), color-mix(in srgb, var(--c) 55%, #000)); }
+.tile b { font: italic 600 20px/1.15 var(--serif); }
+.tile span { font: 700 11px/1.4 var(--sans); letter-spacing: .12em; text-transform: uppercase; opacity: .85; }
+.body { display: flex; flex-direction: column; gap: 8px; padding: 14px 16px 16px; flex: 1; }
+.tags { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 7px; border-radius: 4px; font: 800 11px/1.3 var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+.b-live, .b-breaking { background: var(--live); color: #fff; }
+.b-live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: pulse 1.4s ease-in-out infinite; }
+.b-developing { background: var(--amber); color: #221400; }
+.b-new { background: color-mix(in srgb, var(--green) var(--mix-soft), var(--card)); color: color-mix(in srgb, var(--green) var(--mix-ink), var(--mix)); }
+.b-opinion { background: color-mix(in srgb, #7a4bc2 var(--mix-soft), var(--card)); color: color-mix(in srgb, #7a4bc2 var(--mix-ink), var(--mix)); }
+.b-analysis, .b-explainer { background: color-mix(in srgb, #3d4db7 var(--mix-soft), var(--card)); color: color-mix(in srgb, #3d4db7 var(--mix-ink), var(--mix)); }
+@keyframes pulse { 50% { opacity: .25; } }
+@media (prefers-reduced-motion: reduce) { .b-live::before { animation: none; } .media img { transition: none; } }
+.topic { font: 700 11px/1.3 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--c-ink); }
+.hl { margin: 0; font: 700 20px/1.2 var(--serif); letter-spacing: -.005em; text-wrap: balance; }
+.hl a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .15em; }
+.dek { margin: 0; color: var(--ink-2); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+.meta { margin: auto 0 0; padding-top: 4px; font: 13px/1.4 var(--sans); color: var(--ink-3); }
+.meta b { color: var(--c-ink); font-weight: 700; }
+
+/* compact row: headline left, square picture right */
+.row { flex-direction: row-reverse; align-items: flex-start; gap: 12px; padding: 14px 0; background: none; border-radius: 0; box-shadow: none; overflow: visible; border-top: 1px solid var(--line); }
+.row .media { flex: none; width: 84px; aspect-ratio: 1; border-radius: 8px; }
+.row .tile { padding: 8px; justify-content: center; align-items: center; }
+.row .tile b { font-size: 25px; }
+.row .tile span { display: none; }
+.row .body { padding: 0; gap: 5px; }
+.row .hl { font-size: 16px; line-height: 1.3; }
+.row .dek { display: none; }
+
+/* front page */
+.front { display: grid; gap: 18px; margin-top: 28px; }
+.lead .media { aspect-ratio: 3 / 2; }
+.lead .body { padding: 18px 20px 20px; gap: 10px; }
+.lead .hl { font: 800 clamp(32px, 4.4vw, 50px)/1.05 var(--serif); letter-spacing: -.015em; }
+.lead .dek { font-size: 20px; line-height: 1.45; -webkit-line-clamp: 4; }
+.also { margin: 0; padding-top: 10px; border-top: 1px solid var(--line); font: 13px/1.5 var(--sans); color: var(--ink-3); }
+.side { background: var(--card); border-radius: 12px; box-shadow: var(--shadow); padding: 4px 18px; }
+.side .row:first-child { border-top: 0; }
+.side-head { padding: 14px 0 2px; color: var(--c-ink); }
+@media (min-width: 900px) { .front { grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr); align-items: start; } }
+
+/* sections */
+.section { margin-top: 56px; }
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 18px; padding-top: 10px; border-top: 4px solid var(--c); }
+.sec-head h2 { margin: 0; font: 800 32px/1.1 var(--serif); letter-spacing: -.01em; color: var(--c-ink); }
+.sec-head .label { color: var(--ink-3); }
+.feature { margin-bottom: 18px; }
+.feature .hl { font-size: 32px; line-height: 1.12; }
+.feature .body { padding: 18px 20px 20px; gap: 10px; }
+@media (min-width: 820px) {
+  .feature { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+  .feature .media { aspect-ratio: auto; min-height: 320px; }
+  .feature .body { padding: 26px 28px; justify-content: center; }
+}
+.grid { display: grid; gap: 18px; }
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 639px) {
+  /* phones: everything after the feature becomes a light list instead of stacked cards */
+  .grid { gap: 0; background: var(--card); border-radius: 12px; box-shadow: var(--shadow); padding: 0 16px; }
+  .grid .card { flex-direction: row-reverse; align-items: flex-start; gap: 12px; padding: 14px 0; background: none; border-radius: 0; box-shadow: none; overflow: visible; border-top: 1px solid var(--line); }
+  .grid .card:first-child { border-top: 0; }
+  .grid .media { flex: none; width: 84px; aspect-ratio: 1; border-radius: 8px; }
+  .grid .tile { padding: 8px; justify-content: center; align-items: center; }
+  .grid .tile b { font-size: 25px; }
+  .grid .tile span { display: none; }
+  .grid .body { padding: 0; gap: 5px; }
+  .grid .hl { font-size: 16px; line-height: 1.3; }
+  .grid .dek { display: none; }
+}
+.desks { display: grid; gap: 18px; }
+@media (min-width: 820px) { .desks { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.desk { background: var(--card); border-radius: 12px; box-shadow: var(--shadow); overflow: hidden; }
+.desk-title { display: flex; align-items: center; gap: 8px; margin: 0; padding: 12px 16px; background: var(--c-soft); color: var(--c-ink); }
+.desk-title .flag { font-size: 20px; line-height: 1; letter-spacing: 0; }
+.desk > .card:first-of-type { border-radius: 0; box-shadow: none; }
+.desk .rows { padding: 0 16px 4px; }
+.empty { margin: 0; padding: 16px; font-style: italic; color: var(--ink-3); }
+
+/* the wish */
+.wish { position: relative; overflow: hidden; margin-top: 64px; padding: 40px 24px 36px; border-radius: 18px; text-align: center; background: linear-gradient(160deg, color-mix(in srgb, #ff9a62 30%, var(--card)), color-mix(in srgb, var(--gold) 30%, var(--card)) 55%, color-mix(in srgb, var(--sky) 20%, var(--card))); }
+.wish .sun { width: 64px; height: 64px; color: #c98a00; }
+.wish h2 { margin: 10px 0 12px; font: italic 600 clamp(32px, 5vw, 50px)/1.1 var(--serif); letter-spacing: -.01em; }
+.wish p { margin: 0 auto; max-width: 40ch; }
+.wish .text { font: 400 20px/1.5 var(--serif); }
+.wish .tip { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; padding: 8px 14px; border-radius: 999px; background: color-mix(in srgb, var(--card) 70%, transparent); font: 600 13px/1.4 var(--sans); max-width: none; text-align: left; }
+.wish .signoff { margin-top: 18px; font: italic 500 25px/1.3 var(--serif); color: var(--ink-2); }
+
+/* footer */
+.foot { display: grid; gap: 24px; margin-top: 56px; padding-top: 18px; border-top: 3px double var(--rule); font: 13px/1.6 var(--sans); color: var(--ink-2); }
+@media (min-width: 760px) { .foot { grid-template-columns: 1fr 2fr; gap: 40px; } }
+.foot .label { color: var(--ink); margin: 0 0 8px; }
+.foot p { margin: 0 0 8px; }
+.past { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.past a, .foot summary { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: .2em; cursor: pointer; }
+
+@media print {
+  body { background: #fff; }
+  nav.index, .foot { display: none; }
+  .card, .desk, .panel { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><path id="cloud" d="M7 15h10a3.5 3.5 0 0 0 .4-6.98A5 5 0 0 0 7.6 9.1 3 3 0 0 0 7 15z"/></defs>
+  <symbol id="w-clear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5V5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></symbol>
+  <symbol id="w-partly" viewBox="0 0 24 24"><circle cx="8.5" cy="8" r="3"/><path d="M8.5 2.5v1.2M3 8h1.2M4.6 4.1l.9.9M12.4 4.1l-.9.9"/><use href="#cloud" class="occ" transform="translate(1 4)"/></symbol>
+  <symbol id="w-cloudy" viewBox="0 0 24 24"><use href="#cloud" transform="translate(0 3)"/></symbol>
+  <symbol id="w-fog" viewBox="0 0 24 24"><path d="M4 8h16M6 12h12M4 16h16M8 20h8"/></symbol>
+  <symbol id="w-rain" viewBox="0 0 24 24"><use href="#cloud"/><path d="M9 18l-1 2.5M13 18l-1 2.5M17 18l-1 2.5"/></symbol>
+  <symbol id="w-snow" viewBox="0 0 24 24"><use href="#cloud"/><path d="M8.5 18.5h.01M12.5 18.5h.01M16.5 18.5h.01M10.5 21h.01M14.5 21h.01" stroke-width="2.2"/></symbol>
+  <symbol id="w-storm" viewBox="0 0 24 24"><use href="#cloud"/><path d="M12.5 15.5l-2 3.5h3l-2 3.5"/></symbol>
+  <symbol id="sun" viewBox="0 0 64 64"><circle cx="32" cy="32" r="11" fill="currentColor" stroke="none"/><g stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M32 9v7" transform="rotate(0 32 32)"/><path d="M32 9v7" transform="rotate(30 32 32)"/><path d="M32 9v7" transform="rotate(60 32 32)"/><path d="M32 9v7" transform="rotate(90 32 32)"/><path d="M32 9v7" transform="rotate(120 32 32)"/><path d="M32 9v7" transform="rotate(150 32 32)"/><path d="M32 9v7" transform="rotate(180 32 32)"/><path d="M32 9v7" transform="rotate(210 32 32)"/><path d="M32 9v7" transform="rotate(240 32 32)"/><path d="M32 9v7" transform="rotate(270 32 32)"/><path d="M32 9v7" transform="rotate(300 32 32)"/><path d="M32 9v7" transform="rotate(330 32 32)"/></g></symbol>
+</svg>
+<div class="page">
+
+<header>
+  <div class="topbar">
+    <span class="label">爱丁堡 · 版</span>
+    <nav class="langs" aria-label="Language">
+<a href="../../index.html" hreflang="en">English</a><a href="../../kk/index.html" hreflang="kk">Қазақша</a><a href="../../zh/index.html" hreflang="zh" aria-current="page">中文</a>    </nav>
+  </div>
+  <div class="mast">
+    <div class="ear"><b>最重要的新闻排在最前。</b>新闻按报道它的编辑部数量排序。</div>
+    <h1><a href="{&#39;city&#39;: &#39;Astana&#39;, &#39;role&#39;: &#39;Home&#39;, &#39;utc_offset&#39;: 5, &#39;now&#39;: &#39;2°&#39;, &#39;feels&#39;: &#39;−1°&#39;, &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;wind&#39;: 2, &#39;humidity&#39;: 81, &#39;sunrise&#39;: &#39;07:20&#39;, &#39;sunset&#39;: &#39;16:35&#39;, &#39;days&#39;: [{&#39;date&#39;: datetime.date(2026, 11, 9), &#39;label&#39;: &#39;Rain&#39;, &#39;kind&#39;: &#39;rain&#39;, &#39;high&#39;: 10.8, &#39;hi&#39;: &#39;11°&#39;, &#39;lo&#39;: &#39;2°&#39;, &#39;rain&#39;: 100, &#39;wind&#39;: 6.03}, {&#39;date&#39;: datetime.date(2026, 11, 10), &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;high&#39;: 1.8, &#39;hi&#39;: &#39;2°&#39;, &#39;lo&#39;: &#39;−3°&#39;, &#39;rain&#39;: 2, &#39;wind&#39;: 3.25}, {&#39;date&#39;: datetime.date(2026, 11, 11), &#39;label&#39;: &#39;Partly cloudy&#39;, &#39;kind&#39;: &#39;partly&#39;, &#39;high&#39;: 2.1, &#39;hi&#39;: &#39;2°&#39;, &#39;lo&#39;: &#39;−4°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 2.41}, {&#39;date&#39;: datetime.date(2026, 11, 12), &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;high&#39;: 0.9, &#39;hi&#39;: &#39;1°&#39;, &#39;lo&#39;: &#39;−3°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 2.82}]}index.html">The Morning Edition</a></h1>
+    <div class="ear">
+<b>爱丁堡: 7°, 多云</b>今天 9° / 4° · 阿斯塔纳 2°    </div>
+  </div>
+  <div class="band">
+    <span class="label">第 1</span>
+    <span class="date">2026年11月9日 星期一</span>
+    <span class="label">爱丁堡 7° · 阿斯塔纳 2°</span>
+  </div>
+  <nav class="index label" aria-label="Sections">
+<a class="pill" style="--c: var(--top)" href="#top">头条新闻</a><a class="pill" style="--c: #0065bd" href="#edinburgh">爱丁堡与苏格兰</a><a class="pill" style="--c: #b0306a" href="#whats-on">活动预告</a><a class="pill" style="--c: #00a3c4" href="#kazakhstan">哈萨克斯坦</a><a class="pill" style="--c: #3d4db7" href="#world">国际</a><a class="pill" style="--c: #1e7d4f" href="#economy">经济</a><a class="pill" style="--c: #7a4bc2" href="#policy">政策与新法规</a>  </nav>
+</header>
+
+<main>
+  <section class="quote" aria-label="每日一句">
+<p class="greet"><svg aria-hidden="true"><use href="#sun"/></svg>Қайырлы таң, KK!</p>    <div class="label">每日一句</div>
+    <blockquote>“美并不是事物本身的品质：它仅仅存在于思考它们的心灵中。”</blockquote>
+    <p class="cite">— <b>David Hume</b>, <i>Of the Standard of Taste</i></p>
+  </section>
+
+  <section class="today" id="today" aria-label="天气">
+    <div class="panel" style="--c: var(--saltire)">
+      <div class="label"><span>当地 · 爱丁堡</span><span>日出 07:36 · 日落 16:15</span></div>
+      <div class="wx-now">
+        <svg class="wi big" aria-hidden="true"><use href="#w-partly"/></svg>
+        <div><div class="wx-temp">7°</div><div class="wx-label">多云</div></div>
+      </div>
+      <p class="wx-facts">体感 6° · 风速 1 米/秒 · 湿度 84%</p>
+      <ol class="wx-days">
+        <li>
+          <span class="label">今天</span>
+          <svg class="wi" role="img" aria-label="阴"><use href="#w-cloudy"/></svg>
+          <span><b>9°</b> 4°</span>
+          <span class="r">0% 降水</span>
+        </li>
+        <li>
+          <span class="label">周二</span>
+          <svg class="wi" role="img" aria-label="阴"><use href="#w-cloudy"/></svg>
+          <span><b>7°</b> 3°</span>
+          <span class="r">0% 降水</span>
+        </li>
+        <li>
+          <span class="label">周三</span>
+          <svg class="wi" role="img" aria-label="阴"><use href="#w-cloudy"/></svg>
+          <span><b>6°</b> 2°</span>
+          <span class="r">2% 降水</span>
+        </li>
+        <li>
+          <span class="label">周四</span>
+          <svg class="wi" role="img" aria-label="多云"><use href="#w-partly"/></svg>
+          <span><b>7°</b> 1°</span>
+          <span class="r">2% 降水</span>
+        </li>
+      </ol>
+    </div>
+    <div class="panel" style="--c: var(--sky)" data-offset="5">
+      <div class="label"><span>家乡 · 阿斯塔纳</span><span>当地时间</span></div>
+      <div class="clock">23:06</div>
+<p class="ahead">比爱丁堡快 5 小时</p>      <div class="home-wx">
+        <svg class="wi" aria-hidden="true"><use href="#w-cloudy"/></svg>
+        <div><b>2° · 阴</b>今天 11° / 2° · 风速 2 米/秒</div>
+      </div>
+    </div>
+    <div class="panel money" style="--c: var(--green)">
+      <div class="label"><span>坚戈 · 官方汇率</span><span>10.11.2026</span></div>
+      <div class="big-rate"><span>£1 = 602.35 ₸</span> <small class="up">▲ +3.45</small></div>
+<p class="cross">£1 = $1.34 · €1.20</p>      <table class="fx">
+        <tr>
+          <th scope="row">USD<span>美元</span></th>
+          <td class="v">448.98 ₸</td>
+          <td class="up">▲ +1.84</td>
+        </tr>
+        <tr>
+          <th scope="row">EUR<span>欧元</span></th>
+          <td class="v">502.45 ₸</td>
+          <td class="up">▲ +2.91</td>
+        </tr>
+        <tr>
+          <th scope="row">RUB<span>俄罗斯卢布</span></th>
+          <td class="v">5.45 ₸</td>
+          <td class="down">▼ −0.01</td>
+        </tr>
+        <tr>
+          <th scope="row">CNY<span>人民币</span></th>
+          <td class="v">67.29 ₸</td>
+          <td class="up">▲ +0.26</td>
+        </tr>
+      </table>
+      <p class="note">哈萨克斯坦国家银行</p>
+    </div>
+  </section>
+
+  <section class="front" id="top" style="--c: var(--top)" aria-label="头条新闻">
+    <article class="card lead">
+      <a class="media" href="https://www.theguardian.com/us-news/2026/nov/08/nvidia-jensen-huang-investigation" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/3fc6a5d68684a58fece0294bce9094ed76072ecd/2488_14_5430_4347/master/5430.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=479082a01b7c472e474af2b77df4e1a8" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+      <div class="body">
+        <div class="tags"><span class="badge b-breaking">头条</span><span class="badge b-developing">持续关注</span><span class="topic">科技</span></div>
+        <h2 class="hl"><a href="https://www.theguardian.com/us-news/2026/nov/08/nvidia-jensen-huang-investigation" target="_blank" rel="noopener">英伟达首席执行官黄仁勋成为外国情报目标后展开调查</a></h2>
+<p class="dek">据报道，首席执行官与一名向北京传递信息的中国女商人关系密切，英伟达周日表示，“根据最近的报道，创始人兼首席执行官黄仁勋正在启动独立调查……”</p>        <p class="meta">The Guardian · 17 小时前 · <b>7 家媒体</b></p>
+<p class="also">其他报道媒体： Al Jazeera, France 24, Sky News, BBC, Bloomberg.com, Euronews.</p>      </div>
+    </article>
+    <div class="side">
+      <div class="side-head label">今日要闻</div>
+<article class="card row">
+  <a class="media" href="https://www.theguardian.com/world/2026/nov/09/france-blames-irans-revolutionary-guards-for-cyber-attacks-on-supermarket-fridges" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/aed983f049b0e852c755b8dc230e7c7ba34f9947/46_0_3538_2832/master/3538.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=534357c3d208281dec5abeceb00fe88e" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-breaking">突发</span><span class="topic">科技</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/world/2026/nov/09/france-blames-irans-revolutionary-guards-for-cyber-attacks-on-supermarket-fridges" target="_blank" rel="noopener">法国指责伊朗革命卫队对超市冰箱进行网络攻击</a></h3>
+<p class="dek">法国外长誓言欧洲将因上个月“前所未有”的黑客攻击而对德黑兰实施制裁 欧洲直播 - 最新消息 法国表示，伊朗革命卫队是对超市冰箱进行“前所未有”的网络攻击的幕后黑手......</p>    <p class="meta">The Guardian · 1 小时前 · <b>5 家媒体</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.stv.tv/world/russell-brand-jailed-for-more-than-ten-years-for-rape-and-sexual-assault" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://news.stv.tv/wp-content/uploads/2026/11/11fa3df01de6d871a12195f2602e410f-1794234778-1080x720.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>STV News</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">最新</span><span class="topic">司法</span></div>
+    <h3 class="hl"><a href="https://news.stv.tv/world/russell-brand-jailed-for-more-than-ten-years-for-rape-and-sexual-assault" target="_blank" rel="noopener">拉塞尔·布兰德因强奸和性侵犯被判入狱十多年</a></h3>
+<p class="dek">布兰德上周被判强奸一名妇女并性侵犯另外三人</p>    <p class="meta">STV News · 3 小时前 · <b>5 家媒体</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.npr.org/2026/11/08/nx-s1-6034014/europe-join-us-brokered-ukraine-talks-abu-dhabi-russia" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://npr.brightspotcdn.com/dims3/default/strip/false/crop/8144x5424+0+0/resize/8144x5424!/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Ffa%2Fa1%2F91147a0b4187a331f76a4c33d532%2Fap26311445819542.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>NPR</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">持续关注</span></div>
+    <h3 class="hl"><a href="https://www.npr.org/2026/11/08/nx-s1-6034014/europe-join-us-brokered-ukraine-talks-abu-dhabi-russia" target="_blank" rel="noopener">欧洲不顾克里姆林宫的反对，参加美国斡旋的阿布扎比乌克兰谈判</a></h3>
+<p class="dek">法国表示，欧洲官员将参加本周在阿布扎比举行的美国斡旋的俄罗斯-乌克兰会谈，这是自二月份以来的第一轮三方谈判。</p>    <p class="meta">NPR · 22 小时前 · <b>6 家媒体</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.theguardian.com/us-news/2026/nov/09/stephen-miller-white-house-chief-of-staff" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/db4879733af20c35f81006235d81b932772ab199/670_308_2949_2359/master/2949.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=59c0ec5808741845a67990ec7f8c7703" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-breaking">突发</span><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/us-news/2026/nov/09/stephen-miller-white-house-chief-of-staff" target="_blank" rel="noopener">强硬派特朗普助手斯蒂芬·米勒接任白宫办公厅主任</a></h3>
+<p class="dek">米勒，被称为特朗普有争议的移民镇压的设计师，将取代苏西怀尔斯担任新角色美国政治现场 - 最新更新斯蒂芬米勒，唐纳德特朗普大规模驱逐政策和强硬派的设计师......</p>    <p class="meta">The Guardian · 2 小时前 · <b>3 家媒体</b></p>
+  </div>
+</article>
+    </div>
+  </section>
+
+  <section class="section" id="edinburgh" style="--c: #0065bd">
+    <header class="sec-head"><h2>爱丁堡与苏格兰</h2><span class="label">7 篇</span></header>
+    <article class="card feature">
+  <a class="media" href="https://www.edinburghnews.scotsman.com/news/crime/police-urge-witnesses-to-come-forward-after-unacceptable-oxgangs-disorder-9340011" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.edinburghnews.scotsman.com/jpim-static/image/2026/11/05/22/2026_11_05_22_02_29_031_stts%2520-lf%2520-%252005_11_2026%2520-edinburgh%2520bonfire%2520night%2520-%2520023.JPG?width=1200&amp;auto=webp&amp;crop=3%3A2" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Edinburgh Evening News</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-breaking">突发</span><span class="topic">司法</span></div>
+    <h3 class="hl"><a href="https://www.edinburghnews.scotsman.com/news/crime/police-urge-witnesses-to-come-forward-after-unacceptable-oxgangs-disorder-9340011" target="_blank" rel="noopener">爱丁堡发生“不可接受的”篝火之夜骚乱后，警方敦促目击者挺身而出</a></h3>
+<p class="dek">侦探敦促持有骚乱镜头的居民挺身而出</p>    <p class="meta">Edinburgh Evening News · 1 小时前 · <b>5 家媒体</b></p>
+  </div>
+</article>
+
+<div class="grid"><article class="card ">
+  <a class="media" href="https://www.edinburghnews.scotsman.com/news/elderly-man-hospital-pilrig-heights-disturbance-9339874" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.edinburghnews.scotsman.com/jpim-static/image/2026/11/09/15/08/Untitled-design-2026-11-09T152155-646.png?width=1200&amp;auto=webp&amp;trim=0%2C0%2C0%2C0" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Edinburgh Evening News</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-breaking">突发</span><span class="topic">司法</span></div>
+    <h3 class="hl"><a href="https://www.edinburghnews.scotsman.com/news/elderly-man-hospital-pilrig-heights-disturbance-9339874" target="_blank" rel="noopener">爱丁堡北部公寓发生“骚乱”，71岁老人被送往医院，27岁男子被指控</a></h3>
+<p class="dek">这起事件发生在周日（11 月 8 日）凌晨，地点是 Pilrig Heights 的一间公寓。</p>    <p class="meta">Edinburgh Evening News · 2 小时前 · <b>4 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.edinburghnews.scotsman.com/news/edinburgh-zoo-capybara-triplets-named-after-scottish-delicacies-9339860" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.edinburghnews.scotsman.com/jpim-static/image/2026/11/09/15/23/2026_10_29_Capybara_triplets_BB-(3).jpg?width=1200&amp;auto=webp&amp;trim=0%2C0%2C0%2C0" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Edinburgh Evening News</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">最新</span></div>
+    <h3 class="hl"><a href="https://www.edinburghnews.scotsman.com/news/edinburgh-zoo-capybara-triplets-named-after-scottish-delicacies-9339860" target="_blank" rel="noopener">爱丁堡动物园水豚三胞胎以苏格兰美食命名</a></h3>
+<p class="dek">苏格兰皇家动物学会公布了“babybaras”的获奖名字。</p>    <p class="meta">Edinburgh Evening News · 1 小时前 · <b>9 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.edinburghlive.co.uk/news/edinburgh-news/edinburgh-falls-silent-remembrance-sunday-34881231" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i2-prod.edinburghlive.co.uk/incoming/article34881238.ece/ALTERNATES/s615/0_01M6XQQPQYC70APR3TTR88G90R.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Edinburgh Live</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">持续关注</span></div>
+    <h3 class="hl"><a href="https://www.edinburghlive.co.uk/news/edinburgh-news/edinburgh-falls-silent-remembrance-sunday-34881231" target="_blank" rel="noopener">爱丁堡在阵亡将士纪念日陷入沉默，举行纪念活动</a></h3>
+<p class="dek">人们在纪念石前敬献了罂粟花环。</p>    <p class="meta">Edinburgh Live · 27 小时前 · <b>4 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/cqm242e4k9kro?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/8fae/live/d07edbc0-dc5d-11f1-93e1-3b657b665bcf.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-breaking">突发</span><span class="topic">司法</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/cqm242e4k9kro?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">谋杀弱势青少年并索要她福利的护理人员在监狱中死亡</a></h3>
+<p class="dek">66 岁的艾薇儿·琼斯 (Avril Jones) 和她的伴侣爱德华·凯尼 (Edward Cairney) 在世纪之交谋杀了这位脆弱的青少年。</p>    <p class="meta">BBC · 58 分钟前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://news.stv.tv/world/seven-killed-and-more-than-100-injured-in-train-collision-in-egypt" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://news.stv.tv/wp-content/uploads/2026/11/9a99eeb7b4700ad6383c73bb06256ddc-1794163197-1080x720.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>STV News</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.stv.tv/world/seven-killed-and-more-than-100-injured-in-train-collision-in-egypt" target="_blank" rel="noopener">埃及火车相撞造成7人死亡、100多人受伤</a></h3>
+<p class="dek">坠机事故发生在首都开罗以南约32英里处。</p>    <p class="meta">STV News · 23 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/c6rryrdex252o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/30d4/live/93f29e00-db7a-11f1-a701-fddedf244c16.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-breaking">突发</span><span class="topic">司法</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/c6rryrdex252o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">英国广播公司（BBC）了解到，在大规模斗殴之后，海德鲁不太可能举办更多的裸拳拳击比赛</a></h3>
+<p class="dek">Ovo Hydro 演出后爆发大规模骚乱，三名警察受伤，两名男子被捕。</p>    <p class="meta">BBC · 1 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+</div>  </section>
+  <section class="section" id="whats-on" style="--c: #b0306a">
+    <header class="sec-head"><h2>活动预告</h2><span class="label">6 篇</span></header>
+    <article class="card feature">
+  <a class="media" href="https://www.edinburghnews.scotsman.com/whats-on/heaven-17-tour-greatest-hits-edinburgh-usher-hall-9338791" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.edinburghnews.scotsman.com/jpim-static/image/2026/11/09/11/54/Heaven_17_-_Shooting_Hamburg_2025_-_(c)_ToddeVision_0152.jpeg?width=1200&amp;auto=webp&amp;trim=0%2C0%2C0%2C0" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Edinburgh Evening News</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://www.edinburghnews.scotsman.com/whats-on/heaven-17-tour-greatest-hits-edinburgh-usher-hall-9338791" target="_blank" rel="noopener">80 年代传奇人物 Heaven 17 宣布“Greatest Hits Live with Orchestra”巡演，包括在爱丁堡演出</a></h3>
+<p class="dek">Heaven 17 将由一支完整的管弦乐团加入，作为一系列“独特”演出的一部分，从首都开始</p>    <p class="meta">Edinburgh Evening News · 5 小时前 · <b>3 家媒体</b></p>
+  </div>
+</article>
+
+<div class="grid"><article class="card ">
+  <a class="media" href="https://www.scotsman.com/arts-and-culture/music/rsno-rsno-chorus-edinburgh-festival-chorus-patrick-hahn-edinburgh-review-glorious-lyricism-9338073" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.scotsman.com/webimg/b25lY21zOmRkNDkzNjZlLThiMmUtNGJkZC05MTQwLTgxZjBiMDQ5OWJmNDo5Zjc2MDY1MC0zNzU5LTQyN2UtOGQ4NC00YjZhYWYwY2MzMWY=.jpg?width=1200&amp;auto=webp&amp;crop=3%3A2" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Scotsman</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">持续关注</span><span class="topic">文化</span></div>
+    <h3 class="hl"><a href="https://www.scotsman.com/arts-and-culture/music/rsno-rsno-chorus-edinburgh-festival-chorus-patrick-hahn-edinburgh-review-glorious-lyricism-9338073" target="_blank" rel="noopener">RSNO、RSNO 合唱团、爱丁堡节日合唱团和帕特里克·哈恩，爱丁堡评论：“光荣的抒情”</a></h3>
+<p class="dek">大卫·凯特尔 (David Kettle) 写道，RSNO 合唱团和爱丁堡节日合唱团的合力打造了一场令人难忘的威尔第安魂曲表演</p>    <p class="meta">The Scotsman · 9 小时前 · <b>4 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.edinburghnews.scotsman.com/whats-on/sophie-ellis-bextor-edinburgh-hogmanay-2026-line-up-street-party-9340260" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.edinburghnews.scotsman.com/jpim-static/image/2026/11/09/16/55/Hogmanay_31_December_Jacinta_Oaten_Assembly-4-2.jpeg?width=1200&amp;auto=webp&amp;trim=0%2C0%2C0%2C0" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Edinburgh Evening News</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">最新</span><span class="topic">文化</span></div>
+    <h3 class="hl"><a href="https://www.edinburghnews.scotsman.com/whats-on/sophie-ellis-bextor-edinburgh-hogmanay-2026-line-up-street-party-9340260" target="_blank" rel="noopener">二十世纪九十年代偶像 Sophie Ellis-Bextor 加入爱丁堡 Hogmanay 2026 街头派对阵容，担任 DJ 头条人物</a></h3>
+<p class="dek">Sophie Ellis-Bextor 和丈夫 Richard Jones 将于 12 月 31 日登台演出</p>    <p class="meta">Edinburgh Evening News · 55 分钟前 · <b>3 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.scotsman.com/sponsored/indian-film-festival-edinburgh-2026-free-films-filmhouse-december-4-6-9337892" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.scotsman.com/jpim-static/image/2026/11/08/20/25/Mughal-e-Azam_01.jpeg?width=1200&amp;auto=webp&amp;trim=21%2C0%2C31%2C0" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Scotsman</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">文化</span></div>
+    <h3 class="hl"><a href="https://www.scotsman.com/sponsored/indian-film-festival-edinburgh-2026-free-films-filmhouse-december-4-6-9337892" target="_blank" rel="noopener">爱丁堡印度电影节将于 2026 年 12 月在 Filmhouse 举办七部电影</a></h3>
+<p class="dek">爱丁堡的电影观众将受邀在为期三天的电影节上探索印度各地的故事。</p>    <p class="meta">The Scotsman · 11 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.scotsman.com/arts-and-culture/books/booker-prize-2026-nominees-shortlist-douglas-stuart-9339209" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.scotsman.com/jpim-static/image/2026/11/09/14/31/Booker-Prize-nominees-2026-Shortlist-Getty-Images.jpeg?width=1200&amp;auto=webp&amp;trim=0%2C0%2C0%2C0" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Scotsman</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">最新</span><span class="topic">文化</span></div>
+    <h3 class="hl"><a href="https://www.scotsman.com/arts-and-culture/books/booker-prize-2026-nominees-shortlist-douglas-stuart-9339209" target="_blank" rel="noopener">2026 年布克奖提名者：以下是今年入围名单中的全部 6 本书，其中包括道格拉斯·斯图尔特 (Douglas Stuart) 的《约翰的约翰》(John of John)</a></h3>
+<p class="dek">以下是 2026 年布克奖的所有提名作品，从 6 部入围书籍到今年长名单中的书籍。</p>    <p class="meta">The Scotsman · 3 小时前</p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxNX2FPTWtuNTY0UThfUlM5QkZmbU1teUFERzdxNE9KUExVSjd0MGluODRPM0Z5WTdJcEdndWM3R0cxU2VqSTFpNkJoZjJYN3pjMEQ2STNqZ0NOLTdlWnN3a3ZFU2JGRkcxYi1XMW9ZVm9uSS1OcldDTVZ0RjQ2QVR1NUtHbExHZGRLUzVMTVNJMEFCdnNiMzRyNnF6emI4dEdYWTl6bEZlbGNUQQ?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Edinburgh Live</b></span></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxNX2FPTWtuNTY0UThfUlM5QkZmbU1teUFERzdxNE9KUExVSjd0MGluODRPM0Z5WTdJcEdndWM3R0cxU2VqSTFpNkJoZjJYN3pjMEQ2STNqZ0NOLTdlWnN3a3ZFU2JGRkcxYi1XMW9ZVm9uSS1OcldDTVZ0RjQ2QVR1NUtHbExHZGRLUzVMTVNJMEFCdnNiMzRyNnF6emI4dEdYWTl6bEZlbGNUQQ?oc=5" target="_blank" rel="noopener">评测：iClever P550 儿童无线耳机降低噪音</a></h3>
+    <p class="meta">Edinburgh Live · 35 小时前</p>
+  </div>
+</article>
+</div>  </section>
+  <section class="section" id="kazakhstan" style="--c: #00a3c4">
+    <header class="sec-head"><h2>哈萨克斯坦</h2><span class="label">7 篇</span></header>
+    <article class="card feature">
+  <a class="media" href="https://astanatimes.com/2026/11/rybakina-withdraws-from-wta-finals-due-to-medical-reasons/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://astanatimes.com/wp-content/uploads/2026/11/фото-29-1.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Astana Times</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">体育</span></div>
+    <h3 class="hl"><a href="https://astanatimes.com/2026/11/rybakina-withdraws-from-wta-finals-due-to-medical-reasons/" target="_blank" rel="noopener">雷巴基娜因健康原因退出WTA年终总决赛</a></h3>
+<p class="dek">阿斯塔纳——哈萨克斯坦世界排名第一的埃琳娜·雷巴基娜因健康原因退出2026年在美国印第安维尔斯举行的WTA年终总决赛，她以四项冠军头衔结束了本赛季，其中包括两项大满贯冠军。 “我实在是……</p>    <p class="meta">The Astana Times · 10 小时前 · <b>3 家媒体</b></p>
+  </div>
+</article>
+
+<div class="grid"><article class="card ">
+  <a class="media" href="https://timesca.com/opinion-kazakhstan-and-south-korea-need-investment-not-more-memoranda-for-alatau-city/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://timesca.com/wp-content/uploads/2026/11/photo_2026-11-09_15-21-05.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Times of Central Asia</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-opinion">评论</span><span class="topic">商业</span></div>
+    <h3 class="hl"><a href="https://timesca.com/opinion-kazakhstan-and-south-korea-need-investment-not-more-memoranda-for-alatau-city/" target="_blank" rel="noopener">哈萨克斯坦和韩国阿拉套市需要投资，而不是更多备忘录</a></h3>
+<p class="dek">描述哈萨克斯坦与韩国关系的优美辞藻不乏：“战略伙伴关系”、“巨大潜力”、“新发展”等。</p>    <p class="meta">The Times of Central Asia · 5 小时前 · <b>3 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://timesca.com/kazakhstan-poverty-reduction-stalls-economic-growth/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://timesca.com/wp-content/uploads/2026/11/3-16.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Times of Central Asia</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://timesca.com/kazakhstan-poverty-reduction-stalls-economic-growth/" target="_blank" rel="noopener">尽管经济增长，哈萨克斯坦减贫仍停滞不前</a></h3>
+<p class="dek">世界银行的数据显示，尽管哈萨克斯坦近年来经济持续增长，但在减贫方面进展甚微。</p>    <p class="meta">The Times of Central Asia · 5 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://timesca.com/kazakhstan-tajikistan-fuel-supply-mining-agreements/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://timesca.com/wp-content/uploads/2026/11/photo_2026-11-09_15-56-19-1024x682.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Times of Central Asia</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://timesca.com/kazakhstan-tajikistan-fuel-supply-mining-agreements/" target="_blank" rel="noopener">哈萨克斯坦 塔吉克斯坦签署燃料供应和采矿协议</a></h3>
+<p class="dek">哈萨克斯坦和塔吉克斯坦签署了一项燃料供应框架协议，作为扩大合作更广泛计划的一部分</p>    <p class="meta">The Times of Central Asia · 6 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://astanatimes.com/2026/11/astana-hub-marks-eight-years-with-6-7-billion-in-ecosystem-revenue/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://astanatimes.com/wp-content/uploads/2026/11/фото-3.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Astana Times</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://astanatimes.com/2026/11/astana-hub-marks-eight-years-with-6-7-billion-in-ecosystem-revenue/" target="_blank" rel="noopener">阿斯塔纳中心八周年纪念日生态系统收入达 67 亿美元</a></h3>
+<p class="dek">阿斯塔纳——哈萨克斯坦的国际技术集群阿斯塔纳中心正在庆祝成立八周年，生态系统参与者创造了 67 亿美元的总收入，24 亿美元的 IT 服务出口，并吸引了超过 2 美元……</p>    <p class="meta">The Astana Times · 5 小时前 · <b>3 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://astanatimes.com/2026/11/kazakhstan-secures-4300-hajj-quota-places-for-2027/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://astanatimes.com/wp-content/uploads/2026/11/фото-32.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Astana Times</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://astanatimes.com/2026/11/kazakhstan-secures-4300-hajj-quota-places-for-2027/" target="_blank" rel="noopener">哈萨克斯坦获得2027年4,300个朝觐配额</a></h3>
+<p class="dek">阿斯塔纳——据哈通社报道，根据哈萨克斯坦穆斯林精神管理局与沙特阿拉伯签署的协议，哈萨克斯坦已为2027年朝觐分配了4,300个名额。该协议由 Supreme 签署...</p>    <p class="meta">The Astana Times · 6 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxObklRenJfenBOYjN2VjJxRUFKZjhjdWw5YVB1TE5HZkxybk5hXzJGM1NKMVFoaXRDUDJwOGFVRnZoY0pqa1ltZHdHckNyVm9xU1JEYWd1eE9ZVnB2ZTBuSkFTQzJKUHB6UE05aDB2Z01FRUY4NlhVRlpfNDFEX25Qc0gyRFZlYmtpZ0UtdWlUT1pFYjVJWExQbDdVcTN3OE03cjFWY1ktQ21tOUdlRmd2cFM4MUtSb2lyYl9rSTgwVS1wYXkwNHBmM25Wb0s5ZXRmbUwwM1l5Z1I?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>UEFA.com</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">最新</span><span class="topic">体育</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxObklRenJfenBOYjN2VjJxRUFKZjhjdWw5YVB1TE5HZkxybk5hXzJGM1NKMVFoaXRDUDJwOGFVRnZoY0pqa1ltZHdHckNyVm9xU1JEYWd1eE9ZVnB2ZTBuSkFTQzJKUHB6UE05aDB2Z01FRUY4NlhVRlpfNDFEX25Qc0gyRFZlYmtpZ0UtdWlUT1pFYjVJWExQbDdVcTN3OE03cjFWY1ktQ21tOUdlRmd2cFM4MUtSb2lyYl9rSTgwVS1wYXkwNHBmM25Wb0s5ZXRmbUwwM1l5Z1I?oc=5" target="_blank" rel="noopener">2026/27 欧洲国家联赛：所有联赛阶段赛程和结果 |欧洲国家联赛</a></h3>
+    <p class="meta">UEFA.com · 1 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+</div>  </section>
+  <section class="section" id="world" style="--c: #3d4db7">
+    <header class="sec-head"><h2>国际</h2><span class="label">7 篇</span></header>
+    <article class="card feature">
+  <a class="media" href="https://www.aljazeera.com/news/2026/11/9/what-catastrophic-south-africa-local-election-results-mean-for-anc?traffic_source=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.aljazeera.com/wp-content/uploads/2026/11/epa_6af1bc08d187-1794227208.jpg?resize=1200%2C675" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Al Jazeera</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">持续关注</span><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://www.aljazeera.com/news/2026/11/9/what-catastrophic-south-africa-local-election-results-mean-for-anc?traffic_source=rss" target="_blank" rel="noopener">南非地方选举的“灾难性”结果对非国大意味着什么</a></h3>
+<p class="dek">该国正在从非国大选举主导的时代转向更加分散的政治体系。</p>    <p class="meta">Al Jazeera · 3 小时前 · <b>4 家媒体</b></p>
+  </div>
+</article>
+
+<div class="grid"><article class="card ">
+  <a class="media" href="https://www.theguardian.com/world/2026/nov/09/pope-leo-argentina-visit-speech-javier-milei-austerity" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/cebae71e5fdd86b5579126f7d39addd8b86cf7f9/123_0_2842_2274/master/2842.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=10ec074df5e4211e9bc79bc521c9f23c" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/world/2026/nov/09/pope-leo-argentina-visit-speech-javier-milei-austerity" target="_blank" rel="noopener">教皇利奥在访问阿根廷期间对米莱的紧缩措施进行了严厉谴责</a></h3>
+<p class="dek">教皇利奥十四世在为期 12 天的拉丁美洲之行的第二站告诉阿根廷总统，经济必须让所有人受益。教皇利奥十四世对阿根廷总统哈维尔·米莱的严厉紧缩措施提出了尖锐批评，坚称经济增长......</p>    <p class="meta">The Guardian · 15 小时前 · <b>3 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://news.sky.com/story/at-least-14-dead-after-boat-carrying-migrants-found-near-crete-13610083" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://e3.365dm.com/26/11/1920x1080/skynews-crete-migrant-crisis_7401963.jpg?20261109103131" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Sky News</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.sky.com/story/at-least-14-dead-after-boat-carrying-migrants-found-near-crete-13610083" target="_blank" rel="noopener">克里特岛附近发现载有移民的船只 至少14人死亡</a></h3>
+<p class="dek">希腊当局称，克里特岛附近发现一艘载有移民的船只，造成至少 14 人死亡。</p>    <p class="meta">Sky News · 8 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.dw.com/en/krakow-mass-shooting-suspect-has-died-in-hospital-police-in-poland-say/a-79895626?maca=en-rss-en-world-4025-rdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://static.dw.com/image/79895656_6.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>DW</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">司法</span></div>
+    <h3 class="hl"><a href="https://www.dw.com/en/krakow-mass-shooting-suspect-has-died-in-hospital-police-in-poland-say/a-79895626?maca=en-rss-en-world-4025-rdf" target="_blank" rel="noopener">波兰警方称克拉科夫大规模枪击案嫌疑人已在医院死亡</a></h3>
+<p class="dek">当局称，在波兰克拉科夫市发生的枪击事件中造成六人死亡的枪手在与警方的枪战中受伤身亡。</p>    <p class="meta">DW · 11 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.npr.org/2026/11/09/nx-s1-6034066/paraguay-president-pena-ueno" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://npr.brightspotcdn.com/dims3/default/strip/false/crop/7310x4873+0+0/resize/7310x4873!/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F4a%2Fc2%2Fa04252c842ad9112c89b305097bf%2Fap26310862051093.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>NPR</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://www.npr.org/2026/11/09/nx-s1-6034066/paraguay-president-pena-ueno" target="_blank" rel="noopener">银行倒闭如何让数百万人陷入困境并推翻巴拉圭总统</a></h3>
+<p class="dek">巴拉圭一家银行倒闭，导致数百万人失去资金，总统被推翻，政治和金融关系网暴露。</p>    <p class="meta">NPR · 11 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.theguardian.com/environment/2026/nov/09/high-fossil-fuel-prices-spread-inflation-like-cancer-cop31egotiator-tells-cop31" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/1af03ea7575a463c358fd726501cf079c5960b21/461_53_1403_1122/master/1403.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=5136abdbdff1fcbb2b0738eb5f3bb362" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">最新</span><span class="topic">商业</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/environment/2026/nov/09/high-fossil-fuel-prices-spread-inflation-like-cancer-cop31egotiator-tells-cop31" target="_blank" rel="noopener">联合国气候谈判代表告诉第31届缔约方会议，高化石燃料价格“像癌症一样”扩散通货膨胀</a></h3>
+<p class="dek">西蒙·斯蒂尔在土耳其峰会上发表开幕致辞，会上正在就加快向电气化转型进行谈判。全球化石燃料价格危机正在全球范围内“像癌症一样蔓延通货膨胀”，联合国首席气候......</p>    <p class="meta">The Guardian · 19 分钟前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.theguardian.com/politics/live/2026/nov/09/polanski-greens-labour-andy-burnham-climate-crisis-ev-targets-uk-politics-latest-news" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/e661b9f921ffdd777b231a9de99cca1b4f9bee1e/1889_309_5046_4036/master/5046.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=99a75b60f798f164b9e2d204cbf273ea" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-live">直播</span><span class="topic">健康</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/politics/live/2026/nov/09/polanski-greens-labour-andy-burnham-climate-crisis-ev-targets-uk-politics-latest-news" target="_blank" rel="noopener">伯纳姆警告说，如果顾问不恢复薪资谈判，NHS 将“艰难”应对</a></h3>
+<p class="dek">医院顾问将于 10 月底举行为期两天的罢工，唐宁街坚称政府仍致力于零排放汽车 (ZEV) 的原则，同时也不否认今天的《卫报》……</p>    <p class="meta">The Guardian · 34 分钟前</p>
+  </div>
+</article>
+</div>  </section>
+  <section class="section" id="economy" style="--c: #1e7d4f">
+    <header class="sec-head"><h2>经济</h2><span class="label">16 篇</span></header>
+    <div class="desks">
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇰🇿</span>哈萨克斯坦</h3>
+          <article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMinAFBVV95cUxNcEh0NnB5YmVhUTNURUViRXM2VTZ3dTVfSjFydFRpY0RJclk2Z2JRX2dCWWE5Q0k0djRNOFh1cEhnM05qNHFyZlo5X0I5b2xTeS03eTl4RW5fMkNvTWlKcE5iZU5WUzR6QjU4ZUhxSUhFX2xlVHI5RUlFTXVUMmhpeEtvNVh3TEk1dUFKdGlkRUdudk51Y3J2bXdBaVg?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>The Astana Times</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">气候</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxNcEh0NnB5YmVhUTNURUViRXM2VTZ3dTVfSjFydFRpY0RJclk2Z2JRX2dCWWE5Q0k0djRNOFh1cEhnM05qNHFyZlo5X0I5b2xTeS03eTl4RW5fMkNvTWlKcE5iZU5WUzR6QjU4ZUhxSUhFX2xlVHI5RUlFTXVUMmhpeEtvNVh3TEk1dUFKdGlkRUdudk51Y3J2bXdBaVg?oc=5" target="_blank" rel="noopener">哈萨克斯坦将在土耳其 COP31 上签署 28 份合作文件</a></h3>
+    <p class="meta">The Astana Times · 10 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQMmNmR185aWNxRjVHRHR1dGFBVFY2ak1weWFoSDFOSmxNTzdOalROSlRVZ3pWZmo3UmhWNktMWkF5WW80UjdhTjM0Mm5vVE1xcHlCVGJqbm9HRGNlTnhDbWJCaTFaVjlNUHN3dFhQZEYzeGVMcVVlNF82TXhlNXNQN3FNQk9kblpxMk5JYzF2R3g0aWdKZERROG14MXV1WEg3YUdv?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>The Diplomat</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">最新</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQMmNmR185aWNxRjVHRHR1dGFBVFY2ak1weWFoSDFOSmxNTzdOalROSlRVZ3pWZmo3UmhWNktMWkF5WW80UjdhTjM0Mm5vVE1xcHlCVGJqbm9HRGNlTnhDbWJCaTFaVjlNUHN3dFhQZEYzeGVMcVVlNF82TXhlNXNQN3FNQk9kblpxMk5JYzF2R3g0aWdKZERROG14MXV1WEg3YUdv?oc=5" target="_blank" rel="noopener">哈萨克斯坦向塔吉克斯坦提供合作，而不是替代俄罗斯</a></h3>
+    <p class="meta">The Diplomat · 1 小时前</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMivwFBVV95cUxQSkJxVndBbnlHbDRweE9SdWJ1XzRqNDh4QjlRRE5ma0JPb2ZyeHRTR3FfVFFjbDlKWjA0b3dxRXVYQ1VPSUNhUWlFNkltZGxaWktCQjZRdjZkVmhwSUpBb2QzX2lPVnpyYzM1SUNHLTdEem9uRkVqMXdfNFlkNDl0dkVxMG5kUHMzNGlSM2dMdmVNS0h3TkJVMGJHQ2pkcXpxWEpiREpmVHZnSkc5Q3MtdE1pblZ6WlRJY2s1d29kWQ?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>United Nations Development Programme</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">商业</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxQSkJxVndBbnlHbDRweE9SdWJ1XzRqNDh4QjlRRE5ma0JPb2ZyeHRTR3FfVFFjbDlKWjA0b3dxRXVYQ1VPSUNhUWlFNkltZGxaWktCQjZRdjZkVmhwSUpBb2QzX2lPVnpyYzM1SUNHLTdEem9uRkVqMXdfNFlkNDl0dkVxMG5kUHMzNGlSM2dMdmVNS0h3TkJVMGJHQ2pkcXpxWEpiREpmVHZnSkc5Q3MtdE1pblZ6WlRJY2s1d29kWQ?oc=5" target="_blank" rel="noopener">哈萨克斯坦的库鲁勒泰讨论蓝色金融以吸引水务领域的投资</a></h3>
+    <p class="meta">United Nations Development Programme · 10 小时前</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxPaWZCazA3MlBacFV2Z0M3RkoyeXU3WThtVHJ4RW5vQkNaV0JJVVhISnF2aXBsMERpNzVvNUZseHY5SUVieW5fUnMxeFkzdDk4LWRzZUFjOGtsQzNkVzNXSXZINmRORjBZbkhIdm9nOTNZd2lHMzd5cVV2cVJHb3dHZm1fOXJ0SUVEb1Y4QWNTVmxYWFprbUxiUUpHUlNYYnJ1cC1UWlhqcWwxZ2_SAasBQVVfeXFMT0RFN1pwZUVCaEwyMEVGM3VuU2tPS2RKVUs3eFZxcEpWbmIyTTBPYjQxLUp4SjJZZjNxQWIxRnZOT01BUzEtQkdlXzhoaHBwWHhCUFFYUEYzSnFuN1poYmV1VlhHOFUtQk9zRTR3ZEV6VlFma2pTLXJOLU9seTkzcnF5OG1NUHNlOU9PTHFtRWo3Unh3emMyQVJHcWlHZkNmc0YycGREWHdxR3VJ?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Qazinform</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">商业</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxPaWZCazA3MlBacFV2Z0M3RkoyeXU3WThtVHJ4RW5vQkNaV0JJVVhISnF2aXBsMERpNzVvNUZseHY5SUVieW5fUnMxeFkzdDk4LWRzZUFjOGtsQzNkVzNXSXZINmRORjBZbkhIdm9nOTNZd2lHMzd5cVV2cVJHb3dHZm1fOXJ0SUVEb1Y4QWNTVmxYWFprbUxiUUpHUlNYYnJ1cC1UWlhqcWwxZ2_SAasBQVVfeXFMT0RFN1pwZUVCaEwyMEVGM3VuU2tPS2RKVUs3eFZxcEpWbmIyTTBPYjQxLUp4SjJZZjNxQWIxRnZOT01BUzEtQkdlXzhoaHBwWHhCUFFYUEYzSnFuN1poYmV1VlhHOFUtQk9zRTR3ZEV6VlFma2pTLXJOLU9seTkzcnF5OG1NUHNlOU9PTHFtRWo3Unh3emMyQVJHcWlHZkNmc0YycGREWHdxR3VJ?oc=5" target="_blank" rel="noopener">哈萨克斯坦国家银行公布首批数字代币化项目</a></h3>
+    <p class="meta">Qazinform · 4 小时前</p>
+  </div>
+</article>
+</div>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇬🇧</span>英国</h3>
+          <article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMilwFBVV95cUxPZ0FRUVBoNG9QNWpKdHdNRlpBalc3YWdEZzlLdEc3d0JabUVDMk8xSXcydzNhLTd5MlNXelV5NTRTcV9EbGF6VjFGeE4ybTlmYnl2QWVYMmlqVjkyckZrZmtVeDhCVnEweHVrd0I2cGo5ZzRNSU1BejdCdEpOZkxhRUZqYndlLURORGo3aDExT3FBQXRFNWJR?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>The Guardian</b></span></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxPZ0FRUVBoNG9QNWpKdHdNRlpBalc3YWdEZzlLdEc3d0JabUVDMk8xSXcydzNhLTd5MlNXelV5NTRTcV9EbGF6VjFGeE4ybTlmYnl2QWVYMmlqVjkyckZrZmtVeDhCVnEweHVrd0I2cGo5ZzRNSU1BejdCdEpOZkxhRUZqYndlLURORGo3aDExT3FBQXRFNWJR?oc=5" target="_blank" rel="noopener">星巴克计划在英国主要扩张计划中雇用 7,500 名员工</a></h3>
+    <p class="meta">The Guardian · 4 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://www.theguardian.com/us-news/2026/nov/09/democrats-midterms-economy-healthcare" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/3a8e041b1ffd178a038a02782c554293ae66c6fa/234_0_3164_2533/master/3164.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=d3c3d0085d18cae8d45c7700691e8fea" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/us-news/2026/nov/09/democrats-midterms-economy-healthcare" target="_blank" rel="noopener">民主党人表示，经济救济即将到来。但什么、如何以及何时？</a></h3>
+<p class="dek">获胜的候选人承诺削减成本、控制企业、遏制亿万富翁的权力并改善经济。别担心，资金短缺的美国人，“救济即将到来”，参议员查克·舒默上周在新闻发布会上承诺……</p>    <p class="meta">The Guardian · 7 小时前 · <b>3 家媒体</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMitAFBVV95cUxPTkpVQUhyWV84dUpENVpEcVJ6VEpEcUJJVThSVTBVY183RVhGbmJ2emdJSURnTVh0NkswQ1k4bVpEN1JoZnFsREpIRmJQUGVIa0h4N3VyU0V2Qlo0cFNJekNnRmZZZG12QXJ0Tjd1aXdhZHJrQTFhX3AwT3RQZFQ5SGFCTGY3NmJGRWUwUTlLcDBtOE14TTVUNVZNN3RNS3loLWtWU0o2aWx2WU1oUlMzOGtZUlo?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Department of Agriculture, Environment and Rural Affairs</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxPTkpVQUhyWV84dUpENVpEcVJ6VEpEcUJJVThSVTBVY183RVhGbmJ2emdJSURnTVh0NkswQ1k4bVpEN1JoZnFsREpIRmJQUGVIa0h4N3VyU0V2Qlo0cFNJekNnRmZZZG12QXJ0Tjd1aXdhZHJrQTFhX3AwT3RQZFQ5SGFCTGY3NmJGRWUwUTlLcDBtOE14TTVUNVZNN3RNS3loLWtWU0o2aWx2WU1oUlMzOGtZUlo?oc=5" target="_blank" rel="noopener">缪尔部长将召开峰会，讨论推进气候行动和发展绿色经济</a></h3>
+    <p class="meta">Department of Agriculture, Environment and Rural Affairs · 6 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/cm70pgnx891do?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/1641/live/c3324b50-d6f9-11f1-b983-c357054e4d1e.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">最新</span><span class="topic">司法</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/cm70pgnx891do?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">秘密担任五份工作的公务员被判诈骗罪</a></h3>
+<p class="dek">卡西姆·乔杜里曾秘密担任多个公共部门的全职工作。</p>    <p class="meta">BBC · 49 分钟前</p>
+  </div>
+</article>
+</div>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇺🇸</span>美国</h3>
+          <article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOUDdpRDZLb3pTaElmb1JRdHJfV3VrMlVUMnVOQkZKaC1IODFFaWlRU0o4REFuTEVZclFxdHRKNzZod19jU2NrdUI5T2luMWdnYjZReEpldmdCb2U5U3dkRXhTZ1hsTWtIZnh1cnZqMjFQUmloVkdVeGZCb1ZLVllqcjBuaXJtN0luUWNzZUo4aTIwS2lyNU1BYnRnRzc2WHBGaEc5LTBTMmZ5ZkdfTlo0Sk5IYw?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Bloomberg.com</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">最新</span><span class="topic">商业</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOUDdpRDZLb3pTaElmb1JRdHJfV3VrMlVUMnVOQkZKaC1IODFFaWlRU0o4REFuTEVZclFxdHRKNzZod19jU2NrdUI5T2luMWdnYjZReEpldmdCb2U5U3dkRXhTZ1hsTWtIZnh1cnZqMjFQUmloVkdVeGZCb1ZLVllqcjBuaXJtN0luUWNzZUo4aTIwS2lyNU1BYnRnRzc2WHBGaEc5LTBTMmZ5ZkdfTlo0Sk5IYw?oc=5" target="_blank" rel="noopener">通胀前景稳定，纽约联储调查中对就业的看法不一</a></h3>
+    <p class="meta">Bloomberg.com · 2 小时前 · <b>5 家媒体</b></p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMigwFBVV95cUxOa3VDQVdKcnVEdTB1WDhYZFQzY3Z2b05ydE1yNnc3Nm1mTE5sa2cwUTNURjUtVXNzb1gwem9kaXhZVENaaUY4Nm9LUGp3NDctaFhtRjJCeTJZLWpsdmZkQkg3TENxekZIRUpVakVwT09GRjNva1BLMjI5b1paUW4yTGd6UQ?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>CNBC</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">商业</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxOa3VDQVdKcnVEdTB1WDhYZFQzY3Z2b05ydE1yNnc3Nm1mTE5sa2cwUTNURjUtVXNzb1gwem9kaXhZVENaaUY4Nm9LUGp3NDctaFhtRjJCeTJZLWpsdmZkQkg3TENxekZIRUpVakVwT09GRjNva1BLMjI5b1paUW4yTGd6UQ?oc=5" target="_blank" rel="noopener">随着消费者指标放缓，中国批发通胀创四年多来新高</a></h3>
+    <p class="meta">CNBC · 16 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.npr.org/2026/11/09/nx-s1-6032701/economist-discusses-taxing-the-ultra-wealthy-and-their-impact-on-the-economy" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://media.npr.org/include/images/facebook-default-wide-s1400-c85.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>NPR</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">商业</span></div>
+    <h3 class="hl"><a href="https://www.npr.org/2026/11/09/nx-s1-6032701/economist-discusses-taxing-the-ultra-wealthy-and-their-impact-on-the-economy" target="_blank" rel="noopener">经济学家讨论对超级富豪征税及其对经济的影响</a></h3>
+<p class="dek">NPR 的史蒂夫·英斯基普 (Steve Inskeep) 与经济学家兼财富税专家加布里埃尔·祖克曼 (Gabriel Zucman) 讨论了百万富翁和亿万富翁税及其对经济的影响。</p>    <p class="meta">NPR · 8 小时前</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMilgFBVV95cUxQdHJRVHE1MGEwQVVRSlFvdHZGNFZhZ3F1amY2Q2dXMDV5amZKYmFuRnlrZUlOaS1sTm9EeVZrVE83UmFaTjdaNzhyeF9hcVk5MjFpY1hHdFl4d3NVWS1uV3NmN19hTWpCdmxlWnlDeVZaLWhfNnFDNVVhNDhvY2FrZHJFWVpIZ0ZxZ0JDNEdVU0hGSXZNSEE?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Frontier Africa Reports</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">最新</span><span class="topic">商业</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxQdHJRVHE1MGEwQVVRSlFvdHZGNFZhZ3F1amY2Q2dXMDV5amZKYmFuRnlrZUlOaS1sTm9EeVZrVE83UmFaTjdaNzhyeF9hcVk5MjFpY1hHdFl4d3NVWS1uV3NmN19hTWpCdmxlWnlDeVZaLWhfNnFDNVVhNDhvY2FrZHJFWVpIZ0ZxZ0JDNEdVU0hGSXZNSEE?oc=5" target="_blank" rel="noopener">由于通胀风险加剧，BoU 将 CBR 维持在 12%</a></h3>
+    <p class="meta">Frontier Africa Reports · 1 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+</div>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇪🇺</span>欧洲</h3>
+          <article class="card ">
+  <a class="media" href="https://www.euronews.com/2026/11/09/lecornu-announces-24-monthly-rise-in-minimum-wage-and-tax-breaks-for-firms" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://images.euronews.com/articles/stories/09/98/55/11/1200x675_cmsv2_9d539f87-2bd2-56cb-a5af-0a4ff95f6dd2-9985511.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Euronews</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://www.euronews.com/2026/11/09/lecornu-announces-24-monthly-rise-in-minimum-wage-and-tax-breaks-for-firms" target="_blank" rel="noopener">Lecornu 宣布每月将最低工资提高 24 欧元，并为企业提供税收减免</a></h3>
+<p class="dek">法国总理宣布从12月1日起提前提高最低工资标准。政府还计划对企业采取税收措施，并希望启动新一轮的部门薪酬谈判。</p>    <p class="meta">Euronews · 4 小时前</p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://www.euronews.com/2026/11/09/spains-austrian-backpack-pension-plan-back-at-centre-of-29n-pensions-debate" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://images.euronews.com/articles/stories/09/98/23/99/1200x675_cmsv2_078b0f5a-c5fb-545f-8f3b-c1dcfaaa0e36-9982399.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Euronews</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">商业</span></div>
+    <h3 class="hl"><a href="https://www.euronews.com/2026/11/09/spains-austrian-backpack-pension-plan-back-at-centre-of-29n-pensions-debate" target="_blank" rel="noopener">西班牙“奥地利背包”养老金计划再次成为29N养老金辩论的中心</a></h3>
+<p class="dek">由于养老金领取者担心削减开支，而年轻人不确定自己能否领取养老金，公司资助的个人计划长期以来一直困扰着西班牙政坛。在 29N 选举之前，我们研究一下局势。</p>    <p class="meta">Euronews · 11 小时前</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.euronews.com/2026/11/09/tech-stocks-recover-after-midterms-rout-as-nvidia-takes-centre-stage" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://images.euronews.com/articles/stories/09/98/49/28/1200x675_cmsv2_22ed53ed-7496-5c91-bbeb-fbf4262f087b-9984928.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Euronews</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">科技</span></div>
+    <h3 class="hl"><a href="https://www.euronews.com/2026/11/09/tech-stocks-recover-after-midterms-rout-as-nvidia-takes-centre-stage" target="_blank" rel="noopener">科技股在中期选举惨败后复苏，英伟达占据中心舞台</a></h3>
+<p class="dek">科技公司周一上涨，弥补了上周因人工智能监管担忧而造成的部分惨痛损失，不过交易员仍在密切关注对英伟达老板黄仁勋的调查。</p>    <p class="meta">Euronews · 11 小时前</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMihgFBVV95cUxNQ2pKT295QXRGaDQ2bi1VVkVfN1E5S09mcnhPdEgyWExnTTRZU2xFODg0dFVYOWQtNFkxMnVRVFRvVS1RSkE5VFpNaGRYQjFTaHkxTXVzNUltb29KSC1PUnl3MTQtU3pJRnUyN0hkMGVLMDdzeFJtM00tWm9qbmNoWDZENjZWQQ?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>UkrMedia News</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">最新</span><span class="topic">商业</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxNQ2pKT295QXRGaDQ2bi1VVkVfN1E5S09mcnhPdEgyWExnTTRZU2xFODg0dFVYOWQtNFkxMnVRVFRvVS1RSkE5VFpNaGRYQjFTaHkxTXVzNUltb29KSC1PUnl3MTQtU3pJRnUyN0hkMGVLMDdzeFJtM00tWm9qbmNoWDZENjZWQQ?oc=5" target="_blank" rel="noopener">投资者对欧洲经济失去信心——Sentix</a></h3>
+    <p class="meta">UkrMedia News · 29 分钟前 · <b>3 家媒体</b></p>
+  </div>
+</article>
+</div>      </div>
+    </div>
+  </section>
+  <section class="section" id="policy" style="--c: #7a4bc2">
+    <header class="sec-head"><h2>政策与新法规</h2><span class="label">16 篇</span></header>
+    <div class="desks">
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇰🇿</span>哈萨克斯坦</h3>
+          <article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMirAFBVV95cUxQMFJwZVluam4waDhsZEdDSjJBdFd6YVJwTkpCbk9vX0s1Rld0Y2c4MmxQeEVIVjFIRFFsMm1ET1BnRXJOdzBfczl5NVc1WUlRSW5FT1NORWltSU1RMU9pMFJOaEJQV0YzSGhDTEZiOTczaHh1TG52TjIzNlRaMEo2UWM5TW9FYUhjVjRZaU5Yd0NKWDFTaDJGNVNIRFpsWEt6UG90dE4tMndrQkpu?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>The Times Of Central Asia</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">气候</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxQMFJwZVluam4waDhsZEdDSjJBdFd6YVJwTkpCbk9vX0s1Rld0Y2c4MmxQeEVIVjFIRFFsMm1ET1BnRXJOdzBfczl5NVc1WUlRSW5FT1NORWltSU1RMU9pMFJOaEJQV0YzSGhDTEZiOTczaHh1TG52TjIzNlRaMEo2UWM5TW9FYUhjVjRZaU5Yd0NKWDFTaDJGNVNIRFpsWEt6UG90dE4tMndrQkpu?oc=5" target="_blank" rel="noopener">环保主义者警告说，里海缩小挑战哈萨克斯坦的交通雄心</a></h3>
+    <p class="meta">The Times Of Central Asia · 6 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMinwFBVV95cUxQMTZNbDBZd2VFQmYxWDF3a3Q4anBfQUM2Y3p4ekhqOTd3b3RpdHV1ZUFFbnRLZkItcXdJdkRDTzRnMDRFRlBBRXBPNFU4MU1vSWQ0QnMxU19pTDljR2FLVG5icDhFQUptZjBlSG5GbXRNS09QMU1qdk1YOU5jWGs3blBOdnN1TVI1ZlhsOG5vNVdGaE9JcmFrSWN3T2k4RjA?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>The Astana Times</b></span></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxQMTZNbDBZd2VFQmYxWDF3a3Q4anBfQUM2Y3p4ekhqOTd3b3RpdHV1ZUFFbnRLZkItcXdJdkRDTzRnMDRFRlBBRXBPNFU4MU1vSWQ0QnMxU19pTDljR2FLVG5icDhFQUptZjBlSG5GbXRNS09QMU1qdk1YOU5jWGs3blBOdnN1TVI1ZlhsOG5vNVdGaE9JcmFrSWN3T2k4RjA?oc=5" target="_blank" rel="noopener">哈萨克斯坦为国际投资者规划新机遇</a></h3>
+    <p class="meta">The Astana Times · 6 小时前</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMipwFBVV95cUxOWVBBU1lvTHZlOGY3Rk1QR3BNa0JTekItMl9tVV9JUjZHWEMyWGYwWjVXOXJTU3BwUW5fR0JrbUtnZHhDeUItVzk3M3h1cExfV3paSFBSMTd2RHpGWlhnNERwbW1seFhHd2NjRW8zeFJWdDVYb2JWUDl0NlZOWnNZYTMxNW5wQzdwQUdDSlBaV1lXX3daWW1vRmFSMElST25scHlRUkdzSQ?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>The Astana Times</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">科技</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxOWVBBU1lvTHZlOGY3Rk1QR3BNa0JTekItMl9tVV9JUjZHWEMyWGYwWjVXOXJTU3BwUW5fR0JrbUtnZHhDeUItVzk3M3h1cExfV3paSFBSMTd2RHpGWlhnNERwbW1seFhHd2NjRW8zeFJWdDVYb2JWUDl0NlZOWnNZYTMxNW5wQzdwQUdDSlBaV1lXX3daWW1vRmFSMElST25scHlRUkdzSQ?oc=5" target="_blank" rel="noopener">哈萨克斯坦将其双重人工智能伙伴关系纳入地区安全议程</a></h3>
+    <p class="meta">The Astana Times · 8 小时前</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMirgFBVV95cUxOekVTVFJONklKcVRFdzJvSUItdVZZOXF6THBXOUs5TUs1YU9WanJ3WE95MVlhdExiLVBRSWxTREtQbmNyVFBoYTFiVmd0MGVXSUNQMXlZX0JITHNfcnBhNnVycmFUNHRzdHdCQ1g1NVpnZEJtQTRicFlDWTg2YmVmRGpSRzZ1TDdPRjMzaWdNdnVwOFdQbkVHbEtrNGZraXMwTi1SUm1wRHljQnk5TUE?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>The Astana Times</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxOekVTVFJONklKcVRFdzJvSUItdVZZOXF6THBXOUs5TUs1YU9WanJ3WE95MVlhdExiLVBRSWxTREtQbmNyVFBoYTFiVmd0MGVXSUNQMXlZX0JITHNfcnBhNnVycmFUNHRzdHdCQ1g1NVpnZEJtQTRicFlDWTg2YmVmRGpSRzZ1TDdPRjMzaWdNdnVwOFdQbkVHbEtrNGZraXMwTi1SUm1wRHljQnk5TUE?oc=5" target="_blank" rel="noopener">托卡耶夫向亚运奖牌获得者致敬，呼吁加强奥运准备</a></h3>
+    <p class="meta">The Astana Times · 7 小时前</p>
+  </div>
+</article>
+</div>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇬🇧</span>英国、苏格兰与签证</h3>
+          <article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE5WTGd0d3VTR1VxaHQyUlJKZlRsb1ZzQnVVZzZGZTc0XzdGbXd6WUd5cHZKdjJTLVFiME9Rc2ZrRnBOaEFtdkJscTN2N3ZWc29BR29JaVNsVHpfLVhNTmc?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>BBC</b></span></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE5WTGd0d3VTR1VxaHQyUlJKZlRsb1ZzQnVVZzZGZTc0XzdGbXd6WUd5cHZKdjJTLVFiME9Rc2ZrRnBOaEFtdkJscTN2N3ZWc29BR29JaVNsVHpfLVhNTmc?oc=5" target="_blank" rel="noopener">内政部竞标四月后使用庇护所</a></h3>
+    <p class="meta">BBC · 11 小时前 · <b>3 家媒体</b></p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://www.theguardian.com/politics/2026/nov/09/labour-mp-brexit-red-lines-dignified-retirement" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/0aafddba6dcd8e789dd15dc96c3beee6afdd963f/580_5_937_749/master/937.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=c07d38d5595ba37a1e074d5027d9876e" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">最新</span><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/politics/2026/nov/09/labour-mp-brexit-red-lines-dignified-retirement" target="_blank" rel="noopener">工党的合著者表示，工党的脱欧红线已为“有尊严的退休”做好了准备</a></h3>
+<p class="dek">独家：国会议员克里斯·沃德认为，放弃承诺并与欧盟建立更紧密的关系将保护其免受全球威胁凯尔·斯塔默脱欧红线的设计者之一呼吁安迪·伯纳姆在下一次放弃这些红线……</p>    <p class="meta">The Guardian · 1 小时前</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.theguardian.com/uk-news/2026/nov/09/black-english-asian-english-should-be-census-options-mps" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/91b2c717fb1ac7ffb60004b36661935b11ebcd65/1761_0_3696_2956/master/3696.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=f0c50d4a933cd22deeeb3dfd5c0057e7" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">最新</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/uk-news/2026/nov/09/black-english-asian-english-should-be-census-options-mps" target="_blank" rel="noopener">议员们表示，“黑人英语”和“亚洲英语”应该成为人口普查选项</a></h3>
+<p class="dek">独家：跨党派呼吁扩大种族选择范围，超越“英国人”仅限于“白人”类别，据呼吁扩大种族范围的高级议员表示，英国人应该能够将自己定义为黑人和英国人。</p>    <p class="meta">The Guardian · 1 小时前</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.theguardian.com/business/2026/nov/09/thames-water-asks-creditors-more-time-repay-debt-pile" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/535318ddf017dc682b293bfcd483a717eefaf8a0/247_0_4583_3667/master/4583.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=94a9d5d469340390a0d95137a652e287" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">最新</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/business/2026/nov/09/thames-water-asks-creditors-more-time-repay-debt-pile" target="_blank" rel="noopener">泰晤士水务公司要求债权人有更多时间帮助偿还 200 亿英镑债务</a></h3>
+<p class="dek">陷入困境的公用事业公司游说将部分债务的最后期限延长至 2028 年 3 月 泰晤士水务公司已要求债权人有更多时间偿还数十亿英镑的债务，因为这家水务公司正在努力维持自身的生存。英国的…</p>    <p class="meta">The Guardian · 3 小时前</p>
+  </div>
+</article>
+</div>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇺🇸</span>美国</h3>
+          <article class="card ">
+  <a class="media" href="https://www.npr.org/2026/11/09/nx-s1-6029641/palantir-congress-jon-tester-investigations" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6000x4000+0+0/resize/6000x4000!/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fc1%2Fe0%2F53c022f44e3dbbfa2c2fa3e1b80a%2Ftester-ap.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>NPR</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://www.npr.org/2026/11/09/nx-s1-6029641/palantir-congress-jon-tester-investigations" target="_blank" rel="noopener">Palantir 聘请了一位前民主党参议员，因为该公司面临新国会的审查</a></h3>
+<p class="dek">这家秘密软件公司被指控让特朗普政府使用其强大的工具来监视美国人。现在它正在聘请前参议员乔恩·泰斯特来提升其形象。</p>    <p class="meta">NPR · 8 小时前</p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://www.npr.org/2026/11/09/nx-s1-6030633/congress-is-coming-back-to-washington-heres-what-to-expect" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://npr.brightspotcdn.com/dims3/default/strip/false/crop/2000x1333+0+0/resize/2000x1333!/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F9f%2F88%2F780a9a564af39daf6190b94bfd90%2F021025-capitol-zayrharodriguez-4-1.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>NPR</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://www.npr.org/2026/11/09/nx-s1-6030633/congress-is-coming-back-to-washington-heres-what-to-expect" target="_blank" rel="noopener">国会即将返回华盛顿。这是值得期待的</a></h3>
+<p class="dek">中期选举结束后，议员们将于本周返回华盛顿。共和党计划在民主党一月份控制国会之前完成几个悬而未决问题的工作。</p>    <p class="meta">NPR · 8 小时前</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.npr.org/2026/11/09/nx-s1-6013575/supreme-court-federal-law-enforcement-prison-rights" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6000x4000+0+0/resize/6000x4000!/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F5e%2F7a%2F09d469e94929a1a138f554be6c41%2Fap26275652659374.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>NPR</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">司法</span></div>
+    <h3 class="hl"><a href="https://www.npr.org/2026/11/09/nx-s1-6013575/supreme-court-federal-law-enforcement-prison-rights" target="_blank" rel="noopener">随着 ICE 投诉增加，最高法院考虑保护联邦执法部门</a></h3>
+<p class="dek">最高法院审理了一名囚犯遭受重伤，但在狱中却得不到医疗救治的案件。他想起诉监狱护士，这起案件可能会改变追究联邦官员责任的法律。</p>    <p class="meta">NPR · 8 小时前</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMitgFBVV95cUxQbUpJSVIxVkZ4TUNWdldrRmd0VnBuUUlPamNIeFBkSVhqcnh0cTB1WVh3cnN1OHRUSnlMRVhVbnFFaVFhN2NSX09RYVNwOFBHTlBzbjJBYnlsMzRwRnc4dnV2TDY5Z3hjeW1fSlVVNWNycDBkczdhbGNhb2FhQnk3dDRoZ0dMQzJGQVBJT3YwSTBlTHZGR1NsNW9jbHFvZlRBR1psMGxrNS1ybjhXUkRSTTROWkp2Zw?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Bloomberg Tax</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxQbUpJSVIxVkZ4TUNWdldrRmd0VnBuUUlPamNIeFBkSVhqcnh0cTB1WVh3cnN1OHRUSnlMRVhVbnFFaVFhN2NSX09RYVNwOFBHTlBzbjJBYnlsMzRwRnc4dnV2TDY5Z3hjeW1fSlVVNWNycDBkczdhbGNhb2FhQnk3dDRoZ0dMQzJGQVBJT3YwSTBlTHZGR1NsNW9jbHFvZlRBR1psMGxrNS1ybjhXUkRSTTROWkp2Zw?oc=5" target="_blank" rel="noopener">新法律使国税局指定税务错误需要更正时钟</a></h3>
+    <p class="meta">Bloomberg Tax · 8 小时前</p>
+  </div>
+</article>
+</div>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇪🇺</span>欧洲</h3>
+          <article class="card ">
+  <a class="media" href="https://www.politico.eu/article/the-macrons-sue-candace-owens-in-tennessee/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.politico.eu/cdn-cgi/image/width=1200,height=630,fit=crop,quality=80,onerror=redirect/wp-content/uploads/2026/11/09/GettyImages-2219063764-scaled.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Politico Europe</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">最新</span><span class="topic">司法</span></div>
+    <h3 class="hl"><a href="https://www.politico.eu/article/the-macrons-sue-candace-owens-in-tennessee/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener">马克龙在田纳西州亲自起诉极右翼播客坎迪斯·欧文斯</a></h3>
+<p class="dek">法国总统和他的妻子采取这一最新举措之前，特拉华州一家法院裁定其仅对欧文斯在该州注册的公司拥有管辖权。</p>    <p class="meta">Politico Europe · 1 小时前</p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://www.politico.eu/article/french-far-left-presidential-hopeful-jean-luc-melenchon-sparks-backlash-ukraine/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.politico.eu/cdn-cgi/image/width=1200,height=630,fit=crop,quality=80,onerror=redirect/wp-content/uploads/2026/11/09/GettyImages-2303568405-scaled.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Politico Europe</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">最新</span><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://www.politico.eu/article/french-far-left-presidential-hopeful-jean-luc-melenchon-sparks-backlash-ukraine/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener">乌克兰猛烈抨击法国极左翼总统候选人梅朗雄</a></h3>
+<p class="dek">这位法国政客表示，领土让步应通过投票决定，此举引发了基辅和巴黎的强烈反对。</p>    <p class="meta">Politico Europe · 2 小时前</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.politico.eu/article/norway-model-uk-jonas-gahr-store-andy-burnham/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.politico.eu/cdn-cgi/image/width=1200,height=630,fit=crop,quality=80,onerror=redirect/wp-content/uploads/2026/11/09/GettyImages-2297423700-scaled.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Politico Europe</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">最新</span></div>
+    <h3 class="hl"><a href="https://www.politico.eu/article/norway-model-uk-jonas-gahr-store-andy-burnham/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener">挪威告诉英国，不要效仿挪威模式</a></h3>
+<p class="dek">在接受 POLITICO 采访时，挪威领导人乔纳斯·加尔·斯托尔 (Jonas Gahr Støre) 建议安迪·伯纳姆 (Andy Burnham) 在英国脱欧重置中寻找其他解决方案。</p>    <p class="meta">Politico Europe · 3 小时前</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMifkFVX3lxTE9rcktzczRGU3dwNHI1TlRNOEV1Q3g0SXIxWlhBNFQxVDhuenNuOW9oMl93aTlOWk5pT0RidEdGdWl1bVY0bVhvRmNyNkhnVFdGeTRiNHdSV1J0TVMwTFBEMGZnOEVOVmd1S2NMdEs0ZERrRWxzZmJnXzlNU09yUQ?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Marine Industry News</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">持续关注</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE9rcktzczRGU3dwNHI1TlRNOEV1Q3g0SXIxWlhBNFQxVDhuenNuOW9oMl93aTlOWk5pT0RidEdGdWl1bVY0bVhvRmNyNkhnVFdGeTRiNHdSV1J0TVMwTFBEMGZnOEVOVmd1S2NMdEs0ZERrRWxzZmJnXzlNU09yUQ?oc=5" target="_blank" rel="noopener">欧盟批准阿克苏诺贝尔与艾仕得合并</a></h3>
+    <p class="meta">Marine Industry News · 5 小时前 · <b>6 家媒体</b></p>
+  </div>
+</article>
+</div>      </div>
+    </div>
+  </section>
+
+  <section class="wish" aria-label="祝你今天愉快，KK">
+    <svg class="sun" aria-hidden="true"><use href="#sun"/></svg>
+    <h2>祝你今天愉快，KK</h2>
+    <p class="text">送一点哈萨克阳光——爱丁堡可以利用它。</p>
+<p class="tip"><svg class="wi" aria-hidden="true"><use href="#w-cloudy"/></svg>灰色但干燥——这是沿着利斯水散步的好日子。</p><p class="signoff" lang="kk">Күнің сәтті өтсін!</p>  </section>
+</main>
+
+<footer class="foot">
+  <div>
+    <h4 class="label">往期</h4>
+<p>这是创刊号。</p>  </div>
+  <div>
+    <h4 class="label">关于本报</h4>
+    <p>本报于爱丁堡时间 18:06 根据公开新闻源自动生成。新闻按报道媒体的数量排序，每条标题都链接到原文。内容为机器翻译。</p>
+    <details><summary>本期共 292 个新闻来源</summary><p>1News, 24.kz, 2Firsts, 716.kz, ABC Money, Aberdeen &amp; Grampian Chamber of Commerce, Agerpres, Air Cargo Week, AKIpress News Agency, Al Jazeera, All Blacks, American Enterprise Institute, Ammon News, Anadolu Ajansı, Antigo Daily Journal, AOL.co.uk, Apa.az, Arab Times Kuwait News, ASHARQ AL-AWSAT English, Asia Business Outlook, Asset Servicing Times, Axios, AZ FREE NEWS, AzerNews, Bank of America Institute, BBC, Bedford Gazette, Benzinga, BigGo Finance, Bioengineer.org, BlackRock, Bloomberg Tax, Bloomberg.com, Body Shop Business, Border Telegraph, Boston&#39;s ROCK 92.9, Branding in Asia, Britannica, Brussels Signal, Business Recorder, Business Upturn, BusinessGreen, Businesskorea, BusinessToday Malaysia, Bybit, Caspian Post, caspiannews.com, CEOWORLD magazine, chelmsfordweeklynews.co.uk, Chosunbiz, City of Edinburgh Council, climate.ec.europa.eu, CNBC, CoinGape, Coutts, Crikey, CurrencyNews.co.uk, Daily Express, Daily Mail, Daily Record, Daily Sabah, Dairynews.today, Dartsnews.com, Daryo, Dealroom, Death Penalty Information Center, Demócrata, Department of Agriculture, Environment and Rural Affairs, Diari ARA, DRAM Scotland, DW, DW.com, East Asia Forum, Economies.com, Edinburgh Evening News, Edinburgh Live, Edinburgh Music Review, Edinburgh News, Edinburgh Reviews, Edinburgh Rugby, Edinburgh Zoo, EdinburghGuide.com, El Cronista, El.kz, Electronic Immigration Network, Enbekshi QazaQ, Energy, Engadget, ET Datacenters, EU Law Live, EU Reporter, Eurasianet, Euronews, Euronews.com, European Coatings, Everything Edinburgh, Exchange Rates UK, FAD Magazine, Farmers Guardian, Federal Reserve Bank of Richmond, Financial Times, Finimize, Firstpost, fish4news.co.uk, Forbes, FOREX.com, Fortune, Fox Business, Fragomen, France 24, Free Press Journal, FrenchEntrée, Frontier Africa Reports, FXStreet, Gateway 97.8, Glasgow Live, Global Times, Global Trade Review (GTR), Good Housekeeping, Gotrade, GOV.KZ, Gulf Business, Hargreaves Lansdown, HELLO!, Helsinki Times, Herts Advertiser, Hospitality Net, Housing Digital, https://www.birmingham-now.co.uk/, Hürriyet Daily News, IIHF, Inc.com, Indian Chemical News, infohub.kz, Informat.ro, Insight DIY, InteriorDaily, International Padel Federation, Investing.com, Investing.com UK, investingLive, Investors&#39; Chronicle, InYourArea, Islamabad Post, iXBT.games, JournalArta, kalkine.ca, Kazakhstan Today, Kent Online, Kilmarnock Football Club, Kiplinger, Kitco, KKTC Dışişleri Bakanlığı, Korea IT Times, Korea JoongAng Daily, Kursiv Media, Larder Magazine, Latest news from Azerbaijan, Legacy, Lincolnshire Live, LiveScore, London South East, Los Angeles Times, Marine Industry News, Mashable, Matangi Tonga, MedCity News, Mezha.net, Midlothian View, MiGFlug, Modern Diplomacy, Moomoo, Motor Trade News, Motor1.com, MyJoyOnline, NeoTeo, New Age BD, New Business Ethiopia, Newcastle Red Bulls, News24, North Edinburgh News, Novinite.com, NPR, ODT, Oncodaily, Pakistan Connect, Politico Europe, Pound Sterling Live, PR Newswire, PR Newswire UK, PULPAPERnews.com, Qazinform, Quartz, RealMoney Pro, Reason Magazine, Refindustry, ReliefWeb, Report.az, Reuters, Royal Central, samaa tv, San Antonio Current, Scottish Daily Express, ScottishNews.com, Seeking Alpha, SeeNews, Semafor, Seoul Economic Daily, Sharecast.com, shillongtoday.com, Shropshire Star, Silk Way TV, Simply Wall St, Sky News, Slator, SoaplandTV, Southend Echo, StreetInsider, Struggle-La Lucha, STV News, Tatler, TaxiPoint Taxi News, Telecompaper, TengriNews, Teslarati, The Arts Desk, The Astana Times, The Babylon Bee, The Business Standard, The Diplomat, The Edinburgh Inquirer, The Edinburgh Reporter, THE ELEC, Korea Electronics Industry Media, The European Sting, The Guardian, The Herald, The Independent, The Korea Times, The Manila Times, The Motley Fool, The Namibian, The National Law Review, The New Voice of Ukraine, The News Pakistan, The Paypers, The Peninsula Qatar, The Quinntessential Review, The Royal Society of Chemistry, The Scotsman, The Southern Reporter, The Strategist, The Sun, The Telegraph, The Tennessean, The Times, The Times of Central Asia, The Times Of Central Asia, The Virginian-Pilot, The Washington Post, TodayPress.tv, Town &amp; Country Magazine, Traders Union, TradingView, Transparency International Ukraine, Travel Daily News Asia-Pacific, Trend News Agency, Trending Now Infrastructure, Trending Now Sustainable Construction, TVGuide.co.uk, U.S. News &amp; World Report, UA.NEWS, UEFA.com, UKFT, UkrMedia News, United Nations Development Programme, Vietnam.vn, Vogue Adria, Wansom AI, WHOP Radio, Wired Gov, WN Hub, Wolters Kluwer, World Fertilizer, WRDW, WSJ, www.tmgm.com, WYMT, Y-Axis Overseas Careers, Yahoo, Yahoo Finance, Yahoo Finance UK, Yahoo News UK</p></details>
+  </div>
+</footer>
+
+</div>
+<script>
+// Live clock for home: keeps ticking after the page was built.
+document.querySelectorAll('[data-offset]').forEach(function (panel) {
+  var clock = panel.querySelector('.clock');
+  function tick() { clock.textContent = new Date(Date.now() + Number(panel.dataset.offset) * 36e5).toISOString().slice(11, 16); }
+  tick();
+  setInterval(tick, 20000);
+});
+</script>
+</body>
+</html>

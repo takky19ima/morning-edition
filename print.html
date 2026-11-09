@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="{{ html_lang }}">
+<head>
+<meta charset="utf-8">
+<title>{{ paper.name }} — {{ edition.short }} — print</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400;1,6..72,500&family=PT+Sans:wght@400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia{% if lang == 'zh' %}&family=Noto+Sans+SC:wght@400;700&family=Noto+Serif+SC:wght@400;600;700{% endif %}&display=swap" rel="stylesheet">
+<style>
+@page {
+  size: A4;
+  margin: 12mm 11mm 14mm;
+  @bottom-left { content: "{{ paper.name }} · {{ t('No.') }} {{ edition.number }}"; font: 7.5pt "Libre Franklin", "PT Sans", sans-serif; color: #777; }
+  @bottom-right { content: counter(page) " / " counter(pages); font: 7.5pt "Libre Franklin", "PT Sans", sans-serif; color: #777; }
+}
+:root {
+  --ink: #111; --ink-2: #444; --ink-3: #6b6b6b; --line: #cfcac0; --top: #c8102e; --gold: #f2b705; --sky: #00a3c4;
+  --serif: "Newsreader", "PT Serif", Georgia, serif;
+  --sans: "Libre Franklin", "PT Sans", Arial, sans-serif;
+  --black: "UnifrakturMaguntia", Georgia, serif;
+}
+html[lang="kk"] { --serif: "PT Serif", Georgia, serif; --sans: "PT Sans", Arial, sans-serif; }
+html[lang^="zh"] { --serif: "Noto Serif SC", serif; --sans: "Noto Sans SC", sans-serif; }
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; color: var(--ink); background: #fff; font: 9.5pt/1.4 var(--serif); hyphens: auto; text-align: justify; }
+h1, h2, h3, .label, .byline, .more { text-align: left; hyphens: manual; }
+.label { font: 700 7pt/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+html[lang^="zh"] .label { letter-spacing: .04em; }
+p { margin: 0 0 .55em; }
+
+/* masthead */
+.topline { display: flex; justify-content: space-between; color: var(--ink-2); border-bottom: .5pt solid var(--ink); padding-bottom: 2mm; }
+.mast { margin: 3mm 0 2.5mm; text-align: center; font: 400 46pt/1 var(--black); }
+.band { display: flex; justify-content: space-between; align-items: baseline; padding: 1.6mm 0; border-top: 2.4pt double var(--ink); border-bottom: .5pt solid var(--ink); }
+.band .date { font: italic 500 12pt/1.2 var(--serif); }
+
+/* the strip under the masthead: quote, weather, money */
+.strip { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 4mm; margin: 4mm 0 5mm; }
+.box { padding: 3mm 3.5mm; border: .5pt solid var(--line); border-top: 2pt solid var(--c, var(--ink)); }
+.box .label { color: var(--ink-2); margin-bottom: 1.5mm; }
+.greet { font: 700 8pt/1.3 var(--sans); margin-bottom: 1.5mm; }
+.q { font: italic 500 12pt/1.3 var(--serif); text-align: left; margin-bottom: 1.5mm; }
+.q-orig { font: italic 9.5pt/1.3 var(--serif); color: var(--ink-2); margin-bottom: 1mm; text-align: left; }
+.cite { font: 7.5pt/1.3 var(--sans); color: var(--ink-2); }
+.wx { display: flex; justify-content: space-between; align-items: baseline; font: 8pt/1.5 var(--sans); }
+.wx b { font: 700 15pt/1.1 var(--serif); }
+.wx-days { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 1.5mm; padding-top: 1.5mm; border-top: .5pt solid var(--line); font: 7.5pt/1.35 var(--sans); text-align: center; }
+.fx { width: 100%; border-collapse: collapse; font: 8pt/1.4 var(--sans); font-variant-numeric: tabular-nums; }
+.fx td { padding: .5mm 0; }
+.fx td:last-child { text-align: right; font-weight: 700; }
+.big { font: 700 15pt/1.1 var(--serif); margin-bottom: 1mm; }
+
+/* stories */
+.kicker { color: var(--c, var(--top)); margin-bottom: 1mm; }
+h2.hl, h3.hl { margin: 0 0 1.4mm; font-family: var(--serif); font-weight: 700; line-height: 1.12; letter-spacing: -.005em; break-after: avoid; }
+.byline { margin-bottom: 1.6mm; font: 7.5pt/1.3 var(--sans); color: var(--ink-3); }
+.dek { font: italic 11pt/1.35 var(--serif); color: var(--ink-2); text-align: left; }
+.pic { display: block; width: 100%; object-fit: cover; margin: 0 0 2mm; }
+.more { display: flex; align-items: center; gap: 2.5mm; margin-top: 1.5mm; font: 7pt/1.3 var(--sans); color: var(--ink-3); break-inside: avoid; }
+.more svg { width: 14mm; height: 14mm; flex: none; }
+.story { padding-bottom: 3mm; margin-bottom: 3mm; border-bottom: .5pt solid var(--line); }
+.story h3.hl { font-size: 12.5pt; }
+
+.lead h2.hl { font-size: 27pt; line-height: 1.05; letter-spacing: -.015em; }
+.lead .pic { height: 82mm; }
+.lead .text { columns: 3; column-gap: 5mm; column-rule: .5pt solid var(--line); }
+.tops { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 6mm; margin-top: 4mm; padding-top: 3mm; border-top: 1.5pt solid var(--ink); }
+.tops .story h3.hl { font-size: 14pt; }
+.tops .pic { height: 34mm; }
+
+/* sections flow in three columns like a real paper */
+.section { margin-top: 6mm; --c: var(--ink); }
+.sec-head { display: flex; justify-content: space-between; align-items: baseline; margin: 0 0 3mm; padding-top: 1.5mm; border-top: 3pt solid var(--c); break-after: avoid; }
+.sec-head h2 { margin: 0; font: 800 19pt/1.1 var(--serif); color: var(--c); }
+.cols { columns: 3; column-gap: 5mm; column-rule: .5pt solid var(--line); }
+.cols .story { break-inside: auto; }
+.cols .pic { height: 32mm; }
+.feature h3.hl { font-size: 16pt !important; }
+.desk-title { column-span: all; margin: 1mm 0 2.5mm; padding: 1.2mm 0; border-bottom: 1pt solid var(--c); color: var(--c); }
+.brief { margin-top: 1mm; padding: 2.5mm 3mm; background: #f3f0ea; break-inside: avoid; }
+.brief li { margin: 0 0 1mm; font: 8.5pt/1.3 var(--serif); text-align: left; }
+.brief ul { margin: 1mm 0 0; padding-left: 4mm; }
+.brief span { color: var(--ink-3); font: 7pt var(--sans); }
+
+.wish { margin-top: 7mm; padding: 5mm 8mm; text-align: center; border: .5pt solid var(--line); border-top: 2.5pt solid var(--gold); break-inside: avoid; }
+.wish h2 { margin: 0 0 2mm; font: italic 600 17pt/1.2 var(--serif); text-align: center; }
+.wish p { text-align: center; margin: 0 auto 1.5mm; max-width: 120mm; }
+.wish .tip { font: 8pt/1.4 var(--sans); color: var(--ink-2); }
+.wish .signoff { font: italic 12pt var(--serif); }
+</style>
+</head>
+<body>
+{% macro more(s) %}<div class="more">{{ s.link|qr }}<span>{{ t('Read more') }}<br>{{ s.link|short_url }}</span></div>{% endmacro %}
+{% macro story(s, cls='', picture=false) %}
+<article class="story {{ cls }}">
+  {% if picture and s.image %}<img class="pic" src="{{ s.image|shrink(700) }}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">{% endif %}
+  {% if s.topic %}<div class="kicker label">{{ t(s.topic) }}</div>{% endif %}
+  <h3 class="hl">{{ s.title }}</h3>
+  <div class="byline">{{ s.source }}{% if s.coverage > 1 %} · {{ s.coverage }} {{ t('outlets') }}{% endif %}</div>
+  {% for p in s.body %}<p>{{ p }}</p>{% endfor %}
+  {{ more(s) }}
+</article>
+{% endmacro %}
+{% macro brief(items) %}
+{% if items %}<div class="brief"><div class="label">{{ t('In brief') }}</div><ul>{% for s in items %}<li>{{ s.title }} <span>— {{ s.source }}</span></li>{% endfor %}</ul></div>{% endif %}
+{% endmacro %}
+{% set here = places[0] if places else none %}
+{% set home = places[1] if places|length > 1 else none %}
+
+<div class="topline label"><span>{{ t('No.') }} {{ edition.number }} · {{ t(paper.edition) }} {{ t('edition') }}</span><span>{{ edition.long }}</span></div>
+<div class="mast">{{ paper.name }}</div>
+<div class="band"><span class="label">{{ t('motto') }}</span><span class="date">{{ edition.long }}</span><span class="label">{{ sources|length }} {{ t('outlets') }}</span></div>
+
+<div class="strip">
+  {% if quote %}
+  <div class="box" style="--c: var(--gold)">
+    {% if reader_name %}<div class="greet">{{ reader.greeting ~ ', ' if reader.greeting }}{{ reader_name }}!</div>{% endif %}
+    <div class="label">{{ t('Quote of the day') }}</div>
+    {% if quote.original %}<div class="q-orig" lang="kk">{{ quote.original }}</div>{% endif %}
+    <div class="q">“{{ quote.text.replace(' / ', ' ') }}”</div>
+    <div class="cite">— {{ t(quote.author) }}{% if quote.source %}, <i>{{ quote.source }}</i>{% endif %}</div>
+  </div>
+  {% endif %}
+  {% if here %}
+  <div class="box" style="--c: #0065bd">
+    <div class="label">{{ t('Weather') }}</div>
+    <div class="wx"><span>{{ t(here.city) }}</span><span><b>{{ here.now }}</b> {{ t(here.label) }}</span></div>
+    {% if home %}<div class="wx"><span>{{ t(home.city) }} · {{ home_time }}</span><span><b>{{ home.now }}</b> {{ t(home.label) }}</span></div>{% endif %}
+    <div class="wx-days">{% for d in here.days %}<div><b>{{ t('Today') if loop.first else weekday(d.date) }}</b><br>{{ d.hi }} / {{ d.lo }}<br>{{ d.rain }}%</div>{% endfor %}</div>
+  </div>
+  {% endif %}
+  {% if rates %}
+  <div class="box" style="--c: #1e8e5a">
+    <div class="label">{{ t('Tenge · official rate') }}</div>
+    {% set r0 = rates.rows[0] %}
+    <div class="big">{{ r0.symbol }}1 = {{ '%.2f'|format(r0.value) }} ₸</div>
+    <table class="fx">{% for r in rates.rows[1:] %}<tr><td>{{ r.code }}</td><td>{{ '%.2f'|format(r.value) }} ₸ {{ r.change }}</td></tr>{% endfor %}</table>
+  </div>
+  {% endif %}
+</div>
+
+{% if top %}
+{% set lead = top[0] %}
+<article class="lead">
+  <div class="kicker label">{{ t('Top story') }}{% if lead.topic %} · {{ t(lead.topic) }}{% endif %}</div>
+  <h2 class="hl">{{ lead.title }}</h2>
+  <div class="byline">{{ lead.source }} · {{ lead.coverage }} {{ t('outlets') }}{% if lead.others %} · {{ t('Also reported by') }} {{ lead.others[:5]|join(', ') }}{% endif %}</div>
+  {% if lead.image %}<img class="pic" src="{{ lead.image|shrink }}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">{% endif %}
+  <div class="text">
+    {% if lead.summary %}<p class="dek">{{ lead.summary }}</p>{% endif %}
+    {% for p in lead.body %}<p>{{ p }}</p>{% endfor %}
+    {{ more(lead) }}
+  </div>
+</article>
+<div class="tops">
+  {% for s in top[1:] %}{{ story(s, picture=loop.index <= 2) }}{% endfor %}
+</div>
+{% endif %}
+
+{% for sec in sections %}
+<section class="section" style="--c: {{ sec.color }}">
+  <div class="sec-head"><h2>{{ t(sec.title) }}</h2></div>
+  <div class="cols">
+    {% if sec.desks %}
+      {% for d in sec.desks %}
+        <div class="desk-title label">{{ d.flag }} {{ t(d.title) }}</div>
+        {% set full = d.stories|selectattr('body')|list %}
+        {% for s in full %}{{ story(s, picture=loop.first) }}{% endfor %}
+        {{ brief(d.stories|rejectattr('body')|list) }}
+      {% endfor %}
+    {% else %}
+      {% set full = sec.stories|selectattr('body')|list %}
+      {% for s in full %}{{ story(s, 'feature' if loop.first else '', picture=loop.first) }}{% endfor %}
+      {{ brief(sec.stories|rejectattr('body')|list) }}
+    {% endif %}
+  </div>
+</section>
+{% endfor %}
+
+{% if reader_name and wish.text %}
+<div class="wish">
+  <h2>{{ t('Have a lovely day, {name}', name=reader_name) }}</h2>
+  <p>{{ wish.text }}</p>
+  {% if wish.tip %}<p class="tip">{{ wish.tip }}</p>{% endif %}
+  {% if reader.signoff %}<p class="signoff" lang="kk">{{ reader.signoff }}</p>{% endif %}
+</div>
+{% endif %}
+</body>
+</html>

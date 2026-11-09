@@ -1,0 +1,1082 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Morning Edition — Mon, 9 Nov</title>
+<meta name="description" content="Nvidia opens investigation after report CEO Jensen Huang was target of foreign intelligence">
+<meta property="og:title" content="The Morning Edition · Monday, 9 November 2026">
+<meta property="og:description" content="Nvidia opens investigation after report CEO Jensen Huang was target of foreign intelligence · France blames Iran’s Revolutionary Guards for cyber-attacks on supermarket fridges · Russell Brand jailed for more than ten years for rape and sexual assault · Europe to join U.S.-brokered Ukraine talks in Abu Dhabi, defying Kremlin objections · Hardline Trump aide Stephen Miller takes over as White House chief of staff">
+<meta property="og:image" content="https://i.guim.co.uk/img/media/3fc6a5d68684a58fece0294bce9094ed76072ecd/2488_14_5430_4347/master/5430.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=479082a01b7c472e474af2b77df4e1a8"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400;1,6..72,500&family=PT+Sans:wght@400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f4f1ea; --card: #ffffff; --ink: #16161a; --ink-2: #45454f; --ink-3: #686872;
+  --line: #e4dfd4; --rule: #16161a;
+  --shadow: 0 1px 2px rgb(20 20 30 / .06), 0 6px 20px rgb(20 20 30 / .05);
+  --gold: #f2b705; --sky: #00a3c4; --saltire: #0065bd; --top: #c8102e;
+  --live: #d0021b; --amber: #e8890c; --green: #1e8e5a;
+  --serif: "Newsreader", "PT Serif", Georgia, "Times New Roman", serif;
+  --sans: "Libre Franklin", "PT Sans", "Helvetica Neue", Arial, sans-serif;
+  --black: "UnifrakturMaguntia", "Old English Text MT", Georgia, serif;
+  --mix: #000; --mix-ink: 72%; --mix-soft: 11%; --q-gold: 26%; --q-sky: 16%;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111114; --card: #1b1b20; --ink: #ecebe6; --ink-2: #c4c3bd; --ink-3: #9a99a1;
+    --line: #2d2d34; --rule: #ecebe6; --shadow: 0 1px 2px rgb(0 0 0 / .4);
+    --mix: #fff; --mix-ink: 58%; --mix-soft: 22%; --q-gold: 13%; --q-sky: 14%; color-scheme: dark;
+  }
+}
+/* Kazakh needs Cyrillic letters Newsreader doesn't have; Chinese needs CJK fonts */
+html[lang="kk"] { --serif: "PT Serif", Georgia, serif; --sans: "PT Sans", Arial, sans-serif; }
+html[lang^="zh"] { --serif: "Noto Serif SC", "Songti SC", serif; --sans: "Noto Sans SC", "PingFang SC", sans-serif; }
+html[lang^="zh"] .label, html[lang^="zh"] .badge, html[lang^="zh"] .topic { letter-spacing: .04em; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 64px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.5 var(--serif); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid var(--saltire); outline-offset: 2px; border-radius: 2px; }
+.page { max-width: 1200px; margin: 0 auto; padding: 0 16px 56px; }
+.label { font: 700 11px/1.4 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+/* every coloured block sets --c; these derive readable text and soft fills from it */
+[style*="--c"] { --c-ink: color-mix(in srgb, var(--c) var(--mix-ink), var(--mix)); --c-soft: color-mix(in srgb, var(--c) var(--mix-soft), var(--card)); }
+
+/* masthead */
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; color: var(--ink-2); }
+.langs { display: flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--card); box-shadow: var(--shadow); }
+.langs a { padding: 5px 12px; border-radius: 999px; font: 600 13px/1.3 var(--sans); color: var(--ink-2); }
+.langs a[aria-current] { background: var(--ink); color: var(--bg); }
+.mast { display: grid; align-items: center; gap: 16px; padding: 22px 0 14px; }
+.mast h1 { margin: 0; text-align: center; font: 400 clamp(36px, 11vw, 60px)/1.05 var(--black); }
+.ear { display: none; border: 1px solid var(--rule); padding: 8px 10px; font: 13px/1.4 var(--sans); color: var(--ink-2); }
+.ear b { display: block; color: var(--ink); margin-bottom: 2px; }
+@media (min-width: 640px) { .mast h1 { font-size: min(9vw, 96px); white-space: nowrap; } }
+@media (min-width: 1100px) {
+  .mast { grid-template-columns: 180px 1fr 180px; }
+  .mast h1 { font-size: min(6vw, 80px); }
+  .ear { display: block; }
+}
+.band { display: grid; gap: 2px; padding: 8px 0; text-align: center; border-top: 3px double var(--rule); border-bottom: 1px solid var(--rule); }
+.band .date { font: italic 500 20px/1.3 var(--serif); }
+.band .label { color: var(--ink-2); }
+@media (min-width: 720px) {
+  .band { grid-template-columns: 1fr auto 1fr; align-items: center; }
+  .band > :first-child { text-align: left; }
+  .band > :last-child { text-align: right; }
+}
+nav.index { position: sticky; top: 0; z-index: 5; display: flex; gap: 8px; padding: 10px 16px; margin: 0 -16px; overflow-x: auto; scrollbar-width: none; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+nav.index::-webkit-scrollbar { display: none; }
+@media (min-width: 900px) { nav.index { justify-content: center; } }
+.pill { flex: none; padding: 7px 12px; border-radius: 999px; background: var(--c-soft); color: var(--c-ink); white-space: nowrap; }
+.pill:hover { background: var(--c); color: #fff; }
+
+/* quote of the day */
+.quote { position: relative; overflow: hidden; margin-top: 18px; padding: 26px 22px 24px; border-radius: 14px; background: linear-gradient(135deg, color-mix(in srgb, var(--gold) var(--q-gold), var(--card)), color-mix(in srgb, var(--sky) var(--q-sky), var(--card))); }
+.quote::before { content: "“"; position: absolute; right: 22px; top: 10px; font: 700 180px/.8 var(--serif); color: var(--gold); opacity: .45; pointer-events: none; }
+.greet { display: flex; align-items: center; gap: 8px; margin: 0 0 14px; font: 700 13px/1.3 var(--sans); }
+.greet svg { width: 22px; height: 22px; color: #b88a00; }
+.quote .label { color: var(--ink-2); margin-bottom: 8px; }
+.quote .orig { margin: 0 0 4px; font: italic 500 20px/1.35 var(--serif); color: var(--ink-2); }
+.quote blockquote { margin: 0; max-width: 34ch; font: 500 clamp(25px, 3.4vw, 32px)/1.25 var(--serif); letter-spacing: -.01em; text-wrap: balance; }
+.quote .cite { margin: 12px 0 0; font: 13px/1.4 var(--sans); color: var(--ink-2); }
+.quote .cite b { color: var(--ink); }
+
+/* today: weather here, home, money */
+.today { display: grid; gap: 14px; margin-top: 14px; }
+@media (min-width: 760px) { .today { grid-template-columns: 1.35fr 1fr; } .today .money { grid-column: 1 / -1; } }
+@media (min-width: 1080px) { .today { grid-template-columns: 1.4fr 1fr 1fr; } .today .money { grid-column: auto; } }
+.panel { background: var(--card); border-radius: 14px; box-shadow: var(--shadow); padding: 0 18px 18px; overflow: hidden; }
+.panel > .label { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 12px; margin: 0 -18px 14px; padding: 12px 18px; background: var(--c-soft); color: var(--c-ink); }
+.panel > .label span:last-child { color: var(--ink-3); font-weight: 600; }
+.wi { width: 22px; height: 22px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.wi .occ { fill: var(--card); }
+.wi.big { width: 56px; height: 56px; stroke-width: 1.2; color: var(--c-ink); }
+.wx-now { display: flex; align-items: center; gap: 14px; }
+.wx-temp { font: 700 50px/1 var(--serif); }
+.wx-label { font: italic 20px/1.3 var(--serif); color: var(--ink-2); }
+.wx-facts { margin: 12px 0 14px; font: 13px/1.6 var(--sans); color: var(--ink-2); }
+.wx-days { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+.wx-days li { display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 12px 4px 0; font: 13px/1.3 var(--sans); text-align: center; }
+.wx-days li + li { border-left: 1px solid var(--line); }
+.wx-days .r { color: var(--ink-3); }
+.clock { font: 700 50px/1 var(--serif); font-variant-numeric: tabular-nums; }
+.ahead { margin: 4px 0 14px; font: 13px/1.4 var(--sans); color: var(--ink-2); }
+.home-wx { display: flex; align-items: center; gap: 12px; padding-top: 12px; border-top: 1px solid var(--line); font: 13px/1.5 var(--sans); color: var(--ink-2); }
+.home-wx .wi { width: 36px; height: 36px; color: var(--c-ink); }
+.home-wx b { display: block; font: 700 20px/1.2 var(--serif); color: var(--ink); }
+.big-rate { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; font: 700 40px/1.1 var(--serif); font-variant-numeric: tabular-nums; }
+.big-rate span { white-space: nowrap; }
+.big-rate small { font: 600 13px/1.4 var(--sans); }
+.cross { margin: 6px 0 12px; font: 13px/1.4 var(--sans); color: var(--ink-2); }
+.fx { width: 100%; border-collapse: collapse; font: 13px/1.3 var(--sans); font-variant-numeric: tabular-nums; }
+.fx th, .fx td { padding: 7px 0; border-top: 1px solid var(--line); }
+.fx th { text-align: left; font-weight: 700; }
+.fx th span { font-weight: 400; color: var(--ink-3); margin-left: 6px; }
+.fx td { text-align: right; padding-left: 10px; white-space: nowrap; }
+.fx .v { font: 700 16px/1.2 var(--serif); }
+.up { color: var(--live); } .down { color: var(--green); } .flat { color: var(--ink-3); }
+@media (prefers-color-scheme: dark) { .up { color: #ff7a7a; } .down { color: #6fd39c; } }
+.note { margin: 10px 0 0; font: 13px/1.4 var(--sans); color: var(--ink-3); }
+
+/* cards */
+.card { display: flex; flex-direction: column; background: var(--card); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+.media { display: block; position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--c-soft); }
+.media img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.card:hover .media img { transform: scale(1.03); }
+.tile { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; padding: 12px 14px; color: #fff; background: radial-gradient(circle at 85% 15%, color-mix(in srgb, var(--c) 55%, #fff) 0 18%, transparent 19%), linear-gradient(135deg, var(--c), color-mix(in srgb, var(--c) 55%, #000)); }
+.tile b { font: italic 600 20px/1.15 var(--serif); }
+.tile span { font: 700 11px/1.4 var(--sans); letter-spacing: .12em; text-transform: uppercase; opacity: .85; }
+.body { display: flex; flex-direction: column; gap: 8px; padding: 14px 16px 16px; flex: 1; }
+.tags { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 7px; border-radius: 4px; font: 800 11px/1.3 var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+.b-live, .b-breaking { background: var(--live); color: #fff; }
+.b-live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: pulse 1.4s ease-in-out infinite; }
+.b-developing { background: var(--amber); color: #221400; }
+.b-new { background: color-mix(in srgb, var(--green) var(--mix-soft), var(--card)); color: color-mix(in srgb, var(--green) var(--mix-ink), var(--mix)); }
+.b-opinion { background: color-mix(in srgb, #7a4bc2 var(--mix-soft), var(--card)); color: color-mix(in srgb, #7a4bc2 var(--mix-ink), var(--mix)); }
+.b-analysis, .b-explainer { background: color-mix(in srgb, #3d4db7 var(--mix-soft), var(--card)); color: color-mix(in srgb, #3d4db7 var(--mix-ink), var(--mix)); }
+@keyframes pulse { 50% { opacity: .25; } }
+@media (prefers-reduced-motion: reduce) { .b-live::before { animation: none; } .media img { transition: none; } }
+.topic { font: 700 11px/1.3 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--c-ink); }
+.hl { margin: 0; font: 700 20px/1.2 var(--serif); letter-spacing: -.005em; text-wrap: balance; }
+.hl a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .15em; }
+.dek { margin: 0; color: var(--ink-2); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+.meta { margin: auto 0 0; padding-top: 4px; font: 13px/1.4 var(--sans); color: var(--ink-3); }
+.meta b { color: var(--c-ink); font-weight: 700; }
+
+/* compact row: headline left, square picture right */
+.row { flex-direction: row-reverse; align-items: flex-start; gap: 12px; padding: 14px 0; background: none; border-radius: 0; box-shadow: none; overflow: visible; border-top: 1px solid var(--line); }
+.row .media { flex: none; width: 84px; aspect-ratio: 1; border-radius: 8px; }
+.row .tile { padding: 8px; justify-content: center; align-items: center; }
+.row .tile b { font-size: 25px; }
+.row .tile span { display: none; }
+.row .body { padding: 0; gap: 5px; }
+.row .hl { font-size: 16px; line-height: 1.3; }
+.row .dek { display: none; }
+
+/* front page */
+.front { display: grid; gap: 18px; margin-top: 28px; }
+.lead .media { aspect-ratio: 3 / 2; }
+.lead .body { padding: 18px 20px 20px; gap: 10px; }
+.lead .hl { font: 800 clamp(32px, 4.4vw, 50px)/1.05 var(--serif); letter-spacing: -.015em; }
+.lead .dek { font-size: 20px; line-height: 1.45; -webkit-line-clamp: 4; }
+.also { margin: 0; padding-top: 10px; border-top: 1px solid var(--line); font: 13px/1.5 var(--sans); color: var(--ink-3); }
+.side { background: var(--card); border-radius: 12px; box-shadow: var(--shadow); padding: 4px 18px; }
+.side .row:first-child { border-top: 0; }
+.side-head { padding: 14px 0 2px; color: var(--c-ink); }
+@media (min-width: 900px) { .front { grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr); align-items: start; } }
+
+/* sections */
+.section { margin-top: 56px; }
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 18px; padding-top: 10px; border-top: 4px solid var(--c); }
+.sec-head h2 { margin: 0; font: 800 32px/1.1 var(--serif); letter-spacing: -.01em; color: var(--c-ink); }
+.sec-head .label { color: var(--ink-3); }
+.feature { margin-bottom: 18px; }
+.feature .hl { font-size: 32px; line-height: 1.12; }
+.feature .body { padding: 18px 20px 20px; gap: 10px; }
+@media (min-width: 820px) {
+  .feature { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+  .feature .media { aspect-ratio: auto; min-height: 320px; }
+  .feature .body { padding: 26px 28px; justify-content: center; }
+}
+.grid { display: grid; gap: 18px; }
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 639px) {
+  /* phones: everything after the feature becomes a light list instead of stacked cards */
+  .grid { gap: 0; background: var(--card); border-radius: 12px; box-shadow: var(--shadow); padding: 0 16px; }
+  .grid .card { flex-direction: row-reverse; align-items: flex-start; gap: 12px; padding: 14px 0; background: none; border-radius: 0; box-shadow: none; overflow: visible; border-top: 1px solid var(--line); }
+  .grid .card:first-child { border-top: 0; }
+  .grid .media { flex: none; width: 84px; aspect-ratio: 1; border-radius: 8px; }
+  .grid .tile { padding: 8px; justify-content: center; align-items: center; }
+  .grid .tile b { font-size: 25px; }
+  .grid .tile span { display: none; }
+  .grid .body { padding: 0; gap: 5px; }
+  .grid .hl { font-size: 16px; line-height: 1.3; }
+  .grid .dek { display: none; }
+}
+.desks { display: grid; gap: 18px; }
+@media (min-width: 820px) { .desks { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.desk { background: var(--card); border-radius: 12px; box-shadow: var(--shadow); overflow: hidden; }
+.desk-title { display: flex; align-items: center; gap: 8px; margin: 0; padding: 12px 16px; background: var(--c-soft); color: var(--c-ink); }
+.desk-title .flag { font-size: 20px; line-height: 1; letter-spacing: 0; }
+.desk > .card:first-of-type { border-radius: 0; box-shadow: none; }
+.desk .rows { padding: 0 16px 4px; }
+.empty { margin: 0; padding: 16px; font-style: italic; color: var(--ink-3); }
+
+/* the wish */
+.wish { position: relative; overflow: hidden; margin-top: 64px; padding: 40px 24px 36px; border-radius: 18px; text-align: center; background: linear-gradient(160deg, color-mix(in srgb, #ff9a62 30%, var(--card)), color-mix(in srgb, var(--gold) 30%, var(--card)) 55%, color-mix(in srgb, var(--sky) 20%, var(--card))); }
+.wish .sun { width: 64px; height: 64px; color: #c98a00; }
+.wish h2 { margin: 10px 0 12px; font: italic 600 clamp(32px, 5vw, 50px)/1.1 var(--serif); letter-spacing: -.01em; }
+.wish p { margin: 0 auto; max-width: 40ch; }
+.wish .text { font: 400 20px/1.5 var(--serif); }
+.wish .tip { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; padding: 8px 14px; border-radius: 999px; background: color-mix(in srgb, var(--card) 70%, transparent); font: 600 13px/1.4 var(--sans); max-width: none; text-align: left; }
+.wish .signoff { margin-top: 18px; font: italic 500 25px/1.3 var(--serif); color: var(--ink-2); }
+
+/* footer */
+.foot { display: grid; gap: 24px; margin-top: 56px; padding-top: 18px; border-top: 3px double var(--rule); font: 13px/1.6 var(--sans); color: var(--ink-2); }
+@media (min-width: 760px) { .foot { grid-template-columns: 1fr 2fr; gap: 40px; } }
+.foot .label { color: var(--ink); margin: 0 0 8px; }
+.foot p { margin: 0 0 8px; }
+.past { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.past a, .foot summary { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: .2em; cursor: pointer; }
+
+@media print {
+  body { background: #fff; }
+  nav.index, .foot { display: none; }
+  .card, .desk, .panel { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><path id="cloud" d="M7 15h10a3.5 3.5 0 0 0 .4-6.98A5 5 0 0 0 7.6 9.1 3 3 0 0 0 7 15z"/></defs>
+  <symbol id="w-clear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5V5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></symbol>
+  <symbol id="w-partly" viewBox="0 0 24 24"><circle cx="8.5" cy="8" r="3"/><path d="M8.5 2.5v1.2M3 8h1.2M4.6 4.1l.9.9M12.4 4.1l-.9.9"/><use href="#cloud" class="occ" transform="translate(1 4)"/></symbol>
+  <symbol id="w-cloudy" viewBox="0 0 24 24"><use href="#cloud" transform="translate(0 3)"/></symbol>
+  <symbol id="w-fog" viewBox="0 0 24 24"><path d="M4 8h16M6 12h12M4 16h16M8 20h8"/></symbol>
+  <symbol id="w-rain" viewBox="0 0 24 24"><use href="#cloud"/><path d="M9 18l-1 2.5M13 18l-1 2.5M17 18l-1 2.5"/></symbol>
+  <symbol id="w-snow" viewBox="0 0 24 24"><use href="#cloud"/><path d="M8.5 18.5h.01M12.5 18.5h.01M16.5 18.5h.01M10.5 21h.01M14.5 21h.01" stroke-width="2.2"/></symbol>
+  <symbol id="w-storm" viewBox="0 0 24 24"><use href="#cloud"/><path d="M12.5 15.5l-2 3.5h3l-2 3.5"/></symbol>
+  <symbol id="sun" viewBox="0 0 64 64"><circle cx="32" cy="32" r="11" fill="currentColor" stroke="none"/><g stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M32 9v7" transform="rotate(0 32 32)"/><path d="M32 9v7" transform="rotate(30 32 32)"/><path d="M32 9v7" transform="rotate(60 32 32)"/><path d="M32 9v7" transform="rotate(90 32 32)"/><path d="M32 9v7" transform="rotate(120 32 32)"/><path d="M32 9v7" transform="rotate(150 32 32)"/><path d="M32 9v7" transform="rotate(180 32 32)"/><path d="M32 9v7" transform="rotate(210 32 32)"/><path d="M32 9v7" transform="rotate(240 32 32)"/><path d="M32 9v7" transform="rotate(270 32 32)"/><path d="M32 9v7" transform="rotate(300 32 32)"/><path d="M32 9v7" transform="rotate(330 32 32)"/></g></symbol>
+</svg>
+<div class="page">
+
+<header>
+  <div class="topbar">
+    <span class="label">Edinburgh · edition</span>
+    <nav class="langs" aria-label="Language">
+<a href="index.html" hreflang="en" aria-current="page">English</a><a href="kk/index.html" hreflang="kk">Қазақша</a><a href="zh/index.html" hreflang="zh">中文</a>    </nav>
+  </div>
+  <div class="mast">
+    <div class="ear"><b>All the news that’s fit to rank.</b>Stories ordered by how many newsrooms are covering them.</div>
+    <h1><a href="{&#39;city&#39;: &#39;Astana&#39;, &#39;role&#39;: &#39;Home&#39;, &#39;utc_offset&#39;: 5, &#39;now&#39;: &#39;2°&#39;, &#39;feels&#39;: &#39;−1°&#39;, &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;wind&#39;: 2, &#39;humidity&#39;: 81, &#39;sunrise&#39;: &#39;07:20&#39;, &#39;sunset&#39;: &#39;16:35&#39;, &#39;days&#39;: [{&#39;date&#39;: datetime.date(2026, 11, 9), &#39;label&#39;: &#39;Rain&#39;, &#39;kind&#39;: &#39;rain&#39;, &#39;high&#39;: 10.8, &#39;hi&#39;: &#39;11°&#39;, &#39;lo&#39;: &#39;2°&#39;, &#39;rain&#39;: 100, &#39;wind&#39;: 6.03}, {&#39;date&#39;: datetime.date(2026, 11, 10), &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;high&#39;: 1.8, &#39;hi&#39;: &#39;2°&#39;, &#39;lo&#39;: &#39;−3°&#39;, &#39;rain&#39;: 2, &#39;wind&#39;: 3.25}, {&#39;date&#39;: datetime.date(2026, 11, 11), &#39;label&#39;: &#39;Partly cloudy&#39;, &#39;kind&#39;: &#39;partly&#39;, &#39;high&#39;: 2.1, &#39;hi&#39;: &#39;2°&#39;, &#39;lo&#39;: &#39;−4°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 2.41}, {&#39;date&#39;: datetime.date(2026, 11, 12), &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;high&#39;: 0.9, &#39;hi&#39;: &#39;1°&#39;, &#39;lo&#39;: &#39;−3°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 2.82}]}index.html">The Morning Edition</a></h1>
+    <div class="ear">
+<b>Edinburgh: 7°, partly cloudy</b>Today 9° / 4° · Astana 2°    </div>
+  </div>
+  <div class="band">
+    <span class="label">No. 1</span>
+    <span class="date">Monday, 9 November 2026</span>
+    <span class="label">Edinburgh 7° · Astana 2°</span>
+  </div>
+  <nav class="index label" aria-label="Sections">
+<a class="pill" style="--c: var(--top)" href="#top">Top stories</a><a class="pill" style="--c: #0065bd" href="#edinburgh">Edinburgh &amp; Scotland</a><a class="pill" style="--c: #b0306a" href="#whats-on">What’s on</a><a class="pill" style="--c: #00a3c4" href="#kazakhstan">Kazakhstan</a><a class="pill" style="--c: #3d4db7" href="#world">World</a><a class="pill" style="--c: #1e7d4f" href="#economy">Economy</a><a class="pill" style="--c: #7a4bc2" href="#policy">Policy &amp; New Laws</a>  </nav>
+</header>
+
+<main>
+  <section class="quote" aria-label="Quote of the day">
+<p class="greet"><svg aria-hidden="true"><use href="#sun"/></svg>Қайырлы таң, KK!</p>    <div class="label">Quote of the day</div>
+    <blockquote>“Beauty is no quality in things themselves: it exists merely in the mind which contemplates them.”</blockquote>
+    <p class="cite">— <b>David Hume</b>, <i>Of the Standard of Taste</i></p>
+  </section>
+
+  <section class="today" id="today" aria-label="Weather">
+    <div class="panel" style="--c: var(--saltire)">
+      <div class="label"><span>Here · Edinburgh</span><span>Sunrise 07:36 · Sunset 16:15</span></div>
+      <div class="wx-now">
+        <svg class="wi big" aria-hidden="true"><use href="#w-partly"/></svg>
+        <div><div class="wx-temp">7°</div><div class="wx-label">Partly cloudy</div></div>
+      </div>
+      <p class="wx-facts">Feels like 6° · Wind 1 m/s · Humidity 84%</p>
+      <ol class="wx-days">
+        <li>
+          <span class="label">Today</span>
+          <svg class="wi" role="img" aria-label="Overcast"><use href="#w-cloudy"/></svg>
+          <span><b>9°</b> 4°</span>
+          <span class="r">0% rain</span>
+        </li>
+        <li>
+          <span class="label">Tue</span>
+          <svg class="wi" role="img" aria-label="Overcast"><use href="#w-cloudy"/></svg>
+          <span><b>7°</b> 3°</span>
+          <span class="r">0% rain</span>
+        </li>
+        <li>
+          <span class="label">Wed</span>
+          <svg class="wi" role="img" aria-label="Overcast"><use href="#w-cloudy"/></svg>
+          <span><b>6°</b> 2°</span>
+          <span class="r">2% rain</span>
+        </li>
+        <li>
+          <span class="label">Thu</span>
+          <svg class="wi" role="img" aria-label="Partly cloudy"><use href="#w-partly"/></svg>
+          <span><b>7°</b> 1°</span>
+          <span class="r">2% rain</span>
+        </li>
+      </ol>
+    </div>
+    <div class="panel" style="--c: var(--sky)" data-offset="5">
+      <div class="label"><span>Home · Astana</span><span>Local time</span></div>
+      <div class="clock">23:06</div>
+<p class="ahead">5 h ahead of Edinburgh</p>      <div class="home-wx">
+        <svg class="wi" aria-hidden="true"><use href="#w-cloudy"/></svg>
+        <div><b>2° · Overcast</b>Today 11° / 2° · Wind 2 m/s</div>
+      </div>
+    </div>
+    <div class="panel money" style="--c: var(--green)">
+      <div class="label"><span>Tenge · official rate</span><span>10.11.2026</span></div>
+      <div class="big-rate"><span>£1 = 602.35 ₸</span> <small class="up">▲ +3.45</small></div>
+<p class="cross">£1 = $1.34 · €1.20</p>      <table class="fx">
+        <tr>
+          <th scope="row">USD<span>US dollar</span></th>
+          <td class="v">448.98 ₸</td>
+          <td class="up">▲ +1.84</td>
+        </tr>
+        <tr>
+          <th scope="row">EUR<span>Euro</span></th>
+          <td class="v">502.45 ₸</td>
+          <td class="up">▲ +2.91</td>
+        </tr>
+        <tr>
+          <th scope="row">RUB<span>Russian rouble</span></th>
+          <td class="v">5.45 ₸</td>
+          <td class="down">▼ −0.01</td>
+        </tr>
+        <tr>
+          <th scope="row">CNY<span>Chinese yuan</span></th>
+          <td class="v">67.29 ₸</td>
+          <td class="up">▲ +0.26</td>
+        </tr>
+      </table>
+      <p class="note">National Bank of Kazakhstan</p>
+    </div>
+  </section>
+
+  <section class="front" id="top" style="--c: var(--top)" aria-label="Top stories">
+    <article class="card lead">
+      <a class="media" href="https://www.theguardian.com/us-news/2026/nov/08/nvidia-jensen-huang-investigation" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/3fc6a5d68684a58fece0294bce9094ed76072ecd/2488_14_5430_4347/master/5430.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=479082a01b7c472e474af2b77df4e1a8" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+      <div class="body">
+        <div class="tags"><span class="badge b-breaking">Top story</span><span class="badge b-developing">Developing</span><span class="topic">Tech</span></div>
+        <h2 class="hl"><a href="https://www.theguardian.com/us-news/2026/nov/08/nvidia-jensen-huang-investigation" target="_blank" rel="noopener">Nvidia opens investigation after report CEO Jensen Huang was target of foreign intelligence</a></h2>
+<p class="dek">CEO reportedly ‌had close relationship ‌with a Chinese businesswoman who passed information to ‌Beijing Nvidia said ⁠on Sunday it “is initiating an independent investigation in light of recent reporting that founder and CEO Jensen Huang…</p>        <p class="meta">The Guardian · 17 h ago · <b>7 outlets</b></p>
+<p class="also">Also reported by Al Jazeera, France 24, Sky News, BBC, Bloomberg.com, Euronews.</p>      </div>
+    </article>
+    <div class="side">
+      <div class="side-head label">Also big today</div>
+<article class="card row">
+  <a class="media" href="https://www.theguardian.com/world/2026/nov/09/france-blames-irans-revolutionary-guards-for-cyber-attacks-on-supermarket-fridges" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/aed983f049b0e852c755b8dc230e7c7ba34f9947/46_0_3538_2832/master/3538.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=534357c3d208281dec5abeceb00fe88e" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-breaking">Breaking</span><span class="topic">Tech</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/world/2026/nov/09/france-blames-irans-revolutionary-guards-for-cyber-attacks-on-supermarket-fridges" target="_blank" rel="noopener">France blames Iran’s Revolutionary Guards for cyber-attacks on supermarket fridges</a></h3>
+<p class="dek">French foreign minister vows European sanctions against Tehran over ‘unprecedented’ hacks last month Europe live – latest updates France has said Iran’s Revolutionary Guards were behind “unprecedented” cyber-attacks on supermarket fridges…</p>    <p class="meta">The Guardian · 1 h ago · <b>5 outlets</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.stv.tv/world/russell-brand-jailed-for-more-than-ten-years-for-rape-and-sexual-assault" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://news.stv.tv/wp-content/uploads/2026/11/11fa3df01de6d871a12195f2602e410f-1794234778-1080x720.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>STV News</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">New</span><span class="topic">Justice</span></div>
+    <h3 class="hl"><a href="https://news.stv.tv/world/russell-brand-jailed-for-more-than-ten-years-for-rape-and-sexual-assault" target="_blank" rel="noopener">Russell Brand jailed for more than ten years for rape and sexual assault</a></h3>
+<p class="dek">Brand was convicted last week of raping one woman and sexually assaulting three others</p>    <p class="meta">STV News · 3 h ago · <b>5 outlets</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.npr.org/2026/11/08/nx-s1-6034014/europe-join-us-brokered-ukraine-talks-abu-dhabi-russia" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://npr.brightspotcdn.com/dims3/default/strip/false/crop/8144x5424+0+0/resize/8144x5424!/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Ffa%2Fa1%2F91147a0b4187a331f76a4c33d532%2Fap26311445819542.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>NPR</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">Developing</span></div>
+    <h3 class="hl"><a href="https://www.npr.org/2026/11/08/nx-s1-6034014/europe-join-us-brokered-ukraine-talks-abu-dhabi-russia" target="_blank" rel="noopener">Europe to join U.S.-brokered Ukraine talks in Abu Dhabi, defying Kremlin objections</a></h3>
+<p class="dek">France says European officials will attend this week&#39;s U.S.-mediated Russia-Ukraine talks in Abu Dhabi, the first three-way round of negotiations since February.</p>    <p class="meta">NPR · 22 h ago · <b>6 outlets</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.theguardian.com/us-news/2026/nov/09/stephen-miller-white-house-chief-of-staff" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/db4879733af20c35f81006235d81b932772ab199/670_308_2949_2359/master/2949.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=59c0ec5808741845a67990ec7f8c7703" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-breaking">Breaking</span><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/us-news/2026/nov/09/stephen-miller-white-house-chief-of-staff" target="_blank" rel="noopener">Hardline Trump aide Stephen Miller takes over as White House chief of staff</a></h3>
+<p class="dek">Miller, known as the architect of Trump’s controversial immigration crackdown, is replacing Susie Wiles in new role US politics live – latest updates Stephen Miller, the architect of Donald Trump’s mass deportation policy and hardline…</p>    <p class="meta">The Guardian · 2 h ago · <b>3 outlets</b></p>
+  </div>
+</article>
+    </div>
+  </section>
+
+  <section class="section" id="edinburgh" style="--c: #0065bd">
+    <header class="sec-head"><h2>Edinburgh &amp; Scotland</h2><span class="label">7 stories</span></header>
+    <article class="card feature">
+  <a class="media" href="https://www.edinburghnews.scotsman.com/news/crime/police-urge-witnesses-to-come-forward-after-unacceptable-oxgangs-disorder-9340011" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.edinburghnews.scotsman.com/jpim-static/image/2026/11/05/22/2026_11_05_22_02_29_031_stts%2520-lf%2520-%252005_11_2026%2520-edinburgh%2520bonfire%2520night%2520-%2520023.JPG?width=1200&amp;auto=webp&amp;crop=3%3A2" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Edinburgh Evening News</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-breaking">Breaking</span><span class="topic">Justice</span></div>
+    <h3 class="hl"><a href="https://www.edinburghnews.scotsman.com/news/crime/police-urge-witnesses-to-come-forward-after-unacceptable-oxgangs-disorder-9340011" target="_blank" rel="noopener">Police urge witnesses to come forward after ‘unacceptable’ Bonfire Night disorder in Edinburgh</a></h3>
+<p class="dek">Detectives are urging residents with footage of the unrest to come forward</p>    <p class="meta">Edinburgh Evening News · 1 h ago · <b>5 outlets</b></p>
+  </div>
+</article>
+
+<div class="grid"><article class="card ">
+  <a class="media" href="https://www.edinburghnews.scotsman.com/news/elderly-man-hospital-pilrig-heights-disturbance-9339874" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.edinburghnews.scotsman.com/jpim-static/image/2026/11/09/15/08/Untitled-design-2026-11-09T152155-646.png?width=1200&amp;auto=webp&amp;trim=0%2C0%2C0%2C0" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Edinburgh Evening News</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-breaking">Breaking</span><span class="topic">Justice</span></div>
+    <h3 class="hl"><a href="https://www.edinburghnews.scotsman.com/news/elderly-man-hospital-pilrig-heights-disturbance-9339874" target="_blank" rel="noopener">Elderly man, 71, taken to hospital following &#39;disturbance&#39; at flats in north Edinburgh as 27-year-old charged</a></h3>
+<p class="dek">The incident took place in the early hours of Sunday morning (November 8) at a flat in Pilrig Heights.</p>    <p class="meta">Edinburgh Evening News · 2 h ago · <b>4 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.edinburghnews.scotsman.com/news/edinburgh-zoo-capybara-triplets-named-after-scottish-delicacies-9339860" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.edinburghnews.scotsman.com/jpim-static/image/2026/11/09/15/23/2026_10_29_Capybara_triplets_BB-(3).jpg?width=1200&amp;auto=webp&amp;trim=0%2C0%2C0%2C0" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Edinburgh Evening News</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">New</span></div>
+    <h3 class="hl"><a href="https://www.edinburghnews.scotsman.com/news/edinburgh-zoo-capybara-triplets-named-after-scottish-delicacies-9339860" target="_blank" rel="noopener">Edinburgh Zoo capybara triplets named after Scottish delicacies</a></h3>
+<p class="dek">The Royal Zoological Society of Scotland revealed the winning names for the ‘babybaras’.</p>    <p class="meta">Edinburgh Evening News · 1 h ago · <b>9 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.edinburghlive.co.uk/news/edinburgh-news/edinburgh-falls-silent-remembrance-sunday-34881231" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i2-prod.edinburghlive.co.uk/incoming/article34881238.ece/ALTERNATES/s615/0_01M6XQQPQYC70APR3TTR88G90R.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Edinburgh Live</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">Developing</span></div>
+    <h3 class="hl"><a href="https://www.edinburghlive.co.uk/news/edinburgh-news/edinburgh-falls-silent-remembrance-sunday-34881231" target="_blank" rel="noopener">Edinburgh falls silent on Remembrance Sunday as commemorations take place</a></h3>
+<p class="dek">Wreaths of poppies were laid at the Stone of Remembrance.</p>    <p class="meta">Edinburgh Live · 27 h ago · <b>4 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/cqm242e4k9kro?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/8fae/live/d07edbc0-dc5d-11f1-93e1-3b657b665bcf.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-breaking">Breaking</span><span class="topic">Justice</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/cqm242e4k9kro?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Carer who murdered vulnerable teenager and claimed her benefits dies in jail</a></h3>
+<p class="dek">Avril Jones, 66, and her partner Edward Cairney murdered the vulnerable teenager around the turn of the century.</p>    <p class="meta">BBC · 58 min ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://news.stv.tv/world/seven-killed-and-more-than-100-injured-in-train-collision-in-egypt" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://news.stv.tv/wp-content/uploads/2026/11/9a99eeb7b4700ad6383c73bb06256ddc-1794163197-1080x720.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>STV News</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.stv.tv/world/seven-killed-and-more-than-100-injured-in-train-collision-in-egypt" target="_blank" rel="noopener">Seven killed and more than 100 injured in train collision in Egypt</a></h3>
+<p class="dek">The crash occurred about 32 miles south of the capital Cairo.</p>    <p class="meta">STV News · 23 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/c6rryrdex252o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/30d4/live/93f29e00-db7a-11f1-a701-fddedf244c16.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-breaking">Breaking</span><span class="topic">Justice</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/c6rryrdex252o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Hydro unlikely to host more bare-knuckle boxing after mass brawl, BBC understands</a></h3>
+<p class="dek">Three police officers were injured and two men arrested after the large disturbance broke out following the Ovo Hydro show.</p>    <p class="meta">BBC · 1 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+</div>  </section>
+  <section class="section" id="whats-on" style="--c: #b0306a">
+    <header class="sec-head"><h2>What’s on</h2><span class="label">6 stories</span></header>
+    <article class="card feature">
+  <a class="media" href="https://www.edinburghnews.scotsman.com/whats-on/heaven-17-tour-greatest-hits-edinburgh-usher-hall-9338791" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.edinburghnews.scotsman.com/jpim-static/image/2026/11/09/11/54/Heaven_17_-_Shooting_Hamburg_2025_-_(c)_ToddeVision_0152.jpeg?width=1200&amp;auto=webp&amp;trim=0%2C0%2C0%2C0" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Edinburgh Evening News</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://www.edinburghnews.scotsman.com/whats-on/heaven-17-tour-greatest-hits-edinburgh-usher-hall-9338791" target="_blank" rel="noopener">80s legends Heaven 17 announce &#39;Greatest Hits Live with Orchestra&#39; tour including date at Edinburgh venue</a></h3>
+<p class="dek">Heaven 17 will be joined by a full orchestra as part of a “unique” set of shows, beginning in the Capital</p>    <p class="meta">Edinburgh Evening News · 5 h ago · <b>3 outlets</b></p>
+  </div>
+</article>
+
+<div class="grid"><article class="card ">
+  <a class="media" href="https://www.scotsman.com/arts-and-culture/music/rsno-rsno-chorus-edinburgh-festival-chorus-patrick-hahn-edinburgh-review-glorious-lyricism-9338073" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.scotsman.com/webimg/b25lY21zOmRkNDkzNjZlLThiMmUtNGJkZC05MTQwLTgxZjBiMDQ5OWJmNDo5Zjc2MDY1MC0zNzU5LTQyN2UtOGQ4NC00YjZhYWYwY2MzMWY=.jpg?width=1200&amp;auto=webp&amp;crop=3%3A2" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Scotsman</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">Developing</span><span class="topic">Culture</span></div>
+    <h3 class="hl"><a href="https://www.scotsman.com/arts-and-culture/music/rsno-rsno-chorus-edinburgh-festival-chorus-patrick-hahn-edinburgh-review-glorious-lyricism-9338073" target="_blank" rel="noopener">RSNO, RSNO Chorus, Edinburgh Festival Chorus &amp; Patrick Hahn, Edinburgh review: &#39;glorious lyricism&#39;</a></h3>
+<p class="dek">The combined forces of the RSNO Chorus and Edinburgh Festival Chorus made for a memorable performance of Verdi’s Requiem, writes David Kettle</p>    <p class="meta">The Scotsman · 9 h ago · <b>4 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.edinburghnews.scotsman.com/whats-on/sophie-ellis-bextor-edinburgh-hogmanay-2026-line-up-street-party-9340260" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.edinburghnews.scotsman.com/jpim-static/image/2026/11/09/16/55/Hogmanay_31_December_Jacinta_Oaten_Assembly-4-2.jpeg?width=1200&amp;auto=webp&amp;trim=0%2C0%2C0%2C0" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Edinburgh Evening News</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">New</span><span class="topic">Culture</span></div>
+    <h3 class="hl"><a href="https://www.edinburghnews.scotsman.com/whats-on/sophie-ellis-bextor-edinburgh-hogmanay-2026-line-up-street-party-9340260" target="_blank" rel="noopener">Noughties icon Sophie Ellis-Bextor joins Edinburgh&#39;s Hogmanay 2026 street party line-up as DJ headliner</a></h3>
+<p class="dek">Sophie Ellis-Bextor and husband Richard Jones will be taking to the stage on December 31</p>    <p class="meta">Edinburgh Evening News · 55 min ago · <b>3 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.scotsman.com/sponsored/indian-film-festival-edinburgh-2026-free-films-filmhouse-december-4-6-9337892" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.scotsman.com/jpim-static/image/2026/11/08/20/25/Mughal-e-Azam_01.jpeg?width=1200&amp;auto=webp&amp;trim=21%2C0%2C31%2C0" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Scotsman</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Culture</span></div>
+    <h3 class="hl"><a href="https://www.scotsman.com/sponsored/indian-film-festival-edinburgh-2026-free-films-filmhouse-december-4-6-9337892" target="_blank" rel="noopener">Edinburgh Indian Film Festival brings seven films to Filmhouse for December 2026</a></h3>
+<p class="dek">Edinburgh filmgoers are being invited to discover stories from across India for a three-day festival.</p>    <p class="meta">The Scotsman · 11 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.scotsman.com/arts-and-culture/books/booker-prize-2026-nominees-shortlist-douglas-stuart-9339209" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.scotsman.com/jpim-static/image/2026/11/09/14/31/Booker-Prize-nominees-2026-Shortlist-Getty-Images.jpeg?width=1200&amp;auto=webp&amp;trim=0%2C0%2C0%2C0" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Scotsman</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">New</span><span class="topic">Culture</span></div>
+    <h3 class="hl"><a href="https://www.scotsman.com/arts-and-culture/books/booker-prize-2026-nominees-shortlist-douglas-stuart-9339209" target="_blank" rel="noopener">Booker Prize Nominees 2026: Here are all 6 books on this year&#39;s shortlist - including John of John by Douglas Stuart</a></h3>
+<p class="dek">Here are all of the Booker Prize 2026 nominees, from the 6 shortlisted books to those featured on this year’s longlist.</p>    <p class="meta">The Scotsman · 3 h ago</p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxNX2FPTWtuNTY0UThfUlM5QkZmbU1teUFERzdxNE9KUExVSjd0MGluODRPM0Z5WTdJcEdndWM3R0cxU2VqSTFpNkJoZjJYN3pjMEQ2STNqZ0NOLTdlWnN3a3ZFU2JGRkcxYi1XMW9ZVm9uSS1OcldDTVZ0RjQ2QVR1NUtHbExHZGRLUzVMTVNJMEFCdnNiMzRyNnF6emI4dEdYWTl6bEZlbGNUQQ?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Edinburgh Live</b></span></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxNX2FPTWtuNTY0UThfUlM5QkZmbU1teUFERzdxNE9KUExVSjd0MGluODRPM0Z5WTdJcEdndWM3R0cxU2VqSTFpNkJoZjJYN3pjMEQ2STNqZ0NOLTdlWnN3a3ZFU2JGRkcxYi1XMW9ZVm9uSS1OcldDTVZ0RjQ2QVR1NUtHbExHZGRLUzVMTVNJMEFCdnNiMzRyNnF6emI4dEdYWTl6bEZlbGNUQQ?oc=5" target="_blank" rel="noopener">Review: iClever P550 children&#39;s wireless headphones keep the noise down</a></h3>
+    <p class="meta">Edinburgh Live · 35 h ago</p>
+  </div>
+</article>
+</div>  </section>
+  <section class="section" id="kazakhstan" style="--c: #00a3c4">
+    <header class="sec-head"><h2>Kazakhstan</h2><span class="label">7 stories</span></header>
+    <article class="card feature">
+  <a class="media" href="https://astanatimes.com/2026/11/rybakina-withdraws-from-wta-finals-due-to-medical-reasons/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://astanatimes.com/wp-content/uploads/2026/11/фото-29-1.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Astana Times</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Sport</span></div>
+    <h3 class="hl"><a href="https://astanatimes.com/2026/11/rybakina-withdraws-from-wta-finals-due-to-medical-reasons/" target="_blank" rel="noopener">Rybakina Withdraws From WTA Finals Due to Medical Reasons</a></h3>
+<p class="dek">ASTANA – Kazakhstan’s world No. 1 Elena Rybakina has withdrawn from the 2026 WTA Finals in Indian Wells, the United States (U.S.), due to medical reasons, ending her season with four titles, including two Grand Slam victories. “I am really…</p>    <p class="meta">The Astana Times · 10 h ago · <b>3 outlets</b></p>
+  </div>
+</article>
+
+<div class="grid"><article class="card ">
+  <a class="media" href="https://timesca.com/opinion-kazakhstan-and-south-korea-need-investment-not-more-memoranda-for-alatau-city/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://timesca.com/wp-content/uploads/2026/11/photo_2026-11-09_15-21-05.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Times of Central Asia</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-opinion">Opinion</span><span class="topic">Business</span></div>
+    <h3 class="hl"><a href="https://timesca.com/opinion-kazakhstan-and-south-korea-need-investment-not-more-memoranda-for-alatau-city/" target="_blank" rel="noopener">Kazakhstan and South Korea Need Investment, Not More Memoranda, for Alatau City</a></h3>
+<p class="dek">There is no shortage of elegant phrases to describe relations between Kazakhstan and South Korea: “strategic partnership,” “immense potential,” “new</p>    <p class="meta">The Times of Central Asia · 5 h ago · <b>3 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://timesca.com/kazakhstan-poverty-reduction-stalls-economic-growth/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://timesca.com/wp-content/uploads/2026/11/3-16.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Times of Central Asia</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://timesca.com/kazakhstan-poverty-reduction-stalls-economic-growth/" target="_blank" rel="noopener">Kazakhstan Poverty Reduction Stalls Despite Economic Growth</a></h3>
+<p class="dek">Kazakhstan has made little progress in reducing poverty in recent years despite continued economic growth, according to the World Bank’s</p>    <p class="meta">The Times of Central Asia · 5 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://timesca.com/kazakhstan-tajikistan-fuel-supply-mining-agreements/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://timesca.com/wp-content/uploads/2026/11/photo_2026-11-09_15-56-19-1024x682.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Times of Central Asia</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://timesca.com/kazakhstan-tajikistan-fuel-supply-mining-agreements/" target="_blank" rel="noopener">Kazakhstan Tajikistan Sign Fuel Supply and Mining Agreements</a></h3>
+<p class="dek">Kazakhstan and Tajikistan have signed a framework agreement on fuel supplies as part of wider plans to expand cooperation in</p>    <p class="meta">The Times of Central Asia · 6 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://astanatimes.com/2026/11/astana-hub-marks-eight-years-with-6-7-billion-in-ecosystem-revenue/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://astanatimes.com/wp-content/uploads/2026/11/фото-3.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Astana Times</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://astanatimes.com/2026/11/astana-hub-marks-eight-years-with-6-7-billion-in-ecosystem-revenue/" target="_blank" rel="noopener">Astana Hub Marks Eight Years With $6.7 Billion in Ecosystem Revenue</a></h3>
+<p class="dek">ASTANA – Kazakhstan’s international technology cluster, Astana Hub, is marking its eighth anniversary, with ecosystem participants generating $6.7 billion in total revenue, $2.4 billion in IT services exports, and attracting more than $2…</p>    <p class="meta">The Astana Times · 5 h ago · <b>3 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://astanatimes.com/2026/11/kazakhstan-secures-4300-hajj-quota-places-for-2027/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://astanatimes.com/wp-content/uploads/2026/11/фото-32.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Astana Times</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://astanatimes.com/2026/11/kazakhstan-secures-4300-hajj-quota-places-for-2027/" target="_blank" rel="noopener">Kazakhstan Secures 4,300 Hajj Quota Places for 2027</a></h3>
+<p class="dek">ASTANA – Kazakhstan has been allocated 4,300 places for the 2027 Hajj pilgrimage under an agreement signed between the country’s Spiritual Administration of Muslims and Saudi Arabia, Kazinform reports. The agreement was signed by Supreme…</p>    <p class="meta">The Astana Times · 6 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxObklRenJfenBOYjN2VjJxRUFKZjhjdWw5YVB1TE5HZkxybk5hXzJGM1NKMVFoaXRDUDJwOGFVRnZoY0pqa1ltZHdHckNyVm9xU1JEYWd1eE9ZVnB2ZTBuSkFTQzJKUHB6UE05aDB2Z01FRUY4NlhVRlpfNDFEX25Qc0gyRFZlYmtpZ0UtdWlUT1pFYjVJWExQbDdVcTN3OE03cjFWY1ktQ21tOUdlRmd2cFM4MUtSb2lyYl9rSTgwVS1wYXkwNHBmM25Wb0s5ZXRmbUwwM1l5Z1I?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>UEFA.com</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">New</span><span class="topic">Sport</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxObklRenJfenBOYjN2VjJxRUFKZjhjdWw5YVB1TE5HZkxybk5hXzJGM1NKMVFoaXRDUDJwOGFVRnZoY0pqa1ltZHdHckNyVm9xU1JEYWd1eE9ZVnB2ZTBuSkFTQzJKUHB6UE05aDB2Z01FRUY4NlhVRlpfNDFEX25Qc0gyRFZlYmtpZ0UtdWlUT1pFYjVJWExQbDdVcTN3OE03cjFWY1ktQ21tOUdlRmd2cFM4MUtSb2lyYl9rSTgwVS1wYXkwNHBmM25Wb0s5ZXRmbUwwM1l5Z1I?oc=5" target="_blank" rel="noopener">2026/27 UEFA Nations League: All the league phase fixtures and results | UEFA Nations League</a></h3>
+    <p class="meta">UEFA.com · 1 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+</div>  </section>
+  <section class="section" id="world" style="--c: #3d4db7">
+    <header class="sec-head"><h2>World</h2><span class="label">7 stories</span></header>
+    <article class="card feature">
+  <a class="media" href="https://www.aljazeera.com/news/2026/11/9/what-catastrophic-south-africa-local-election-results-mean-for-anc?traffic_source=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.aljazeera.com/wp-content/uploads/2026/11/epa_6af1bc08d187-1794227208.jpg?resize=1200%2C675" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Al Jazeera</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">Developing</span><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://www.aljazeera.com/news/2026/11/9/what-catastrophic-south-africa-local-election-results-mean-for-anc?traffic_source=rss" target="_blank" rel="noopener">What ‘catastrophic’ South Africa local election results mean for ANC</a></h3>
+<p class="dek">The country is transitioning away from the era of ANC electoral dominance towards a more fragmented political system.</p>    <p class="meta">Al Jazeera · 3 h ago · <b>4 outlets</b></p>
+  </div>
+</article>
+
+<div class="grid"><article class="card ">
+  <a class="media" href="https://www.theguardian.com/world/2026/nov/09/pope-leo-argentina-visit-speech-javier-milei-austerity" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/cebae71e5fdd86b5579126f7d39addd8b86cf7f9/123_0_2842_2274/master/2842.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=10ec074df5e4211e9bc79bc521c9f23c" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/world/2026/nov/09/pope-leo-argentina-visit-speech-javier-milei-austerity" target="_blank" rel="noopener">Pope Leo delivers stinging rebuke of Milei’s austerity measures during Argentina visit</a></h3>
+<p class="dek">Pontiff tells Argentina’s president the economy must benefit all on second stop of 12-day Latin America tour Pope Leo XIV has delivered a stinging critique of Argentine president Javier Milei’s harsh austerity measures, insisting growth…</p>    <p class="meta">The Guardian · 15 h ago · <b>3 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://news.sky.com/story/at-least-14-dead-after-boat-carrying-migrants-found-near-crete-13610083" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://e3.365dm.com/26/11/1920x1080/skynews-crete-migrant-crisis_7401963.jpg?20261109103131" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Sky News</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.sky.com/story/at-least-14-dead-after-boat-carrying-migrants-found-near-crete-13610083" target="_blank" rel="noopener">At least 14 dead after boat carrying migrants found near Crete</a></h3>
+<p class="dek">At least 14 people have died after a boat carrying migrants was found near Crete, Greek authorities have said.</p>    <p class="meta">Sky News · 8 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.dw.com/en/krakow-mass-shooting-suspect-has-died-in-hospital-police-in-poland-say/a-79895626?maca=en-rss-en-world-4025-rdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://static.dw.com/image/79895656_6.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>DW</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Justice</span></div>
+    <h3 class="hl"><a href="https://www.dw.com/en/krakow-mass-shooting-suspect-has-died-in-hospital-police-in-poland-say/a-79895626?maca=en-rss-en-world-4025-rdf" target="_blank" rel="noopener">Krakow mass shooting suspect has died in hospital, police in Poland say</a></h3>
+<p class="dek">The alleged gunman who killed six people in a shooting spree in the Polish city of Krakow has died of injuries sustained in a shootout with police, authorities say.</p>    <p class="meta">DW · 11 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.npr.org/2026/11/09/nx-s1-6034066/paraguay-president-pena-ueno" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://npr.brightspotcdn.com/dims3/default/strip/false/crop/7310x4873+0+0/resize/7310x4873!/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F4a%2Fc2%2Fa04252c842ad9112c89b305097bf%2Fap26310862051093.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>NPR</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://www.npr.org/2026/11/09/nx-s1-6034066/paraguay-president-pena-ueno" target="_blank" rel="noopener">How a bank collapse left millions in limbo and toppled Paraguay&#39;s president</a></h3>
+<p class="dek">A bank&#39;s collapse in Paraguay left millions locked out of their money, toppled the president and exposed a web of political and financial ties.</p>    <p class="meta">NPR · 11 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.theguardian.com/environment/2026/nov/09/high-fossil-fuel-prices-spread-inflation-like-cancer-cop31egotiator-tells-cop31" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/1af03ea7575a463c358fd726501cf079c5960b21/461_53_1403_1122/master/1403.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=5136abdbdff1fcbb2b0738eb5f3bb362" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">New</span><span class="topic">Business</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/environment/2026/nov/09/high-fossil-fuel-prices-spread-inflation-like-cancer-cop31egotiator-tells-cop31" target="_blank" rel="noopener">High fossil fuel prices spread inflation ‘like a cancer’, UN climate negotiator tells Cop31</a></h3>
+<p class="dek">Simon Stiell makes opening address at summit in Turkey, where talks are under way about speeding up shift to electrification A global fossil fuel price crisis is “spreading inflation like a cancer” around the planet, the UN’s chief climate…</p>    <p class="meta">The Guardian · 19 min ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.theguardian.com/politics/live/2026/nov/09/polanski-greens-labour-andy-burnham-climate-crisis-ev-targets-uk-politics-latest-news" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/e661b9f921ffdd777b231a9de99cca1b4f9bee1e/1889_309_5046_4036/master/5046.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=99a75b60f798f164b9e2d204cbf273ea" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-live">Live</span><span class="topic">Health</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/politics/live/2026/nov/09/polanski-greens-labour-andy-burnham-climate-crisis-ev-targets-uk-politics-latest-news" target="_blank" rel="noopener">Burnham warns that NHS will ‘struggle’ to cope if consultants don’t resume talks over pay</a></h3>
+<p class="dek">Hospital consultants are set to go on a two-day strike at the end of October Downing Street has insisted that the government remains committed to the principle of the zero emission vehicle (ZEV) mandate – while not denying today’s Guardian…</p>    <p class="meta">The Guardian · 34 min ago</p>
+  </div>
+</article>
+</div>  </section>
+  <section class="section" id="economy" style="--c: #1e7d4f">
+    <header class="sec-head"><h2>Economy</h2><span class="label">16 stories</span></header>
+    <div class="desks">
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇰🇿</span>Kazakhstan</h3>
+          <article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMinAFBVV95cUxNcEh0NnB5YmVhUTNURUViRXM2VTZ3dTVfSjFydFRpY0RJclk2Z2JRX2dCWWE5Q0k0djRNOFh1cEhnM05qNHFyZlo5X0I5b2xTeS03eTl4RW5fMkNvTWlKcE5iZU5WUzR6QjU4ZUhxSUhFX2xlVHI5RUlFTXVUMmhpeEtvNVh3TEk1dUFKdGlkRUdudk51Y3J2bXdBaVg?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>The Astana Times</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Climate</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxNcEh0NnB5YmVhUTNURUViRXM2VTZ3dTVfSjFydFRpY0RJclk2Z2JRX2dCWWE5Q0k0djRNOFh1cEhnM05qNHFyZlo5X0I5b2xTeS03eTl4RW5fMkNvTWlKcE5iZU5WUzR6QjU4ZUhxSUhFX2xlVHI5RUlFTXVUMmhpeEtvNVh3TEk1dUFKdGlkRUdudk51Y3J2bXdBaVg?oc=5" target="_blank" rel="noopener">Kazakhstan to Sign 28 Cooperation Documents at COP31 in Türkiye</a></h3>
+    <p class="meta">The Astana Times · 10 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQMmNmR185aWNxRjVHRHR1dGFBVFY2ak1weWFoSDFOSmxNTzdOalROSlRVZ3pWZmo3UmhWNktMWkF5WW80UjdhTjM0Mm5vVE1xcHlCVGJqbm9HRGNlTnhDbWJCaTFaVjlNUHN3dFhQZEYzeGVMcVVlNF82TXhlNXNQN3FNQk9kblpxMk5JYzF2R3g0aWdKZERROG14MXV1WEg3YUdv?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>The Diplomat</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">New</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQMmNmR185aWNxRjVHRHR1dGFBVFY2ak1weWFoSDFOSmxNTzdOalROSlRVZ3pWZmo3UmhWNktMWkF5WW80UjdhTjM0Mm5vVE1xcHlCVGJqbm9HRGNlTnhDbWJCaTFaVjlNUHN3dFhQZEYzeGVMcVVlNF82TXhlNXNQN3FNQk9kblpxMk5JYzF2R3g0aWdKZERROG14MXV1WEg3YUdv?oc=5" target="_blank" rel="noopener">Kazakhstan Offers Tajikistan Cooperation, Not a Substitute for Russia</a></h3>
+    <p class="meta">The Diplomat · 1 h ago</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMivwFBVV95cUxQSkJxVndBbnlHbDRweE9SdWJ1XzRqNDh4QjlRRE5ma0JPb2ZyeHRTR3FfVFFjbDlKWjA0b3dxRXVYQ1VPSUNhUWlFNkltZGxaWktCQjZRdjZkVmhwSUpBb2QzX2lPVnpyYzM1SUNHLTdEem9uRkVqMXdfNFlkNDl0dkVxMG5kUHMzNGlSM2dMdmVNS0h3TkJVMGJHQ2pkcXpxWEpiREpmVHZnSkc5Q3MtdE1pblZ6WlRJY2s1d29kWQ?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>United Nations Development Programme</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Business</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxQSkJxVndBbnlHbDRweE9SdWJ1XzRqNDh4QjlRRE5ma0JPb2ZyeHRTR3FfVFFjbDlKWjA0b3dxRXVYQ1VPSUNhUWlFNkltZGxaWktCQjZRdjZkVmhwSUpBb2QzX2lPVnpyYzM1SUNHLTdEem9uRkVqMXdfNFlkNDl0dkVxMG5kUHMzNGlSM2dMdmVNS0h3TkJVMGJHQ2pkcXpxWEpiREpmVHZnSkc5Q3MtdE1pblZ6WlRJY2s1d29kWQ?oc=5" target="_blank" rel="noopener">Kazakhstan’s Kurultai discusses Blue Finance to attract investment into the water sector</a></h3>
+    <p class="meta">United Nations Development Programme · 10 h ago</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxPaWZCazA3MlBacFV2Z0M3RkoyeXU3WThtVHJ4RW5vQkNaV0JJVVhISnF2aXBsMERpNzVvNUZseHY5SUVieW5fUnMxeFkzdDk4LWRzZUFjOGtsQzNkVzNXSXZINmRORjBZbkhIdm9nOTNZd2lHMzd5cVV2cVJHb3dHZm1fOXJ0SUVEb1Y4QWNTVmxYWFprbUxiUUpHUlNYYnJ1cC1UWlhqcWwxZ2_SAasBQVVfeXFMT0RFN1pwZUVCaEwyMEVGM3VuU2tPS2RKVUs3eFZxcEpWbmIyTTBPYjQxLUp4SjJZZjNxQWIxRnZOT01BUzEtQkdlXzhoaHBwWHhCUFFYUEYzSnFuN1poYmV1VlhHOFUtQk9zRTR3ZEV6VlFma2pTLXJOLU9seTkzcnF5OG1NUHNlOU9PTHFtRWo3Unh3emMyQVJHcWlHZkNmc0YycGREWHdxR3VJ?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Qazinform</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Business</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxPaWZCazA3MlBacFV2Z0M3RkoyeXU3WThtVHJ4RW5vQkNaV0JJVVhISnF2aXBsMERpNzVvNUZseHY5SUVieW5fUnMxeFkzdDk4LWRzZUFjOGtsQzNkVzNXSXZINmRORjBZbkhIdm9nOTNZd2lHMzd5cVV2cVJHb3dHZm1fOXJ0SUVEb1Y4QWNTVmxYWFprbUxiUUpHUlNYYnJ1cC1UWlhqcWwxZ2_SAasBQVVfeXFMT0RFN1pwZUVCaEwyMEVGM3VuU2tPS2RKVUs3eFZxcEpWbmIyTTBPYjQxLUp4SjJZZjNxQWIxRnZOT01BUzEtQkdlXzhoaHBwWHhCUFFYUEYzSnFuN1poYmV1VlhHOFUtQk9zRTR3ZEV6VlFma2pTLXJOLU9seTkzcnF5OG1NUHNlOU9PTHFtRWo3Unh3emMyQVJHcWlHZkNmc0YycGREWHdxR3VJ?oc=5" target="_blank" rel="noopener">Kazakhstan&#39;s National Bank reveals first projects for digital tokenization</a></h3>
+    <p class="meta">Qazinform · 4 h ago</p>
+  </div>
+</article>
+</div>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇬🇧</span>United Kingdom</h3>
+          <article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMilwFBVV95cUxPZ0FRUVBoNG9QNWpKdHdNRlpBalc3YWdEZzlLdEc3d0JabUVDMk8xSXcydzNhLTd5MlNXelV5NTRTcV9EbGF6VjFGeE4ybTlmYnl2QWVYMmlqVjkyckZrZmtVeDhCVnEweHVrd0I2cGo5ZzRNSU1BejdCdEpOZkxhRUZqYndlLURORGo3aDExT3FBQXRFNWJR?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>The Guardian</b></span></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxPZ0FRUVBoNG9QNWpKdHdNRlpBalc3YWdEZzlLdEc3d0JabUVDMk8xSXcydzNhLTd5MlNXelV5NTRTcV9EbGF6VjFGeE4ybTlmYnl2QWVYMmlqVjkyckZrZmtVeDhCVnEweHVrd0I2cGo5ZzRNSU1BejdCdEpOZkxhRUZqYndlLURORGo3aDExT3FBQXRFNWJR?oc=5" target="_blank" rel="noopener">Starbucks plans to hire 7,500 staff in major UK expansion plan</a></h3>
+    <p class="meta">The Guardian · 4 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://www.theguardian.com/us-news/2026/nov/09/democrats-midterms-economy-healthcare" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/3a8e041b1ffd178a038a02782c554293ae66c6fa/234_0_3164_2533/master/3164.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=d3c3d0085d18cae8d45c7700691e8fea" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/us-news/2026/nov/09/democrats-midterms-economy-healthcare" target="_blank" rel="noopener">Economic relief is on the way, Democrats say. But what, how and when?</a></h3>
+<p class="dek">Winning candidates promised to cut costs, rein in corporations, curb billionaire power and improve the economy Don’t worry, cash-strapped Americans, “relief is on the way”, the senator Chuck Schumer promised last week in a press conference…</p>    <p class="meta">The Guardian · 7 h ago · <b>3 outlets</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMitAFBVV95cUxPTkpVQUhyWV84dUpENVpEcVJ6VEpEcUJJVThSVTBVY183RVhGbmJ2emdJSURnTVh0NkswQ1k4bVpEN1JoZnFsREpIRmJQUGVIa0h4N3VyU0V2Qlo0cFNJekNnRmZZZG12QXJ0Tjd1aXdhZHJrQTFhX3AwT3RQZFQ5SGFCTGY3NmJGRWUwUTlLcDBtOE14TTVUNVZNN3RNS3loLWtWU0o2aWx2WU1oUlMzOGtZUlo?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Department of Agriculture, Environment and Rural Affairs</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxPTkpVQUhyWV84dUpENVpEcVJ6VEpEcUJJVThSVTBVY183RVhGbmJ2emdJSURnTVh0NkswQ1k4bVpEN1JoZnFsREpIRmJQUGVIa0h4N3VyU0V2Qlo0cFNJekNnRmZZZG12QXJ0Tjd1aXdhZHJrQTFhX3AwT3RQZFQ5SGFCTGY3NmJGRWUwUTlLcDBtOE14TTVUNVZNN3RNS3loLWtWU0o2aWx2WU1oUlMzOGtZUlo?oc=5" target="_blank" rel="noopener">Minister Muir to convene summit on progressing climate action and growing the green economy</a></h3>
+    <p class="meta">Department of Agriculture, Environment and Rural Affairs · 6 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/cm70pgnx891do?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/1641/live/c3324b50-d6f9-11f1-b983-c357054e4d1e.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">New</span><span class="topic">Justice</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/cm70pgnx891do?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Civil servant who secretly held five jobs found guilty of fraud</a></h3>
+<p class="dek">Kashim Chowdhury had secretly held multiple public sector jobs on full-time salaries.</p>    <p class="meta">BBC · 49 min ago</p>
+  </div>
+</article>
+</div>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇺🇸</span>United States</h3>
+          <article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOUDdpRDZLb3pTaElmb1JRdHJfV3VrMlVUMnVOQkZKaC1IODFFaWlRU0o4REFuTEVZclFxdHRKNzZod19jU2NrdUI5T2luMWdnYjZReEpldmdCb2U5U3dkRXhTZ1hsTWtIZnh1cnZqMjFQUmloVkdVeGZCb1ZLVllqcjBuaXJtN0luUWNzZUo4aTIwS2lyNU1BYnRnRzc2WHBGaEc5LTBTMmZ5ZkdfTlo0Sk5IYw?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Bloomberg.com</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">New</span><span class="topic">Business</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOUDdpRDZLb3pTaElmb1JRdHJfV3VrMlVUMnVOQkZKaC1IODFFaWlRU0o4REFuTEVZclFxdHRKNzZod19jU2NrdUI5T2luMWdnYjZReEpldmdCb2U5U3dkRXhTZ1hsTWtIZnh1cnZqMjFQUmloVkdVeGZCb1ZLVllqcjBuaXJtN0luUWNzZUo4aTIwS2lyNU1BYnRnRzc2WHBGaEc5LTBTMmZ5ZkdfTlo0Sk5IYw?oc=5" target="_blank" rel="noopener">Steady Inflation Outlook, Mixed Views for Jobs in NY Fed Survey</a></h3>
+    <p class="meta">Bloomberg.com · 2 h ago · <b>5 outlets</b></p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMigwFBVV95cUxOa3VDQVdKcnVEdTB1WDhYZFQzY3Z2b05ydE1yNnc3Nm1mTE5sa2cwUTNURjUtVXNzb1gwem9kaXhZVENaaUY4Nm9LUGp3NDctaFhtRjJCeTJZLWpsdmZkQkg3TENxekZIRUpVakVwT09GRjNva1BLMjI5b1paUW4yTGd6UQ?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>CNBC</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Business</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxOa3VDQVdKcnVEdTB1WDhYZFQzY3Z2b05ydE1yNnc3Nm1mTE5sa2cwUTNURjUtVXNzb1gwem9kaXhZVENaaUY4Nm9LUGp3NDctaFhtRjJCeTJZLWpsdmZkQkg3TENxekZIRUpVakVwT09GRjNva1BLMjI5b1paUW4yTGd6UQ?oc=5" target="_blank" rel="noopener">China wholesale inflation hits highest in more than four years as consumer measure slows</a></h3>
+    <p class="meta">CNBC · 16 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.npr.org/2026/11/09/nx-s1-6032701/economist-discusses-taxing-the-ultra-wealthy-and-their-impact-on-the-economy" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://media.npr.org/include/images/facebook-default-wide-s1400-c85.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>NPR</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Business</span></div>
+    <h3 class="hl"><a href="https://www.npr.org/2026/11/09/nx-s1-6032701/economist-discusses-taxing-the-ultra-wealthy-and-their-impact-on-the-economy" target="_blank" rel="noopener">Economist discusses taxing the ultra wealthy and their impact on the economy</a></h3>
+<p class="dek">NPR&#39;s Steve Inskeep speaks with economist and wealth tax expert Gabriel Zucman about millionaire and billionaire taxes and their impact on the economy.</p>    <p class="meta">NPR · 8 h ago</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMilgFBVV95cUxQdHJRVHE1MGEwQVVRSlFvdHZGNFZhZ3F1amY2Q2dXMDV5amZKYmFuRnlrZUlOaS1sTm9EeVZrVE83UmFaTjdaNzhyeF9hcVk5MjFpY1hHdFl4d3NVWS1uV3NmN19hTWpCdmxlWnlDeVZaLWhfNnFDNVVhNDhvY2FrZHJFWVpIZ0ZxZ0JDNEdVU0hGSXZNSEE?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Frontier Africa Reports</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">New</span><span class="topic">Business</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxQdHJRVHE1MGEwQVVRSlFvdHZGNFZhZ3F1amY2Q2dXMDV5amZKYmFuRnlrZUlOaS1sTm9EeVZrVE83UmFaTjdaNzhyeF9hcVk5MjFpY1hHdFl4d3NVWS1uV3NmN19hTWpCdmxlWnlDeVZaLWhfNnFDNVVhNDhvY2FrZHJFWVpIZ0ZxZ0JDNEdVU0hGSXZNSEE?oc=5" target="_blank" rel="noopener">BoU Holds CBR at 12% as Inflation Risks Mount</a></h3>
+    <p class="meta">Frontier Africa Reports · 1 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+</div>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇪🇺</span>Europe</h3>
+          <article class="card ">
+  <a class="media" href="https://www.euronews.com/2026/11/09/lecornu-announces-24-monthly-rise-in-minimum-wage-and-tax-breaks-for-firms" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://images.euronews.com/articles/stories/09/98/55/11/1200x675_cmsv2_9d539f87-2bd2-56cb-a5af-0a4ff95f6dd2-9985511.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Euronews</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://www.euronews.com/2026/11/09/lecornu-announces-24-monthly-rise-in-minimum-wage-and-tax-breaks-for-firms" target="_blank" rel="noopener">Lecornu announces €24 monthly rise in minimum wage and tax breaks for firms</a></h3>
+<p class="dek">The French Prime Minister has announced an early increase in the minimum wage from 1 December. The government also plans tax measures for businesses and wants to launch a new round of sectoral pay negotiations.</p>    <p class="meta">Euronews · 4 h ago</p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://www.euronews.com/2026/11/09/spains-austrian-backpack-pension-plan-back-at-centre-of-29n-pensions-debate" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://images.euronews.com/articles/stories/09/98/23/99/1200x675_cmsv2_078b0f5a-c5fb-545f-8f3b-c1dcfaaa0e36-9982399.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Euronews</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Business</span></div>
+    <h3 class="hl"><a href="https://www.euronews.com/2026/11/09/spains-austrian-backpack-pension-plan-back-at-centre-of-29n-pensions-debate" target="_blank" rel="noopener">Spain&#39;s &#39;Austrian backpack&#39; pension plan back at centre of 29N pensions debate</a></h3>
+<p class="dek">With pensioners worried about cuts and young people unsure they will ever get a pension, company-funded individual schemes have long hovered over Spanish politics. Ahead of the 29N elections, we examine the situation.</p>    <p class="meta">Euronews · 11 h ago</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.euronews.com/2026/11/09/tech-stocks-recover-after-midterms-rout-as-nvidia-takes-centre-stage" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://images.euronews.com/articles/stories/09/98/49/28/1200x675_cmsv2_22ed53ed-7496-5c91-bbeb-fbf4262f087b-9984928.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Euronews</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Tech</span></div>
+    <h3 class="hl"><a href="https://www.euronews.com/2026/11/09/tech-stocks-recover-after-midterms-rout-as-nvidia-takes-centre-stage" target="_blank" rel="noopener">Tech stocks recover after midterms rout as Nvidia takes centre stage</a></h3>
+<p class="dek">Tech firms rose on Monday to claw back some of last week&#39;s painful losses fuelled by AI regulation worries, though traders were keeping an eye on a probe into Nvidia boss Jensen Huang.</p>    <p class="meta">Euronews · 11 h ago</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMihgFBVV95cUxNQ2pKT295QXRGaDQ2bi1VVkVfN1E5S09mcnhPdEgyWExnTTRZU2xFODg0dFVYOWQtNFkxMnVRVFRvVS1RSkE5VFpNaGRYQjFTaHkxTXVzNUltb29KSC1PUnl3MTQtU3pJRnUyN0hkMGVLMDdzeFJtM00tWm9qbmNoWDZENjZWQQ?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>UkrMedia News</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">New</span><span class="topic">Business</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxNQ2pKT295QXRGaDQ2bi1VVkVfN1E5S09mcnhPdEgyWExnTTRZU2xFODg0dFVYOWQtNFkxMnVRVFRvVS1RSkE5VFpNaGRYQjFTaHkxTXVzNUltb29KSC1PUnl3MTQtU3pJRnUyN0hkMGVLMDdzeFJtM00tWm9qbmNoWDZENjZWQQ?oc=5" target="_blank" rel="noopener">Investors are losing confidence in the European economy — Sentix</a></h3>
+    <p class="meta">UkrMedia News · 29 min ago · <b>3 outlets</b></p>
+  </div>
+</article>
+</div>      </div>
+    </div>
+  </section>
+  <section class="section" id="policy" style="--c: #7a4bc2">
+    <header class="sec-head"><h2>Policy &amp; New Laws</h2><span class="label">16 stories</span></header>
+    <div class="desks">
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇰🇿</span>Kazakhstan</h3>
+          <article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMirAFBVV95cUxQMFJwZVluam4waDhsZEdDSjJBdFd6YVJwTkpCbk9vX0s1Rld0Y2c4MmxQeEVIVjFIRFFsMm1ET1BnRXJOdzBfczl5NVc1WUlRSW5FT1NORWltSU1RMU9pMFJOaEJQV0YzSGhDTEZiOTczaHh1TG52TjIzNlRaMEo2UWM5TW9FYUhjVjRZaU5Yd0NKWDFTaDJGNVNIRFpsWEt6UG90dE4tMndrQkpu?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>The Times Of Central Asia</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Climate</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxQMFJwZVluam4waDhsZEdDSjJBdFd6YVJwTkpCbk9vX0s1Rld0Y2c4MmxQeEVIVjFIRFFsMm1ET1BnRXJOdzBfczl5NVc1WUlRSW5FT1NORWltSU1RMU9pMFJOaEJQV0YzSGhDTEZiOTczaHh1TG52TjIzNlRaMEo2UWM5TW9FYUhjVjRZaU5Yd0NKWDFTaDJGNVNIRFpsWEt6UG90dE4tMndrQkpu?oc=5" target="_blank" rel="noopener">Shrinking Caspian Sea Challenges Kazakhstan’s Transport Ambitions, Environmentalist Warns</a></h3>
+    <p class="meta">The Times Of Central Asia · 6 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMinwFBVV95cUxQMTZNbDBZd2VFQmYxWDF3a3Q4anBfQUM2Y3p4ekhqOTd3b3RpdHV1ZUFFbnRLZkItcXdJdkRDTzRnMDRFRlBBRXBPNFU4MU1vSWQ0QnMxU19pTDljR2FLVG5icDhFQUptZjBlSG5GbXRNS09QMU1qdk1YOU5jWGs3blBOdnN1TVI1ZlhsOG5vNVdGaE9JcmFrSWN3T2k4RjA?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>The Astana Times</b></span></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxQMTZNbDBZd2VFQmYxWDF3a3Q4anBfQUM2Y3p4ekhqOTd3b3RpdHV1ZUFFbnRLZkItcXdJdkRDTzRnMDRFRlBBRXBPNFU4MU1vSWQ0QnMxU19pTDljR2FLVG5icDhFQUptZjBlSG5GbXRNS09QMU1qdk1YOU5jWGs3blBOdnN1TVI1ZlhsOG5vNVdGaE9JcmFrSWN3T2k4RjA?oc=5" target="_blank" rel="noopener">Kazakhstan Maps Out New Opportunities for International Investors</a></h3>
+    <p class="meta">The Astana Times · 6 h ago</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMipwFBVV95cUxOWVBBU1lvTHZlOGY3Rk1QR3BNa0JTekItMl9tVV9JUjZHWEMyWGYwWjVXOXJTU3BwUW5fR0JrbUtnZHhDeUItVzk3M3h1cExfV3paSFBSMTd2RHpGWlhnNERwbW1seFhHd2NjRW8zeFJWdDVYb2JWUDl0NlZOWnNZYTMxNW5wQzdwQUdDSlBaV1lXX3daWW1vRmFSMElST25scHlRUkdzSQ?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>The Astana Times</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Tech</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxOWVBBU1lvTHZlOGY3Rk1QR3BNa0JTekItMl9tVV9JUjZHWEMyWGYwWjVXOXJTU3BwUW5fR0JrbUtnZHhDeUItVzk3M3h1cExfV3paSFBSMTd2RHpGWlhnNERwbW1seFhHd2NjRW8zeFJWdDVYb2JWUDl0NlZOWnNZYTMxNW5wQzdwQUdDSlBaV1lXX3daWW1vRmFSMElST25scHlRUkdzSQ?oc=5" target="_blank" rel="noopener">Kazakhstan Turns Its Dual AI Partnerships Into Regional Security Agenda</a></h3>
+    <p class="meta">The Astana Times · 8 h ago</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMirgFBVV95cUxOekVTVFJONklKcVRFdzJvSUItdVZZOXF6THBXOUs5TUs1YU9WanJ3WE95MVlhdExiLVBRSWxTREtQbmNyVFBoYTFiVmd0MGVXSUNQMXlZX0JITHNfcnBhNnVycmFUNHRzdHdCQ1g1NVpnZEJtQTRicFlDWTg2YmVmRGpSRzZ1TDdPRjMzaWdNdnVwOFdQbkVHbEtrNGZraXMwTi1SUm1wRHljQnk5TUE?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>The Astana Times</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxOekVTVFJONklKcVRFdzJvSUItdVZZOXF6THBXOUs5TUs1YU9WanJ3WE95MVlhdExiLVBRSWxTREtQbmNyVFBoYTFiVmd0MGVXSUNQMXlZX0JITHNfcnBhNnVycmFUNHRzdHdCQ1g1NVpnZEJtQTRicFlDWTg2YmVmRGpSRzZ1TDdPRjMzaWdNdnVwOFdQbkVHbEtrNGZraXMwTi1SUm1wRHljQnk5TUE?oc=5" target="_blank" rel="noopener">Tokayev Honors Asian Games Medalists, Calls for Stronger Olympic Preparations</a></h3>
+    <p class="meta">The Astana Times · 7 h ago</p>
+  </div>
+</article>
+</div>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇬🇧</span>UK, Scotland &amp; visas</h3>
+          <article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE5WTGd0d3VTR1VxaHQyUlJKZlRsb1ZzQnVVZzZGZTc0XzdGbXd6WUd5cHZKdjJTLVFiME9Rc2ZrRnBOaEFtdkJscTN2N3ZWc29BR29JaVNsVHpfLVhNTmc?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>BBC</b></span></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE5WTGd0d3VTR1VxaHQyUlJKZlRsb1ZzQnVVZzZGZTc0XzdGbXd6WUd5cHZKdjJTLVFiME9Rc2ZrRnBOaEFtdkJscTN2N3ZWc29BR29JaVNsVHpfLVhNTmc?oc=5" target="_blank" rel="noopener">Home Office bid to use asylum site beyond April</a></h3>
+    <p class="meta">BBC · 11 h ago · <b>3 outlets</b></p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://www.theguardian.com/politics/2026/nov/09/labour-mp-brexit-red-lines-dignified-retirement" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/0aafddba6dcd8e789dd15dc96c3beee6afdd963f/580_5_937_749/master/937.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=c07d38d5595ba37a1e074d5027d9876e" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">New</span><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/politics/2026/nov/09/labour-mp-brexit-red-lines-dignified-retirement" target="_blank" rel="noopener">Labour’s Brexit red lines ready for ‘dignified retirement’, says their co-author</a></h3>
+<p class="dek">Exclusive: MP Chris Ward believes ditching pledges and forming closer ties with EU would protect it from global threats One of the architects of Keir Stamer’s Brexit red lines has called for Andy Burnham to abandon them at the next…</p>    <p class="meta">The Guardian · 1 h ago</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.theguardian.com/uk-news/2026/nov/09/black-english-asian-english-should-be-census-options-mps" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/91b2c717fb1ac7ffb60004b36661935b11ebcd65/1761_0_3696_2956/master/3696.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=f0c50d4a933cd22deeeb3dfd5c0057e7" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">New</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/uk-news/2026/nov/09/black-english-asian-english-should-be-census-options-mps" target="_blank" rel="noopener">‘Black English’ and ‘Asian English’ should be census options, MPs say</a></h3>
+<p class="dek">Exclusive: Cross-party call for ethnicity options to be broadened beyond ‘English’ being only within ‘White’ category Britons should be able to define themselves as both black and English, according to senior MPs who are calling to broaden…</p>    <p class="meta">The Guardian · 1 h ago</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.theguardian.com/business/2026/nov/09/thames-water-asks-creditors-more-time-repay-debt-pile" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/535318ddf017dc682b293bfcd483a717eefaf8a0/247_0_4583_3667/master/4583.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=94a9d5d469340390a0d95137a652e287" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">New</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/business/2026/nov/09/thames-water-asks-creditors-more-time-repay-debt-pile" target="_blank" rel="noopener">Thames Water asks creditors for more time to help repay £20bn debt pile</a></h3>
+<p class="dek">Troubled utility lobbies for deadline on part of the debt to be extended to March 2028 Thames Water has asked creditors for more time to pay back billions of pounds in debt, as the water company scrambles to keep itself afloat. The UK’s…</p>    <p class="meta">The Guardian · 3 h ago</p>
+  </div>
+</article>
+</div>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇺🇸</span>United States</h3>
+          <article class="card ">
+  <a class="media" href="https://www.npr.org/2026/11/09/nx-s1-6029641/palantir-congress-jon-tester-investigations" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6000x4000+0+0/resize/6000x4000!/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fc1%2Fe0%2F53c022f44e3dbbfa2c2fa3e1b80a%2Ftester-ap.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>NPR</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://www.npr.org/2026/11/09/nx-s1-6029641/palantir-congress-jon-tester-investigations" target="_blank" rel="noopener">Palantir hires a former Democratic senator as it faces scrutiny in new Congress</a></h3>
+<p class="dek">The secretive software company has been accused of letting its powerful tools be used by the Trump administration to surveil Americans. Now it&#39;s hiring former Sen. Jon Tester to burnish its image.</p>    <p class="meta">NPR · 8 h ago</p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://www.npr.org/2026/11/09/nx-s1-6030633/congress-is-coming-back-to-washington-heres-what-to-expect" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://npr.brightspotcdn.com/dims3/default/strip/false/crop/2000x1333+0+0/resize/2000x1333!/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F9f%2F88%2F780a9a564af39daf6190b94bfd90%2F021025-capitol-zayrharodriguez-4-1.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>NPR</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://www.npr.org/2026/11/09/nx-s1-6030633/congress-is-coming-back-to-washington-heres-what-to-expect" target="_blank" rel="noopener">Congress is coming back to Washington. Here&#39;s what to expect</a></h3>
+<p class="dek">Lawmakers are coming back to Washington this week after the midterm elections. Republicans plan to finish work on several outstanding issues before Democrats take control of Congress in January.</p>    <p class="meta">NPR · 8 h ago</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.npr.org/2026/11/09/nx-s1-6013575/supreme-court-federal-law-enforcement-prison-rights" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6000x4000+0+0/resize/6000x4000!/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F5e%2F7a%2F09d469e94929a1a138f554be6c41%2Fap26275652659374.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>NPR</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Justice</span></div>
+    <h3 class="hl"><a href="https://www.npr.org/2026/11/09/nx-s1-6013575/supreme-court-federal-law-enforcement-prison-rights" target="_blank" rel="noopener">Supreme Court weighs effort to shield federal law enforcement as ICE complaints rise</a></h3>
+<p class="dek">The Supreme Court considers the case of a prisoner who suffered brutal injuries, only to be denied medical care behind bars. He wants to sue the prison nurse in a case that could change the law on holding federal officers accountable.</p>    <p class="meta">NPR · 8 h ago</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMitgFBVV95cUxQbUpJSVIxVkZ4TUNWdldrRmd0VnBuUUlPamNIeFBkSVhqcnh0cTB1WVh3cnN1OHRUSnlMRVhVbnFFaVFhN2NSX09RYVNwOFBHTlBzbjJBYnlsMzRwRnc4dnV2TDY5Z3hjeW1fSlVVNWNycDBkczdhbGNhb2FhQnk3dDRoZ0dMQzJGQVBJT3YwSTBlTHZGR1NsNW9jbHFvZlRBR1psMGxrNS1ybjhXUkRSTTROWkp2Zw?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Bloomberg Tax</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxQbUpJSVIxVkZ4TUNWdldrRmd0VnBuUUlPamNIeFBkSVhqcnh0cTB1WVh3cnN1OHRUSnlMRVhVbnFFaVFhN2NSX09RYVNwOFBHTlBzbjJBYnlsMzRwRnc4dnV2TDY5Z3hjeW1fSlVVNWNycDBkczdhbGNhb2FhQnk3dDRoZ0dMQzJGQVBJT3YwSTBlTHZGR1NsNW9jbHFvZlRBR1psMGxrNS1ybjhXUkRSTTROWkp2Zw?oc=5" target="_blank" rel="noopener">New Law Making IRS Specify Tax Errors Needs a Correction Clock</a></h3>
+    <p class="meta">Bloomberg Tax · 8 h ago</p>
+  </div>
+</article>
+</div>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇪🇺</span>Europe</h3>
+          <article class="card ">
+  <a class="media" href="https://www.politico.eu/article/the-macrons-sue-candace-owens-in-tennessee/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.politico.eu/cdn-cgi/image/width=1200,height=630,fit=crop,quality=80,onerror=redirect/wp-content/uploads/2026/11/09/GettyImages-2219063764-scaled.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Politico Europe</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">New</span><span class="topic">Justice</span></div>
+    <h3 class="hl"><a href="https://www.politico.eu/article/the-macrons-sue-candace-owens-in-tennessee/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener">Macrons sue far-right podcaster Candace Owens personally in Tennessee</a></h3>
+<p class="dek">The latest move by the French president and his wife comes after a court in Delaware ruled it only had jurisdiction over Owens’ corporations registered in the state.</p>    <p class="meta">Politico Europe · 1 h ago</p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://www.politico.eu/article/french-far-left-presidential-hopeful-jean-luc-melenchon-sparks-backlash-ukraine/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.politico.eu/cdn-cgi/image/width=1200,height=630,fit=crop,quality=80,onerror=redirect/wp-content/uploads/2026/11/09/GettyImages-2303568405-scaled.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Politico Europe</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">New</span><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://www.politico.eu/article/french-far-left-presidential-hopeful-jean-luc-melenchon-sparks-backlash-ukraine/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener">Ukraine slams French far-left presidential hopeful Mélenchon</a></h3>
+<p class="dek">The French politician said territorial concessions should be decided with votes, sparking backlash in Kyiv and Paris.</p>    <p class="meta">Politico Europe · 2 h ago</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.politico.eu/article/norway-model-uk-jonas-gahr-store-andy-burnham/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.politico.eu/cdn-cgi/image/width=1200,height=630,fit=crop,quality=80,onerror=redirect/wp-content/uploads/2026/11/09/GettyImages-2297423700-scaled.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Politico Europe</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">New</span></div>
+    <h3 class="hl"><a href="https://www.politico.eu/article/norway-model-uk-jonas-gahr-store-andy-burnham/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener">Don’t do the Norway model, Norway tells Britain</a></h3>
+<p class="dek">In a POLITICO interview, Norwegian leader Jonas Gahr Støre advises Andy Burnham to look for other solutions in his Brexit reset.</p>    <p class="meta">Politico Europe · 3 h ago</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMifkFVX3lxTE9rcktzczRGU3dwNHI1TlRNOEV1Q3g0SXIxWlhBNFQxVDhuenNuOW9oMl93aTlOWk5pT0RidEdGdWl1bVY0bVhvRmNyNkhnVFdGeTRiNHdSV1J0TVMwTFBEMGZnOEVOVmd1S2NMdEs0ZERrRWxzZmJnXzlNU09yUQ?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Marine Industry News</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">Developing</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE9rcktzczRGU3dwNHI1TlRNOEV1Q3g0SXIxWlhBNFQxVDhuenNuOW9oMl93aTlOWk5pT0RidEdGdWl1bVY0bVhvRmNyNkhnVFdGeTRiNHdSV1J0TVMwTFBEMGZnOEVOVmd1S2NMdEs0ZERrRWxzZmJnXzlNU09yUQ?oc=5" target="_blank" rel="noopener">EU approves AkzoNobel and Axalta merger</a></h3>
+    <p class="meta">Marine Industry News · 5 h ago · <b>6 outlets</b></p>
+  </div>
+</article>
+</div>      </div>
+    </div>
+  </section>
+
+  <section class="wish" aria-label="Have a lovely day, KK">
+    <svg class="sun" aria-hidden="true"><use href="#sun"/></svg>
+    <h2>Have a lovely day, KK</h2>
+    <p class="text">Sending a little bit of Kazakh sunshine your way — Edinburgh could use it.</p>
+<p class="tip"><svg class="wi" aria-hidden="true"><use href="#w-cloudy"/></svg>Grey but dry — a good day for a walk along the Water of Leith.</p><p class="signoff" lang="kk">Күнің сәтті өтсін!</p>  </section>
+</main>
+
+<footer class="foot">
+  <div>
+    <h4 class="label">Past editions</h4>
+<p>This is the first edition.</p>  </div>
+  <div>
+    <h4 class="label">About this paper</h4>
+    <p>Put together automatically at 18:06 Edinburgh time from public news feeds. Stories are ranked by how many outlets cover them, and every headline links to its publisher.</p>
+    <details><summary>292 sources in today’s edition</summary><p>1News, 24.kz, 2Firsts, 716.kz, ABC Money, Aberdeen &amp; Grampian Chamber of Commerce, Agerpres, Air Cargo Week, AKIpress News Agency, Al Jazeera, All Blacks, American Enterprise Institute, Ammon News, Anadolu Ajansı, Antigo Daily Journal, AOL.co.uk, Apa.az, Arab Times Kuwait News, ASHARQ AL-AWSAT English, Asia Business Outlook, Asset Servicing Times, Axios, AZ FREE NEWS, AzerNews, Bank of America Institute, BBC, Bedford Gazette, Benzinga, BigGo Finance, Bioengineer.org, BlackRock, Bloomberg Tax, Bloomberg.com, Body Shop Business, Border Telegraph, Boston&#39;s ROCK 92.9, Branding in Asia, Britannica, Brussels Signal, Business Recorder, Business Upturn, BusinessGreen, Businesskorea, BusinessToday Malaysia, Bybit, Caspian Post, caspiannews.com, CEOWORLD magazine, chelmsfordweeklynews.co.uk, Chosunbiz, City of Edinburgh Council, climate.ec.europa.eu, CNBC, CoinGape, Coutts, Crikey, CurrencyNews.co.uk, Daily Express, Daily Mail, Daily Record, Daily Sabah, Dairynews.today, Dartsnews.com, Daryo, Dealroom, Death Penalty Information Center, Demócrata, Department of Agriculture, Environment and Rural Affairs, Diari ARA, DRAM Scotland, DW, DW.com, East Asia Forum, Economies.com, Edinburgh Evening News, Edinburgh Live, Edinburgh Music Review, Edinburgh News, Edinburgh Reviews, Edinburgh Rugby, Edinburgh Zoo, EdinburghGuide.com, El Cronista, El.kz, Electronic Immigration Network, Enbekshi QazaQ, Energy, Engadget, ET Datacenters, EU Law Live, EU Reporter, Eurasianet, Euronews, Euronews.com, European Coatings, Everything Edinburgh, Exchange Rates UK, FAD Magazine, Farmers Guardian, Federal Reserve Bank of Richmond, Financial Times, Finimize, Firstpost, fish4news.co.uk, Forbes, FOREX.com, Fortune, Fox Business, Fragomen, France 24, Free Press Journal, FrenchEntrée, Frontier Africa Reports, FXStreet, Gateway 97.8, Glasgow Live, Global Times, Global Trade Review (GTR), Good Housekeeping, Gotrade, GOV.KZ, Gulf Business, Hargreaves Lansdown, HELLO!, Helsinki Times, Herts Advertiser, Hospitality Net, Housing Digital, https://www.birmingham-now.co.uk/, Hürriyet Daily News, IIHF, Inc.com, Indian Chemical News, infohub.kz, Informat.ro, Insight DIY, InteriorDaily, International Padel Federation, Investing.com, Investing.com UK, investingLive, Investors&#39; Chronicle, InYourArea, Islamabad Post, iXBT.games, JournalArta, kalkine.ca, Kazakhstan Today, Kent Online, Kilmarnock Football Club, Kiplinger, Kitco, KKTC Dışişleri Bakanlığı, Korea IT Times, Korea JoongAng Daily, Kursiv Media, Larder Magazine, Latest news from Azerbaijan, Legacy, Lincolnshire Live, LiveScore, London South East, Los Angeles Times, Marine Industry News, Mashable, Matangi Tonga, MedCity News, Mezha.net, Midlothian View, MiGFlug, Modern Diplomacy, Moomoo, Motor Trade News, Motor1.com, MyJoyOnline, NeoTeo, New Age BD, New Business Ethiopia, Newcastle Red Bulls, News24, North Edinburgh News, Novinite.com, NPR, ODT, Oncodaily, Pakistan Connect, Politico Europe, Pound Sterling Live, PR Newswire, PR Newswire UK, PULPAPERnews.com, Qazinform, Quartz, RealMoney Pro, Reason Magazine, Refindustry, ReliefWeb, Report.az, Reuters, Royal Central, samaa tv, San Antonio Current, Scottish Daily Express, ScottishNews.com, Seeking Alpha, SeeNews, Semafor, Seoul Economic Daily, Sharecast.com, shillongtoday.com, Shropshire Star, Silk Way TV, Simply Wall St, Sky News, Slator, SoaplandTV, Southend Echo, StreetInsider, Struggle-La Lucha, STV News, Tatler, TaxiPoint Taxi News, Telecompaper, TengriNews, Teslarati, The Arts Desk, The Astana Times, The Babylon Bee, The Business Standard, The Diplomat, The Edinburgh Inquirer, The Edinburgh Reporter, THE ELEC, Korea Electronics Industry Media, The European Sting, The Guardian, The Herald, The Independent, The Korea Times, The Manila Times, The Motley Fool, The Namibian, The National Law Review, The New Voice of Ukraine, The News Pakistan, The Paypers, The Peninsula Qatar, The Quinntessential Review, The Royal Society of Chemistry, The Scotsman, The Southern Reporter, The Strategist, The Sun, The Telegraph, The Tennessean, The Times, The Times of Central Asia, The Times Of Central Asia, The Virginian-Pilot, The Washington Post, TodayPress.tv, Town &amp; Country Magazine, Traders Union, TradingView, Transparency International Ukraine, Travel Daily News Asia-Pacific, Trend News Agency, Trending Now Infrastructure, Trending Now Sustainable Construction, TVGuide.co.uk, U.S. News &amp; World Report, UA.NEWS, UEFA.com, UKFT, UkrMedia News, United Nations Development Programme, Vietnam.vn, Vogue Adria, Wansom AI, WHOP Radio, Wired Gov, WN Hub, Wolters Kluwer, World Fertilizer, WRDW, WSJ, www.tmgm.com, WYMT, Y-Axis Overseas Careers, Yahoo, Yahoo Finance, Yahoo Finance UK, Yahoo News UK</p></details>
+  </div>
+</footer>
+
+</div>
+<script>
+// Live clock for home: keeps ticking after the page was built.
+document.querySelectorAll('[data-offset]').forEach(function (panel) {
+  var clock = panel.querySelector('.clock');
+  function tick() { clock.textContent = new Date(Date.now() + Number(panel.dataset.offset) * 36e5).toISOString().slice(11, 16); }
+  tick();
+  setInterval(tick, 20000);
+});
+</script>
+</body>
+</html>
