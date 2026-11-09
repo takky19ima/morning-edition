@@ -20,6 +20,16 @@ Built from free public feeds, published on GitHub Pages, sent to Telegram.
 7. `notify.py` sends the top stories, the link and the PDF to Telegram.
 8. `.github/workflows/daily.yml` runs it all every morning (about 06:00 in Edinburgh).
 
+## The bot
+
+`bot/` is a tiny Vercel function (https://bot-woad-psi-33.vercel.app/api/telegram). When someone sends
+/start or /today to the bot, it replies with today's morning message, read from `docs/telegram.json`.
+It needs no bot token: the reply goes back inside Telegram's own request. Vercel redeploys it on every push.
+
+Readers who get the paper every morning are listed in the `TELEGRAM_CHAT_ID` secret, comma-separated.
+A new reader's chat id shows up in the Vercel logs (`chat 123456789 (Name) sent /start`) after they press Start.
+If the bot's address ever changes: Actions → **Connect bot** → Run workflow with the new URL.
+
 ## Change things
 
 | What | Where |

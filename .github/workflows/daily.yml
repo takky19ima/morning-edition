@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "40 5 * * *"     # 05:40 UTC = 05:40 in Edinburgh in winter, 06:40 in summer. GitHub may start it 5–30 min late.
   workflow_dispatch:          # "Run workflow" button for an extra edition
+    inputs:
+      notify:
+        description: "Send it to Telegram"
+        type: boolean
+        default: true
 
 permissions:
   contents: write             # save the edition to the archive
@@ -51,6 +56,7 @@ jobs:
         uses: actions/deploy-pages@v4
 
       - name: Send to Telegram
+        if: github.event_name == 'schedule' || inputs.notify
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
