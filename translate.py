@@ -1,12 +1,16 @@
-"""Machine translation of the day's stories through Google Translate's free web endpoint.
+"""Machine translation of the day's stories.
 
-Every text is translated once and kept in cache/translations.json, so tomorrow's run only
-translates what's new. If the service is unreachable, the text stays in English.
+Google Translate's free web endpoint goes first: it translates best, but it often refuses requests
+from GitHub's servers ("429 Too Many Requests"). Whatever it refuses is translated on the build
+machine itself by Meta's open NLLB-200 model. Every text is translated once and kept in
+cache/translations.json, so tomorrow's run only translates what's new.
 """
 from __future__ import annotations
 
 import hashlib
 import json
+import os
+import re
 import time
 import urllib.error
 import urllib.parse
@@ -18,7 +22,55 @@ ENDPOINT = "https://translate.googleapis.com/translate_a/single"
 CODES = {"kk": "kk", "zh": "zh-CN", "ru": "ru"}   # our language id → Google's
 BATCH_CHARS = 4500                            # several texts per request, one per line
 PAUSE = 0.7                                   # seconds between requests: the free endpoint refuses bursts
-RETRIES = (5, 15, 40)                         # seconds to wait after "429 Too Many Requests"
+RETRIES = (5, 15)                             # seconds to wait after "429 Too Many Requests"
+GIVE_UP_AFTER = 2                             # refusals in a row before leaving the rest to the local model
+
+# Meta's NLLB-200 (1.3B, distilled), converted for fast CPU use. CC BY-NC 4.0: fine for a personal paper.
+LOCAL_MODEL = "OpenNMT/nllb-200-distilled-1.3B-ct2-int8"
+LOCAL_TOKENIZER = ("facebook/nllb-200-distilled-600M", "sentencepiece.bpe.model")   # same for every NLLB-200
+NLLB = {"kk": "kaz_Cyrl", "zh": "zho_Hans", "ru": "rus_Cyrl"}
+
+
+class LocalModel:
+    """NLLB-200 on the build machine — slower and a little less fluent than Google, but never refuses."""
+
+    def __init__(self):
+        self.ready: bool | None = None
+
+    def _load(self) -> bool:
+        if self.ready is None:
+            try:
+                import ctranslate2
+                import sentencepiece
+                from huggingface_hub import hf_hub_download, snapshot_download
+                print("  loading the local translation model…")
+                self.sp = sentencepiece.SentencePieceProcessor(model_file=hf_hub_download(*LOCAL_TOKENIZER))
+                self.model = ctranslate2.Translator(snapshot_download(LOCAL_MODEL), device="cpu",
+                                                    compute_type="int8", intra_threads=os.cpu_count() or 4)
+                self.ready = True
+            except Exception as ex:
+                print(f"  ! local translation model unavailable — {ex}")
+                self.ready = False
+        return self.ready
+
+    def translate(self, texts: list[str], lang: str) -> list[str | None]:
+        if lang not in NLLB or not texts or not self._load():
+            return [None] * len(texts)
+        sentences, owner = [], []                # NLLB translates a sentence at a time
+        for i, text in enumerate(texts):
+            for sentence in re.split(r"(?<=[.!?…])\s+", text):
+                if sentence.strip():
+                    sentences.append(sentence)
+                    owner.append(i)
+        results = self.model.translate_batch(
+            [["eng_Latn", *self.sp.encode(x, out_type=str), "</s>"] for x in sentences],
+            target_prefix=[[NLLB[lang]]] * len(sentences), beam_size=2, max_batch_size=24, max_decoding_length=256,
+        )
+        parts: list[list[str]] = [[] for _ in texts]
+        for i, result in zip(owner, results):
+            parts[i].append(self.sp.decode(result.hypotheses[0][1:]))
+        joiner = "" if lang == "zh" else " "
+        return [joiner.join(p) if p else None for p in parts]
 
 
 class Translator:
@@ -26,6 +78,8 @@ class Translator:
         self.path, self.today, self.keep_days = path, today, keep_days
         self.cache: dict[str, dict[str, list]] = json.loads(path.read_text()) if path.exists() else {}
         self.failed: dict[str, int] = {}
+        self.refused_in_a_row = 0
+        self.local = LocalModel()
 
     @staticmethod
     def key(text: str) -> str:
@@ -46,9 +100,17 @@ class Translator:
         if current:
             batches.append(current)
         for batch in batches:                    # one request at a time — bursts get refused
+            if self.refused_in_a_row >= GIVE_UP_AFTER:
+                break                            # Google has stopped answering this machine today
             for original, translated in zip(batch, self._batch(batch, lang)):
                 if translated:
                     store[self.key(original)] = [translated, self.today.isoformat()]
+        by_model = 0
+        rest = [t for t in wanted if self.key(t) not in store]
+        for original, translated in zip(rest, self.local.translate(rest, lang)):
+            if translated:
+                store[self.key(original)] = [translated, self.today.isoformat()]
+                by_model += 1
         out = {}
         for t in wanted:
             hit = store.get(self.key(t))
@@ -57,6 +119,7 @@ class Translator:
             out[t] = hit[0] if hit else t
         missing = sum(1 for t in wanted if self.key(t) not in store)
         print(f"  translated into {lang}: {len(wanted) - missing} of {len(wanted)} texts"
+              + (f" ({by_model} by the local model)" if by_model else "")
               + (f" — {missing} left in English" if missing else ""))
         return out
 
@@ -82,6 +145,7 @@ class Translator:
             time.sleep(PAUSE)
             try:
                 with urllib.request.urlopen(req, timeout=30) as r:
+                    self.refused_in_a_row = 0
                     return "".join(seg[0] for seg in json.load(r)[0] if seg[0])
             except urllib.error.HTTPError as ex:
                 if ex.code == 429 and wait:
@@ -92,6 +156,7 @@ class Translator:
                 error = ex
             break
         self.failed[lang] = self.failed.get(lang, 0) + 1
+        self.refused_in_a_row += 1
         if self.failed[lang] <= 3:
             print(f"  ! translation to {lang} failed — {error}")
         return None

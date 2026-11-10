@@ -60,6 +60,12 @@ jobs:
 
       - run: pip install -r requirements.txt
 
+      # The local translation model (~1.4 GB) is downloaded once and kept between runs.
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: nllb-200-distilled-1.3B-ct2-int8
+
       - name: Build today's edition       # web pages + print PDFs (Chrome comes with the runner)
         run: python build.py papers/$PAPER.toml
         env:
