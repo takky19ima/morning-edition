@@ -1,5 +1,5 @@
 feedparser==6.0.14
 jinja2==3.1.6
-pillow
+pillow==13.0.0
 segno==1.6.6
 trafilatura==2.3.1

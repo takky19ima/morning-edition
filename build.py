@@ -688,10 +688,14 @@ def add_bodies(top: list[dict], sections: list[dict]) -> None:
         a, b = re.sub(r"\W+", " ", a).lower().strip(), re.sub(r"\W+", " ", b).lower().strip()
         return bool(a and b) and (a.startswith(b[:60]) or b.startswith(a[:60]))
 
+    # Download the pages in parallel, but extract the text one page at a time:
+    # trafilatura's lxml parser is shared and crashes the process when used from several threads.
     with cf.ThreadPoolExecutor(12) as pool:
-        for (c, _), body in zip(jobs, pool.map(lambda job: article_text(job[0]["link"], job[1], job[0]["lang"]), jobs)):
-            # many pages open by repeating the headline or the summary the paper already prints
-            c["body"] = [p for p in body if not same(p, c["title"]) and not same(p, c["summary"])]
+        list(pool.map(lambda job: article_page(job[0]["link"]), jobs))
+    for c, n in jobs:
+        body = article_text(c["link"], n, c["lang"])
+        # many pages open by repeating the headline or the summary the paper already prints
+        c["body"] = [p for p in body if not same(p, c["title"]) and not same(p, c["summary"])]
     print(f"  print text: {sum(1 for c, _ in jobs if c.get('body'))} of {len(jobs)} articles")
 
 

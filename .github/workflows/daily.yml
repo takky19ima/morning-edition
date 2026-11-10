@@ -62,6 +62,8 @@ jobs:
 
       - name: Build today's edition       # web pages + print PDFs (Chrome comes with the runner)
         run: python build.py papers/$PAPER.toml
+        env:
+          PYTHONUNBUFFERED: "1"           # show progress live, even if something crashes
 
       # Committing the edition keeps the archive (and the translation cache) and keeps GitHub
       # from pausing the schedule (it does that to repos with no activity for 60 days).
