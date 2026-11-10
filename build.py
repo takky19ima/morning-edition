@@ -656,8 +656,9 @@ JUNK = re.compile(r"(sign up|subscribe|newsletter|follow us|read more|click here
                   r"image caption|copyright|all rights reserved|advertisement|share this|related:)", re.I)
 
 
-def article_text(url: str, words: int) -> list[str]:
-    """The first paragraphs of an article, up to about `words` words."""
+def article_text(url: str, words: int, lang: str = "en") -> list[str]:
+    """The first paragraphs of an article, up to about `words` words, in the story's own language."""
+    readable = looks_russian if lang == "ru" else looks_english
     page = article_page(url)
     if not page:
         return []
@@ -665,7 +666,7 @@ def article_text(url: str, words: int) -> list[str]:
     out, count = [], 0
     for para in text.split("\n"):
         para = para.strip()
-        if len(para) < 60 or JUNK.search(para[:80]):
+        if len(para) < 60 or JUNK.search(para[:80]) or not readable(para):
             continue
         out.append(para)
         count += len(para.split())
@@ -688,7 +689,7 @@ def add_bodies(top: list[dict], sections: list[dict]) -> None:
         return bool(a and b) and (a.startswith(b[:60]) or b.startswith(a[:60]))
 
     with cf.ThreadPoolExecutor(12) as pool:
-        for (c, _), body in zip(jobs, pool.map(lambda job: article_text(job[0]["link"], job[1]), jobs)):
+        for (c, _), body in zip(jobs, pool.map(lambda job: article_text(job[0]["link"], job[1], job[0]["lang"]), jobs)):
             # many pages open by repeating the headline or the summary the paper already prints
             c["body"] = [p for p in body if not same(p, c["title"]) and not same(p, c["summary"])]
     print(f"  print text: {sum(1 for c, _ in jobs if c.get('body'))} of {len(jobs)} articles")

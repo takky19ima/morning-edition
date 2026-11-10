@@ -5,9 +5,10 @@ translates what's new. If the service is unreachable, the text stays in English.
 """
 from __future__ import annotations
 
-import concurrent.futures as cf
 import hashlib
 import json
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import date, timedelta
@@ -15,14 +16,16 @@ from pathlib import Path
 
 ENDPOINT = "https://translate.googleapis.com/translate_a/single"
 CODES = {"kk": "kk", "zh": "zh-CN", "ru": "ru"}   # our language id → Google's
-BATCH_CHARS = 3500                            # several texts per request, one per line
+BATCH_CHARS = 4500                            # several texts per request, one per line
+PAUSE = 0.7                                   # seconds between requests: the free endpoint refuses bursts
+RETRIES = (5, 15, 40)                         # seconds to wait after "429 Too Many Requests"
 
 
 class Translator:
     def __init__(self, path: Path, today: date, keep_days: int = 21):
         self.path, self.today, self.keep_days = path, today, keep_days
         self.cache: dict[str, dict[str, list]] = json.loads(path.read_text()) if path.exists() else {}
-        self.failed = 0
+        self.failed: dict[str, int] = {}
 
     @staticmethod
     def key(text: str) -> str:
@@ -42,25 +45,32 @@ class Translator:
             size += len(t) + 1
         if current:
             batches.append(current)
-        with cf.ThreadPoolExecutor(3) as pool:
-            for batch, result in zip(batches, pool.map(lambda b: self._batch(b, lang), batches)):
-                for original, translated in zip(batch, result):
-                    if translated:
-                        store[self.key(original)] = [translated, self.today.isoformat()]
+        for batch in batches:                    # one request at a time — bursts get refused
+            for original, translated in zip(batch, self._batch(batch, lang)):
+                if translated:
+                    store[self.key(original)] = [translated, self.today.isoformat()]
         out = {}
         for t in wanted:
             hit = store.get(self.key(t))
             if hit:
                 hit[1] = self.today.isoformat()
             out[t] = hit[0] if hit else t
+        missing = sum(1 for t in wanted if self.key(t) not in store)
+        print(f"  translated into {lang}: {len(wanted) - missing} of {len(wanted)} texts"
+              + (f" — {missing} left in English" if missing else ""))
         return out
 
     def _batch(self, texts: list[str], lang: str) -> list[str | None]:
         joined = self._call("\n".join(texts), lang)
-        parts = joined.split("\n") if joined else []
+        if joined is None:
+            return [None] * len(texts)          # refused even after waiting: leave these in English
+        parts = joined.split("\n")
         if len(parts) == len(texts):
             return [p.strip() for p in parts]
-        return [self._call(t, lang) for t in texts]      # lines got merged or split: go one by one
+        if len(texts) == 1:
+            return [joined.strip()]
+        half = len(texts) // 2                  # lines got merged or split: try the halves
+        return self._batch(texts[:half], lang) + self._batch(texts[half:], lang)
 
     def _call(self, text: str, lang: str) -> str | None:
         query = urllib.parse.urlencode({"client": "gtx", "sl": "en", "tl": CODES.get(lang, lang), "dt": "t"})
@@ -68,14 +78,23 @@ class Translator:
             f"{ENDPOINT}?{query}", data=urllib.parse.urlencode({"q": text}).encode(),
             headers={"User-Agent": "Mozilla/5.0", "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"},
         )
-        try:
-            with urllib.request.urlopen(req, timeout=30) as r:
-                return "".join(seg[0] for seg in json.load(r)[0] if seg[0])
-        except Exception as ex:
-            self.failed += 1
-            if self.failed <= 3:
-                print(f"  ! translation to {lang} failed — {ex}")
-            return None
+        for wait in (*RETRIES, None):
+            time.sleep(PAUSE)
+            try:
+                with urllib.request.urlopen(req, timeout=30) as r:
+                    return "".join(seg[0] for seg in json.load(r)[0] if seg[0])
+            except urllib.error.HTTPError as ex:
+                if ex.code == 429 and wait:
+                    time.sleep(wait)
+                    continue
+                error = ex
+            except Exception as ex:
+                error = ex
+            break
+        self.failed[lang] = self.failed.get(lang, 0) + 1
+        if self.failed[lang] <= 3:
+            print(f"  ! translation to {lang} failed — {error}")
+        return None
 
     def save(self) -> None:
         cutoff = (self.today - timedelta(days=self.keep_days)).isoformat()
