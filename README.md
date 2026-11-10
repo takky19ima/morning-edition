@@ -8,7 +8,8 @@ Two automatic morning papers from one codebase:
 | «Утро» | Astana, in Russian, a modern magazine | `papers/my.toml` | `/my/` | /my |
 
 Build one: `python build.py papers/kk.toml` or `python build.py papers/my.toml`.
-«Утро» uses `magazine.html` and `magazine-print.html`; its readers are in the `TELEGRAM_CHAT_ID_MY` secret.
+«Утро» uses `magazine.html` and `magazine-print.html`. It is built every morning but not sent: it comes only with /my
+(a manual run with "Send to Telegram" sends it to the `TELEGRAM_CHAT_ID_MY` readers).
 
 ---
 

@@ -3,7 +3,7 @@ name: Daily paper
 on:
   schedule:
     - cron: "40 5 * * *"     # KK's paper: 05:40 UTC = 05:40 in Edinburgh in winter, 06:40 in summer
-    - cron: "30 1 * * *"     # «Утро»: 01:30 UTC = 06:30 in Astana
+    - cron: "30 1 * * *"     # «Утро»: 01:30 UTC = 06:30 in Astana — built for /my, not sent
   workflow_dispatch:          # "Run workflow" button for an extra edition
     inputs:
       paper:
@@ -64,8 +64,9 @@ jobs:
       - id: deploy
         uses: actions/deploy-pages@v4
 
+      # KK's paper arrives by itself; «Утро» only when asked for with /my (or a manual run).
       - name: Send to Telegram
-        if: github.event_name == 'schedule' || inputs.notify
+        if: (github.event_name == 'schedule' && env.PAPER != 'my') || (github.event_name == 'workflow_dispatch' && inputs.notify)
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           # each paper has its own readers; «Утро» never falls back to KK's list
