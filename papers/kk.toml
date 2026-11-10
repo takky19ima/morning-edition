@@ -5,7 +5,11 @@
 # (Google News searches use the same syntax as news.google.com; "when:1d" = last 24 hours.)
 
 [paper]
+id = "kk"
 name = "The Morning Edition"
+out = "docs"                # the website: takky19ima.github.io/morning-edition/
+quotes = "quotes.toml"
+wishes = "wishes.toml"
 edition = "Edinburgh"
 site_url = "https://takky19ima.github.io/morning-edition/"
 founded = 2026-11-09        # edition No. 1

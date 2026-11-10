@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>{{ paper.name }} — № {{ edition.number }} — печать</title>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;600;800;900&display=swap" rel="stylesheet">
+<style>
+@page {
+  size: A4;
+  margin: 14mm 14mm 16mm;
+  @bottom-left { content: "{{ paper.name }} · № {{ edition.number }} · {{ edition.short }}"; font: 600 7.5pt Onest, sans-serif; color: #888; }
+  @bottom-right { content: counter(page); font: 800 8pt Unbounded, sans-serif; color: #111; }
+}
+@page cover { margin: 0; @bottom-left { content: none; } @bottom-right { content: none; } }
+:root { --ink: #0e0e10; --ink-2: #44444c; --ink-3: #75757e; --line: #e2e2e6; --display: "Unbounded", sans-serif; --text: "Onest", sans-serif; }
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; color: var(--ink); font: 400 9.6pt/1.5 var(--text); }
+p { margin: 0 0 .6em; }
+.label { font: 700 7pt/1.3 var(--text); letter-spacing: .1em; text-transform: uppercase; }
+
+/* cover: a full-bleed photo like a magazine */
+.cover { page: cover; position: relative; width: 210mm; height: 297mm; overflow: hidden; color: #fff; background: #ff4f00; break-after: page; }
+.cover > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.cover::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgb(0 0 0 / .6), rgb(0 0 0 / 0) 28%, rgb(0 0 0 / .05) 38%, rgb(0 0 0 / .82) 58%, rgb(0 0 0 / .94)); }
+.cover-top, .cover-bottom { position: absolute; left: 14mm; right: 14mm; }
+.cover-top { top: 12mm; }
+.cover-bottom { bottom: 14mm; }
+.mast { font: 900 128pt/.85 var(--display); letter-spacing: -.045em; text-transform: uppercase; }
+.issue { display: flex; justify-content: space-between; margin-top: 4mm; padding-top: 2.5mm; border-top: 1pt solid rgb(255 255 255 / .7); font: 600 9pt var(--text); }
+.cover-story { font: 600 25pt/1.08 var(--display); letter-spacing: -.02em; margin: 2mm 0 6mm; max-width: 170mm; }
+.chip { display: inline-block; padding: 1.2mm 3mm; border-radius: 10mm; background: var(--c, #ff4f00); color: #fff; font: 700 7pt/1.2 var(--text); letter-spacing: .08em; text-transform: uppercase; }
+.lines { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm 8mm; padding-top: 4mm; border-top: 1pt solid rgb(255 255 255 / .5); }
+.lines div { font: 500 9pt/1.35 var(--text); }
+.lines .chip { margin-bottom: 1.2mm; }
+
+/* page 2: today in Astana + the night's main stories */
+.today { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 5mm; margin-bottom: 7mm; }
+.box { padding: 4mm 5mm; border-radius: 4mm; background: #f3f3f5; }
+.box .label { color: var(--ink-3); margin-bottom: 2mm; }
+.big { font: 800 26pt/1 var(--display); letter-spacing: -.03em; }
+.sub { font: 8.5pt/1.45 var(--text); color: var(--ink-2); margin-top: 1.5mm; }
+.fx { width: 100%; border-collapse: collapse; margin-top: 2mm; font: 8.5pt/1.5 var(--text); }
+.fx td:last-child { text-align: right; font-weight: 700; }
+.q { padding: 6mm 7mm; border-radius: 4mm; background: #0e0e10; color: #fff; margin-bottom: 8mm; }
+.q blockquote { margin: 1.5mm 0 2mm; font: 500 15pt/1.3 var(--display); letter-spacing: -.01em; }
+.q .label { color: rgb(255 255 255 / .6); }
+h2.page-title { margin: 0 0 4mm; font: 800 20pt/1 var(--display); letter-spacing: -.02em; }
+.night { display: grid; grid-template-columns: 1fr 1fr; gap: 0 8mm; }
+.night article { padding: 3mm 0 4mm; border-top: 1.5pt solid var(--ink); break-inside: avoid; }
+.night .n { font: 800 18pt/1 var(--display); color: #ff4f00; }
+
+/* sections: each opens with a colour band on a new page */
+.section { margin-top: 9mm; }
+.band { display: flex; justify-content: space-between; align-items: flex-end; padding: 9mm 7mm 5mm; margin-bottom: 6mm; border-radius: 5mm; background: var(--c); color: #fff; break-after: avoid; break-inside: avoid; }
+.band h2 { margin: 0; font: 800 34pt/.95 var(--display); letter-spacing: -.03em; }
+.band span { font: 600 9pt var(--text); opacity: .85; }
+h3 { margin: 0 0 2mm; font: 600 12.5pt/1.25 var(--text); }
+.lead h3 { font: 600 19pt/1.12 var(--display); letter-spacing: -.015em; }
+.lead .pic { height: 78mm; }
+.lead > .pic, .lead > h3, .lead > .byline { break-after: avoid; }
+.lead > .pic { break-inside: avoid; }
+.lead .cols { columns: 2; column-gap: 8mm; }
+.pic { display: block; width: 100%; height: 48mm; object-fit: cover; border-radius: 3mm; margin-bottom: 3mm; }
+.byline { margin-bottom: 2mm; color: var(--ink-3); font: 600 7.5pt/1.3 var(--text); }
+.dek { font: 500 11pt/1.4 var(--text); color: var(--ink-2); }
+.rest { columns: 2; column-gap: 8mm; margin-top: 6mm; }
+.rest article { padding-top: 3mm; margin-bottom: 5mm; border-top: 1.5pt solid var(--c); }
+.rest h3, .rest .pic { break-after: avoid; break-inside: avoid; }
+.more { display: flex; align-items: center; gap: 3mm; margin-top: 2mm; color: var(--ink-3); font: 600 7pt/1.3 var(--text); break-inside: avoid; }
+.more svg { width: 13mm; height: 13mm; flex: none; }
+.brief { margin-top: 7mm; padding: 4mm 5mm; border-radius: 3mm; background: var(--c-soft, #f3f3f5); break-inside: avoid; }
+.brief ul { margin: 2mm 0 0; padding-left: 4mm; }
+.brief li { margin-bottom: 1.2mm; font: 500 9pt/1.35 var(--text); }
+.brief span { color: var(--ink-3); font-size: 7.5pt; }
+</style>
+</head>
+<body>
+{% macro plural(n, one, few, many) %}{% set a = n % 10 %}{% set b = n % 100 %}{{ n }} {{ one if a == 1 and b != 11 else few if a in [2, 3, 4] and b not in [12, 13, 14] else many }}{% endmacro %}
+{% macro byline(s) %}<div class="byline">{{ s.source }}{% if s.coverage > 1 %} · {{ plural(s.coverage, 'издание', 'издания', 'изданий') }}{% endif %}</div>{% endmacro %}
+{% macro more(s) %}<div class="more">{{ s.link|qr }}<span>Читать полностью<br>{{ s.link|short_url }}</span></div>{% endmacro %}
+{% set here = places[0] if places else none %}
+
+<section class="cover" style="--c: #ff4f00">
+  {% if top and top[0].image %}<img src="{{ top[0].image|shrink(1600) }}" alt="" onerror="this.remove()">{% endif %}
+  <div class="cover-top">
+    <div class="mast">{{ paper.name }}</div>
+    <div class="issue"><span>№ {{ edition.number }} · {{ edition.long }}</span><span>{{ paper.edition }}{% if here %} · {{ here.now }}{% endif %}</span></div>
+  </div>
+  <div class="cover-bottom">
+    {% if top %}<span class="chip">Главное</span><div class="cover-story">{{ top[0].title }}</div>{% endif %}
+    <div class="lines">
+      {% for sec in sections if sec.stories %}<div style="--c: {{ sec.color }}"><span class="chip">{{ sec.title }}</span><br>{{ sec.stories[0].title|truncate(90) }}</div>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="today">
+    {% if here %}
+    <div class="box">
+      <div class="label">Погода · Астана</div>
+      <div class="big">{{ here.now }}</div>
+      <div class="sub">{{ t(here.label) }}, ощущается как {{ here.feels }}. Ветер {{ here.wind }} м/с.<br>{% for d in here.days %}{{ 'Сегодня' if loop.first else weekday(d.date) }} {{ d.hi }}/{{ d.lo }}{% if not loop.last %} · {% endif %}{% endfor %}</div>
+    </div>
+    {% if here.air %}
+    <div class="box">
+      <div class="label">Воздух</div>
+      <div class="big">AQI {{ here.air.aqi }}</div>
+      <div class="sub">{{ t(here.air.level)|capitalize }}. PM2.5: {{ here.air.pm25 }} мкг/м³</div>
+    </div>
+    {% endif %}
+    {% endif %}
+    {% if rates %}
+    <div class="box">
+      <div class="label">Курс Нацбанка · {{ rates.on }}</div>
+      <div class="big">{{ rates.rows[0].symbol }}{{ '%.2f'|format(rates.rows[0].value) }}</div>
+      <table class="fx">{% for r in rates.rows[1:] %}<tr><td>{{ r.code }}</td><td>{{ '%.2f'|format(r.value) }} ₸</td></tr>{% endfor %}</table>
+    </div>
+    {% endif %}
+  </div>
+  {% if quote %}
+  <div class="q">
+    <div class="label">Цитата дня</div>
+    <blockquote>«{{ quote.text.replace(' / ', ' ') }}»</blockquote>
+    <div class="label">— {{ quote.author }}</div>
+  </div>
+  {% endif %}
+  {% if top %}
+  <h2 class="page-title">Главное за ночь</h2>
+  <div class="night">
+    {% for s in top %}
+    <article>
+      <div class="n">{{ '%02d'|format(loop.index) }}</div>
+      <h3>{{ s.title }}</h3>
+      {{ byline(s) }}
+      {% for p in s.body|words(60) %}<p>{{ p }}</p>{% endfor %}
+      {% if not s.body and s.summary %}<p>{{ s.summary }}</p>{% endif %}
+      {{ more(s) }}
+    </article>
+    {% endfor %}
+  </div>
+  {% endif %}
+</section>
+
+{% for sec in sections if sec.stories %}
+<section class="section" style="--c: {{ sec.color }}; --c-soft: color-mix(in srgb, {{ sec.color }} 10%, #fff)">
+  <div class="band"><h2>{{ sec.title }}</h2><span>{{ plural(sec.stories|length, 'материал', 'материала', 'материалов') }}</span></div>
+  {% set with_text = sec.stories|selectattr('body')|list %}
+  {% set full = with_text[:4] %}
+  {% set brief = with_text[4:] + sec.stories|rejectattr('body')|list %}
+  {% if full %}
+  {% set s = full[0] %}
+  <article class="lead">
+    {% if s.image %}<img class="pic" src="{{ s.image|shrink }}" alt="" onerror="this.remove()">{% endif %}
+    <h3>{{ s.title }}</h3>
+    {{ byline(s) }}
+    <div class="cols">
+      {% if s.summary %}<p class="dek">{{ s.summary }}</p>{% endif %}
+      {% for p in s.body|words(240) %}<p>{{ p }}</p>{% endfor %}
+      {{ more(s) }}
+    </div>
+  </article>
+  {% if full|length > 1 %}
+  <div class="rest">
+    {% for s in full[1:] %}
+    <article>
+      {% if s.image and loop.index <= 2 %}<img class="pic" src="{{ s.image|shrink(800) }}" alt="" onerror="this.remove()">{% endif %}
+      <h3>{{ s.title }}</h3>
+      {{ byline(s) }}
+      {% for p in s.body|words(110) %}<p>{{ p }}</p>{% endfor %}
+      {{ more(s) }}
+    </article>
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% endif %}
+  {% if brief %}
+  <div class="brief"><div class="label">Коротко</div><ul>{% for s in brief %}<li>{{ s.title }} <span>— {{ s.source }}</span></li>{% endfor %}</ul></div>
+  {% endif %}
+</section>
+{% endfor %}
+</body>
+</html>

@@ -2,9 +2,15 @@ name: Daily paper
 
 on:
   schedule:
-    - cron: "40 5 * * *"     # 05:40 UTC = 05:40 in Edinburgh in winter, 06:40 in summer. GitHub may start it 5–30 min late.
+    - cron: "40 5 * * *"     # KK's paper: 05:40 UTC = 05:40 in Edinburgh in winter, 06:40 in summer
+    - cron: "30 1 * * *"     # «Утро»: 01:30 UTC = 06:30 in Astana
   workflow_dispatch:          # "Run workflow" button for an extra edition
     inputs:
+      paper:
+        description: "Which paper"
+        type: choice
+        options: [kk, my]
+        default: kk
       notify:
         description: "Send it to Telegram"
         type: boolean
@@ -16,8 +22,11 @@ permissions:
   id-token: write
 
 concurrency:
-  group: daily-paper
+  group: daily-paper          # one paper at a time: both deploy the same website
   cancel-in-progress: false
+
+env:
+  PAPER: ${{ github.event.schedule == '30 1 * * *' && 'my' || inputs.paper || 'kk' }}
 
 jobs:
   publish:
@@ -35,8 +44,8 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - name: Build today's edition       # web in three languages + print PDFs (Chrome comes with the runner)
-        run: python build.py
+      - name: Build today's edition       # web pages + print PDFs (Chrome comes with the runner)
+        run: python build.py papers/$PAPER.toml
 
       # Committing the edition keeps the archive (and the translation cache) and keeps GitHub
       # from pausing the schedule (it does that to repos with no activity for 60 days).
@@ -45,8 +54,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs cache
-          git commit -m "Edition $(date -u +%F)" || echo "Nothing new to save"
-          git push
+          git commit -m "Edition $(date -u +%F) ($PAPER)" || echo "Nothing new to save"
+          git pull --rebase -q && git push
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
@@ -59,6 +68,6 @@ jobs:
         if: github.event_name == 'schedule' || inputs.notify
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          PAGE_URL: ${{ steps.deploy.outputs.page_url }}
-        run: python notify.py
+          # each paper has its own readers; «Утро» never falls back to KK's list
+          TELEGRAM_CHAT_ID: ${{ env.PAPER == 'my' && secrets.TELEGRAM_CHAT_ID_MY || env.PAPER != 'my' && secrets.TELEGRAM_CHAT_ID || '' }}
+        run: python notify.py --summary build/$PAPER/summary.json

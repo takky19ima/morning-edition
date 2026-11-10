@@ -14,7 +14,7 @@ from datetime import date, timedelta
 from pathlib import Path
 
 ENDPOINT = "https://translate.googleapis.com/translate_a/single"
-CODES = {"kk": "kk", "zh": "zh-CN"}          # our language id → Google's
+CODES = {"kk": "kk", "zh": "zh-CN", "ru": "ru"}   # our language id → Google's
 BATCH_CHARS = 3500                            # several texts per request, one per line
 
 

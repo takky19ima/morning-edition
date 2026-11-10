@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ paper.name }} — № {{ edition.number }}, {{ edition.short }}</title>
+<meta name="description" content="{{ top[0].title if top else paper.name }}">
+<meta property="og:title" content="{{ paper.name }} · № {{ edition.number }} · {{ edition.long }}">
+<meta property="og:description" content="{{ top|map(attribute='title')|join(' · ') if top else paper.name }}">
+{% if top and top[0].image %}<meta property="og:image" content="{{ top[0].image }}">{% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;600;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fafaf7; --surface: #ffffff; --ink: #0e0e10; --ink-2: #44444c; --ink-3: #6b6b74; --line: #e4e4e8;
+  --display: "Unbounded", "Arial Black", sans-serif;
+  --text: "Onest", "Helvetica Neue", Arial, sans-serif;
+  --mix: #000; --mix-ink: 78%; --mix-soft: 12%;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c0c0f; --surface: #16161b; --ink: #f3f3f5; --ink-2: #c3c3cb; --ink-3: #93939c; --line: #2a2a31;
+    --mix: #fff; --mix-ink: 62%; --mix-soft: 20%; color-scheme: dark;
+  }
+}
+[style*="--c"] { --c-ink: color-mix(in srgb, var(--c) var(--mix-ink), var(--mix)); --c-soft: color-mix(in srgb, var(--c) var(--mix-soft), var(--surface)); }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 16px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 17px/1.55 var(--text); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; border-radius: 4px; }
+h2 a:hover, h3 a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .12em; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px 64px; }
+.small { font: 600 13px/1.4 var(--text); letter-spacing: .02em; }
+
+/* header */
+.meta-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; padding: 16px 0 0; color: var(--ink-2); }
+.meta-row b { font-variant-numeric: tabular-nums; color: var(--ink); }
+.mast { margin: 6px 0 0; font: 900 min(calc((100vw - 32px) / 3.45), 350px)/.86 var(--display); letter-spacing: -.045em; text-transform: uppercase; }
+.toc { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 18px 0 4px; margin: 0 -16px; padding-left: 16px; padding-right: 16px; }
+.toc::-webkit-scrollbar { display: none; }
+.toc a { flex: none; padding: 9px 14px; border-radius: 999px; background: var(--c-soft); color: var(--c-ink); font: 600 13px/1.2 var(--text); }
+.toc a:hover { background: var(--c); color: #fff; }
+
+/* status labels */
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { display: inline-flex; align-items: center; gap: 6px; padding: 4px 9px; border-radius: 999px; font: 700 13px/1.2 var(--text); letter-spacing: .04em; text-transform: uppercase; }
+.tag.solid { background: var(--c); color: #fff; }
+.b-live, .b-breaking { background: #e5172f; color: #fff; }
+.b-live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: pulse 1.4s ease-in-out infinite; }
+.b-developing { background: #ffb020; color: #261800; }
+.b-new { background: color-mix(in srgb, #12a150 var(--mix-soft), var(--surface)); color: color-mix(in srgb, #12a150 var(--mix-ink), var(--mix)); }
+.b-opinion { background: color-mix(in srgb, #a64dff var(--mix-soft), var(--surface)); color: color-mix(in srgb, #a64dff var(--mix-ink), var(--mix)); }
+.b-analysis, .b-explainer { background: color-mix(in srgb, #3a5bff var(--mix-soft), var(--surface)); color: color-mix(in srgb, #3a5bff var(--mix-ink), var(--mix)); }
+@keyframes pulse { 50% { opacity: .25; } }
+@media (prefers-reduced-motion: reduce) { .b-live::before { animation: none; } }
+
+/* cover */
+.cover { position: relative; display: flex; align-items: flex-end; min-height: min(78vh, 720px); margin-top: 20px; border-radius: 24px; overflow: hidden; background: var(--c); color: #fff; isolation: isolate; }
+.cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.cover::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgb(0 0 0 / .88), rgb(0 0 0 / .45) 48%, rgb(0 0 0 / 0) 78%); }
+.cover-text { display: grid; gap: 14px; padding: 28px 22px 26px; max-width: 980px; }
+.cover h2 { margin: 0; font: 600 clamp(24px, 4.8vw, 62px)/1.06 var(--display); letter-spacing: -.02em; text-wrap: balance; hyphens: auto; overflow-wrap: break-word; }
+.cover .dek { margin: 0; max-width: 60ch; font-size: 21px; color: rgb(255 255 255 / .86); }
+.cover .meta { margin: 0; color: rgb(255 255 255 / .75); }
+@media (min-width: 760px) { .cover-text { padding: 44px 44px 40px; } }
+
+/* today: weather, air, money, quote */
+.today { display: grid; gap: 14px; margin-top: 14px; }
+.tile { padding: 20px 22px; border-radius: 20px; background: var(--surface); border: 1px solid var(--line); }
+.tile .small { color: var(--ink-3); margin-bottom: 10px; }
+.big { font: 800 56px/1 var(--display); letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.big small { font: 600 17px/1.3 var(--text); letter-spacing: 0; color: var(--ink-2); }
+.money .big { font-size: 44px; }
+.sub { margin: 8px 0 0; color: var(--ink-2); }
+.days { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 13px; text-align: center; }
+.days b { display: block; font: 700 13px/1.4 var(--text); color: var(--ink-3); text-transform: uppercase; letter-spacing: .04em; }
+.aqi { display: inline-flex; align-items: center; gap: 10px; }
+.aqi i { width: 14px; height: 14px; border-radius: 50%; background: var(--aqi); box-shadow: 0 0 0 5px color-mix(in srgb, var(--aqi) 25%, transparent); }
+.fx { width: 100%; margin-top: 14px; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.fx td { padding: 6px 0; border-top: 1px solid var(--line); }
+.fx td:nth-child(2) { text-align: right; font-weight: 700; }
+.fx td:last-child { text-align: right; width: 64px; font-size: 13px; }
+.up { color: #e5172f; } .down { color: #12a150; } .flat { color: var(--ink-3); }
+.quote blockquote { margin: 0; font: 500 21px/1.35 var(--display); letter-spacing: -.01em; text-wrap: balance; }
+.quote .orig { margin: 0 0 6px; color: var(--ink-2); font-style: italic; }
+.quote .sub b { color: var(--ink); }
+@media (min-width: 720px) { .today { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) {
+  .today { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .today .weather { grid-column: span 4; } .today .air { grid-column: span 2; }
+  .today .money { grid-column: span 3; } .today .quote { grid-column: span 3; }
+}
+
+/* more top stories */
+.more { display: grid; gap: 0 32px; margin-top: 40px; }
+.more h2 { grid-column: 1 / -1; margin: 0 0 6px; font: 800 13px/1.2 var(--display); letter-spacing: .08em; text-transform: uppercase; }
+.more article { display: grid; grid-template-columns: auto 1fr 96px; gap: 16px; align-items: start; padding: 18px 0; border-top: 1px solid var(--line); }
+.more .n { font: 800 34px/1 var(--display); color: transparent; -webkit-text-stroke: 1.5px var(--ink); }
+.more h3 { margin: 0 0 6px; font: 600 21px/1.3 var(--text); text-wrap: balance; }
+.more img, .more .fill { width: 96px; aspect-ratio: 1; object-fit: cover; border-radius: 14px; }
+@media (min-width: 900px) { .more { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 639px) {
+  .more article { grid-template-columns: auto 1fr 72px; gap: 12px; }
+  .more .n { font-size: 21px; }
+  .more h3 { font-size: 17px; }
+  .more img, .more .fill { width: 72px; }
+}
+
+/* sections */
+.sec { margin-top: 72px; }
+.sec-open { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 16px; margin-bottom: 30px; padding: 30px 26px 24px; border-radius: 24px; background: var(--c); color: #fff; }
+.sec-open h2 { margin: 0; font: 800 clamp(34px, 6vw, 72px)/.95 var(--display); letter-spacing: -.03em; }
+.sec-open .small { color: rgb(255 255 255 / .85); }
+.lead { display: grid; gap: 18px; margin-bottom: 34px; }
+.lead h3 { margin: 0; font: 600 clamp(27px, 2.8vw, 34px)/1.12 var(--display); letter-spacing: -.015em; text-wrap: balance; }
+.lead .dek { font-size: 21px; -webkit-line-clamp: 5; }
+.lead .ph { aspect-ratio: 3 / 2; }
+@media (min-width: 860px) { .lead { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 32px; align-items: center; } }
+.ph { display: block; position: relative; aspect-ratio: 4 / 3; border-radius: 16px; overflow: hidden; background: var(--c-soft); }
+.ph img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.card:hover .ph img, .lead:hover .ph img { transform: scale(1.03); }
+@media (prefers-reduced-motion: reduce) { .ph img { transition: none; } }
+.fill { display: flex; align-items: flex-end; padding: 14px; width: 100%; height: 100%; background: linear-gradient(135deg, var(--c), color-mix(in srgb, var(--c) 55%, #000)); color: #fff; font: 600 21px/1.15 var(--display); }
+.txt { display: grid; gap: 10px; align-content: start; }
+.card h3 { margin: 0; font: 600 21px/1.28 var(--text); text-wrap: balance; }
+.dek { margin: 0; color: var(--ink-2); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+.meta { margin: 0; font: 500 13px/1.4 var(--text); color: var(--ink-3); }
+.grid { display: grid; gap: 34px 28px; }
+.card { display: grid; gap: 14px; align-content: start; }
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1020px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 639px) {
+  .grid { gap: 0; }
+  .grid .card { grid-template-columns: 1fr 88px; gap: 14px; padding: 16px 0; border-top: 1px solid var(--line); }
+  .grid .card .ph { order: 2; width: 88px; aspect-ratio: 1; border-radius: 12px; }
+  .grid .card .fill { font-size: 13px; padding: 8px; }
+  .grid .card h3 { font-size: 17px; }
+  .grid .card .dek { display: none; }
+}
+.empty { color: var(--ink-3); font-style: italic; }
+
+/* footer */
+.foot { display: grid; gap: 24px; margin-top: 80px; padding-top: 24px; border-top: 3px solid var(--ink); color: var(--ink-2); font-size: 13px; }
+.foot h4 { margin: 0 0 8px; font: 800 13px/1.2 var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
+.foot ul { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0; padding: 0; list-style: none; }
+.foot a { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: .2em; }
+@media (min-width: 760px) { .foot { grid-template-columns: 1fr 2fr; } }
+</style>
+</head>
+<body>
+{% macro plural(n, one, few, many) %}{% set a = n % 10 %}{% set b = n % 100 %}{{ n }} {{ one if a == 1 and b != 11 else few if a in [2, 3, 4] and b not in [12, 13, 14] else many }}{% endmacro %}
+{% macro photo(s) %}<a class="ph" href="{{ s.link }}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">{% if s.image %}<img src="{{ s.image }}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'{{ s.source|e }}'}))">{% else %}<span class="fill">{{ s.source }}</span>{% endif %}</a>{% endmacro %}
+{% macro tags(s) %}{% if s.badges %}<div class="tags">{% for cls, text in s.badges %}<span class="tag b-{{ cls }}">{{ t(text) }}</span>{% endfor %}</div>{% endif %}{% endmacro %}
+{% macro meta(s) %}<p class="meta">{{ s.source }}{% if s.published %} · {{ ago(s.published) }}{% endif %}{% if s.coverage > 1 %} · {{ plural(s.coverage, 'издание', 'издания', 'изданий') }}{% endif %}</p>{% endmacro %}
+{% set here = places[0] if places else none %}
+<div class="wrap">
+
+<header>
+  <div class="meta-row small">
+    <span>№ {{ edition.number }} · {{ edition.long }}</span>
+    <span>Астана, сейчас <b class="clock" data-offset="5">{{ edition.built }}</b></span>
+  </div>
+  <h1 class="mast"><a href="{{ home }}index.html">{{ paper.name }}</a></h1>
+  <nav class="toc" aria-label="Разделы">
+    {% for sec in sections %}<a href="#{{ sec.id }}" style="--c: {{ sec.color }}">{{ sec.title }}</a>{% endfor %}
+  </nav>
+</header>
+
+<main>
+{% if top %}
+  {% set c = top[0] %}
+  <article class="cover" style="--c: #ff4f00">
+    {% if c.image %}<img src="{{ c.image }}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">{% endif %}
+    <div class="cover-text">
+      <div class="tags"><span class="tag solid">Главное</span>{% for cls, text in c.badges %}<span class="tag b-{{ cls }}">{{ t(text) }}</span>{% endfor %}</div>
+      <h2><a href="{{ c.link }}" target="_blank" rel="noopener">{{ c.title }}</a></h2>
+      {% if c.summary %}<p class="dek">{{ c.summary }}</p>{% endif %}
+      {{ meta(c) }}
+    </div>
+  </article>
+{% endif %}
+
+<section class="today" aria-label="Сегодня в Астане">
+  {% if here %}
+  <div class="tile weather">
+    <div class="small">Погода · Астана</div>
+    <div class="big">{{ here.now }} <small>{{ t(here.label) }}</small></div>
+    <p class="sub">Ощущается как {{ here.feels }} · ветер {{ here.wind }} м/с · восход {{ here.sunrise }}, закат {{ here.sunset }}</p>
+    <div class="days">{% for d in here.days %}<div><b>{{ 'Сегодня' if loop.first else weekday(d.date) }}</b>{{ d.hi }} / {{ d.lo }}<br><span class="meta">{{ t(d.label) }}</span></div>{% endfor %}</div>
+  </div>
+  {% if here.air %}
+  {% set colors = {'Good': '#2fb35a', 'Moderate': '#e6b800', 'Unhealthy for sensitive groups': '#ff8a00', 'Unhealthy': '#e5172f', 'Very unhealthy': '#8f3fbf', 'Hazardous': '#7e0023'} %}
+  <div class="tile air" style="--aqi: {{ colors[here.air.level] }}">
+    <div class="small">Воздух</div>
+    <div class="big aqi"><i aria-hidden="true"></i>{{ here.air.aqi }}</div>
+    <p class="sub">AQI — {{ t(here.air.level) }}. PM2.5: {{ here.air.pm25 }} мкг/м³</p>
+  </div>
+  {% endif %}
+  {% endif %}
+  {% if rates %}
+  {% set r0 = rates.rows[0] %}
+  <div class="tile money">
+    <div class="small">Курс Нацбанка · {{ rates.on }}</div>
+    <div class="big">{{ r0.symbol }}{{ '%.2f'|format(r0.value) }} <small class="{{ r0.dir }}">{{ {'up': '▲', 'down': '▼', 'flat': '–'}[r0.dir] }} {{ r0.change }}</small></div>
+    <table class="fx">{% for r in rates.rows[1:] %}<tr><td>{{ r.code }}</td><td>{{ '%.2f'|format(r.value) }} ₸</td><td class="{{ r.dir }}">{{ r.change }}</td></tr>{% endfor %}</table>
+  </div>
+  {% endif %}
+  {% if quote %}
+  <div class="tile quote">
+    <div class="small">Цитата дня</div>
+    {% if quote.original %}<p class="orig" lang="kk">{{ quote.original }}</p>{% endif %}
+    <blockquote>«{{ quote.text.replace(' / ', ' ') }}»</blockquote>
+    <p class="sub">— <b>{{ quote.author }}</b></p>
+  </div>
+  {% endif %}
+</section>
+
+{% if top|length > 1 %}
+<section class="more" aria-label="Ещё главное">
+  <h2>Ещё главное</h2>
+  {% for s in top[1:] %}
+  <article style="--c: #ff4f00">
+    <span class="n" aria-hidden="true">{{ '%02d'|format(loop.index + 1) }}</span>
+    <div class="txt">{{ tags(s) }}<h3><a href="{{ s.link }}" target="_blank" rel="noopener">{{ s.title }}</a></h3>{{ meta(s) }}</div>
+    {% if s.image %}<img src="{{ s.image }}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">{% else %}<span class="fill"></span>{% endif %}
+  </article>
+  {% endfor %}
+</section>
+{% endif %}
+
+{% for sec in sections %}
+<section class="sec" id="{{ sec.id }}" style="--c: {{ sec.color }}">
+  <header class="sec-open">
+    <h2>{{ sec.title }}</h2>
+    <span class="small">{{ plural(sec.stories|length, 'материал', 'материала', 'материалов') }}</span>
+  </header>
+  {% if sec.stories %}
+  {% set s = sec.stories[0] %}
+  <article class="lead">
+    {{ photo(s) }}
+    <div class="txt">{{ tags(s) }}<h3><a href="{{ s.link }}" target="_blank" rel="noopener">{{ s.title }}</a></h3>{% if s.summary %}<p class="dek">{{ s.summary }}</p>{% endif %}{{ meta(s) }}</div>
+  </article>
+  <div class="grid">
+    {% for s in sec.stories[1:] %}
+    <article class="card">
+      {{ photo(s) }}
+      <div class="txt">{{ tags(s) }}<h3><a href="{{ s.link }}" target="_blank" rel="noopener">{{ s.title }}</a></h3>{% if s.summary %}<p class="dek">{{ s.summary }}</p>{% endif %}{{ meta(s) }}</div>
+    </article>
+    {% endfor %}
+  </div>
+  {% else %}<p class="empty">Сегодня здесь тихо.</p>{% endif %}
+</section>
+{% endfor %}
+</main>
+
+<footer class="foot">
+  <div>
+    <h4>Прошлые выпуски</h4>
+    {% if past %}<ul>{% for d in past %}<li><a href="{{ home }}archive/{{ d.isoformat() }}.html">{{ long_date(d) }}</a></li>{% endfor %}</ul>{% else %}<p>Это первый выпуск.</p>{% endif %}
+  </div>
+  <div>
+    <h4>О журнале</h4>
+    <p>Собирается автоматически каждое утро в {{ edition.built }} по Астане из открытых новостных лент. Новости ранжируются по тому, сколько изданий о них пишут; каждый заголовок ведёт к первоисточнику. Материалы на английском переведены машинным переводом.</p>
+    <details><summary>{{ plural(sources|length, 'источник', 'источника', 'источников') }} в этом выпуске</summary><p>{{ sources|join(', ') }}</p></details>
+  </div>
+</footer>
+
+</div>
+<script>
+// Astana clock keeps ticking after the page was built.
+document.querySelectorAll('.clock[data-offset]').forEach(function (el) {
+  function tick() { el.textContent = new Date(Date.now() + Number(el.dataset.offset) * 36e5).toISOString().slice(11, 16); }
+  tick();
+  setInterval(tick, 20000);
+});
+</script>
+</body>
+</html>

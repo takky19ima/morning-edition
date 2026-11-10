@@ -1,4 +1,17 @@
-# The Morning Edition
+# The Morning Edition + «Утро»
+
+Two automatic morning papers from one codebase:
+
+| Paper | For | Settings | Website | Bot |
+|---|---|---|---|---|
+| The Morning Edition | KK in Edinburgh (EN · ҚАЗ · 中文) | `papers/kk.toml` | `/` | /start, /today |
+| «Утро» | Astana, in Russian, a modern magazine | `papers/my.toml` | `/my/` | /my |
+
+Build one: `python build.py papers/kk.toml` or `python build.py papers/my.toml`.
+«Утро» uses `magazine.html` and `magazine-print.html`; its readers are in the `TELEGRAM_CHAT_ID_MY` secret.
+
+---
+
 
 A newspaper for KK that writes itself every morning: Edinburgh and Scotland, what's on,
 Kazakhstan, the world, economy and new laws, weather here and at home, the tenge rate, a quote
@@ -34,7 +47,7 @@ If the bot's address ever changes: Actions → **Connect bot** → Run workflow 
 
 | What | Where |
 |---|---|
-| Name, city, languages, sections, feeds, which PDF goes to Telegram | `paper.toml` |
+| Name, city, languages, sections, feeds, which PDF goes to Telegram | `papers/kk.toml`, `papers/my.toml` |
 | Quotes of the day | `quotes.toml` |
 | Good-day wishes and weather tips | `wishes.toml` |
 | Kazakh and Chinese interface wording | `i18n.toml` |
@@ -45,7 +58,7 @@ For an extra edition: GitHub → **Actions** → **Daily paper** → **Run workf
 
 ```sh
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
-.venv/bin/python build.py && open docs/index.html build/paper-en.pdf
+.venv/bin/python build.py papers/kk.toml && open docs/index.html build/kk/paper-en.pdf
 ```
 
 ## Setup (once)

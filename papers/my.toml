@@ -1,0 +1,116 @@
+# «Утро» — a Russian-language morning magazine for Astana.
+# Same format as kk.toml. Feeds marked lang = "ru" are Russian; the rest are English and get
+# machine-translated into Russian.
+
+[paper]
+id = "my"
+name = "Утро"
+out = "docs/my"             # the website: takky19ima.github.io/morning-edition/my/
+site_url = "https://takky19ima.github.io/morning-edition/my/"
+templates = { web = "magazine.html", print = "magazine-print.html" }
+quotes = "quotes.toml"
+edition = "Астана"
+founded = 2026-11-10        # issue No. 1
+timezone = "Asia/Almaty"    # Astana time (UTC+5)
+max_age_hours = 30
+top_stories = 5             # the cover story and "Ещё главное"
+archive_days = 60
+languages = ["ru"]
+
+[print]
+# A4 magazine PDF: a photo cover, then each section on its own pages. Telegram only.
+languages = ["ru"]
+send = ["ru"]
+
+[[places]]
+city = "Astana"
+role = "Here"
+latitude = 51.1694
+longitude = 71.4491
+air = true                  # air quality (AQI), worth knowing in Astana's winter
+
+[rates]
+currencies = ["USD", "EUR", "RUB", "CNY", "GBP"]
+
+[[sections]]
+id = "kazakhstan"
+title = "Казахстан и Астана"
+color = "#00a3c4"
+limit = 7
+max_age_hours = 30
+feeds = [
+  { source = "Tengrinews", url = "https://tengrinews.kz/news.rss", lang = "ru" },
+  { source = "Курсив", url = "https://kz.kursiv.media/feed/", lang = "ru" },
+  { google = "Астана when:1d", lang = "ru" },
+  { google = "Казахстан when:1d", lang = "ru" },
+]
+
+[[sections]]
+id = "politics"
+title = "Политика"
+color = "#e0245e"
+limit = 5
+max_age_hours = 36
+feeds = [
+  { google = "(Токаев OR Мажилис OR Акорда OR \"правительство Казахстана\" OR \"сенат Казахстана\") when:1d", lang = "ru" },
+  { google = "Казахстан (закон OR указ OR реформа OR министр) when:1d", lang = "ru" },
+]
+
+[[sections]]
+id = "world"
+title = "Мир"
+color = "#ff4f00"
+limit = 6
+feeds = [
+  { source = "BBC", url = "https://feeds.bbci.co.uk/news/world/rss.xml" },
+  { source = "The Guardian", url = "https://www.theguardian.com/world/rss" },
+  { source = "Al Jazeera", url = "https://www.aljazeera.com/xml/rss/all.xml" },
+  { source = "NPR", url = "https://feeds.npr.org/1004/rss.xml" },
+  { source = "France 24", url = "https://www.france24.com/en/rss" },
+  { source = "Sky News", url = "https://feeds.skynews.com/feeds/rss/world.xml" },
+  { source = "CNBC", url = "https://www.cnbc.com/id/100727362/device/rss/rss.html" },
+]
+
+[[sections]]
+id = "tech"
+title = "Технологии и ИИ"
+color = "#3a5bff"
+limit = 7
+max_age_hours = 36
+feeds = [
+  { source = "The Verge", url = "https://www.theverge.com/rss/index.xml" },
+  { source = "TechCrunch", url = "https://techcrunch.com/category/artificial-intelligence/feed/" },
+  { source = "Ars Technica", url = "https://feeds.arstechnica.com/arstechnica/index" },
+  { source = "MIT Technology Review", url = "https://www.technologyreview.com/feed/" },
+  { source = "Hacker News", url = "https://hnrss.org/frontpage?points=200" },
+  { source = "Хабр", url = "https://habr.com/ru/rss/news/?fl=ru", lang = "ru" },
+  { source = "Profit.kz", url = "https://profit.kz/rss/", lang = "ru" },
+]
+
+[[sections]]
+id = "startups"
+title = "Стартапы"
+color = "#12a150"
+limit = 6
+max_age_hours = 72
+feeds = [
+  { source = "TechCrunch", url = "https://techcrunch.com/category/startups/feed/" },
+  { source = "Crunchbase News", url = "https://news.crunchbase.com/feed/" },
+  { source = "Sifted", url = "https://sifted.eu/feed" },
+  { source = "Digital Business", url = "https://digitalbusiness.kz/feed/", lang = "ru" },
+  { google = "(стартап OR \"Astana Hub\" OR венчур OR инвестиции) Казахстан when:3d", lang = "ru" },
+]
+
+[[sections]]
+id = "design"
+title = "Дизайн и UX"
+color = "#a64dff"
+limit = 6
+max_age_hours = 168         # design news comes weekly, not hourly
+feeds = [
+  { source = "UX Collective", url = "https://uxdesign.cc/feed" },
+  { source = "Smashing Magazine", url = "https://www.smashingmagazine.com/feed/" },
+  { source = "Nielsen Norman Group", url = "https://www.nngroup.com/feed/rss/" },
+  { source = "Figma", url = "https://www.figma.com/blog/feed/atom.xml" },
+  { source = "Sidebar", url = "https://sidebar.io/feed.xml" },
+]

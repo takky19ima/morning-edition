@@ -13,7 +13,7 @@ import urllib.request
 import uuid
 from pathlib import Path
 
-SUMMARY = Path(__file__).parent / "build" / "summary.json"
+SUMMARY = Path(__file__).parent / "build" / "kk" / "summary.json"
 
 
 def telegram(token: str, method: str, payload: dict | None = None, *, body: bytes | None = None,
@@ -65,12 +65,13 @@ def message(s: dict, url: str | None) -> str:
         lines.append(f"🌡 {e(line)}")
     if s.get("rates"):
         lines.append(f"💱 {e(s['rates'])}")
+    labels = s.get("labels") or {}
     if s["top"]:
-        lines += ["", "<b>Top stories</b>"]
+        lines += ["", f"<b>{e(labels.get('Top stories', 'Top stories'))}</b>"]
         for i, t in enumerate(s["top"], 1):
             lines.append(f'{i}. <a href="{e(t["link"], quote=True)}">{e(t["title"])}</a> — {e(t["source"])}')
     if url:
-        lines += ["", f'<a href="{e(url, quote=True)}">Read today’s paper →</a>']
+        lines += ["", f'<a href="{e(url, quote=True)}">{e(labels.get("Read today’s paper →", "Read today’s paper →"))}</a>']
         if "zh" in (s.get("pdfs") or {}):
             lines.append(f'<a href="{e(url, quote=True)}zh/">中文版 →</a>')
     wish = s.get("wish") or {}
@@ -94,7 +95,12 @@ def main() -> None:
     if "--set-webhook" in sys.argv:
         url = sys.argv[sys.argv.index("--set-webhook") + 1]
         telegram(token, "setWebhook", {"url": url, "allowed_updates": ["message"]})
-        telegram(token, "setMyCommands", {"commands": [{"command": "today", "description": "Today’s paper"}]})
+        today = {"command": "today", "description": "Today’s paper"}
+        telegram(token, "setMyCommands", {"commands": [today]})
+        # /my is listed only in its owner's chat (it still works for anyone who types it)
+        for owner in filter(None, os.environ.get("MY_CHAT_ID", "").split(",")):
+            telegram(token, "setMyCommands", {"commands": [today, {"command": "my", "description": "Мой выпуск"}],
+                                              "scope": {"type": "chat", "chat_id": owner.strip()}})
         print(f"Bot now answers through {url}")
         return
     # one or more readers, comma-separated
@@ -103,18 +109,21 @@ def main() -> None:
         print("TELEGRAM_CHAT_ID is not set — skipping Telegram.")
         return
 
-    summary = json.loads(SUMMARY.read_text())
-    url = os.environ.get("PAGE_URL")
+    path = Path(sys.argv[sys.argv.index("--summary") + 1]) if "--summary" in sys.argv else SUMMARY
+    summary = json.loads(path.read_text())
+    url = summary.get("url") or os.environ.get("PAGE_URL")
+    text = summary.get("message") or message(summary, url)
+    caption = (summary.get("labels") or {}).get("Today’s paper to print", "Today’s paper to print")
+    slug = "-".join(summary["paper"].split())
     preview = {"url": url, "prefer_large_media": True} if url else {"is_disabled": True}
-    names = {"en": "English", "kk": "Қазақша", "zh": "中文"}
-    stamp = summary["date"].split(", ", 1)[-1].replace(" ", "-")
+    names = {"en": "English", "kk": "Қазақша", "zh": "中文", "ru": "Русский"}
+    stamp = summary.get("day", "today")
     for i, chat_id in enumerate(readers, 1):
         telegram(token, "sendMessage", {
-            "chat_id": chat_id, "text": message(summary, url), "parse_mode": "HTML", "link_preview_options": preview,
+            "chat_id": chat_id, "text": text, "parse_mode": "HTML", "link_preview_options": preview,
         })
         for lang, pdf in (summary.get("pdfs") or {}).items():
-            send_pdf(token, chat_id, Path(pdf), f"Morning-Edition-{stamp}-{lang}.pdf",
-                     f"🖨 Today’s paper to print · {names.get(lang, lang)}")
+            send_pdf(token, chat_id, Path(pdf), f"{slug}-{stamp}-{lang}.pdf", f"🖨 {caption} · {names.get(lang, lang)}")
         print(f"Sent the paper and {len(summary.get('pdfs') or {})} PDF(s) to reader {i} of {len(readers)}.")
 
 

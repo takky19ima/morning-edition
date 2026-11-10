@@ -18,6 +18,7 @@ import random
 import re
 import shutil
 import subprocess
+import sys
 import tomllib
 import urllib.parse
 import urllib.request
@@ -43,10 +44,12 @@ SITE = ROOT / "docs"
 BUILD = ROOT / "build"
 UA = "Mozilla/5.0 (compatible; DailyPaper/1.0; +https://github.com)"
 BROWSER_UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"
-GOOGLE_NEWS = "https://news.google.com/rss/search?hl=en-GB&gl=GB&ceid=GB:en&q="
+GOOGLE_NEWS = {"en": "https://news.google.com/rss/search?hl=en-GB&gl=GB&ceid=GB:en&q=",
+               "ru": "https://news.google.com/rss/search?hl=ru&gl=KZ&ceid=KZ:ru&q="}
 NBK_RATES = "https://nationalbank.kz/rss/rates_all.xml"
 CROSS_RATES = "https://open.er-api.com/v6/latest/"
 OPEN_METEO = "https://api.open-meteo.com/v1/forecast"
+AIR_QUALITY = "https://air-quality-api.open-meteo.com/v1/air-quality"
 
 STOPWORDS = set("""
 a an the and or but if of to in on at by for with from into onto over under about after before amid
@@ -57,6 +60,16 @@ photos pictures how why what who when where which more most than then also just 
 last next year years day days week weeks month months today yesterday tomorrow one two three four
 five six seven eight nine ten via per up down out off back get gets got make makes made take takes
 took set sets amid while during across through make here there
+""".split())
+
+RU_STOPWORDS = set("""
+и в во не что он на я с со как а то все она так его но да ты к у же вы за бы по только ее мне было вот от меня
+еще нет о из ему теперь когда даже ну вдруг ли если уже или ни быть был него до вас нибудь опять уж вам ведь там
+потом себя ничего ей может они тут где есть надо ней для мы тебя их чем была сам чтоб без будто чего раз тоже
+себе под будет ж тогда кто этот того потому этого какой совсем ним здесь этом один почти мой тем чтобы нее сейчас
+были куда зачем всех никогда можно при наконец два об другой хоть после над больше тот через эти нас про всего них
+какая много разве три эту моя впрочем хорошо свою этой перед иногда лучше чуть том нельзя такой им более всегда
+конечно всю между это году года годы лет также стало стал стала будут заявил заявила рассказал сообщил сообщили
 """.split())
 
 LIVE_SUFFIX = r"\s+[–—-]\s+([\w ]{0,30} live|live updates|latest updates?|as it happened)$"
@@ -92,6 +105,7 @@ class Story:
     order: int                    # feed priority, lower = preferred
     position: int                 # place in its feed; outlets list their main stories first
     ignore: frozenset[str] = frozenset()   # a search feed's own query words
+    lang: str = "en"              # language of the feed
     live: bool = False            # a live blog
     kind: str | None = None       # "opinion", "analysis" or "explainer"
     tokens: frozenset[str] = frozenset()
@@ -157,7 +171,7 @@ def fetch(url: str, limit: int | None = None, agent: str = UA, timeout: int = 25
 
 def feed_url(spec: dict) -> str:
     if "google" in spec:
-        return GOOGLE_NEWS + urllib.parse.quote_plus(spec["google"])
+        return GOOGLE_NEWS[spec.get("lang", "en")] + urllib.parse.quote_plus(spec["google"])
     return spec["url"]
 
 
@@ -225,6 +239,11 @@ def page_image(url: str) -> str | None:
 FOREIGN = set("de la le les des du est une pour dans sur avec qui que der die das und ist mit für von zu el los las por para con una".split())
 
 
+def looks_russian(title: str) -> bool:
+    """Cyrillic, and not Kazakh (which has letters Russian doesn't)."""
+    return bool(re.search(r"[а-яё]", title.lower())) and not re.search(r"[әғқңөұүһі]", title.lower())
+
+
 def looks_english(title: str) -> bool:
     if re.search(r"[Ѐ-ӿ؀-ۿ぀-ヿ一-鿿가-힯]", title):
         return False
@@ -245,12 +264,14 @@ def kind_of(title: str, link: str) -> tuple[str, str | None]:
 def parse_feed(raw: bytes, spec: dict, slot: str, order: int, cutoff: datetime) -> list[Story]:
     stories = []
     is_google = "google" in spec
+    lang = spec.get("lang", "en")
+    readable = looks_russian if lang == "ru" else looks_english
     ignore = frozenset(tokenize(spec["google"])) if is_google else frozenset()
     for position, e in enumerate(feedparser.parse(raw).entries):
         title = clean_text(e.get("title", ""), 300)
         title = re.sub(r"^[^\w‘'\"“(]+", "", title)                                  # "🔴 Breaking…"
         link = e.get("link")
-        if not title or not link or not looks_english(title) or re.search(r"^(sponsored|advertisement|paid post|competition:|win\b)|\bnow £\d|\bvouchers?\b|\bdiscount\b", title, re.I):
+        if not title or not link or not readable(title) or re.search(r"^(sponsored|advertisement|paid post|competition:|win\b)|\bnow £\d|\bvouchers?\b|\bdiscount\b", title, re.I):
             continue
         parsed = e.get("published_parsed") or e.get("updated_parsed")
         published = datetime(*parsed[:6], tzinfo=timezone.utc) if parsed else None
@@ -271,7 +292,7 @@ def parse_feed(raw: bytes, spec: dict, slot: str, order: int, cutoff: datetime) 
         title = re.sub(LIVE_SUFFIX, "", title, flags=re.I)
         title, kind = kind_of(title, link)
         stories.append(Story(title, link, source, published, summary, image_of(e), slot, order, position,
-                             ignore, live, kind))
+                             ignore, lang, live, kind))
     return stories
 
 
@@ -332,9 +353,13 @@ def stem(w: str) -> str:
 
 
 def tokenize(title: str) -> set[str]:
-    words = re.findall(r"[a-z0-9]+(?:'[a-z]+)?", title.lower().replace("’", "'"))
+    words = re.findall(r"[a-z0-9]+(?:'[a-z]+)?|[а-яё]+", title.lower().replace("’", "'"))
     out = set()
     for w in words:
+        if w[0] >= "а":                      # Russian: endings change with case, so compare word stems
+            if len(w) >= 4 and w not in RU_STOPWORDS:
+                out.add(w[:6])
+            continue
         w = re.sub(r"'s$", "", w)
         if len(w) < 3 or w in STOPWORDS:
             continue
@@ -410,7 +435,8 @@ def card(c: Cluster, now: datetime, major: set[str], slot: str | None = None) ->
         "title": s.title, "link": s.link, "source": s.source, "published": s.published,
         "summary": s.summary, "image": s.image, "coverage": c.coverage,
         "others": [src for src in c.sources if src != s.source],
-        "badges": badges(c, s, now, major), "topic": topic_of(s), "via_google": s.via_google,
+        "badges": badges(c, s, now, major), "topic": topic_of(s) if s.lang == "en" else None,
+        "via_google": s.via_google, "lang": s.lang,
     }
 
 
@@ -461,7 +487,8 @@ def lay_out(cfg: dict, stories: list[Story], slots: list[tuple[str, str, int]], 
 
     sections = []
     for section in cfg["sections"]:
-        entry = {"id": section["id"], "title": section["title"], "color": section.get("color", "#555")}
+        entry = {"id": section["id"], "title": section["title"], "color": section.get("color", "#555"),
+                 "kicker": section.get("kicker", "")}
         if section.get("desks"):
             entry["desks"] = [{"title": d["title"], "flag": d.get("flag", ""), "stories": filled[f'{section["id"]}/{d["title"]}']}
                               for d in section["desks"]]
@@ -526,12 +553,28 @@ def forecast(place: dict) -> dict | None:
             "hi": deg(day["temperature_2m_max"][i]), "lo": deg(day["temperature_2m_min"][i]),
             "rain": day["precipitation_probability_max"][i] or 0, "wind": day["wind_speed_10m_max"][i] or 0,
         })
+    air = None
+    if place.get("air"):
+        try:
+            q = urllib.parse.urlencode({"latitude": place["latitude"], "longitude": place["longitude"],
+                                        "current": "us_aqi,pm2_5", "timezone": "auto"})
+            cur_air = json.loads(fetch(f"{AIR_QUALITY}?{q}"))["current"]
+            aqi = round(cur_air["us_aqi"])
+            level = next(name for limit, name in AQI_LEVELS if aqi <= limit)
+            air = {"aqi": aqi, "pm25": round(cur_air["pm2_5"]), "level": level}
+        except Exception as ex:
+            print(f"  ! air quality for {place['city']} failed — {ex}")
     return {
+        "air": air,
         "city": place["city"], "role": place.get("role", ""), "utc_offset": place.get("utc_offset"),
         "now": deg(cur["temperature_2m"]), "feels": deg(cur["apparent_temperature"]),
         "label": label, "kind": kind, "wind": round(cur["wind_speed_10m"]), "humidity": cur["relative_humidity_2m"],
         "sunrise": day["sunrise"][0][-5:], "sunset": day["sunset"][0][-5:], "days": days,
     }
+
+
+AQI_LEVELS = [(50, "Good"), (100, "Moderate"), (150, "Unhealthy for sensitive groups"), (200, "Unhealthy"),
+              (300, "Very unhealthy"), (10_000, "Hazardous")]
 
 
 def weather_tip(wx: dict | None, tips: dict) -> str | None:
@@ -681,7 +724,8 @@ def dates(i18n: dict, lang: str):
 def translate_edition(top: list[dict], sections: list[dict], extras: dict, lang: str, tr: Translator):
     """Copies of the day's stories (and the quote and wish) in another language."""
     top, sections, extras = copy.deepcopy(top), copy.deepcopy(sections), copy.deepcopy(extras)
-    cards = top + [s for sec in sections for d in sec.get("desks") or [sec] for s in d["stories"]]
+    every = top + [s for sec in sections for d in sec.get("desks") or [sec] for s in d["stories"]]
+    cards = [c for c in every if c.get("lang", "en") == "en"]      # stories already in Russian stay as they are
     quote, wish = extras["quote"], extras["wish"]
     native = lang == "kk" and quote and quote.get("original")      # Kazakh proverbs need no translation
     texts = [x for c in cards for x in [c["title"], c["summary"], *c.get("body", [])]]
@@ -748,6 +792,20 @@ def shrink(url: str | None, width: int = 1100) -> str | None:
     return _shrunk[url, width]
 
 
+def words(paragraphs: list[str] | None, limit: int) -> list[str]:
+    """The first `limit` words of an article, ending with … if it was cut."""
+    out, count = [], 0
+    for p in paragraphs or []:
+        w = p.split()
+        if count + len(w) > limit:
+            if limit - count > 12:
+                out.append(" ".join(w[:limit - count]).rstrip(",;:—–-") + "…")
+            break
+        out.append(p)
+        count += len(w)
+    return out
+
+
 def qr(url: str) -> Markup:
     return Markup(segno.make(url, error="m").svg_inline(omitsize=True, border=0, dark="#111"))
 
@@ -774,17 +832,22 @@ def to_pdf(page: Path, pdf: Path) -> bool:
 
 
 def main() -> None:
-    cfg = tomllib.loads((ROOT / "paper.toml").read_text())
-    quotes = tomllib.loads((ROOT / "quotes.toml").read_text()).get("quote", [])
-    wishes = tomllib.loads((ROOT / "wishes.toml").read_text())
+    config = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "papers" / "kk.toml"
+    cfg = tomllib.loads(config.read_text())
+    paper_id = cfg["paper"]["id"]
+    quotes = tomllib.loads((ROOT / cfg["paper"].get("quotes", "quotes.toml")).read_text()).get("quote", [])
+    wishes = tomllib.loads((ROOT / cfg["paper"]["wishes"]).read_text()) if cfg["paper"].get("wishes") else {}
     i18n = tomllib.loads((ROOT / "i18n.toml").read_text())
     tz = ZoneInfo(cfg["paper"].get("timezone", "UTC"))
     now = datetime.now(timezone.utc)
     today = now.astimezone(tz).date()
     languages = cfg["paper"].get("languages", ["en"])
     print_languages = cfg.get("print", {}).get("languages", [])
+    out = ROOT / cfg["paper"].get("out", "docs")              # the paper's folder on the website
+    build = BUILD / paper_id
+    build.mkdir(parents=True, exist_ok=True)
 
-    print("Fetching feeds…")
+    print(f"{cfg['paper']['name']}: fetching feeds…")
     stories, slots = collect(cfg, now)
     top, sections = lay_out(cfg, stories, slots, now)
     cards = top + [s for sec in sections for d in sec.get("desks") or [sec] for s in d["stories"]]
@@ -809,11 +872,11 @@ def main() -> None:
         home_diff = places[1]["utc_offset"] - now.astimezone(tz).utcoffset().total_seconds() / 3600
 
     env = Environment(loader=FileSystemLoader(ROOT), autoescape=True, trim_blocks=True, lstrip_blocks=True)
-    env.filters.update(qr=qr, short_url=short_url, shrink=shrink)
+    env.filters.update(qr=qr, short_url=short_url, shrink=shrink, words=words)
     translator = Translator(ROOT / "cache" / "translations.json", today)
     switcher = [(code, i18n.get(code, {}).get("_name", "English")) for code in languages]
-    BUILD.mkdir(exist_ok=True)
-    pdfs = {}
+    templates = cfg["paper"].get("templates", {})
+    pdfs, main_edition = {}, None
 
     for lang in languages:
         if lang == "en":
@@ -823,7 +886,7 @@ def main() -> None:
             l_top, l_sections, l_extras = translate_edition(top, sections, extras, lang, translator)
         t = strings(i18n, lang)
         long_date, short_date, weekday = dates(i18n, lang)
-        folder = SITE if lang == "en" else SITE / lang
+        folder = out if lang == languages[0] else out / lang
         (folder / "archive").mkdir(parents=True, exist_ok=True)
         (folder / "archive" / f"{today}.html").touch()
         past = [d for d in editions(folder, cfg["paper"].get("archive_days", 60), today) if d != today]
@@ -836,32 +899,41 @@ def main() -> None:
             rates=fx, top=l_top, sections=l_sections, past=past[:14], sources=all_sources, long_date=long_date,
             t=t, weekday=weekday, ago=lambda dt, t=t: ago(dt, now, t),
         )
-        root = "" if lang == "en" else "../"
-        page = env.get_template("template.html")
+        root = "" if folder == out else "../"           # from this edition to the paper's main edition
+        page = env.get_template(templates.get("web", "template.html"))
         (folder / "index.html").write_text(page.render(**context, root=root, home=""))
         (folder / "archive" / f"{today}.html").write_text(page.render(**context, root=root + "../", home="../"))
         if lang in print_languages:
-            sheet = BUILD / f"paper-{lang}.html"
-            sheet.write_text(env.get_template("print.html").render(**context))
-            if to_pdf(sheet, BUILD / f"paper-{lang}.pdf"):
-                pdfs[lang] = str(BUILD / f"paper-{lang}.pdf")
+            sheet = build / f"paper-{lang}.html"
+            sheet.write_text(env.get_template(templates.get("print", "print.html")).render(**context))
+            if to_pdf(sheet, build / f"paper-{lang}.pdf"):
+                pdfs[lang] = str(build / f"paper-{lang}.pdf")
+        if lang == languages[0]:
+            main_edition = (t, long_date, l_top, l_extras)
     translator.save()
 
+    # Telegram speaks the paper's main language.
+    t, long_date, l_top, l_extras = main_edition
     lead = fx["rows"][0] if fx else None
     summary = {
-        "paper": cfg["paper"]["name"], "date": dates(i18n, "en")[0](today), "number": number,
-        "reader": reader.get("name"), "greeting": reader.get("greeting"), "signoff": reader.get("signoff"),
-        **extras,
-        "weather": [f'{w["city"]} {w["now"]}, {w["label"].lower()} (today {w["days"][0]["lo"]}…{w["days"][0]["hi"]})' for w in places],
+        "id": paper_id, "paper": cfg["paper"]["name"], "date": long_date(today), "day": today.isoformat(), "number": number,
+        "reader": i18n.get(languages[0], {}).get("_reader", reader.get("name")),
+        "greeting": reader.get("greeting"), "signoff": reader.get("signoff"), **l_extras,
+        "weather": [f'{t(w["city"])} {w["now"]}, {t(w["label"]).lower()} ({t("Today").lower()} '
+                    f'{w["days"][0]["lo"]}…{w["days"][0]["hi"]})'
+                    + (f' · AQI {w["air"]["aqi"]}' if w.get("air") else "") for w in places],
         "rates": lead and f'{lead["symbol"]}1 = {lead["value"]:.2f} ₸',
-        "top": [{"title": c["title"], "link": c["link"], "source": c["source"], "coverage": c["coverage"]} for c in top],
+        "top": [{"title": c["title"], "link": c["link"], "source": c["source"], "coverage": c["coverage"]} for c in l_top],
         "pdfs": {lang: pdfs[lang] for lang in cfg.get("print", {}).get("send", []) if lang in pdfs},
+        "labels": {k: t(k) for k in ("Top stories", "Read today’s paper →", "Today’s paper to print")},
     }
-    (BUILD / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2))
-    # The bot answers /start with this, any time of day (bot/api/telegram.js).
     site_url = cfg["paper"].get("site_url")
-    (SITE / "telegram.json").write_text(json.dumps({"date": today.isoformat(), "text": notify.message(summary, site_url)},
-                                                   ensure_ascii=False))
+    summary["url"] = site_url
+    summary["message"] = notify.message(summary, site_url)
+    (build / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2))
+    # The bot answers its command with this, any time of day (bot/api/telegram.js).
+    (out / "telegram.json").write_text(json.dumps({"date": today.isoformat(), "text": summary["message"]},
+                                                  ensure_ascii=False))
 
     print(f"Edition No. {number}: {len(top)} top stories, {len(cards) - len(top)} in sections, from {len(stories)} "
           f"headlines by {len(all_sources)} outlets · languages: {', '.join(languages)} · PDFs: {', '.join(pdfs) or 'none'}")
