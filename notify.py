@@ -56,7 +56,8 @@ def show_chat_ids(token: str) -> None:
 
 def message(s: dict, url: str | None) -> str:
     e = html.escape
-    lines = [f"<b>🗞 {e(s['paper'])}</b> · No. {s['number']}", f"<i>{e(s['date'])}</i>", ""]
+    labels = s.get("labels") or {}
+    lines = [f"<b>🗞 {e(s['paper'])}</b> · {e(labels.get('No.', 'No.'))} {s['number']}", f"<i>{e(s['date'])}</i>", ""]
     if s.get("reader"):
         lines.append(f"☀️ <b>{e(s['greeting'] + ', ' if s.get('greeting') else '')}{e(s['reader'])}!</b>")
     if q := s.get("quote"):
@@ -65,7 +66,6 @@ def message(s: dict, url: str | None) -> str:
         lines.append(f"🌡 {e(line)}")
     if s.get("rates"):
         lines.append(f"💱 {e(s['rates'])}")
-    labels = s.get("labels") or {}
     if s["top"]:
         lines += ["", f"<b>{e(labels.get('Top stories', 'Top stories'))}</b>"]
         for i, t in enumerate(s["top"], 1):

@@ -231,6 +231,7 @@ _date_short = "{month}{day}日"
 
 [ru]
 _name = "Русский"
+"No." = "№"
 _html = "ru"
 "Top stories" = "Главное"
 "Read today’s paper →" = "Читать выпуск →"

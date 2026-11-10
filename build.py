@@ -925,7 +925,7 @@ def main() -> None:
         "rates": lead and f'{lead["symbol"]}1 = {lead["value"]:.2f} ₸',
         "top": [{"title": c["title"], "link": c["link"], "source": c["source"], "coverage": c["coverage"]} for c in l_top],
         "pdfs": {lang: pdfs[lang] for lang in cfg.get("print", {}).get("send", []) if lang in pdfs},
-        "labels": {k: t(k) for k in ("Top stories", "Read today’s paper →", "Today’s paper to print")},
+        "labels": {k: t(k) for k in ("No.", "Top stories", "Read today’s paper →", "Today’s paper to print")},
     }
     site_url = cfg["paper"].get("site_url")
     summary["url"] = site_url
