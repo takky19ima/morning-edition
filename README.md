@@ -44,6 +44,24 @@ Readers who get the paper every morning are listed in the `TELEGRAM_CHAT_ID` sec
 A new reader's chat id shows up in the Vercel logs (`chat 123456789 (Name) sent /start`) after they press Start.
 If the bot's address ever changes: Actions → **Connect bot** → Run workflow with the new URL.
 
+### The journal
+
+/journal turns on a dreams-and-thoughts journal for that chat: every message the reader writes to the bot
+becomes a note, and the morning paper ends with "Dreamt something?" (a reply to it is saved as a dream).
+/notes shows the latest, /summary counts them up (no AI: totals, days in a row, words that keep coming back,
+a note from a week, month or year ago), /export opens everything on a page that works for 15 minutes,
+/forget deletes it all.
+
+Notes are encrypted (AES-256-GCM) inside the Vercel function and stored in Upstash Redis, connected to the
+Vercel project as a Marketplace integration. They never go to this repo, the website or the logs. The bot needs:
+
+| Vercel environment variable | What |
+|---|---|
+| `KV_REST_API_URL`, `KV_REST_API_TOKEN` | the database, added by the Upstash integration |
+| `JOURNAL_KEY` | the encryption key (random); lose it and the notes can't be read |
+| `TELEGRAM_WEBHOOK_SECRET` | also a GitHub secret; proves a request comes from Telegram |
+| `JOURNAL_TZ` | optional, the readers' time zone (default Europe/London) |
+
 ## Change things
 
 | What | Where |

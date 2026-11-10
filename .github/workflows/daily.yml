@@ -95,6 +95,8 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           # each paper has its own readers; «Утро» never falls back to KK's list
           TELEGRAM_CHAT_ID: ${{ env.PAPER == 'my' && secrets.TELEGRAM_CHAT_ID_MY || env.PAPER != 'my' && secrets.TELEGRAM_CHAT_ID || '' }}
+          # readers who keep a journal in the bot get the morning dream question
+          JOURNAL_URL: https://bot-woad-psi-33.vercel.app/api/journal
         run: python notify.py --summary build/$PAPER/summary.json
 
       - name: Mark today's edition as done
