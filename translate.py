@@ -29,6 +29,20 @@ GIVE_UP_AFTER = 2                             # refusals in a row before leaving
 LOCAL_MODEL = "OpenNMT/nllb-200-distilled-1.3B-ct2-int8"
 LOCAL_TOKENIZER = ("facebook/nllb-200-distilled-600M", "sentencepiece.bpe.model")   # same for every NLLB-200
 NLLB = {"kk": "kaz_Cyrl", "zh": "zho_Hans", "ru": "rus_Cyrl"}
+ABBREVIATIONS = {"no", "mr", "mrs", "ms", "dr", "st", "jr", "sr", "vs", "inc", "ltd", "co", "gov", "gen", "sen", "rep",
+                 "u.s", "u.k", "e.g", "i.e", "a.m", "p.m", "approx", "est", "dept", "fig", "vol"}
+
+
+def sentences(text: str) -> list[str]:
+    """Split into sentences, but not after "No.", "U.S.", "Dr." and the like."""
+    out: list[str] = []
+    for piece in re.split(r"(?<=[.!?…])\s+(?=[\"“‘'(A-Z0-9])", text):
+        last = out[-1].rsplit(None, 1)[-1].rstrip(".").lower() if out else ""
+        if out and (last in ABBREVIATIONS or len(last) == 1):
+            out[-1] += " " + piece
+        elif piece.strip():
+            out.append(piece)
+    return out
 
 
 class LocalModel:
@@ -56,19 +70,25 @@ class LocalModel:
     def translate(self, texts: list[str], lang: str) -> list[str | None]:
         if lang not in NLLB or not texts or not self._load():
             return [None] * len(texts)
-        sentences, owner = [], []                # NLLB translates a sentence at a time
+        pieces, owner = [], []                   # NLLB translates a sentence at a time
         for i, text in enumerate(texts):
-            for sentence in re.split(r"(?<=[.!?…])\s+", text):
-                if sentence.strip():
-                    sentences.append(sentence)
-                    owner.append(i)
-        results = self.model.translate_batch(
-            [["eng_Latn", *self.sp.encode(x, out_type=str), "</s>"] for x in sentences],
-            target_prefix=[[NLLB[lang]]] * len(sentences), beam_size=2, max_batch_size=24, max_decoding_length=256,
-        )
+            for sentence in sentences(text):
+                pieces.append(sentence)
+                owner.append(i)
+        source = [["eng_Latn", *self.sp.encode(x, out_type=str), "</s>"] for x in pieces]
+        prefix = [[NLLB[lang]]]
+        out = self.model.translate_batch(source, target_prefix=prefix * len(source), beam_size=4,
+                                         max_batch_size=24, max_decoding_length=256)
+        target = [r.hypotheses[0][1:] for r in out]
+        # NLLB sometimes stops halfway through a sentence; translate those again, made to go on longer
+        for j, (src, tgt) in enumerate(zip(source, target)):
+            if len(src) > 8 and len(tgt) < 0.5 * len(src):
+                again = self.model.translate_batch([src], target_prefix=prefix, beam_size=5, max_decoding_length=256,
+                                                   min_decoding_length=int(0.6 * len(src)) + 1)
+                target[j] = again[0].hypotheses[0][1:]
         parts: list[list[str]] = [[] for _ in texts]
-        for i, result in zip(owner, results):
-            parts[i].append(self.sp.decode(result.hypotheses[0][1:]))
+        for i, tgt in zip(owner, target):
+            parts[i].append(self.sp.decode(tgt))
         joiner = "" if lang == "zh" else " "
         return [joiner.join(p) if p else None for p in parts]
 
@@ -89,7 +109,8 @@ class Translator:
         """Translate texts into lang; returns {original: translation}. Missing ones fall back to the original."""
         store = self.cache.setdefault(lang, {})
         wanted = [t for t in dict.fromkeys(texts) if t and t.strip()]
-        todo = [t for t in wanted if self.key(t) not in store]
+        # new texts, plus ones the local model translated before: Google may do better today
+        todo = [t for t in wanted if self.key(t) not in store or store[self.key(t)][2:] == ["model"]]
         batches, current, size = [], [], 0
         for t in todo:
             if current and size + len(t) > BATCH_CHARS:
@@ -109,7 +130,7 @@ class Translator:
         rest = [t for t in wanted if self.key(t) not in store]
         for original, translated in zip(rest, self.local.translate(rest, lang)):
             if translated:
-                store[self.key(original)] = [translated, self.today.isoformat()]
+                store[self.key(original)] = [translated, self.today.isoformat(), "model"]
                 by_model += 1
         out = {}
         for t in wanted:
@@ -164,7 +185,7 @@ class Translator:
     def save(self) -> None:
         cutoff = (self.today - timedelta(days=self.keep_days)).isoformat()
         for store in self.cache.values():
-            for k in [k for k, (_, used) in store.items() if used < cutoff]:
+            for k in [k for k, (_, used, *_) in store.items() if used < cutoff]:
                 del store[k]
         self.path.parent.mkdir(exist_ok=True)
         self.path.write_text(json.dumps(self.cache, ensure_ascii=False, separators=(",", ":")))
