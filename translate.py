@@ -80,9 +80,11 @@ class LocalModel:
         out = self.model.translate_batch(source, target_prefix=prefix * len(source), beam_size=4,
                                          max_batch_size=24, max_decoding_length=256)
         target = [r.hypotheses[0][1:] for r in out]
-        # NLLB sometimes stops halfway through a sentence; translate those again, made to go on longer
+        # NLLB sometimes stops halfway through a sentence (much too short, or ending on a comma or quote
+        # the original doesn't end with); translate those again, made to go on longer
         for j, (src, tgt) in enumerate(zip(source, target)):
-            if len(src) > 8 and len(tgt) < 0.5 * len(src):
+            cut = self.sp.decode(tgt).rstrip()[-1:] in {",", "，", "、", '"', "“", ":", "：", "-"}
+            if len(src) > 8 and (len(tgt) < 0.5 * len(src) or (cut and not pieces[j].rstrip().endswith((",", ":")))):
                 again = self.model.translate_batch([src], target_prefix=prefix, beam_size=5, max_decoding_length=256,
                                                    min_decoding_length=int(0.6 * len(src)) + 1)
                 target[j] = again[0].hypotheses[0][1:]
