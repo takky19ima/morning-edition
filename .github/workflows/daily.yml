@@ -1,9 +1,14 @@
 name: Daily paper
 
 on:
+  # GitHub sometimes skips a scheduled run, so each paper has backup times;
+  # done.py makes sure only the first run of the day does anything.
   schedule:
     - cron: "40 5 * * *"     # KK's paper: 05:40 UTC = 05:40 in Edinburgh in winter, 06:40 in summer
+    - cron: "20 6 * * *"     # … backup
+    - cron: "10 7 * * *"     # … backup
     - cron: "30 1 * * *"     # «Утро»: 01:30 UTC = 06:30 in Astana — built for /my, not sent
+    - cron: "10 2 * * *"     # … backup
   workflow_dispatch:          # "Run workflow" button for an extra edition
     inputs:
       paper:
@@ -26,10 +31,21 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  PAPER: ${{ github.event.schedule == '30 1 * * *' && 'my' || inputs.paper || 'kk' }}
+  PAPER: ${{ (github.event.schedule == '30 1 * * *' || github.event.schedule == '10 2 * * *') && 'my' || inputs.paper || 'kk' }}
 
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      go: ${{ steps.done.outputs.go }}
+    steps:
+      - uses: actions/checkout@v5
+      - id: done
+        run: python3 done.py check $PAPER >> "$GITHUB_OUTPUT"
+
   publish:
+    needs: check
+    if: needs.check.outputs.go == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -72,3 +88,11 @@ jobs:
           # each paper has its own readers; «Утро» never falls back to KK's list
           TELEGRAM_CHAT_ID: ${{ env.PAPER == 'my' && secrets.TELEGRAM_CHAT_ID_MY || env.PAPER != 'my' && secrets.TELEGRAM_CHAT_ID || '' }}
         run: python notify.py --summary build/$PAPER/summary.json
+
+      - name: Mark today's edition as done
+        if: github.event_name == 'schedule' || inputs.notify || env.PAPER == 'my'
+        run: |
+          python done.py mark $PAPER
+          git add cache
+          git commit -m "Done: $PAPER $(date -u +%F)" || exit 0
+          git pull --rebase -q && git push
