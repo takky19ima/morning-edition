@@ -21,6 +21,7 @@ languages = ["ru"]
 # A4 magazine PDF: a photo cover, then each section on its own pages. Telegram only.
 languages = ["ru"]
 send = ["ru"]
+publish = true              # also on the site under a hidden name, so /my can send it
 
 [[places]]
 city = "Astana"

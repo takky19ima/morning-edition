@@ -7,6 +7,7 @@ To find your chat id: message your bot once, then run  TELEGRAM_BOT_TOKEN=... py
 import html
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.request
@@ -82,6 +83,22 @@ def message(s: dict, url: str | None) -> str:
         if s.get("signoff"):
             lines.append(e(s["signoff"]))
     return "\n".join(lines)
+
+
+def caption(s: dict, url: str | None, limit: int = 1024) -> str:
+    """The message cut down to fit under a PDF: Telegram allows 1024 characters there."""
+    e = html.escape
+    labels = s.get("labels") or {}
+    head = [f"<b>🗞 {e(s['paper'])}</b> · {e(labels.get('No.', 'No.'))} {s['number']}", f"<i>{e(s['date'])}</i>", ""]
+    info = [f"🌡 {e(w)}" for w in s.get("weather") or []] + ([f"💱 {e(s['rates'])}"] if s.get("rates") else [])
+    tail = [f'<a href="{e(url, quote=True)}">{e(labels.get("Read today’s paper →", "Read today’s paper →"))}</a>'] if url else []
+    for n in range(len(s["top"]), -1, -1):          # drop headlines from the end until it fits
+        tops = [f'{i}. <a href="{e(t["link"], quote=True)}">{e(t["title"])}</a>' for i, t in enumerate(s["top"][:n], 1)]
+        lines = head + info + (["", f"<b>{e(labels.get('Top stories', 'Top stories'))}</b>", *tops] if tops else []) + [""] + tail
+        text = "\n".join(lines)
+        if len(html.unescape(re.sub(r"<[^>]+>", "", text))) <= limit:
+            return text
+    return "\n".join(head + tail)
 
 
 def main() -> None:

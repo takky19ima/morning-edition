@@ -831,6 +831,32 @@ def to_pdf(page: Path, pdf: Path) -> bool:
         return False
 
 
+def restore_published(skip: Path) -> None:
+    """Published PDFs aren't kept in git, and every run redeploys the whole site — so before building,
+    fetch the other paper's current PDF from the live site to keep it online."""
+    for info in SITE.rglob("telegram.json"):
+        data = json.loads(info.read_text())
+        target = info.parent / data.get("pdf", "")
+        if info.parent == skip or not data.get("pdf") or target.exists():
+            continue
+        try:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(fetch(data["url"] + data["pdf"], timeout=60))
+        except Exception as ex:
+            print(f"  ! couldn't keep {data['pdf']} online — {ex}")
+
+
+def publish_pdf(pdf: Path, out: Path) -> str:
+    """Put the PDF on the site under a name nobody can guess (no page links to it); drop yesterday's."""
+    files = out / "files"
+    files.mkdir(parents=True, exist_ok=True)
+    for old in files.glob("*.pdf"):
+        old.unlink()
+    name = f"files/{os.urandom(12).hex()}.pdf"
+    shutil.copy(pdf, out / name)
+    return name
+
+
 def main() -> None:
     config = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "papers" / "kk.toml"
     cfg = tomllib.loads(config.read_text())
@@ -846,6 +872,7 @@ def main() -> None:
     out = ROOT / cfg["paper"].get("out", "docs")              # the paper's folder on the website
     build = BUILD / paper_id
     build.mkdir(parents=True, exist_ok=True)
+    restore_published(skip=out)
 
     print(f"{cfg['paper']['name']}: fetching feeds…")
     stories, slots = collect(cfg, now)
@@ -932,8 +959,10 @@ def main() -> None:
     summary["message"] = notify.message(summary, site_url)
     (build / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2))
     # The bot answers its command with this, any time of day (bot/api/telegram.js).
-    (out / "telegram.json").write_text(json.dumps({"date": today.isoformat(), "text": summary["message"]},
-                                                  ensure_ascii=False))
+    answer = {"date": today.isoformat(), "text": summary["message"], "url": site_url}
+    if cfg.get("print", {}).get("publish") and languages[0] in pdfs:     # /my sends the PDF with a short caption
+        answer.update(pdf=publish_pdf(Path(pdfs[languages[0]]), out), caption=notify.caption(summary, site_url))
+    (out / "telegram.json").write_text(json.dumps(answer, ensure_ascii=False))
 
     print(f"Edition No. {number}: {len(top)} top stories, {len(cards) - len(top)} in sections, from {len(stories)} "
           f"headlines by {len(all_sources)} outlets · languages: {', '.join(languages)} · PDFs: {', '.join(pdfs) or 'none'}")

@@ -22,7 +22,11 @@ export async function POST(request) {
   const paper = SITE + PAPERS[command];
   try {
     const res = await fetch(`${paper}telegram.json?${Date.now()}`);
-    const { text } = await res.json();
+    const { text, pdf, caption } = await res.json();
+    if (pdf && caption) {
+      // Telegram fetches the PDF from the site itself and posts it with the short summary under it.
+      return Response.json({ method: "sendDocument", chat_id: chat, document: paper + pdf, caption, parse_mode: "HTML" });
+    }
     return reply(chat, { text, parse_mode: "HTML", link_preview_options: { url: paper, prefer_large_media: true } });
   } catch {
     return reply(chat, { text: paper });
