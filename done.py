@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Has today's edition of a paper already gone out?
 
-GitHub sometimes skips or delays scheduled runs, so each paper has backup times. The first run of
-the day does the work and marks it done; later backup runs see the mark and stop.
+GitHub sometimes skips or delays scheduled runs, so each paper has backup times, and an alarm clock on
+Vercel (bot/api/alarm.js) starts it too. The first run of the day does the work and marks it done;
+later runs see the mark and stop.
   python done.py check kk   → prints go=true/false (for $GITHUB_OUTPUT)
   python done.py mark kk    → marks today's edition as done
 """
@@ -21,8 +22,9 @@ marker = root / "cache" / f"done-{paper}.txt"
 
 if action == "check":
     done = marker.exists() and marker.read_text().strip() == today
-    # a manual run always goes ahead; only scheduled backups stop
-    print(f"go={'false' if done and os.environ.get('GITHUB_EVENT_NAME') == 'schedule' else 'true'}")
+    # a manual run always goes ahead; only scheduled backups and the alarm clock stop
+    scheduled = os.environ.get("GITHUB_EVENT_NAME") == "schedule" or os.environ.get("SCHEDULED") == "true"
+    print(f"go={'false' if done and scheduled else 'true'}")
 else:
     marker.parent.mkdir(exist_ok=True)
     marker.write_text(today + "\n")

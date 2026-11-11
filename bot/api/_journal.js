@@ -1,51 +1,43 @@
-// The journal: dreams and thoughts a reader sends the bot, kept for them and summed up on request.
+// The journal: dreams and thoughts a reader writes at the end of her paper's web page.
 //
 // Each note is encrypted (AES-256-GCM with JOURNAL_KEY) before it leaves this function, so the
 // database (Upstash Redis, connected through Vercel) only ever holds ciphertext. Note text never goes
 // to logs, the repo or the website. The summary is plain counting, no AI.
-// Files starting with "_" in api/ are not endpoints; telegram.js and journal.js use this one.
-import { createCipheriv, createDecipheriv, createHmac, randomBytes, timingSafeEqual } from "node:crypto";
+//
+// Who is writing: every morning notify.py puts a personal one-time link into each reader's Telegram
+// message (#t=chat.until.signature, signed with JOURNAL_LINK_SECRET, which GitHub also has). The page
+// trades it for a device key it keeps in the browser. Each link works once, so a forwarded message
+// doesn't open someone else's journal.
+// Files starting with "_" in api/ are not endpoints; journal.js uses this one.
+import { createCipheriv, createDecipheriv, createHash, createHmac, randomBytes, timingSafeEqual } from "node:crypto";
 
 const DB_URL = process.env.KV_REST_API_URL ?? process.env.UPSTASH_REDIS_REST_URL;
 const DB_TOKEN = process.env.KV_REST_API_TOKEN ?? process.env.UPSTASH_REDIS_REST_TOKEN;
 const KEY = process.env.JOURNAL_KEY;
-const WEBHOOK_SECRET = process.env.TELEGRAM_WEBHOOK_SECRET;
-const TIMEZONE = process.env.JOURNAL_TZ ?? "Europe/London";   // the reader's clock, for dates and streaks
+const LINK_SECRET = process.env.JOURNAL_LINK_SECRET;
+const TIMEZONE = process.env.JOURNAL_TZ ?? "Europe/London";   // the reader's clock, for streaks and hours
 const MAX_NOTES = 10_000;
-const LINK_MINUTES = 15;          // how long an /export link works
-const FORGET_MINUTES = 10;        // how long the "Delete all" button works
+const MAX_LENGTH = 8_000;                                      // characters in one note
+const DEVICE_DAYS = 180;                                       // a browser stays connected this long after its last visit
 const DAY = 86_400_000;
 
-export const COMMANDS = new Set(["journal", "notes", "summary", "export", "forget"]);
-const configured = Boolean(DB_URL && DB_TOKEN && KEY && WEBHOOK_SECRET);
-
-// Only Telegram knows the webhook secret, so only its requests can read or change notes.
-// (The bot's replies ride on the response, so an unchecked request could ask for someone's notes.)
-export function trusted(request) {
-  if (!configured) return false;
-  const got = Buffer.from(request.headers.get("x-telegram-bot-api-secret-token") ?? "");
-  const want = Buffer.from(WEBHOOK_SECRET);
-  return got.length === want.length && timingSafeEqual(got, want);
-}
+export const configured = Boolean(DB_URL && DB_TOKEN && KEY && LINK_SECRET);
 
 // ---------------------------------------------------------------- storage
 
-let keys;
-const key = (purpose) => (keys ??= {
-  notes: createHmac("sha256", KEY).update("journal notes").digest(),
-  links: createHmac("sha256", KEY).update("journal links").digest(),
-})[purpose];
+let noteKey;
+const notesKey = () => (noteKey ??= createHmac("sha256", KEY).update("journal notes").digest());
 
 function seal(chat, note) {
   const iv = randomBytes(12);
-  const cipher = createCipheriv("aes-256-gcm", key("notes"), iv).setAAD(Buffer.from(String(chat)));
+  const cipher = createCipheriv("aes-256-gcm", notesKey(), iv).setAAD(Buffer.from(String(chat)));
   const body = Buffer.concat([cipher.update(JSON.stringify(note), "utf8"), cipher.final()]);
   return Buffer.concat([iv, body, cipher.getAuthTag()]).toString("base64");
 }
 
 function unseal(chat, sealed) {
   const raw = Buffer.from(sealed, "base64");
-  const decipher = createDecipheriv("aes-256-gcm", key("notes"), raw.subarray(0, 12))
+  const decipher = createDecipheriv("aes-256-gcm", notesKey(), raw.subarray(0, 12))
     .setAAD(Buffer.from(String(chat)))
     .setAuthTag(raw.subarray(-16));
   return JSON.parse(Buffer.concat([decipher.update(raw.subarray(12, -16)), decipher.final()]).toString("utf8"));
@@ -65,291 +57,66 @@ async function db(...commands) {
   });
 }
 
-const ON = "journal:on";                       // the chats that keep a journal
-const list = (chat) => `journal:${chat}`;      // one chat's notes, oldest first
-// a note: { t: time in ms, k: "dream" | "thought" | "", s: text, m: Telegram message id }
+const list = (chat) => `journal:${chat}`;                       // one reader's notes, oldest first
+const device = (token) => `journal:device:${createHash("sha256").update(token).digest("hex")}`;
+// a note: { id, t: time in ms, k: "dream" | "thought", s: text }
 
-export async function isOn(chat) {
-  if (!configured) return false;
-  const [on] = await db(["SISMEMBER", ON, String(chat)]);
-  return on === 1;
+// ---------------------------------------------------------------- who is writing
+
+const equal = (a, b) => a.length === b.length && timingSafeEqual(Buffer.from(a), Buffer.from(b));
+
+// A morning link → a device key for this browser. Errors: "expired", "used", "invalid".
+export async function claim(link) {
+  const [chat, until, sig] = String(link ?? "").split(".");
+  if (!/^-?\d+$/.test(chat ?? "") || !/^\d+$/.test(until ?? "") || !sig) return { error: "invalid" };
+  const want = createHmac("sha256", LINK_SECRET).update(`claim.${chat}.${until}`).digest("base64url");
+  if (!equal(sig, want)) return { error: "invalid" };
+  if (Number(until) * 1000 < Date.now()) return { error: "expired" };
+  const [fresh] = await db(["SET", `journal:claim:${sig}`, "1", "NX", "EXAT", Number(until)]);
+  if (fresh !== "OK") return { error: "used" };
+  const token = randomBytes(24).toString("base64url");
+  await db(["SET", device(token), chat, "EX", DEVICE_DAYS * 86_400]);
+  return { device: token };
 }
 
-// A plain message: a note if this chat keeps a journal, otherwise null.
-export async function maybeNote(message) {
-  try {
-    if (!(await isOn(message.chat.id))) return null;
-  } catch (err) {
-    fail(err);
-    return send(message.chat.id, S[langOf(message.from)].failed);
+// The reader a device key belongs to (and keep it alive), or null.
+export async function reader(token) {
+  if (!token || token.length > 100) return null;
+  const [chat] = await db(["GET", device(token)], ["EXPIRE", device(token), DEVICE_DAYS * 86_400]);
+  return chat ?? null;
+}
+
+// ---------------------------------------------------------------- notes
+
+export async function add(chat, text, kind) {
+  const s = String(text ?? "").trim().slice(0, MAX_LENGTH);
+  if (!s) return { error: "empty" };
+  const note = { id: randomBytes(6).toString("hex"), t: Date.now(), k: kind === "thought" ? "thought" : "dream", s };
+  const [count] = await db(["RPUSH", list(chat), seal(chat, note)]);
+  if (count > MAX_NOTES) {
+    await db(["RPOP", list(chat)]);
+    return { error: "full" };
   }
-  return onNote(message);
+  return { note, total: count };
 }
 
-export async function allNotes(chat) {
+// The latest n notes (all of them without n), newest first.
+export async function recent(chat, n) {
+  const [total, items] = await db(["LLEN", list(chat)], ["LRANGE", list(chat), n ? -n : 0, -1]);
+  return { total, notes: items.map((item) => unseal(chat, item)).reverse() };
+}
+
+export async function remove(chat, id) {
   const [items] = await db(["LRANGE", list(chat), 0, -1]);
-  return items.map((item) => unseal(chat, item));
+  const item = items.find((it) => unseal(chat, it).id === id);
+  if (!item) return { removed: false, total: items.length };
+  const [, total] = await db(["LREM", list(chat), 1, item], ["LLEN", list(chat)]);
+  return { removed: true, total };
 }
 
-// ---------------------------------------------------------------- words
-
-const FORMS = {
-  en: { note: ["note", "notes"], dream: ["dream", "dreams"], thought: ["thought", "thoughts"], day: ["day", "days"] },
-  ru: {
-    note: ["запись", "записи", "записей"], dream: ["сон", "сна", "снов"],
-    thought: ["мысль", "мысли", "мыслей"], day: ["день", "дня", "дней"],
-  },
-};
-
-function plural(lang, n, word) {
-  const forms = FORMS[lang][word];
-  if (lang === "en") return forms[n === 1 ? 0 : 1];
-  const [d, h] = [n % 10, n % 100];
-  return forms[d === 1 && h !== 11 ? 0 : d >= 2 && d <= 4 && (h < 10 || h >= 20) ? 1 : 2];
-}
-const many = (lang, n, word) => `${n} ${plural(lang, n, word)}`;
-
-const S = {
-  en: {
-    intro: "🌙 <b>Your journal is on.</b>\n\n"
-      + "Write here anything you’d like to keep: a dream, a thought, a line from the day. Every message becomes a note. "
-      + "In the morning the paper will ask about your dreams; just reply to it.\n\n"
-      + "🔒 <b>Who can read it.</b> Notes are encrypted before they are stored, and they never appear on the website "
-      + "or in logs. The bot’s owner could technically get to them, and has promised not to read them.\n\n"
-      + "/notes — latest notes\n/summary — your journal in numbers\n/export — everything, to read or save\n"
-      + "/forget — delete everything\n/journal off — pause it (notes stay)",
-    status: (n) => `🌙 <b>Your journal is on</b> · ${many("en", n, "note")}\n\n`
-      + "/notes · /summary · /export · /forget\n/journal off — pause it\n\n"
-      + "🔒 Notes are stored encrypted, never on the website or in logs.",
-    paused: "Journal paused. Your notes are kept; /journal turns it back on.",
-    notReady: "The journal isn’t switched on for this bot yet.",
-    saved: "✍️ Saved. A dream or a thought?",
-    savedDream: "🌙 Saved as a dream.",
-    dream: "🌙 Dream",
-    thought: "💭 Thought",
-    marked: { dream: "🌙 Marked as a dream", thought: "💭 Marked as a thought" },
-    gone: "That note isn’t there any more.",
-    textOnly: "I can only keep text for now ✍️",
-    full: "Your journal is full (10,000 notes). /export it, then /forget to start a fresh one.",
-    failed: "⚠️ Couldn’t do that just now. Please try again in a minute.",
-    empty: "No notes yet. Send /journal, then just write here.",
-    hint: "Send /today for today’s paper 🗞\n/journal — keep your dreams and thoughts here 🌙",
-    latest: "🌙 <b>Latest notes</b>",
-    shown: (shown, total) => `${shown} of ${total} · everything: /export`,
-    exported: (url) => `📖 <a href="${url}">Open your journal</a>\n`
-      + `The link works for ${LINK_MINUTES} minutes. You can save it as a text file from there.`,
-    forgetAsk: (n) => `This deletes all ${many("en", n, "note")} for good. There’s no undo.`,
-    forgetButton: (n) => `Delete all ${n}`,
-    forgotten: "Done. Your journal is empty now.",
-    expired: "This button has expired. Send /forget again.",
-    kinds: { dream: "Dream", thought: "Thought", "": "Note" },
-    summary: "🌙 <b>Your journal</b>",
-    total: (n, since) => `📝 ${many("en", n, "note")} since ${since}`,
-    unmarked: (n) => `${n} unmarked`,
-    month: (n, days) => `🗓 Last 30 days: ${many("en", n, "note")} · ${days} days of 30`,
-    streak: (now, best) => now >= 2
-      ? `🔥 ${now} days in a row${best > now ? ` (best: ${best})` : ""}`
-      : `🔥 Best run: ${best} days in a row`,
-    when: ["Mostly written at night", "Mostly written in the morning", "Mostly written in the afternoon",
-      "Mostly written in the evening"],
-    themes: { dream: "✨ Often in dreams", thought: "💭 Often in thoughts", all: "🔁 Often in notes" },
-    ago: { 365: "A year ago", 30: "A month ago", 7: "A week ago" },
-    early: "Patterns show up once there are a few more notes ✨",
-    page: { title: "Journal", exported: "exported", download: "Download as text", expired:
-      "This link has expired. Send /export to the bot for a new one." },
-  },
-  ru: {
-    intro: "🌙 <b>Дневник включён.</b>\n\n"
-      + "Пиши сюда всё, что хочется сохранить: сон, мысль, строчку из дня. Каждое сообщение станет записью. "
-      + "По утрам газета будет спрашивать про сны — просто ответь на неё.\n\n"
-      + "🔒 <b>Кто может прочитать.</b> Записи шифруются перед сохранением и не попадают ни на сайт, ни в логи. "
-      + "Технически владелец бота может до них добраться, но обещает их не читать.\n\n"
-      + "/notes — последние записи\n/summary — дневник в цифрах\n/export — всё целиком, прочитать или сохранить\n"
-      + "/forget — удалить всё\n/journal off — поставить на паузу (записи останутся)",
-    status: (n) => `🌙 <b>Дневник включён</b> · ${many("ru", n, "note")}\n\n`
-      + "/notes · /summary · /export · /forget\n/journal off — поставить на паузу\n\n"
-      + "🔒 Записи хранятся зашифрованными, их нет ни на сайте, ни в логах.",
-    paused: "Дневник на паузе. Записи сохранены, /journal включит его снова.",
-    notReady: "Дневник у этого бота ещё не включён.",
-    saved: "✍️ Сохранено. Это сон или мысль?",
-    savedDream: "🌙 Сохранено как сон.",
-    dream: "🌙 Сон",
-    thought: "💭 Мысль",
-    marked: { dream: "🌙 Отмечено как сон", thought: "💭 Отмечено как мысль" },
-    gone: "Этой записи уже нет.",
-    textOnly: "Пока сохраняю только текст ✍️",
-    full: "Дневник заполнен (10 000 записей). Сохрани его через /export, потом /forget — и можно начать новый.",
-    failed: "⚠️ Сейчас не получилось. Попробуй ещё раз через минуту.",
-    empty: "Записей пока нет. Отправь /journal и просто пиши сюда.",
-    hint: "/today — сегодняшний выпуск 🗞\n/journal — дневник для снов и мыслей 🌙",
-    latest: "🌙 <b>Последние записи</b>",
-    shown: (shown, total) => `${shown} из ${total} · всё целиком: /export`,
-    exported: (url) => `📖 <a href="${url}">Открыть дневник</a>\n`
-      + `Ссылка работает ${LINK_MINUTES} минут. Там же можно скачать его текстовым файлом.`,
-    forgetAsk: (n) => `Это навсегда удалит ${n === 1 ? "единственную запись" : `все ${many("ru", n, "note")}`}. Вернуть их будет нельзя.`,
-    forgetButton: (n) => `Удалить ${n === 1 ? "запись" : `все ${n}`}`,
-    forgotten: "Готово. Дневник пуст.",
-    expired: "Эта кнопка устарела. Отправь /forget ещё раз.",
-    kinds: { dream: "Сон", thought: "Мысль", "": "Запись" },
-    summary: "🌙 <b>Твой дневник</b>",
-    total: (n, since) => `📝 ${many("ru", n, "note")} с ${since}`,
-    unmarked: (n) => `${n} без пометки`,
-    month: (n, days) => `🗓 За 30 дней: ${many("ru", n, "note")} · ${days} ${plural("ru", days, "day")} из 30`,
-    streak: (now, best) => now >= 2
-      ? `🔥 ${many("ru", now, "day")} подряд${best > now ? ` (рекорд — ${best})` : ""}`
-      : `🔥 Рекорд: ${many("ru", best, "day")} подряд`,
-    when: ["Чаще всего пишешь ночью", "Чаще всего пишешь утром", "Чаще всего пишешь днём", "Чаще всего пишешь вечером"],
-    themes: { dream: "✨ Часто в снах", thought: "💭 Часто в мыслях", all: "🔁 Часто в записях" },
-    ago: { 365: "Год назад", 30: "Месяц назад", 7: "Неделю назад" },
-    early: "Закономерности появятся, когда записей станет больше ✨",
-    page: { title: "Дневник", exported: "выгружено", download: "Скачать текстом", expired:
-      "Ссылка устарела. Отправь боту /export, чтобы получить новую." },
-  },
-};
-
-export const langOf = (user) => (/^(ru|uk|be|kk)/.test(user?.language_code ?? "") ? "ru" : "en");
-export const hint = (user) => S[langOf(user)].hint;
-export const unavailable = (message) => send(message.chat.id, S[langOf(message.from)].notReady);
-const ICON = { dream: "🌙", thought: "💭", "": "✍️" };
-
-const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-const clip = (s, n) => (s.length > n ? `${s.slice(0, n).trimEnd()}…` : s);
-
-// ---------------------------------------------------------------- dates (in the reader's time zone)
-
-const locale = (lang) => (lang === "ru" ? "ru-RU" : "en-GB");
-const format = (lang, t, options) => new Intl.DateTimeFormat(locale(lang), { timeZone: TIMEZONE, ...options }).format(t);
-const dayOf = (t) => new Intl.DateTimeFormat("en-CA", { timeZone: TIMEZONE, dateStyle: "short" }).format(t);
-const hourOf = (t) => Number(new Intl.DateTimeFormat("en-GB", { timeZone: TIMEZONE, hour: "2-digit", hourCycle: "h23" }).format(t));
-const addDays = (day, n) => new Date(Date.parse(`${day}T00:00:00Z`) + n * DAY).toISOString().slice(0, 10);
-const dateOf = (lang, t, now = Date.now()) =>
-  format(lang, t, { day: "numeric", month: "long", ...(dayOf(t).slice(0, 4) !== dayOf(now).slice(0, 4) && { year: "numeric" }) });
-const stamp = (lang, t) => format(lang, t, { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
-
-// ---------------------------------------------------------------- telegram replies
-
-const send = (chat_id, text, extra = {}) =>
-  Response.json({ method: "sendMessage", chat_id, text, parse_mode: "HTML", link_preview_options: { is_disabled: true }, ...extra });
-const toast = (callback_query_id, text, show_alert = false) =>
-  Response.json({ method: "answerCallbackQuery", callback_query_id, text, show_alert });
-const fail = (err) => console.error(`journal: ${err.message}`);    // never the note itself
-
-// Any message that isn't a command, while the journal is on.
-async function onNote(message) {
-  const chat = message.chat.id;
-  const s = S[langOf(message.from)];
-  if (!message.text) return send(chat, s.textOnly);
-  // A reply to the morning paper (which asks "Dreamt something? 🌙") is a dream.
-  const reply = message.reply_to_message;
-  const dream = Boolean(reply?.from?.is_bot && reply.text?.includes("🌙"));
-  const note = { t: message.date * 1000, k: dream ? "dream" : "", s: message.text, m: message.message_id };
-  try {
-    const [count] = await db(["RPUSH", list(chat), seal(chat, note)]);
-    if (count > MAX_NOTES) {
-      await db(["RPOP", list(chat)]);
-      return send(chat, s.full);
-    }
-    const at = `${count - 1}:${note.m}`;
-    return send(chat, dream ? s.savedDream : s.saved, {
-      reply_parameters: { message_id: message.message_id, allow_sending_without_reply: true },
-      reply_markup: { inline_keyboard: [[
-        { text: s.dream, callback_data: `kind:dream:${at}` },
-        { text: s.thought, callback_data: `kind:thought:${at}` },
-      ]] },
-    });
-  } catch (err) {
-    fail(err);
-    return send(chat, s.failed);
-  }
-}
-
-// An edited message: the note follows the edit.
-export async function onEdit(message) {
-  if (!message.text || message.text.startsWith("/")) return new Response("ok");
-  const chat = message.chat.id;
-  try {
-    const [length, items] = await db(["LLEN", list(chat)], ["LRANGE", list(chat), -200, -1]);
-    const offset = length - items.length;
-    for (let i = items.length - 1; i >= 0; i--) {
-      const note = unseal(chat, items[i]);
-      if (note.m === message.message_id) {
-        await db(["LSET", list(chat), offset + i, seal(chat, { ...note, s: message.text })]);
-        break;
-      }
-    }
-  } catch (err) {
-    fail(err);
-  }
-  return new Response("ok");
-}
-
-// The buttons under "Saved" and under /forget.
-export async function onButton(query) {
-  const s = S[langOf(query.from)];
-  const chat = query.message?.chat?.id ?? query.from.id;
-  const [what, ...rest] = (query.data ?? "").split(":");
-  try {
-    if (what === "kind") {
-      const [kind, i, m] = rest;
-      const [item] = await db(["LINDEX", list(chat), Number(i)]);
-      const note = item && unseal(chat, item);
-      if (!note || String(note.m) !== m || !(kind in s.marked)) return toast(query.id, s.gone);
-      await db(["LSET", list(chat), Number(i), seal(chat, { ...note, k: kind })]);
-      return toast(query.id, s.marked[kind]);
-    }
-    if (what === "forget") {
-      if (Date.now() / 1000 - Number(rest[0]) > FORGET_MINUTES * 60) return toast(query.id, s.expired, true);
-      await db(["DEL", list(chat)]);
-      return toast(query.id, s.forgotten, true);
-    }
-  } catch (err) {
-    fail(err);
-    return toast(query.id, s.failed, true);
-  }
-  return toast(query.id, "");
-}
-
-// /journal, /notes, /summary, /export, /forget
-export async function onCommand(message, command, arg, origin) {
-  const chat = message.chat.id;
-  const lang = langOf(message.from);
-  const s = S[lang];
-  if (!configured) return send(chat, s.notReady);
-  try {
-    if (command === "journal") {
-      if (/^(off|stop|pause|выкл|стоп|пауза)/i.test(arg)) {
-        await db(["SREM", ON, String(chat)]);
-        return send(chat, s.paused);
-      }
-      const [added, count] = await db(["SADD", ON, String(chat)], ["LLEN", list(chat)]);
-      return send(chat, added ? s.intro : s.status(count));
-    }
-    if (command === "notes") {
-      const [count, items] = await db(["LLEN", list(chat)], ["LRANGE", list(chat), -5, -1]);
-      if (!count) return send(chat, s.empty);
-      const notes = items.map((item) => unseal(chat, item)).reverse();
-      const body = notes.map((n) => `${ICON[n.k] ?? "✍️"} <b>${stamp(lang, n.t)}</b>\n${esc(clip(n.s, 700))}`);
-      return send(chat, [s.latest, ...body, `<i>${s.shown(notes.length, count)}</i>`].join("\n\n"));
-    }
-    if (command === "summary") {
-      const notes = await allNotes(chat);
-      return send(chat, notes.length ? summarize(notes, lang) : s.empty);
-    }
-    if (command === "export") {
-      const [count] = await db(["LLEN", list(chat)]);
-      return send(chat, count ? s.exported(link(origin, chat, lang)) : s.empty);
-    }
-    if (command === "forget") {
-      const [count] = await db(["LLEN", list(chat)]);
-      if (!count) return send(chat, s.empty);
-      const button = { text: s.forgetButton(count), callback_data: `forget:${Math.floor(Date.now() / 1000)}` };
-      return send(chat, s.forgetAsk(count), { reply_markup: { inline_keyboard: [[button]] } });
-    }
-  } catch (err) {
-    fail(err);
-    return send(chat, s.failed);
-  }
-  return send(chat, s.hint);
+export async function forget(chat) {
+  await db(["DEL", list(chat)]);
+  return { removed: true, total: 0 };
 }
 
 // ---------------------------------------------------------------- the summary
@@ -367,7 +134,7 @@ some somehow someone something sometimes somewhere still such sure than that tha
 there there's these they they're thing things think this those though thought through till to today told tomorrow too
 took two under until up upon us very was wasn't way we we're well went were weren't what what's when where which while
 who whom whose why will with within without won't would wouldn't yeah yes yesterday yet you you're your yours yourself
-dream dreams dreamt dreamed dreaming tonight last night
+dream dreams dreamt dreamed dreaming tonight
 а без более больше будет будто бы был была были было быть в вам вас ведь весь во вот впрочем все всегда всего всех всю
 вы где да даже два для до другой его ее ей ему если есть еще ж же за зачем здесь и из или им ими их к как какая какой
 какие какую когда кто куда ли лучше между меня мне много может можно мой моя мое мои мы на над надо наконец нас не него
@@ -376,8 +143,8 @@ dream dreams dreamt dreamed dreaming tonight last night
 тоже только том тот три тут ты у уж уже хоть чего чем через что чтоб чтобы чуть эти этого этой этом этот эту это я
 очень просто типа короче вообще кажется помню словно вроде какой-то что-то кто-то где-то как-то который которая которое
 которые которых которую котором которой мной нам нами наш наша наше наши твой твоя твое твои свой своя свое свои сегодня
-вчера завтра снова потому сначала затем всё ещё её сон сны сна сне сном снов снах снилось снился снилась снились
-приснилось приснился приснилась приснились снится снятся сниться
+вчера завтра снова сначала затем сон сны сна сне сном снов снах снилось снился снилась снились приснилось приснился
+приснилась приснились снится снятся сниться
 және мен бен пен сен ол біз сіз олар бұл сол осы мына ана не неге қалай қашан қайда кім ғой ғана бір барлық әр еш бар
 жоқ еді екен емес болды болып болса бола деп деді дейді үшін туралы сияқты секілді өте тым енді әлі кейін соң дейін бірақ
 немесе яғни сонда мұнда онда маған саған оған бізге сізге оларға мені сені оны менің сенің оның біздің сіздің олардың өз
@@ -456,8 +223,7 @@ function stemRu(word) {
   if (rv.endsWith("и")) rv = rv.slice(0, -1);
   // step 3: -ость in R2
   const whole = head + rv;
-  const r1 = regionAfter(whole, 0);
-  const r2 = regionAfter(whole, r1);
+  const r2 = regionAfter(whole, regionAfter(whole, 0));
   for (const e of ["ость", "ост"]) {
     if (whole.endsWith(e) && whole.length - e.length >= r2) {
       rv = rv.slice(0, -e.length);
@@ -503,25 +269,30 @@ function themes(notes) {
     .filter((e) => e.notes >= 2)
     .sort((a, b) => b.notes - a.notes)
     .slice(0, 6)
-    .map((e) => `${[...e.forms].sort((a, b) => b[1] - a[1])[0][0]} (${e.notes})`);
+    .map((e) => ({ word: [...e.forms].sort((a, b) => b[1] - a[1])[0][0], n: e.notes }));
 }
 
-export function summarize(notes, lang, now = Date.now()) {
-  const s = S[lang];
-  const lines = [s.summary, ""];
-  const by = { dream: 0, thought: 0, "": 0 };
-  for (const n of notes) by[n.k in by ? n.k : ""]++;
-  const parts = [
-    by.dream && many(lang, by.dream, "dream"),
-    by.thought && many(lang, by.thought, "thought"),
-    by[""] && (by.dream || by.thought) && s.unmarked(by[""]),
-  ].filter(Boolean);
-  lines.push(s.total(notes.length, dateOf(lang, notes[0].t, now)) + (parts.length ? `: ${parts.join(", ")}` : ""));
+const dayOf = (t) =>
+  new Intl.DateTimeFormat("en-CA", { timeZone: TIMEZONE, year: "numeric", month: "2-digit", day: "2-digit" }).format(t);
+const hourOf = (t) => Number(new Intl.DateTimeFormat("en-GB", { timeZone: TIMEZONE, hour: "2-digit", hourCycle: "h23" }).format(t));
+const addDays = (day, n) => new Date(Date.parse(`${day}T00:00:00Z`) + n * DAY).toISOString().slice(0, 10);
 
+export async function summary(chat, now = Date.now()) {
+  const [items] = await db(["LRANGE", list(chat), 0, -1]);
+  return stats(items.map((item) => unseal(chat, item)), now);
+}
+
+// Numbers for the page to put into words, in whatever language it is in.
+export function stats(notes, now = Date.now()) {
+  if (!notes.length) return { total: 0 };
+  const out = {
+    total: notes.length,
+    first: notes[0].t,
+    dreams: notes.filter((n) => n.k === "dream").length,
+    thoughts: notes.filter((n) => n.k === "thought").length,
+  };
   const recent = notes.filter((n) => n.t >= now - 30 * DAY);
-  if (notes[0].t < now - 30 * DAY && recent.length) {
-    lines.push(s.month(recent.length, new Set(recent.map((n) => dayOf(n.t))).size));
-  }
+  if (notes[0].t < now - 30 * DAY) out.month = { notes: recent.length, days: new Set(recent.map((n) => dayOf(n.t))).size };
 
   // days in a row: up to today (or yesterday, if today has no note yet), and the best run ever
   const days = new Set(notes.map((n) => dayOf(n.t)));
@@ -536,109 +307,35 @@ export function summarize(notes, lang, now = Date.now()) {
     best = Math.max(best, run);
     prev = d;
   }
-  if (best >= 2) lines.push(s.streak(current, best));
+  out.streak = { now: current, best };
 
-  if (notes.length < 3) return [...lines, "", s.early].join("\n");
-
-  const hours = [0, 0, 0, 0];      // night, morning, afternoon, evening
-  for (const n of notes) {
-    const h = hourOf(n.t);
-    hours[h < 5 ? 0 : h < 12 ? 1 : h < 17 ? 2 : 3]++;
+  if (notes.length >= 5) {
+    const hours = [0, 0, 0, 0];      // night, morning, afternoon, evening
+    for (const n of notes) {
+      const h = hourOf(n.t);
+      hours[h < 5 ? 0 : h < 12 ? 1 : h < 17 ? 2 : 3]++;
+    }
+    const top = hours.indexOf(Math.max(...hours));
+    if (hours[top] / notes.length >= 0.4) out.when = ["night", "morning", "afternoon", "evening"][top];
   }
-  const top = hours.indexOf(Math.max(...hours));
-  if (notes.length >= 5 && hours[top] / notes.length >= 0.4) lines.push(`⏰ ${s.when[top]}`);
 
-  const groups = [["dream", notes.filter((n) => n.k === "dream")], ["thought", notes.filter((n) => n.k === "thought")]]
-    .filter(([, group]) => group.length >= 3);
-  if (!groups.length) groups.push(["all", notes]);
-  const found = groups.map(([kind, group]) => [kind, themes(group)]).filter(([, words]) => words.length);
-  if (found.length) lines.push("");
-  for (const [kind, words] of found) lines.push(`${s.themes[kind]}: ${words.join(" · ")}`);
-  if (!found.length && notes.length < 8) lines.push("", s.early);
+  if (notes.length >= 3) {
+    out.themes = {};
+    for (const kind of ["dream", "thought"]) {
+      const group = notes.filter((n) => n.k === kind);
+      if (group.length >= 3) out.themes[kind] = themes(group);
+    }
+    if (!Object.keys(out.themes).length) out.themes.all = themes(notes);
+  }
 
   // a note from a year, a month or a week ago (give or take a day)
   for (const ago of [365, 30, 7]) {
     const target = Date.parse(addDays(today, -ago));
     const old = notes.find((n) => Math.abs(Date.parse(dayOf(n.t)) - target) <= DAY);
     if (old) {
-      lines.push("", `↩️ ${s.ago[ago]}, ${dateOf(lang, old.t, now)}:`, `<i>${esc(clip(old.s, 240))}</i>`);
+      out.ago = { days: ago, t: old.t, k: old.k, s: old.s.length > 280 ? `${old.s.slice(0, 280).trimEnd()}…` : old.s };
       break;
     }
   }
-  return lines.join("\n");
-}
-
-// ---------------------------------------------------------------- /export
-
-const sign = (text) => createHmac("sha256", key("links")).update(text).digest("base64url");
-
-function link(origin, chat, lang) {
-  const until = Math.floor(Date.now() / 1000) + LINK_MINUTES * 60;
-  return `${origin}/api/journal?c=${chat}&e=${until}&l=${lang}&s=${sign(`${chat}.${until}`)}`;
-}
-
-// The chat an /export link was made for, or null if the link is forged or out of date.
-export function linkChat(params) {
-  if (!configured) return null;
-  const [chat, until, sig] = [params.get("c"), params.get("e"), params.get("s") ?? ""];
-  if (!/^-?\d+$/.test(chat ?? "") || !/^\d+$/.test(until ?? "")) return null;
-  const want = Buffer.from(sign(`${chat}.${until}`));
-  const got = Buffer.from(sig);
-  if (got.length !== want.length || !timingSafeEqual(got, want)) return null;
-  return Number(until) >= Date.now() / 1000 ? chat : null;
-}
-
-export const expiredText = (lang) => S[lang === "ru" ? "ru" : "en"].page.expired;
-
-export function asText(notes, lang) {
-  const s = S[lang];
-  const now = Date.now();
-  const head = `${s.page.title} · ${many(lang, notes.length, "note")} · ${s.page.exported} ${format(lang, now, { dateStyle: "long" })}`;
-  const body = notes.map((n) => `${s.kinds[n.k] ?? s.kinds[""]} · ${format(lang, n.t, { dateStyle: "full", timeStyle: "short" })}\n\n${n.s}`);
-  return [head, ...body].join("\n\n――――――――\n\n") + "\n";
-}
-
-export function asPage(notes, lang, textUrl) {
-  const s = S[lang];
-  const now = Date.now();
-  const articles = notes.map((n) => `
-    <article class="${n.k || "note"}">
-      <div class="when"><span class="kind">${ICON[n.k] ?? "✍️"} ${s.kinds[n.k] ?? s.kinds[""]}</span>
-        <time>${format(lang, n.t, { dateStyle: "full", timeStyle: "short" })}</time></div>
-      <p>${esc(n.s)}</p>
-    </article>`).join("");
-  return `<!doctype html>
-<html lang="${lang}">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<title>${s.page.title}</title>
-<style>
-  :root { --bg: #fbf8f3; --ink: #1f1b16; --muted: #786f64; --line: #e8e0d4; --dream: #5a55c8; --thought: #b4630c; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #15130f; --ink: #eee7dc; --muted: #a2988b; --line: #2e2a23; --dream: #aaa6ff; --thought: #f0b25e; }
-  }
-  body { margin: 0; background: var(--bg); color: var(--ink); font: 18px/1.65 Georgia, "Times New Roman", serif; }
-  main { max-width: 640px; margin: 0 auto; padding: 40px 16px 72px; }
-  h1 { font-size: 40px; line-height: 1.1; margin: 0 0 8px; }
-  .meta, .when { font: 14px/1.4 system-ui, -apple-system, sans-serif; color: var(--muted); }
-  .meta a { color: inherit; }
-  article { border-top: 1px solid var(--line); padding: 24px 0; }
-  .when { display: flex; flex-wrap: wrap; gap: 4px 12px; }
-  .kind { font-weight: 600; }
-  .dream .kind { color: var(--dream); }
-  .thought .kind { color: var(--thought); }
-  p { margin: 8px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
-</style>
-</head>
-<body>
-<main>
-  <h1>🌙 ${s.page.title}</h1>
-  <div class="meta">${many(lang, notes.length, "note")} · ${s.page.exported} ${format(lang, now, { dateStyle: "long" })}
-    · <a href="${textUrl}">${s.page.download}</a></div>
-  ${articles}
-</main>
-</body>
-</html>`;
+  return out;
 }

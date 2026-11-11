@@ -217,6 +217,62 @@ nav.index::-webkit-scrollbar { display: none; }
 .wish .tip { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; padding: 8px 14px; border-radius: 999px; background: color-mix(in srgb, var(--card) 70%, transparent); font: 600 13px/1.4 var(--sans); max-width: none; text-align: left; }
 .wish .signoff { margin-top: 18px; font: italic 500 25px/1.3 var(--serif); color: var(--ink-2); }
 
+/* her page: dreams and thoughts. Shown only in a browser her morning link has connected (see the script);
+   the notes themselves live encrypted with the bot, never on this site */
+.journal { max-width: 820px; margin: 28px auto 0; border-radius: 18px; background: var(--card); box-shadow: var(--shadow); overflow: hidden; }
+.journal [hidden] { display: none; }
+.j-head { position: relative; padding: 24px 22px 22px; color: #f4f2ff;
+  background: radial-gradient(circle at 62% 30%, #fff 0 1px, transparent 1.5px), radial-gradient(circle at 74% 72%, rgb(255 255 255 / .7) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 48% 64%, rgb(255 255 255 / .55) 0 1px, transparent 1.5px), radial-gradient(circle at 92% 84%, rgb(255 255 255 / .6) 0 1px, transparent 1.5px),
+    linear-gradient(160deg, #1b1a44, #34307f 65%, #5249a8); }
+.j-head .label { color: rgb(244 242 255 / .72); }
+.j-head h2 { margin: 6px 0 0; max-width: 14ch; font: italic 600 clamp(32px, 5vw, 50px)/1.1 var(--serif); letter-spacing: -.01em; }
+.j-head .moon { position: absolute; right: 22px; top: 20px; width: 56px; height: 56px; fill: currentColor; color: #ffe9a8; }
+.j-body { display: grid; gap: 18px; padding: 18px 22px 22px; }
+.j-kind { display: inline-flex; justify-self: start; gap: 2px; padding: 3px; border-radius: 999px; background: var(--bg); }
+.j-kind input { position: absolute; opacity: 0; pointer-events: none; }
+.j-kind span { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 6px 14px; border-radius: 999px; font: 600 13px/1.3 var(--sans); color: var(--ink-2); cursor: pointer; }
+.j-kind span .wi { width: 18px; height: 18px; }
+.j-kind input:checked + span { background: var(--ink); color: var(--bg); }
+.j-kind input:focus-visible + span { outline: 2px solid var(--c); outline-offset: 2px; }
+.j-write { display: grid; gap: 12px; }
+.j-write textarea { width: 100%; min-height: 168px; resize: vertical; margin: 0; padding: 0 14px; border: 1px solid var(--line); border-radius: 12px; color: var(--ink);
+  background: var(--card) repeating-linear-gradient(transparent 0 31px, var(--line) 31px 32px) local; font: 400 20px/32px var(--serif); }
+.j-write textarea::placeholder { color: var(--ink-3); font-style: italic; }
+.j-write textarea:focus { outline: 2px solid color-mix(in srgb, var(--c) 45%, transparent); outline-offset: 1px; border-color: var(--c); }
+.j-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.j-save { min-height: 44px; padding: 10px 22px; border: 0; border-radius: 999px; background: var(--ink); color: var(--bg); font: 700 16px/1.2 var(--sans); cursor: pointer; }
+.j-save:disabled { opacity: .55; cursor: default; }
+.j-save:focus-visible, .j-link:focus-visible { outline: 2px solid var(--c); outline-offset: 2px; }
+.j-status { font: 13px/1.4 var(--sans); color: var(--ink-3); }
+.j-status.ok { color: var(--green); }
+.j-status.bad { color: var(--live); }
+.j-notes > .label { display: flex; justify-content: space-between; gap: 12px; margin: 0; color: var(--ink-3); }
+.j-notes ol { list-style: none; margin: 8px 0 0; padding: 0; }
+.j-note { padding: 14px 0; border-top: 1px solid var(--line); }
+.j-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; font: 13px/1.4 var(--sans); color: var(--ink-3); }
+.j-tag { display: inline-flex; align-items: center; gap: 5px; font: 700 11px/1.3 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: color-mix(in srgb, var(--k) var(--mix-ink), var(--mix)); }
+.j-tag .wi { width: 16px; height: 16px; }
+.j-note.dream { --k: #5a55c8; }
+.j-note.thought { --k: #c27a0e; }
+.j-note p { margin: 6px 0 0; font: 400 16px/1.55 var(--serif); white-space: pre-wrap; overflow-wrap: anywhere; }
+.j-link { padding: 4px 0; border: 0; background: none; color: var(--ink-2); font: 13px/1.4 var(--sans); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: .2em; cursor: pointer; }
+.j-link:hover { color: var(--ink); text-decoration-color: currentColor; }
+.j-meta .j-link { margin-left: auto; padding: 0; color: var(--ink-3); }
+.j-link.armed { color: var(--live); text-decoration-color: currentColor; }
+.j-look { padding: 16px 18px; border-radius: 12px; background: var(--c-soft); }
+.j-look p { margin: 0 0 8px; font: 16px/1.5 var(--serif); }
+.j-look h3 { margin: 14px 0 6px; color: var(--c-ink); }
+.j-words { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.j-words li { padding: 4px 10px; border-radius: 999px; background: var(--card); font: 13px/1.4 var(--sans); }
+.j-words b { font-weight: 700; color: var(--c-ink); }
+.j-look blockquote { margin: 6px 0 0; padding-left: 12px; border-left: 2px solid var(--c); font: italic 16px/1.5 var(--serif); color: var(--ink-2); white-space: pre-wrap; }
+.j-tools { display: flex; flex-wrap: wrap; gap: 4px 18px; padding-top: 12px; border-top: 1px solid var(--line); }
+.j-privacy { display: flex; gap: 8px; margin: 0; font: 13px/1.5 var(--sans); color: var(--ink-3); }
+.j-privacy .wi { width: 16px; height: 16px; margin-top: 2px; }
+.j-closed { margin: 28px auto 0; max-width: 46ch; text-align: center; font: italic 16px/1.5 var(--serif); color: var(--ink-3); }
+@media (max-width: 520px) { .j-head, .j-body { padding-left: 16px; padding-right: 16px; } .j-head .moon { width: 44px; height: 44px; right: 16px; } }
+
 /* footer */
 .foot { display: grid; gap: 24px; margin-top: 56px; padding-top: 18px; border-top: 3px double var(--rule); font: 13px/1.6 var(--sans); color: var(--ink-2); }
 @media (min-width: 760px) { .foot { grid-template-columns: 1fr 2fr; gap: 40px; } }
@@ -264,6 +320,9 @@ nav.index::-webkit-scrollbar { display: none; }
   <symbol id="w-snow" viewBox="0 0 24 24"><use href="#cloud"/><path d="M8.5 18.5h.01M12.5 18.5h.01M16.5 18.5h.01M10.5 21h.01M14.5 21h.01" stroke-width="2.2"/></symbol>
   <symbol id="w-storm" viewBox="0 0 24 24"><use href="#cloud"/><path d="M12.5 15.5l-2 3.5h3l-2 3.5"/></symbol>
   <symbol id="sun" viewBox="0 0 64 64"><circle cx="32" cy="32" r="11" fill="currentColor" stroke="none"/><g stroke="currentColor" stroke-width="2.5" stroke-linecap="round">{% for a in range(0, 360, 30) %}<path d="M32 9v7" transform="rotate({{ a }} 32 32)"/>{% endfor %}</g></symbol>
+  <symbol id="moon" viewBox="0 0 24 24"><path d="M20 14.6A8.5 8.5 0 0 1 9.4 4a8.5 8.5 0 1 0 10.6 10.6z"/></symbol>
+  <symbol id="thought" viewBox="0 0 24 24"><path d="M6.5 15.5a3.5 3.5 0 0 1-.4-7A5 5 0 0 1 15.6 7a3.8 3.8 0 0 1 2.4 7.2 3 3 0 0 1-2.5 1.3z"/><circle cx="6.5" cy="19" r="1.2"/><circle cx="4" cy="21.5" r=".6"/></symbol>
+  <symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
 </svg>
 {% set here = places[0] if places else none %}
 {% set home = places[1] if places|length > 1 else none %}
@@ -415,6 +474,42 @@ nav.index::-webkit-scrollbar { display: none; }
     {% if reader.signoff %}<p class="signoff" lang="kk">{{ reader.signoff }}</p>{% endif %}
   </section>
 {% endif %}
+{% if journal %}
+  <section class="journal" id="journal" style="--c: #5a55c8" data-api="{{ journal.api }}" aria-labelledby="journal-title" hidden>
+    <div class="j-head">
+      <span class="label">{{ t('Your page') }}</span>
+      <h2 id="journal-title">{{ t('Dreams & thoughts') }}</h2>
+      <svg class="moon" aria-hidden="true"><use href="#moon"/></svg>
+    </div>
+    <div class="j-body">
+      <form class="j-write">
+        <div class="j-kind" role="radiogroup" aria-label="{{ t('Dreams & thoughts') }}">
+          <label><input type="radio" name="kind" value="dream" checked><span><svg class="wi" aria-hidden="true"><use href="#moon"/></svg>{{ t('Dream') }}</span></label>
+          <label><input type="radio" name="kind" value="thought"><span><svg class="wi" aria-hidden="true"><use href="#thought"/></svg>{{ t('Thought') }}</span></label>
+        </div>
+        <textarea name="text" maxlength="8000" placeholder="{{ t('What did you dream about?') }}" aria-labelledby="journal-title"></textarea>
+        <div class="j-actions">
+          <button type="submit" class="j-save">{{ t('Keep it') }}</button>
+          <span class="j-status" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+      <div class="j-notes" hidden>
+        <h3 class="label"><span>{{ t('Your notes') }}</span><span class="j-total"></span></h3>
+        <ol></ol>
+        <button type="button" class="j-link j-all" hidden>{{ t('Show all') }}</button>
+      </div>
+      <div class="j-tools" hidden>
+        <button type="button" class="j-link j-summary" aria-expanded="false">{{ t('Look back') }}</button>
+        <button type="button" class="j-link j-download">{{ t('Download all') }}</button>
+        <button type="button" class="j-link j-forget">{{ t('Delete everything') }}</button>
+      </div>
+      <div class="j-look" hidden aria-live="polite"></div>
+      <p class="j-privacy"><svg class="wi" aria-hidden="true"><use href="#lock"/></svg><span>{{ t('journal privacy') }}</span></p>
+    </div>
+  </section>
+  <p class="j-closed" id="journal-closed" hidden></p>
+  <script type="application/json" id="journal-text">{{ journal.text|tojson }}</script>
+{% endif %}
 </main>
 
 <footer class="foot">
@@ -440,6 +535,226 @@ document.querySelectorAll('[data-offset]').forEach(function (panel) {
   tick();
   setInterval(tick, 20000);
 });
+
+// Her journal. The morning Telegram message links here with a one-time key after "#t=" (the part after #
+// never reaches a server); it is traded once for a device key kept in this browser. Without one, the
+// journal stays hidden: the site is public, the notes are not (they live encrypted with the bot).
+(() => {
+  const box = document.getElementById('journal');
+  if (!box) return;
+  const S = JSON.parse(document.getElementById('journal-text').textContent);
+  const lang = document.documentElement.lang === 'en' ? 'en-GB' : document.documentElement.lang;
+  const say = (key, values = {}) => (S[key] ?? key).replace(/\{(\w+)\}/g, (_, k) => values[k] ?? '');
+  const many = (key, n) => say(n === 1 ? key + '_one' : key, { n: n.toLocaleString(lang) });
+  const stored = {
+    get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+    drop(k) { try { localStorage.removeItem(k); } catch {} },
+  };
+  const $ = (sel) => box.querySelector(sel);
+  const form = $('.j-write'), area = form.elements.text, status = $('.j-status');
+  const list = $('.j-notes ol'), look = $('.j-look');
+  // dates: browsers know English well, Kazakh barely, so other editions use the paper's own month names
+  const clock = (d) => String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+  const weekday = (d) => (d.getDay() + 6) % 7;
+  const fill = (format, d) => format.replace('{year}', d.getFullYear()).replace('{month}', S._months[d.getMonth()])
+    .replace('{day}', d.getDate()).replace('{weekday}', S._weekdays_long[weekday(d)]);
+  const when = (t, full) => {
+    const d = new Date(t);
+    if (S._months) return full ? fill(S._date_long, d) + ', ' + clock(d) : S._weekdays[weekday(d)] + ' · ' + fill(S._date_short, d) + ' · ' + clock(d);
+    return new Intl.DateTimeFormat(lang, full ? { dateStyle: 'full', timeStyle: 'short' }
+      : { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }).format(d);
+  };
+  const day = (t) => {
+    const d = new Date(t);
+    const old = d.getFullYear() !== new Date().getFullYear();
+    if (S._months) return fill(old ? S._date_year : S._date_short, d);
+    return new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'long', ...(old && { year: 'numeric' }) }).format(d);
+  };
+  const SHOWN = 5;          // notes listed until "Show all"
+  let me = stored.get('journal'), total = 0, all = false;
+
+  const hash = new URLSearchParams(location.hash.slice(1));
+  const link = hash.get('t'), go = hash.get('go') === 'journal';
+  if (link || go) history.replaceState(null, '', location.pathname + location.search);   // the link is hers alone
+
+  async function call(action, data = {}) {
+    const headers = { 'Content-Type': 'application/json' };
+    if (me) headers.Authorization = 'Bearer ' + me.device;
+    const res = await fetch(box.dataset.api, { method: 'POST', headers, body: JSON.stringify({ action, ...data }) });
+    const body = await res.json().catch(() => ({}));
+    if (res.status === 401) { stored.drop('journal'); me = null; box.hidden = true; }
+    if (!res.ok) throw Object.assign(new Error(body.error || res.status), { code: body.error });
+    return body;
+  }
+
+  function closed(code) {
+    const note = document.getElementById('journal-closed');
+    if (code !== 'used' && code !== 'expired') return;
+    note.textContent = say('journal ' + code);
+    note.hidden = false;
+  }
+
+  function item(n) {
+    const li = document.createElement('li');
+    const kind = n.k === 'thought' ? 'thought' : 'dream';
+    li.className = 'j-note ' + kind;
+    li.innerHTML = '<div class="j-meta"><span class="j-tag"><svg class="wi" aria-hidden="true"><use href="#' + (kind === 'dream' ? 'moon' : 'thought') +
+      '"/></svg></span><time></time><button type="button" class="j-link"></button></div><p></p>';
+    li.querySelector('.j-tag').append(say(kind === 'dream' ? 'Dream' : 'Thought'));
+    li.querySelector('time').textContent = when(n.t);
+    li.querySelector('time').dateTime = new Date(n.t).toISOString();
+    li.querySelector('p').textContent = n.s;
+    const del = li.querySelector('button');
+    del.textContent = say('Delete');
+    del.addEventListener('click', () => arm(del, say('Sure?'), async () => {
+      const r = await call('remove', { id: n.id });
+      li.remove();
+      count(r.total);
+    }));
+    return li;
+  }
+
+  // a destructive button asks once more: the second tap within 5 seconds does it
+  function arm(button, question, action) {
+    if (button.classList.contains('armed')) {
+      button.classList.remove('armed');
+      return action().catch(() => { status.textContent = say('Couldn’t save. Please try again in a minute.'); });
+    }
+    const label = button.textContent;
+    button.classList.add('armed');
+    button.textContent = question;
+    setTimeout(() => { button.classList.remove('armed'); button.textContent = label; }, 5000);
+  }
+
+  function count(n) {
+    total = n;
+    $('.j-notes').hidden = $('.j-tools').hidden = !n;
+    $('.j-total').textContent = many('j_notes', n);
+    $('.j-all').hidden = list.children.length >= n;
+    if (!n) { look.hidden = true; summary.setAttribute('aria-expanded', 'false'); }
+  }
+
+  async function load(everything) {
+    all = Boolean(everything);
+    const r = await call('recent', all ? { all: true } : {});
+    list.replaceChildren(...r.notes.slice(0, all ? undefined : SHOWN).map(item));
+    count(r.total);
+  }
+
+  function lookBack(st) {
+    look.replaceChildren();
+    const p = (text) => look.appendChild(Object.assign(document.createElement('p'), { textContent: text }));
+    if (!st.total) return;
+    p(say('j_since', { notes: many('j_notes', st.total), date: day(st.first) }));
+    const kinds = [st.dreams && many('j_dreams', st.dreams), st.thoughts && many('j_thoughts', st.thoughts)].filter(Boolean);
+    if (kinds.length > 1) p(kinds.join(' · '));
+    if (st.month) p(say('j_month', { notes: many('j_notes', st.month.notes), days: many('j_days', st.month.days) }));
+    const { now, best } = st.streak || {};
+    if (now >= 2) p(say('j_streak', { days: many('j_days', now) }) + (best > now ? ' · ' + say('j_best', { days: many('j_days', best) }) : ''));
+    else if (best >= 2) p(say('j_best_only', { days: many('j_days', best) }));
+    if (st.when) p(say('j_' + st.when));
+    let words = 0;
+    for (const [kind, found] of Object.entries(st.themes || {})) {
+      if (!found.length) continue;
+      words += found.length;
+      look.appendChild(Object.assign(document.createElement('h3'), { className: 'label', textContent: say('j_often_' + kind) }));
+      const ul = Object.assign(document.createElement('ul'), { className: 'j-words' });
+      for (const w of found) {
+        const li = document.createElement('li');
+        li.append(w.word + ' ', Object.assign(document.createElement('b'), { textContent: '×' + w.n }));
+        ul.appendChild(li);
+      }
+      look.appendChild(ul);
+    }
+    if (!words) p(say('j_early'));
+    if (st.ago) {
+      look.appendChild(Object.assign(document.createElement('h3'), { className: 'label', textContent: say('j_ago_' + st.ago.days) + ' · ' + day(st.ago.t) }));
+      look.appendChild(Object.assign(document.createElement('blockquote'), { textContent: st.ago.s }));
+    }
+  }
+
+  // a draft survives closing the page
+  const draft = stored.get('journal-draft');
+  if (draft) { area.value = draft.text || ''; form.elements.kind.value = draft.kind || 'dream'; }
+  const hint = () => { area.placeholder = say(form.elements.kind.value === 'thought' ? 'What’s on your mind?' : 'What did you dream about?'); };
+  hint();
+  form.addEventListener('change', hint);
+  form.addEventListener('input', () => stored.set('journal-draft', { text: area.value, kind: form.elements.kind.value }));
+  area.addEventListener('keydown', (e) => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) form.requestSubmit(); });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const text = area.value.trim();
+    if (!text) return area.focus();
+    const button = $('.j-save');
+    button.disabled = true;
+    status.className = 'j-status';
+    status.textContent = say('Saving…');
+    try {
+      const r = await call('add', { text, kind: form.elements.kind.value });
+      list.prepend(item(r.note));
+      if (!all && list.children.length > SHOWN) list.lastElementChild.remove();
+      count(r.total);
+      area.value = '';
+      stored.drop('journal-draft');
+      status.className = 'j-status ok';
+      status.textContent = '✓ ' + say('Kept');
+      look.hidden = true;
+      summary.setAttribute('aria-expanded', 'false');
+    } catch {
+      status.className = 'j-status bad';
+      status.textContent = say('Couldn’t save. Please try again in a minute.');
+    } finally {
+      button.disabled = false;
+    }
+  });
+
+  $('.j-all').addEventListener('click', () => load(true));
+  const summary = $('.j-summary');
+  summary.addEventListener('click', async () => {
+    const open = look.hidden;
+    if (open) lookBack(await call('summary'));
+    look.hidden = !open;
+    summary.setAttribute('aria-expanded', String(open));
+  });
+  $('.j-download').addEventListener('click', async () => {
+    const r = await call('recent', { all: true });
+    const text = r.notes.slice().reverse()
+      .map((n) => say(n.k === 'thought' ? 'Thought' : 'Dream') + ' · ' + when(n.t, true) + '\n\n' + n.s)
+      .join('\n\n————\n\n');
+    const a = Object.assign(document.createElement('a'), {
+      href: URL.createObjectURL(new Blob([text + '\n'], { type: 'text/plain;charset=utf-8' })),
+      download: 'journal-' + new Date().toISOString().slice(0, 10) + '.txt',
+    });
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  });
+  const forget = $('.j-forget');
+  forget.addEventListener('click', () => arm(forget, say('Tap again to delete all {notes}', { notes: many('j_notes', total) }), async () => {
+    await call('forget');
+    list.replaceChildren();
+    count(0);
+  }));
+
+  (async () => {
+    const chat = link && link.split('.')[0];
+    if (link && (!me || me.chat !== chat)) {
+      try {
+        const { device } = await call('claim', { link });
+        me = { device, chat };
+        stored.set('journal', me);
+      } catch (err) {
+        if (!me) return closed(err.code);
+      }
+    }
+    if (!me) return;
+    box.hidden = false;
+    if (go) box.scrollIntoView({ block: 'start' });
+    load().catch(() => {});
+  })();
+})();
 </script>
 </body>
 </html>

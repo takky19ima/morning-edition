@@ -1,31 +1,51 @@
-// The journal's two web addresses (the notes themselves live in _journal.js):
-//   ?on=<chat>             does this chat keep a journal? notify.py asks, to add the morning dream question
-//   ?c=…&e=…&l=…&s=…       a signed /export link: the whole journal as a page, or with &as=txt as a text file
+// The journal's door for the paper's web page (the notes themselves are handled in _journal.js).
+// POST { action, ... } from the page, with "Authorization: Bearer <device key>" once it has one:
+//   claim   { link }          → { device }   the one-time link from the morning Telegram message
+//   add     { text, kind }    → { note, total }
+//   recent  { all? }          → { notes, total }   the latest 10, or all of them
+//   remove  { id }            → { removed, total }
+//   forget                    → { removed, total }  deletes every note
+//   summary                   → numbers for the "Look back" panel
 import * as journal from "./_journal.js";
 
-const PRIVATE = { "Cache-Control": "no-store", "X-Robots-Tag": "noindex", "Referrer-Policy": "no-referrer" };
+const SITE = new URL(process.env.PAPER_URL ?? "https://takky19ima.github.io/morning-edition/").origin;
+const HEADERS = {
+  "Access-Control-Allow-Origin": SITE,
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Authorization, Content-Type",
+  "Access-Control-Max-Age": "86400",
+  "Cache-Control": "no-store",
+  Vary: "Origin",
+};
+const answer = (body, status = 200) => Response.json(body, { status, headers: HEADERS });
 
-export async function GET(request) {
-  const url = new URL(request.url);
-  const params = url.searchParams;
+export function OPTIONS() {
+  return new Response(null, { status: 204, headers: HEADERS });
+}
 
-  if (params.has("on")) {
-    const on = /^-?\d+$/.test(params.get("on")) && await journal.isOn(params.get("on")).catch(() => false);
-    return Response.json({ on }, { headers: PRIVATE });
+export async function POST(request) {
+  if (!journal.configured) return answer({ error: "off" }, 503);
+  const body = await request.json().catch(() => ({}));
+  try {
+    if (body.action === "claim") {
+      const result = await journal.claim(body.link);
+      return answer(result, result.error ? 403 : 200);
+    }
+    const chat = await journal.reader((request.headers.get("authorization") ?? "").replace(/^Bearer /, ""));
+    if (!chat) return answer({ error: "unknown" }, 401);
+    switch (body.action) {
+      case "add": {
+        const result = await journal.add(chat, body.text, body.kind);
+        return answer(result, result.error ? 400 : 200);
+      }
+      case "recent": return answer(await journal.recent(chat, body.all ? 0 : 10));
+      case "remove": return answer(await journal.remove(chat, String(body.id ?? "")));
+      case "forget": return answer(await journal.forget(chat));
+      case "summary": return answer(await journal.summary(chat));
+    }
+    return answer({ error: "action?" }, 400);
+  } catch (err) {
+    console.error(`journal: ${err.message}`);      // never the notes themselves
+    return answer({ error: "failed" }, 500);
   }
-
-  const lang = params.get("l") === "ru" ? "ru" : "en";
-  const chat = journal.linkChat(params);
-  if (!chat) {
-    return new Response(journal.expiredText(lang), { status: 410, headers: { ...PRIVATE, "Content-Type": "text/plain; charset=utf-8" } });
-  }
-  const notes = await journal.allNotes(chat);
-  if (params.get("as") === "txt") {
-    const day = new Date().toISOString().slice(0, 10);
-    return new Response(journal.asText(notes, lang), {
-      headers: { ...PRIVATE, "Content-Type": "text/plain; charset=utf-8", "Content-Disposition": `attachment; filename="journal-${day}.txt"` },
-    });
-  }
-  params.set("as", "txt");
-  return new Response(journal.asPage(notes, lang, `?${params}`), { headers: { ...PRIVATE, "Content-Type": "text/html; charset=utf-8" } });
 }

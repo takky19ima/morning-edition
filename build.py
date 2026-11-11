@@ -701,6 +701,17 @@ def add_bodies(top: list[dict], sections: list[dict]) -> None:
 
 # ---------------------------------------------------------------- languages
 
+# Wording the journal's script needs at the end of the web page (template.html), from i18n.toml.
+JOURNAL_STRINGS = (
+    "Dream", "Thought", "What did you dream about?", "What’s on your mind?", "Saving…", "Kept",
+    "Couldn’t save. Please try again in a minute.", "Delete", "Sure?", "Tap again to delete all {notes}",
+    "journal used", "journal expired", "j_notes", "j_notes_one", "j_dreams", "j_dreams_one", "j_thoughts",
+    "j_thoughts_one", "j_days", "j_days_one", "j_since", "j_month", "j_streak", "j_best", "j_best_only", "j_night",
+    "j_morning", "j_afternoon", "j_evening", "j_often_dream", "j_often_thought", "j_often_all", "j_ago_365",
+    "j_ago_30", "j_ago_7", "j_early",
+)
+JOURNAL_DATES = ("_months", "_weekdays", "_weekdays_long", "_date_short", "_date_long", "_date_year")
+
 
 def strings(i18n: dict, lang: str):
     """t(key, **values): interface text in this edition's language (English when missing)."""
@@ -930,6 +941,9 @@ def main() -> None:
             quote=l_extras["quote"], wish=l_extras["wish"], places=places, home_time=home_time, home_diff=home_diff,
             rates=fx, top=l_top, sections=l_sections, past=past[:14], sources=all_sources, long_date=long_date,
             t=t, weekday=weekday, ago=lambda dt, t=t: ago(dt, now, t),
+            journal=cfg.get("journal") and {**cfg["journal"], "text": {
+                **{k: t(k) for k in JOURNAL_STRINGS},
+                **{k: v for k, v in i18n.get(lang, {}).items() if k in JOURNAL_DATES}}},
         )
         root = "" if folder == out else "../"           # from this edition to the paper's main edition
         page = env.get_template(templates.get("web", "template.html"))
@@ -958,7 +972,8 @@ def main() -> None:
         "top": [{"title": c["title"], "link": c["link"], "source": c["source"], "coverage": c["coverage"]} for c in l_top],
         "pdfs": {lang: pdfs[lang] for lang in cfg.get("print", {}).get("send", []) if lang in pdfs},
         "labels": {k: t(k) for k in ("No.", "Top stories", "Read today’s paper →", "Today’s paper to print",
-                                     notify.DREAM_QUESTION)},
+                                     notify.JOURNAL_LINE)},
+        "journal": bool(cfg.get("journal")),
     }
     site_url = cfg["paper"].get("site_url")
     summary["url"] = site_url

@@ -44,23 +44,31 @@ Readers who get the paper every morning are listed in the `TELEGRAM_CHAT_ID` sec
 A new reader's chat id shows up in the Vercel logs (`chat 123456789 (Name) sent /start`) after they press Start.
 If the bot's address ever changes: Actions → **Connect bot** → Run workflow with the new URL.
 
-### The journal
+### Her journal
 
-/journal turns on a dreams-and-thoughts journal for that chat: every message the reader writes to the bot
-becomes a note, and the morning paper ends with "Dreamt something?" (a reply to it is saved as a dream).
-/notes shows the latest, /summary counts them up (no AI: totals, days in a row, words that keep coming back,
-a note from a week, month or year ago), /export opens everything on a page that works for 15 minutes,
-/forget deletes it all.
+At the end of KK's web page there is a page for her dreams and thoughts. Only a browser her morning
+Telegram message has connected sees it: each reader's message carries a one-time link after `#t=`
+(signed by `notify.py` with `JOURNAL_LINK_SECRET`), which the page trades for a key it keeps.
+A forwarded message's link has already been used, so it opens nothing. She writes, deletes, downloads
+everything as a text file, and "Look back" counts it up (no AI: totals, days in a row, words that keep
+coming back, a note from a week, month or year ago).
 
-Notes are encrypted (AES-256-GCM) inside the Vercel function and stored in Upstash Redis, connected to the
-Vercel project as a Marketplace integration. They never go to this repo, the website or the logs. The bot needs:
+The notes are encrypted (AES-256-GCM) in `bot/api/_journal.js` and stored in Upstash Redis, a Vercel
+Marketplace integration. They never go to this repo, the website or any log.
+
+### Alarm clock
+
+GitHub sometimes skips or delays scheduled runs. Vercel's cron (`bot/vercel.json`) calls `bot/api/alarm.js`
+once a morning per paper, which starts the workflow too; `done.py` makes sure a paper goes out only once.
 
 | Vercel environment variable | What |
 |---|---|
-| `KV_REST_API_URL`, `KV_REST_API_TOKEN` | the database, added by the Upstash integration |
+| `KV_REST_API_URL`, `KV_REST_API_TOKEN` | the journal's database, added by the Upstash integration |
 | `JOURNAL_KEY` | the encryption key (random); lose it and the notes can't be read |
-| `TELEGRAM_WEBHOOK_SECRET` | also a GitHub secret; proves a request comes from Telegram |
-| `JOURNAL_TZ` | optional, the readers' time zone (default Europe/London) |
+| `JOURNAL_LINK_SECRET` | also a GitHub secret; signs the morning links |
+| `JOURNAL_TZ` | optional, her time zone for streaks (default Europe/London) |
+| `CRON_SECRET` | Vercel sends it with each cron call, so only the cron can ring the alarm |
+| `ALARM_GITHUB_TOKEN` | fine-grained GitHub token for this repo only, Actions: read and write |
 
 ## Change things
 

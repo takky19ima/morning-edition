@@ -19,6 +19,11 @@ top_stories = 5             # front page: the stories covered by the most outlet
 archive_days = 60           # keep this many past editions online
 languages = ["en", "kk", "zh"]   # web editions: English, Kazakh, Chinese (machine-translated)
 
+[journal]
+# Her dreams and thoughts, written at the end of the web page. The notes live encrypted with the bot
+# (bot/api/_journal.js), never on this site; each morning's Telegram message carries her personal link.
+api = "https://bot-woad-psi-33.vercel.app/api/journal"
+
 [print]
 # A printable PDF (A4, like a real paper) with longer excerpts and QR codes to the full stories.
 # It goes to Telegram only — the articles' text isn't published on the website.
