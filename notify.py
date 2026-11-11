@@ -125,6 +125,11 @@ def caption(s: dict, url: str | None, limit: int = 1024) -> str:
 
 
 def main() -> None:
+    if "--journal-link" in sys.argv:          # a one-time journal link for one reader, e.g. to try it out
+        chat_id = sys.argv[sys.argv.index("--journal-link") + 1]
+        link = journal_link(chat_id)
+        print(f"https://takky19ima.github.io/morning-edition/#t={link}&go=journal" if link else "JOURNAL_LINK_SECRET is not set")
+        return
     token = os.environ.get("TELEGRAM_BOT_TOKEN")
     if not token:
         print("TELEGRAM_BOT_TOKEN is not set — skipping Telegram.")
