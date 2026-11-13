@@ -1,0 +1,1354 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Morning Edition — 11月13日</title>
+<meta name="description" content="英伟达前首席执行官黄仁勋被传唤到国会就与涉嫌中国间谍的事件作证">
+<meta property="og:title" content="The Morning Edition · 2026年11月13日 星期五">
+<meta property="og:description" content="英伟达前首席执行官黄仁勋被传唤到国会就与涉嫌中国间谍的事件作证 · 卫生部称，以色列对加沙医院的袭击造成六名巴勒斯坦人死亡 · 安迪·伯纳姆承诺在和平谈判中支持乌克兰并推动欧洲准入 · 俄罗斯军舰在芬兰湾被乌克兰无人机击中 · “看来我们必须与人们交谈”：澳大利亚发回了微软重大故障电子邮件之前的时间">
+<meta property="og:image" content="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/f66c/live/4f0358a0-def1-11f1-bb80-c5cef03337ce.jpg"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400;1,6..72,500&family=PT+Sans:wght@400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&family=Noto+Sans+SC:wght@400;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f4f1ea; --card: #ffffff; --ink: #16161a; --ink-2: #45454f; --ink-3: #686872;
+  --line: #e4dfd4; --rule: #16161a;
+  --shadow: 0 1px 2px rgb(20 20 30 / .06), 0 6px 20px rgb(20 20 30 / .05);
+  --gold: #f2b705; --sky: #00a3c4; --saltire: #0065bd; --top: #c8102e;
+  --live: #d0021b; --amber: #e8890c; --green: #1e8e5a;
+  --serif: "Newsreader", "PT Serif", Georgia, "Times New Roman", serif;
+  --sans: "Libre Franklin", "PT Sans", "Helvetica Neue", Arial, sans-serif;
+  --black: "UnifrakturMaguntia", "Old English Text MT", Georgia, serif;
+  --mix: #000; --mix-ink: 72%; --mix-soft: 11%; --q-gold: 26%; --q-sky: 16%;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111114; --card: #1b1b20; --ink: #ecebe6; --ink-2: #c4c3bd; --ink-3: #9a99a1;
+    --line: #2d2d34; --rule: #ecebe6; --shadow: 0 1px 2px rgb(0 0 0 / .4);
+    --mix: #fff; --mix-ink: 58%; --mix-soft: 22%; --q-gold: 13%; --q-sky: 14%; color-scheme: dark;
+  }
+}
+/* Kazakh needs Cyrillic letters Newsreader doesn't have; Chinese needs CJK fonts */
+html[lang="kk"] { --serif: "PT Serif", Georgia, serif; --sans: "PT Sans", Arial, sans-serif; }
+html[lang^="zh"] { --serif: "Noto Serif SC", "Songti SC", serif; --sans: "Noto Sans SC", "PingFang SC", sans-serif; }
+html[lang^="zh"] .label, html[lang^="zh"] .badge, html[lang^="zh"] .topic { letter-spacing: .04em; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 64px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.5 var(--serif); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid var(--saltire); outline-offset: 2px; border-radius: 2px; }
+.page { max-width: 1200px; margin: 0 auto; padding: 0 16px 56px; }
+.label { font: 700 11px/1.4 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+/* every coloured block sets --c; these derive readable text and soft fills from it */
+[style*="--c"] { --c-ink: color-mix(in srgb, var(--c) var(--mix-ink), var(--mix)); --c-soft: color-mix(in srgb, var(--c) var(--mix-soft), var(--card)); }
+
+/* masthead */
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; color: var(--ink-2); }
+.langs { display: flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--card); box-shadow: var(--shadow); }
+.langs a { padding: 5px 12px; border-radius: 999px; font: 600 13px/1.3 var(--sans); color: var(--ink-2); }
+.langs a[aria-current] { background: var(--ink); color: var(--bg); }
+.mast { display: grid; align-items: center; gap: 16px; padding: 22px 0 14px; }
+.mast h1 { margin: 0; text-align: center; font: 400 clamp(36px, 11vw, 60px)/1.05 var(--black); }
+.ear { display: none; border: 1px solid var(--rule); padding: 8px 10px; font: 13px/1.4 var(--sans); color: var(--ink-2); }
+.ear b { display: block; color: var(--ink); margin-bottom: 2px; }
+@media (min-width: 640px) { .mast h1 { font-size: min(9vw, 96px); white-space: nowrap; } }
+@media (min-width: 1100px) {
+  .mast { grid-template-columns: 180px 1fr 180px; }
+  .mast h1 { font-size: min(6vw, 80px); }
+  .ear { display: block; }
+}
+.band { display: grid; gap: 2px; padding: 8px 0; text-align: center; border-top: 3px double var(--rule); border-bottom: 1px solid var(--rule); }
+.band .date { font: italic 500 20px/1.3 var(--serif); }
+.band .label { color: var(--ink-2); }
+@media (min-width: 720px) {
+  .band { grid-template-columns: 1fr auto 1fr; align-items: center; }
+  .band > :first-child { text-align: left; }
+  .band > :last-child { text-align: right; }
+}
+nav.index { position: sticky; top: 0; z-index: 5; display: flex; gap: 8px; padding: 10px 16px; margin: 0 -16px; overflow-x: auto; scrollbar-width: none; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+nav.index::-webkit-scrollbar { display: none; }
+@media (min-width: 900px) { nav.index { justify-content: center; } }
+.pill { flex: none; padding: 7px 12px; border-radius: 999px; background: var(--c-soft); color: var(--c-ink); white-space: nowrap; }
+.pill:hover { background: var(--c); color: #fff; }
+
+/* quote of the day */
+.quote { position: relative; overflow: hidden; margin-top: 18px; padding: 26px 22px 24px; border-radius: 14px; background: linear-gradient(135deg, color-mix(in srgb, var(--gold) var(--q-gold), var(--card)), color-mix(in srgb, var(--sky) var(--q-sky), var(--card))); }
+.quote::before { content: "“"; position: absolute; right: 22px; top: 10px; font: 700 180px/.8 var(--serif); color: var(--gold); opacity: .45; pointer-events: none; }
+.greet { display: flex; align-items: center; gap: 8px; margin: 0 0 14px; font: 700 13px/1.3 var(--sans); }
+.greet svg { width: 22px; height: 22px; color: #b88a00; }
+.quote .label { color: var(--ink-2); margin-bottom: 8px; }
+.quote .orig { margin: 0 0 4px; font: italic 500 20px/1.35 var(--serif); color: var(--ink-2); }
+.quote blockquote { margin: 0; max-width: 34ch; font: 500 clamp(25px, 3.4vw, 32px)/1.25 var(--serif); letter-spacing: -.01em; text-wrap: balance; }
+.quote .cite { margin: 12px 0 0; font: 13px/1.4 var(--sans); color: var(--ink-2); }
+.quote .cite b { color: var(--ink); }
+
+/* today: weather here, home, money */
+.today { display: grid; gap: 14px; margin-top: 14px; }
+@media (min-width: 760px) { .today { grid-template-columns: 1.35fr 1fr; } .today .money { grid-column: 1 / -1; } }
+@media (min-width: 1080px) { .today { grid-template-columns: 1.4fr 1fr 1fr; } .today .money { grid-column: auto; } }
+.panel { background: var(--card); border-radius: 14px; box-shadow: var(--shadow); padding: 0 18px 18px; overflow: hidden; }
+.panel > .label { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 12px; margin: 0 -18px 14px; padding: 12px 18px; background: var(--c-soft); color: var(--c-ink); }
+.panel > .label span:last-child { color: var(--ink-3); font-weight: 600; }
+.wi { width: 22px; height: 22px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.wi .occ { fill: var(--card); }
+.wi.big { width: 56px; height: 56px; stroke-width: 1.2; color: var(--c-ink); }
+.wx-now { display: flex; align-items: center; gap: 14px; }
+.wx-temp { font: 700 50px/1 var(--serif); }
+.wx-label { font: italic 20px/1.3 var(--serif); color: var(--ink-2); }
+.wx-facts { margin: 12px 0 14px; font: 13px/1.6 var(--sans); color: var(--ink-2); }
+.wx-days { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+.wx-days li { display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 12px 4px 0; font: 13px/1.3 var(--sans); text-align: center; }
+.wx-days li + li { border-left: 1px solid var(--line); }
+.wx-days .r { color: var(--ink-3); }
+.clock { font: 700 50px/1 var(--serif); font-variant-numeric: tabular-nums; }
+.ahead { margin: 4px 0 14px; font: 13px/1.4 var(--sans); color: var(--ink-2); }
+.home-wx { display: flex; align-items: center; gap: 12px; padding-top: 12px; border-top: 1px solid var(--line); font: 13px/1.5 var(--sans); color: var(--ink-2); }
+.home-wx .wi { width: 36px; height: 36px; color: var(--c-ink); }
+.home-wx b { display: block; font: 700 20px/1.2 var(--serif); color: var(--ink); }
+.big-rate { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; font: 700 40px/1.1 var(--serif); font-variant-numeric: tabular-nums; }
+.big-rate span { white-space: nowrap; }
+.big-rate small { font: 600 13px/1.4 var(--sans); }
+.cross { margin: 6px 0 12px; font: 13px/1.4 var(--sans); color: var(--ink-2); }
+.fx { width: 100%; border-collapse: collapse; font: 13px/1.3 var(--sans); font-variant-numeric: tabular-nums; }
+.fx th, .fx td { padding: 7px 0; border-top: 1px solid var(--line); }
+.fx th { text-align: left; font-weight: 700; }
+.fx th span { font-weight: 400; color: var(--ink-3); margin-left: 6px; }
+.fx td { text-align: right; padding-left: 10px; white-space: nowrap; }
+.fx .v { font: 700 16px/1.2 var(--serif); }
+.up { color: var(--live); } .down { color: var(--green); } .flat { color: var(--ink-3); }
+@media (prefers-color-scheme: dark) { .up { color: #ff7a7a; } .down { color: #6fd39c; } }
+.note { margin: 10px 0 0; font: 13px/1.4 var(--sans); color: var(--ink-3); }
+
+/* cards */
+.card { display: flex; flex-direction: column; background: var(--card); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+.media { display: block; position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--c-soft); }
+.media img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.card:hover .media img { transform: scale(1.03); }
+.tile { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; padding: 12px 14px; color: #fff; background: radial-gradient(circle at 85% 15%, color-mix(in srgb, var(--c) 55%, #fff) 0 18%, transparent 19%), linear-gradient(135deg, var(--c), color-mix(in srgb, var(--c) 55%, #000)); }
+.tile b { font: italic 600 20px/1.15 var(--serif); }
+.tile span { font: 700 11px/1.4 var(--sans); letter-spacing: .12em; text-transform: uppercase; opacity: .85; }
+.body { display: flex; flex-direction: column; gap: 8px; padding: 14px 16px 16px; flex: 1; }
+.tags { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 7px; border-radius: 4px; font: 800 11px/1.3 var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+.b-live, .b-breaking { background: var(--live); color: #fff; }
+.b-live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: pulse 1.4s ease-in-out infinite; }
+.b-developing { background: var(--amber); color: #221400; }
+.b-new { background: color-mix(in srgb, var(--green) var(--mix-soft), var(--card)); color: color-mix(in srgb, var(--green) var(--mix-ink), var(--mix)); }
+.b-opinion { background: color-mix(in srgb, #7a4bc2 var(--mix-soft), var(--card)); color: color-mix(in srgb, #7a4bc2 var(--mix-ink), var(--mix)); }
+.b-analysis, .b-explainer { background: color-mix(in srgb, #3d4db7 var(--mix-soft), var(--card)); color: color-mix(in srgb, #3d4db7 var(--mix-ink), var(--mix)); }
+@keyframes pulse { 50% { opacity: .25; } }
+@media (prefers-reduced-motion: reduce) { .b-live::before { animation: none; } .media img { transition: none; } }
+.topic { font: 700 11px/1.3 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--c-ink); }
+.hl { margin: 0; font: 700 20px/1.2 var(--serif); letter-spacing: -.005em; text-wrap: balance; }
+.hl a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .15em; }
+.dek { margin: 0; color: var(--ink-2); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+.meta { margin: auto 0 0; padding-top: 4px; font: 13px/1.4 var(--sans); color: var(--ink-3); }
+.meta b { color: var(--c-ink); font-weight: 700; }
+
+/* compact row: headline left, square picture right */
+.row { flex-direction: row-reverse; align-items: flex-start; gap: 12px; padding: 14px 0; background: none; border-radius: 0; box-shadow: none; overflow: visible; border-top: 1px solid var(--line); }
+.row .media { flex: none; width: 84px; aspect-ratio: 1; border-radius: 8px; }
+.row .tile { padding: 8px; justify-content: center; align-items: center; }
+.row .tile b { font-size: 25px; }
+.row .tile span { display: none; }
+.row .body { padding: 0; gap: 5px; }
+.row .hl { font-size: 16px; line-height: 1.3; }
+.row .dek { display: none; }
+
+/* front page */
+.front { display: grid; gap: 18px; margin-top: 28px; }
+.lead .media { aspect-ratio: 3 / 2; }
+.lead .body { padding: 18px 20px 20px; gap: 10px; }
+.lead .hl { font: 800 clamp(32px, 4.4vw, 50px)/1.05 var(--serif); letter-spacing: -.015em; }
+.lead .dek { font-size: 20px; line-height: 1.45; -webkit-line-clamp: 4; }
+.also { margin: 0; padding-top: 10px; border-top: 1px solid var(--line); font: 13px/1.5 var(--sans); color: var(--ink-3); }
+.side { background: var(--card); border-radius: 12px; box-shadow: var(--shadow); padding: 4px 18px; }
+.side .row:first-child { border-top: 0; }
+.side-head { padding: 14px 0 2px; color: var(--c-ink); }
+@media (min-width: 900px) { .front { grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr); align-items: start; } }
+
+/* sections */
+.section { margin-top: 56px; }
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 18px; padding-top: 10px; border-top: 4px solid var(--c); }
+.sec-head h2 { margin: 0; font: 800 32px/1.1 var(--serif); letter-spacing: -.01em; color: var(--c-ink); }
+.sec-head .label { color: var(--ink-3); }
+.feature { margin-bottom: 18px; }
+.feature .hl { font-size: 32px; line-height: 1.12; }
+.feature .body { padding: 18px 20px 20px; gap: 10px; }
+@media (min-width: 820px) {
+  .feature { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+  .feature .media { aspect-ratio: auto; min-height: 320px; }
+  .feature .body { padding: 26px 28px; justify-content: center; }
+}
+.grid { display: grid; gap: 18px; }
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 639px) {
+  /* phones: everything after the feature becomes a light list instead of stacked cards */
+  .grid { gap: 0; background: var(--card); border-radius: 12px; box-shadow: var(--shadow); padding: 0 16px; }
+  .grid .card { flex-direction: row-reverse; align-items: flex-start; gap: 12px; padding: 14px 0; background: none; border-radius: 0; box-shadow: none; overflow: visible; border-top: 1px solid var(--line); }
+  .grid .card:first-child { border-top: 0; }
+  .grid .media { flex: none; width: 84px; aspect-ratio: 1; border-radius: 8px; }
+  .grid .tile { padding: 8px; justify-content: center; align-items: center; }
+  .grid .tile b { font-size: 25px; }
+  .grid .tile span { display: none; }
+  .grid .body { padding: 0; gap: 5px; }
+  .grid .hl { font-size: 16px; line-height: 1.3; }
+  .grid .dek { display: none; }
+}
+.desks { display: grid; gap: 18px; }
+@media (min-width: 820px) { .desks { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.desk { background: var(--card); border-radius: 12px; box-shadow: var(--shadow); overflow: hidden; }
+.desk-title { display: flex; align-items: center; gap: 8px; margin: 0; padding: 12px 16px; background: var(--c-soft); color: var(--c-ink); }
+.desk-title .flag { font-size: 20px; line-height: 1; letter-spacing: 0; }
+.desk > .card:first-of-type { border-radius: 0; box-shadow: none; }
+.desk .rows { padding: 0 16px 4px; }
+.empty { margin: 0; padding: 16px; font-style: italic; color: var(--ink-3); }
+
+/* the wish */
+.wish { position: relative; overflow: hidden; margin-top: 64px; padding: 40px 24px 36px; border-radius: 18px; text-align: center; background: linear-gradient(160deg, color-mix(in srgb, #ff9a62 30%, var(--card)), color-mix(in srgb, var(--gold) 30%, var(--card)) 55%, color-mix(in srgb, var(--sky) 20%, var(--card))); }
+.wish .sun { width: 64px; height: 64px; color: #c98a00; }
+.wish h2 { margin: 10px 0 12px; font: italic 600 clamp(32px, 5vw, 50px)/1.1 var(--serif); letter-spacing: -.01em; }
+.wish p { margin: 0 auto; max-width: 40ch; }
+.wish .text { font: 400 20px/1.5 var(--serif); }
+.wish .tip { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; padding: 8px 14px; border-radius: 999px; background: color-mix(in srgb, var(--card) 70%, transparent); font: 600 13px/1.4 var(--sans); max-width: none; text-align: left; }
+.wish .signoff { margin-top: 18px; font: italic 500 25px/1.3 var(--serif); color: var(--ink-2); }
+
+/* her page: dreams and thoughts. Shown only in a browser her morning link has connected (see the script);
+   the notes themselves live encrypted with the bot, never on this site */
+.journal { max-width: 820px; margin: 28px auto 0; border-radius: 18px; background: var(--card); box-shadow: var(--shadow); overflow: hidden; }
+.journal [hidden] { display: none; }
+.j-head { position: relative; padding: 24px 22px 22px; color: #f4f2ff;
+  background: radial-gradient(circle at 62% 30%, #fff 0 1px, transparent 1.5px), radial-gradient(circle at 74% 72%, rgb(255 255 255 / .7) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 48% 64%, rgb(255 255 255 / .55) 0 1px, transparent 1.5px), radial-gradient(circle at 92% 84%, rgb(255 255 255 / .6) 0 1px, transparent 1.5px),
+    linear-gradient(160deg, #1b1a44, #34307f 65%, #5249a8); }
+.j-head .label { color: rgb(244 242 255 / .72); }
+.j-head h2 { margin: 6px 0 0; max-width: 14ch; font: italic 600 clamp(32px, 5vw, 50px)/1.1 var(--serif); letter-spacing: -.01em; }
+.j-head .moon { position: absolute; right: 22px; top: 20px; width: 56px; height: 56px; fill: currentColor; color: #ffe9a8; }
+.j-body { display: grid; gap: 18px; padding: 18px 22px 22px; }
+.j-kind { display: inline-flex; justify-self: start; gap: 2px; padding: 3px; border-radius: 999px; background: var(--bg); }
+.j-kind input { position: absolute; opacity: 0; pointer-events: none; }
+.j-kind span { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 6px 14px; border-radius: 999px; font: 600 13px/1.3 var(--sans); color: var(--ink-2); cursor: pointer; }
+.j-kind span .wi { width: 18px; height: 18px; }
+.j-kind input:checked + span { background: var(--ink); color: var(--bg); }
+.j-kind input:focus-visible + span { outline: 2px solid var(--c); outline-offset: 2px; }
+.j-write { display: grid; gap: 12px; }
+.j-write textarea { width: 100%; min-height: 168px; resize: vertical; margin: 0; padding: 0 14px; border: 1px solid var(--line); border-radius: 12px; color: var(--ink);
+  background: var(--card) repeating-linear-gradient(transparent 0 31px, var(--line) 31px 32px) local; font: 400 20px/32px var(--serif); }
+.j-write textarea::placeholder { color: var(--ink-3); font-style: italic; }
+.j-write textarea:focus { outline: 2px solid color-mix(in srgb, var(--c) 45%, transparent); outline-offset: 1px; border-color: var(--c); }
+.j-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.j-save { min-height: 44px; padding: 10px 22px; border: 0; border-radius: 999px; background: var(--ink); color: var(--bg); font: 700 16px/1.2 var(--sans); cursor: pointer; }
+.j-save:disabled { opacity: .55; cursor: default; }
+.j-save:focus-visible, .j-link:focus-visible { outline: 2px solid var(--c); outline-offset: 2px; }
+.j-status { font: 13px/1.4 var(--sans); color: var(--ink-3); }
+.j-status.ok { color: var(--green); }
+.j-status.bad { color: var(--live); }
+.j-notes > .label { display: flex; justify-content: space-between; gap: 12px; margin: 0; color: var(--ink-3); }
+.j-notes ol { list-style: none; margin: 8px 0 0; padding: 0; }
+.j-note { padding: 14px 0; border-top: 1px solid var(--line); }
+.j-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; font: 13px/1.4 var(--sans); color: var(--ink-3); }
+.j-tag { display: inline-flex; align-items: center; gap: 5px; font: 700 11px/1.3 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: color-mix(in srgb, var(--k) var(--mix-ink), var(--mix)); }
+.j-tag .wi { width: 16px; height: 16px; }
+.j-note.dream { --k: #5a55c8; }
+.j-note.thought { --k: #c27a0e; }
+.j-note p { margin: 6px 0 0; font: 400 16px/1.55 var(--serif); white-space: pre-wrap; overflow-wrap: anywhere; }
+.j-link { padding: 4px 0; border: 0; background: none; color: var(--ink-2); font: 13px/1.4 var(--sans); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: .2em; cursor: pointer; }
+.j-link:hover { color: var(--ink); text-decoration-color: currentColor; }
+.j-meta .j-link { margin-left: auto; padding: 0; color: var(--ink-3); }
+.j-link.armed { color: var(--live); text-decoration-color: currentColor; }
+.j-look { padding: 16px 18px; border-radius: 12px; background: var(--c-soft); }
+.j-look p { margin: 0 0 8px; font: 16px/1.5 var(--serif); }
+.j-look h3 { margin: 14px 0 6px; color: var(--c-ink); }
+.j-words { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.j-words li { padding: 4px 10px; border-radius: 999px; background: var(--card); font: 13px/1.4 var(--sans); }
+.j-words b { font-weight: 700; color: var(--c-ink); }
+.j-look blockquote { margin: 6px 0 0; padding-left: 12px; border-left: 2px solid var(--c); font: italic 16px/1.5 var(--serif); color: var(--ink-2); white-space: pre-wrap; }
+.j-tools { display: flex; flex-wrap: wrap; gap: 4px 18px; padding-top: 12px; border-top: 1px solid var(--line); }
+.j-privacy { display: flex; gap: 8px; margin: 0; font: 13px/1.5 var(--sans); color: var(--ink-3); }
+.j-privacy .wi { width: 16px; height: 16px; margin-top: 2px; }
+.j-closed { margin: 28px auto 0; max-width: 46ch; text-align: center; font: italic 16px/1.5 var(--serif); color: var(--ink-3); }
+@media (max-width: 520px) { .j-head, .j-body { padding-left: 16px; padding-right: 16px; } .j-head .moon { width: 44px; height: 44px; right: 16px; } }
+
+/* footer */
+.foot { display: grid; gap: 24px; margin-top: 56px; padding-top: 18px; border-top: 3px double var(--rule); font: 13px/1.6 var(--sans); color: var(--ink-2); }
+@media (min-width: 760px) { .foot { grid-template-columns: 1fr 2fr; gap: 40px; } }
+.foot .label { color: var(--ink); margin: 0 0 8px; }
+.foot p { margin: 0 0 8px; }
+.past { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.past a, .foot summary { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: .2em; cursor: pointer; }
+
+@media print {
+  body { background: #fff; }
+  nav.index, .foot { display: none; }
+  .card, .desk, .panel { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><path id="cloud" d="M7 15h10a3.5 3.5 0 0 0 .4-6.98A5 5 0 0 0 7.6 9.1 3 3 0 0 0 7 15z"/></defs>
+  <symbol id="w-clear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5V5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></symbol>
+  <symbol id="w-partly" viewBox="0 0 24 24"><circle cx="8.5" cy="8" r="3"/><path d="M8.5 2.5v1.2M3 8h1.2M4.6 4.1l.9.9M12.4 4.1l-.9.9"/><use href="#cloud" class="occ" transform="translate(1 4)"/></symbol>
+  <symbol id="w-cloudy" viewBox="0 0 24 24"><use href="#cloud" transform="translate(0 3)"/></symbol>
+  <symbol id="w-fog" viewBox="0 0 24 24"><path d="M4 8h16M6 12h12M4 16h16M8 20h8"/></symbol>
+  <symbol id="w-rain" viewBox="0 0 24 24"><use href="#cloud"/><path d="M9 18l-1 2.5M13 18l-1 2.5M17 18l-1 2.5"/></symbol>
+  <symbol id="w-snow" viewBox="0 0 24 24"><use href="#cloud"/><path d="M8.5 18.5h.01M12.5 18.5h.01M16.5 18.5h.01M10.5 21h.01M14.5 21h.01" stroke-width="2.2"/></symbol>
+  <symbol id="w-storm" viewBox="0 0 24 24"><use href="#cloud"/><path d="M12.5 15.5l-2 3.5h3l-2 3.5"/></symbol>
+  <symbol id="sun" viewBox="0 0 64 64"><circle cx="32" cy="32" r="11" fill="currentColor" stroke="none"/><g stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M32 9v7" transform="rotate(0 32 32)"/><path d="M32 9v7" transform="rotate(30 32 32)"/><path d="M32 9v7" transform="rotate(60 32 32)"/><path d="M32 9v7" transform="rotate(90 32 32)"/><path d="M32 9v7" transform="rotate(120 32 32)"/><path d="M32 9v7" transform="rotate(150 32 32)"/><path d="M32 9v7" transform="rotate(180 32 32)"/><path d="M32 9v7" transform="rotate(210 32 32)"/><path d="M32 9v7" transform="rotate(240 32 32)"/><path d="M32 9v7" transform="rotate(270 32 32)"/><path d="M32 9v7" transform="rotate(300 32 32)"/><path d="M32 9v7" transform="rotate(330 32 32)"/></g></symbol>
+  <symbol id="moon" viewBox="0 0 24 24"><path d="M20 14.6A8.5 8.5 0 0 1 9.4 4a8.5 8.5 0 1 0 10.6 10.6z"/></symbol>
+  <symbol id="thought" viewBox="0 0 24 24"><path d="M6.5 15.5a3.5 3.5 0 0 1-.4-7A5 5 0 0 1 15.6 7a3.8 3.8 0 0 1 2.4 7.2 3 3 0 0 1-2.5 1.3z"/><circle cx="6.5" cy="19" r="1.2"/><circle cx="4" cy="21.5" r=".6"/></symbol>
+  <symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+</svg>
+<div class="page">
+
+<header>
+  <div class="topbar">
+    <span class="label">爱丁堡 · 版</span>
+    <nav class="langs" aria-label="Language">
+<a href="../../index.html" hreflang="en">English</a><a href="../../kk/index.html" hreflang="kk">Қазақша</a><a href="../../zh/index.html" hreflang="zh" aria-current="page">中文</a>    </nav>
+  </div>
+  <div class="mast">
+    <div class="ear"><b>最重要的新闻排在最前。</b>新闻按报道它的编辑部数量排序。</div>
+    <h1><a href="Noneindex.html">The Morning Edition</a></h1>
+    <div class="ear">
+<b>11月13日</b>    </div>
+  </div>
+  <div class="band">
+    <span class="label">第 5</span>
+    <span class="date">2026年11月13日 星期五</span>
+    <span class="label"></span>
+  </div>
+  <nav class="index label" aria-label="Sections">
+<a class="pill" style="--c: var(--top)" href="#top">头条新闻</a><a class="pill" style="--c: #0065bd" href="#edinburgh">爱丁堡与苏格兰</a><a class="pill" style="--c: #b0306a" href="#whats-on">活动预告</a><a class="pill" style="--c: #00a3c4" href="#kazakhstan">哈萨克斯坦</a><a class="pill" style="--c: #3d4db7" href="#world">国际</a><a class="pill" style="--c: #1e7d4f" href="#economy">经济</a><a class="pill" style="--c: #7a4bc2" href="#policy">政策与新法规</a>  </nav>
+</header>
+
+<main>
+  <section class="quote" aria-label="每日一句">
+<p class="greet"><svg aria-hidden="true"><use href="#sun"/></svg>Қайырлы таң, KK!</p>    <div class="label">每日一句</div>
+    <blockquote>“我不是鸟；没有任何网罗我：我是一个拥有独立意志的自由人。”</blockquote>
+    <p class="cite">— <b>Charlotte Brontë</b>, <i>Jane Eyre</i></p>
+  </section>
+
+  <section class="today" id="today" aria-label="天气">
+    <div class="panel money" style="--c: var(--green)">
+      <div class="label"><span>坚戈 · 官方汇率</span><span>13.11.2026</span></div>
+      <div class="big-rate"><span>£1 = 588.86 ₸</span> <small class="down">▼ −3.47</small></div>
+<p class="cross">£1 = $1.32 · €1.20</p>      <table class="fx">
+        <tr>
+          <th scope="row">USD<span>美元</span></th>
+          <td class="v">443.62 ₸</td>
+          <td class="down">▼ −1.14</td>
+        </tr>
+        <tr>
+          <th scope="row">EUR<span>欧元</span></th>
+          <td class="v">492.24 ₸</td>
+          <td class="down">▼ −3.13</td>
+        </tr>
+        <tr>
+          <th scope="row">RUB<span>俄罗斯卢布</span></th>
+          <td class="v">5.36 ₸</td>
+          <td class="down">▼ −0.01</td>
+        </tr>
+        <tr>
+          <th scope="row">CNY<span>人民币</span></th>
+          <td class="v">66.53 ₸</td>
+          <td class="down">▼ −0.15</td>
+        </tr>
+      </table>
+      <p class="note">哈萨克斯坦国家银行</p>
+    </div>
+  </section>
+
+  <section class="front" id="top" style="--c: var(--top)" aria-label="头条新闻">
+    <article class="card lead">
+      <a class="media" href="https://www.bbc.co.uk/news/articles/cmq5vd1wdgz6o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/f66c/live/4f0358a0-def1-11f1-bb80-c5cef03337ce.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+      <div class="body">
+        <div class="tags"><span class="badge b-breaking">头条</span><span class="badge b-breaking">突发</span><span class="topic">政治</span></div>
+        <h2 class="hl"><a href="https://www.bbc.co.uk/news/articles/cmq5vd1wdgz6o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">英伟达前首席执行官黄仁勋被传唤到国会就与涉嫌中国间谍的事件作证</a></h2>
+<p class="dek">在涉嫌婚外情被曝光后，黄周四突然辞去了全球最有价值公司之一的负责人职务。</p>        <p class="meta">BBC · 1 小时前 · <b>12 家媒体</b></p>
+<p class="also">其他报道媒体： The Guardian, France 24, DW, CNBC, Yahoo Finance, Eurasia Business News 等 5 家.</p>      </div>
+    </article>
+    <div class="side">
+      <div class="side-head label">今日要闻</div>
+<article class="card row">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/ckzd9p7e4eqeo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/d247/live/940d6f30-de7e-11f1-b88b-3f1671ea859d.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">持续关注</span><span class="topic">冲突</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/ckzd9p7e4eqeo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">卫生部称，以色列对加沙医院的袭击造成六名巴勒斯坦人死亡</a></h3>
+<p class="dek">目击者称，一枚导弹击中了加沙南部最大的纳赛尔医院内设有外科病房和重症监护室的大楼。</p>    <p class="meta">BBC · 12 小时前 · <b>7 家媒体</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.stv.tv/world/andy-burnham-pledges-support-for-ukraine-in-peace-talks-and-pushes-for-european-access" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://news.stv.tv/wp-content/uploads/2026/11/648973335375722df8ecbce7c0b15d26-1794513101-1280x720.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>STV News</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">持续关注</span><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://news.stv.tv/world/andy-burnham-pledges-support-for-ukraine-in-peace-talks-and-pushes-for-european-access" target="_blank" rel="noopener">安迪·伯纳姆承诺在和平谈判中支持乌克兰并推动欧洲准入</a></h3>
+<p class="dek">首相出席在都柏林举行的欧洲政治共同体峰会</p>    <p class="meta">STV News · 9 小时前 · <b>7 家媒体</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/cmn0d33zz34zo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/d4c4/live/1934a9b0-deb3-11f1-8fb5-a771a656a227.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">持续关注</span><span class="topic">冲突</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/cmn0d33zz34zo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">俄罗斯军舰在芬兰湾被乌克兰无人机击中</a></h3>
+<p class="dek">此次袭击被认为是乌克兰无人机首次在波罗的海开阔海域袭击俄罗斯船只。</p>    <p class="meta">BBC · 9 小时前 · <b>4 家媒体</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.theguardian.com/technology/2026/nov/13/major-microsoft-outage-impacts-australian-government-services-and-schools" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/f0ae4d035807e736dec6925a910e633298856938/354_12_2900_2321/master/2900.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=a4e8a63dcd001d313e4b3db89f088da3" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-breaking">突发</span><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/technology/2026/nov/13/major-microsoft-outage-impacts-australian-government-services-and-schools" target="_blank" rel="noopener">“看来我们必须与人们交谈”：澳大利亚发回了微软重大故障电子邮件之前的时间</a></h3>
+<p class="dek">受到 Outlook 和 Teams 问题影响的政府服务和学校，公司表示修复未“按预期处理”的 Microsoft 中断 - 实时更新 Microsoft 努力修复影响 Outlook 和 Teams 的巨大中断 澳大利亚学校、法院……</p>    <p class="meta">The Guardian · 39 分钟前 · <b>3 家媒体</b></p>
+  </div>
+</article>
+    </div>
+  </section>
+
+  <section class="section" id="edinburgh" style="--c: #0065bd">
+    <header class="sec-head"><h2>爱丁堡与苏格兰</h2><span class="label">7 篇</span></header>
+    <article class="card feature">
+  <a class="media" href="https://www.edinburghnews.scotsman.com/news/woman-dies-after-being-struck-by-vehicle-edinburgh-city-bypass-man-arrested-9347766" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.edinburghnews.scotsman.com/webimg/b25lY21zOmFiZmE2MWYzLTg5YzMtNDBlZi1iNTliLTUzYWU4MTM0MmYyODo1NzAwYzcyZC1lOWM3LTQxOWUtOGExYS03ZTc4ZTUyNDVkNzA=.jpg?width=1200&amp;auto=webp&amp;crop=3%3A2" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Edinburgh Evening News</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">司法</span></div>
+    <h3 class="hl"><a href="https://www.edinburghnews.scotsman.com/news/woman-dies-after-being-struck-by-vehicle-edinburgh-city-bypass-man-arrested-9347766" target="_blank" rel="noopener">47 岁女子在爱丁堡城市绕道上被车辆撞死，男子在警方调查中被捕</a></h3>
+<p class="dek">该事件发生在周三（11月11日）晚上9点左右，地点位于爱丁堡城市绕道巴伯顿路口附近</p>    <p class="meta">Edinburgh Evening News · 12 小时前 · <b>16 家媒体</b></p>
+  </div>
+</article>
+
+<div class="grid"><article class="card ">
+  <a class="media" href="https://www.edinburghnews.scotsman.com/news/grand-theft-auto-developer-rockstar-begin-union-recognition-vote-9346844" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.edinburghnews.scotsman.com/jpim-static/image/2026/11/12/11/49/01M25HB0Q9R08W2NXX53268MDA.jpeg?width=1200&amp;auto=webp&amp;trim=0%2C0%2C0%2C0" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Edinburgh Evening News</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://www.edinburghnews.scotsman.com/news/grand-theft-auto-developer-rockstar-begin-union-recognition-vote-9346844" target="_blank" rel="noopener">Rockstar 员工开始工会认可投票，公司正准备发布《侠盗猎车手 VI》</a></h3>
+<p class="dek">此次投票正值就业法庭正在进行之中，此前有 23 名员工声称自己因工会活动而被不公平解雇</p>    <p class="meta">Edinburgh Evening News · 17 小时前 · <b>3 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/cx5y139gyqzmo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/94d2/live/63690880-de6f-11f1-9115-cfe6d179af3a.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/cx5y139gyqzmo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">罗马皇帝的巨型雕像曾经矗立在苏格兰南部</a></h3>
+<p class="dek">研究表明，在霍伊克附近发现的一条青铜腿属于安东尼努斯·皮乌斯骑马的雕塑。</p>    <p class="meta">BBC · 23 小时前 · <b>3 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.edinburghlive.co.uk/news/edinburgh-news/new-edinburgh-george-street-plans-34904081" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i2-prod.edinburghlive.co.uk/incoming/article34904087.ece/ALTERNATES/s615/1_George-Street.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Edinburgh Live</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://www.edinburghlive.co.uk/news/edinburgh-news/new-edinburgh-george-street-plans-34904081" target="_blank" rel="noopener">新的爱丁堡乔治街计划获得批准，包括汽车禁令和更宽的人行道</a></h3>
+<p class="dek">在 11 月 12 日的交通和环境委员会会议上，议员们以 9 比 2 的投票结果通过了一项继续开发的动议。</p>    <p class="meta">Edinburgh Live · 12 小时前 · <b>3 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/c6z9dppxxyxpo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/624c/live/20082b60-deb1-11f1-8fb5-a771a656a227.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">司法</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/c6z9dppxxyxpo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">法庭获悉，古德威利检察官没有以强奸罪对足球运动员进行审判是“错误的”</a></h3>
+<p class="dek">丹尼斯·克莱尔对这名足球运动员提起了私人刑事诉讼，民事法庭裁定这名足球运动员强奸了她。</p>    <p class="meta">BBC · 11 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/cw62p4p99z0jo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/98d8/live/31f63700-de9c-11f1-9afe-1f03bfe02283.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">司法</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/cw62p4p99z0jo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">延误已久的 CalMac 渡轮 Glen Rosa 开始海上试航</a></h3>
+<p class="dek">MV Glen Rosa 将在克莱德湾接受测试，专家将测量其系统。</p>    <p class="meta">BBC · 15 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.edinburghnews.scotsman.com/news/edinburgh-zoo-cancels-penguin-parade-again-after-bird-flu-zone-declared-9348465" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.edinburghnews.scotsman.com/jpim-static/image/2026/01/01/10/25/wee-waddle.jpeg?width=1200&amp;auto=webp&amp;crop=3%3A2" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Edinburgh Evening News</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://www.edinburghnews.scotsman.com/news/edinburgh-zoo-cancels-penguin-parade-again-after-bird-flu-zone-declared-9348465" target="_blank" rel="noopener">宣布禽流感区后爱丁堡动物园再次取消企鹅游行</a></h3>
+<p class="dek">由于担心禽流感，爱丁堡动物园的企鹅游行在返回几周后暂停</p>    <p class="meta">Edinburgh Evening News · 9 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+</div>  </section>
+  <section class="section" id="whats-on" style="--c: #b0306a">
+    <header class="sec-head"><h2>活动预告</h2><span class="label">6 篇</span></header>
+    <article class="card feature">
+  <a class="media" href="https://news.google.com/rss/articles/CBMi7AFBVV95cUxNRTBfcUdVdGw2dURzYWNzRFJZb2lwdnBjXzNnd1FXTGJlZzZlWFMzbkI0Vjg4ZGtxUm5zQjVhLWgwb2NtMXFVdmF6bzJSRlh5bzFxUDBQY2RxQm91YXhJN21BWjB4VS1mUmpiNFlzbTBsUUVPU0xHak5fQVNBZk94M044Q2lpV3RYQUFzeXg2TDktM3NEZnQ4MG9nYjI0N0pObllFVVlhV0o1US1ycGl2Nkt6R011N2hSbDlZYVVTMFhXWVFSWjZ4NWFwZHVPX3dCdEtscThEVGtDYXM0OFBoY0llMXFoLXJrWEVLSA?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Edinburgh News</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">商业</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMi7AFBVV95cUxNRTBfcUdVdGw2dURzYWNzRFJZb2lwdnBjXzNnd1FXTGJlZzZlWFMzbkI0Vjg4ZGtxUm5zQjVhLWgwb2NtMXFVdmF6bzJSRlh5bzFxUDBQY2RxQm91YXhJN21BWjB4VS1mUmpiNFlzbTBsUUVPU0xHak5fQVNBZk94M044Q2lpV3RYQUFzeXg2TDktM3NEZnQ4MG9nYjI0N0pObllFVVlhV0o1US1ycGl2Nkt6R011N2hSbDlZYVVTMFhXWVFSWjZ4NWFwZHVPX3dCdEtscThEVGtDYXM0OFBoY0llMXFoLXJrWEVLSA?oc=5" target="_blank" rel="noopener">爱丁堡圣诞市场被评为 2026 年圣诞节前英国最受搜索的节日目的地</a></h3>
+    <p class="meta">Edinburgh News · 13 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+
+<div class="grid"><article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMiO0FVX3lxTE1HaHVuMjlrbG03ZWlXNEpUY0QwVTJHVUMtSmFkRUk1UXBTRXNTMHRob1AyWm9rc1F5ZDBN?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Howl.Link</b></span></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMiO0FVX3lxTE1HaHVuMjlrbG03ZWlXNEpUY0QwVTJHVUMtSmFkRUk1UXBTRXNTMHRob1AyWm9rc1F5ZDBN?oc=5" target="_blank" rel="noopener">中洛锡安居民询问有关轮椅无障碍住房的意见</a></h3>
+    <p class="meta">Howl.Link · 13 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.scotsman.com/whats-on/download-2027-line-up-headliners-9348442" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.scotsman.com/jpim-static/image/2026/11/12/20/56/highlights-from-the-Download-2027-line-up-announcement-Getty-Images.png?width=1200&amp;auto=webp&amp;trim=0%2C0%2C0%2C0" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Scotsman</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://www.scotsman.com/whats-on/download-2027-line-up-headliners-9348442" target="_blank" rel="noopener">DLXXIV：2027 年下载阵容中的 18 个亮点，Blink-182、Evanescent 和 Bring Me The Horizon 宣布成为头条新闻</a></h3>
+<p class="dek">下载 2027 已宣布超过 100 场演出，其中包括头条新闻《Blink-182》、《伊凡塞斯》和《Bring Me The Horizon》。</p>    <p class="meta">The Scotsman · 8 小时前</p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.scotsman.com/arts-and-culture/film-and-tv/shetland-series-11-cast-9347765" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.scotsman.com/jpim-static/image/2026/11/12/17/43/The-full-cast-of-Shetland-Series-11-and-where-youve-seen-them-before.jpeg?width=1200&amp;auto=webp&amp;trim=0%2C0%2C0%2C0" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Scotsman</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://www.scotsman.com/arts-and-culture/film-and-tv/shetland-series-11-cast-9347765" target="_blank" rel="noopener">设得兰系列 11 演员阵容：这是新系列的完整演员阵容 - 以及您以前在哪里见过他们</a></h3>
+<p class="dek">格雷戈尔·费舍尔、斯特拉·戈内特、克里斯汀·博顿利和加文·米切尔已加入设得兰群岛第十一季的演员阵容。</p>    <p class="meta">The Scotsman · 11 小时前</p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.scotsman.com/whats-on/the-script-aberdeen-glasgow-setlist-stage-times-tickets-2026-tour-scotland-9346506" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.scotsman.com/jpim-static/image/2026/11/12/11/33/The-Script-2026-Scottish-tour-Aberdeen-Glasgow.jpeg?width=1200&amp;auto=webp&amp;trim=0%2C0%2C0%2C0" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Scotsman</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://www.scotsman.com/whats-on/the-script-aberdeen-glasgow-setlist-stage-times-tickets-2026-tour-scotland-9346506" target="_blank" rel="noopener">The Script 阿伯丁和格拉斯哥：乐队苏格兰演出的舞台时间、演出列表、支持、门票等</a></h3>
+<p class="dek">以下是您需要了解的有关 The Script 苏格兰演出的所有信息，包括可能的歌单、舞台时间等。</p>    <p class="meta">The Scotsman · 17 小时前</p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMinAFBVV95cUxPRk9MVFFPUmNzdVc2VzV1bDVwdHZPdXNRX29wSVRpRklTbkdSZVFuX1FYOXcyUF96UmFLZTNMSGZZUnVyMVJYUVB4VG5GdVotLTRjdjN1b2FtajIwTTVZRUo2VzJnbUEwR2ZiZFBMZVdxRzRTMGVuelVpQU1OLWhQZ3V5S0NoZlN6RlQyblV4UVJmNGF3dTVNVV83cHo?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>The Guardian</b></span></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxPRk9MVFFPUmNzdVc2VzV1bDVwdHZPdXNRX29wSVRpRklTbkdSZVFuX1FYOXcyUF96UmFLZTNMSGZZUnVyMVJYUVB4VG5GdVotLTRjdjN1b2FtajIwTTVZRUo2VzJnbUEwR2ZiZFBMZVdxRzRTMGVuelVpQU1OLWhQZ3V5S0NoZlN6RlQyblV4UVJmNGF3dTVNVV83cHo?oc=5" target="_blank" rel="noopener">在苏格兰沼泽中发现的青铜腿为罗马占领提供了新线索</a></h3>
+    <p class="meta">The Guardian · 19 小时前</p>
+  </div>
+</article>
+</div>  </section>
+  <section class="section" id="kazakhstan" style="--c: #00a3c4">
+    <header class="sec-head"><h2>哈萨克斯坦</h2><span class="label">7 篇</span></header>
+    <article class="card feature">
+  <a class="media" href="https://timesca.com/kazakhstan-linked-hackers-ai-tajikistan-security-documents/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://timesca.com/wp-content/uploads/2026/11/photo_2026-11-12_16-17-39.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Times of Central Asia</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">持续关注</span><span class="topic">科技</span></div>
+    <h3 class="hl"><a href="https://timesca.com/kazakhstan-linked-hackers-ai-tajikistan-security-documents/" target="_blank" rel="noopener">研究人员称，与哈萨克斯坦有关的黑客利用人工智能窃取塔吉克国防文件</a></h3>
+<p class="dek">据网络安全公司 CloudSEK 称，黑客利用人工智能窃取了塔吉克斯坦国防部的 2000 多份文件。</p>    <p class="meta">The Times of Central Asia · 16 小时前 · <b>14 家媒体</b></p>
+  </div>
+</article>
+
+<div class="grid"><article class="card ">
+  <a class="media" href="https://timesca.com/kazakhstan-detains-heads-of-samruk-kazyna-and-national-railways-in-corruption-probe/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://timesca.com/wp-content/uploads/2026/11/download-1.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Times of Central Asia</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://timesca.com/kazakhstan-detains-heads-of-samruk-kazyna-and-national-railways-in-corruption-probe/" target="_blank" rel="noopener">哈萨克斯坦在腐败调查中拘留萨姆鲁克-卡济纳和国家铁路公司负责人</a></h3>
+<p class="dek">哈萨克斯坦国家安全委员会（KNB）证实，国有萨姆鲁克-卡济纳主权财富基金和</p>    <p class="meta">The Times of Central Asia · 18 小时前 · <b>8 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://timesca.com/kazakhstan-science-funding-audit-reveals-failures/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://timesca.com/wp-content/uploads/2026/11/3-24.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Times of Central Asia</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://timesca.com/kazakhstan-science-funding-audit-reveals-failures/" target="_blank" rel="noopener">哈萨克斯坦科学资助审计发现 141 个项目中有 103 个未达到销售目标</a></h3>
+<p class="dek">哈萨克斯坦科学部计划修改衡量公共资助研究商业成功的方式。最高审计院</p>    <p class="meta">The Times of Central Asia · 17 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://astanatimes.com/2026/11/kazakhstan-ranks-third-globally-in-land-restoration-efforts-covering-8-13-million-hectares/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://astanatimes.com/wp-content/uploads/2026/11/фото-5.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Astana Times</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://astanatimes.com/2026/11/kazakhstan-ranks-third-globally-in-land-restoration-efforts-covering-8-13-million-hectares/" target="_blank" rel="noopener">哈萨克斯坦土地恢复面积813万公顷，位居全球第三</a></h3>
+<p class="dek">阿斯塔纳——根据首个全球“自然回归”报告，哈萨克斯坦的恢复工作土地面积位居世界第三，此类举措涵盖了 813 万公顷（约占其领土面积的 3%）。</p>    <p class="meta">The Astana Times · 16 小时前 · <b>3 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://astanatimes.com/2026/11/kazakhstan-to-build-settlement-for-33000-near-balkhash-nuclear-power-plant/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://astanatimes.com/wp-content/uploads/2026/11/copy_63182B4F-8B0F-4375-90D2-BF6628B79EF8.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Astana Times</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://astanatimes.com/2026/11/kazakhstan-to-build-settlement-for-33000-near-balkhash-nuclear-power-plant/" target="_blank" rel="noopener">哈萨克斯坦将为巴尔喀什核电站附近的33,000人建造定居点</a></h3>
+<p class="dek">阿斯塔纳 — — 哈萨克斯坦计划将巴尔喀什湖畔的乌尔肯村改造成可容纳 33,000 名居民的现代化居住区，作为该国核电站项目筹备工作的一部分。发展将...</p>    <p class="meta">The Astana Times · 17 小时前 · <b>3 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://astanatimes.com/2026/11/kazakhstan-and-germany-advance-energy-cooperation-explore-green-hydrogen-projects/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://astanatimes.com/wp-content/uploads/2026/11/2188467125-huge-2048x931-1.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Astana Times</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">持续关注</span><span class="topic">气候</span></div>
+    <h3 class="hl"><a href="https://astanatimes.com/2026/11/kazakhstan-and-germany-advance-energy-cooperation-explore-green-hydrogen-projects/" target="_blank" rel="noopener">哈萨克斯坦与德国推进能源合作探索绿色氢能项目</a></h3>
+<p class="dek">阿斯塔纳—哈萨克斯坦和德国寻求扩大工业和技术合作，正在探索可再生能源、绿色氢和碳捕获技术方面的新机遇。代表…</p>    <p class="meta">The Astana Times · 19 小时前 · <b>3 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE5yT2VMT25VSlY4V3FTUk9EcFM3V0xmYkNCRmhaQ1RDbHh1ZWt2Qld2QXlCRUh6NVlHSGw5VUtVU3I0amJRdFc4Wmthc294czJtNl9xOFRBbjRUenk1QUc0b0xRdnV6dw?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>BBC</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">体育</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE5yT2VMT25VSlY4V3FTUk9EcFM3V0xmYkNCRmhaQ1RDbHh1ZWt2Qld2QXlCRUh6NVlHSGw5VUtVU3I0amJRdFc4Wmthc294czJtNl9xOFRBbjRUenk1QUc0b0xRdnV6dw?oc=5" target="_blank" rel="noopener">摩尔多瓦 vs 哈萨克斯坦：欧洲国家联赛统计数据和交锋记录</a></h3>
+    <p class="meta">BBC · 4 小时前</p>
+  </div>
+</article>
+</div>  </section>
+  <section class="section" id="world" style="--c: #3d4db7">
+    <header class="sec-head"><h2>国际</h2><span class="label">7 篇</span></header>
+    <article class="card feature">
+  <a class="media" href="https://www.theguardian.com/us-news/live/2026/nov/12/mississippi-scott-colom-ukraine-donald-trump" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/d151820dd96f644a510e876cd48686056cafc4e2/689_0_5000_4000/master/5000.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=fbec931e8442f26a03eae42e9606a03f" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-live">直播</span><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/us-news/live/2026/nov/12/mississippi-scott-colom-ukraine-donald-trump" target="_blank" rel="noopener">克里斯·范·霍伦表示，他将竞选参议院多数党领袖，挑战民主党同僚查克·舒默</a></h3>
+<p class="dek">该实时博客现已关闭。克里斯·范·霍伦 (Chris Van Hollen) 挑战查克·舒默 (Chuck Schumer) 竞选参议院多数党领袖 注册美国突发新闻电子邮件 也许您看到了斯科特·科洛姆 (Scott Colom) 的这则广告，他刚刚当选为密西西比州第一任……</p>    <p class="meta">The Guardian · 2 小时前 · <b>3 家媒体</b></p>
+  </div>
+</article>
+
+<div class="grid"><article class="card ">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/cw7vppyr80eeo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/884a/live/97210150-de3d-11f1-a9ed-658311f31da9.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">持续关注</span><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/cw7vppyr80eeo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">民主党人斯科特·科洛姆 (Scott Colom) 创造历史，成为 19 世纪以来密西西比州第一位黑人参议员</a></h3>
+<p class="dek">在特朗普两年前以 22 个百分点获胜的州，科罗姆的胜利延续了民主党在参议院的一系列胜利。</p>    <p class="meta">BBC · 16 小时前 · <b>3 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.cnbc.com/2026/11/12/uk-gdp-third-quarter-2026.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://image.cnbcfm.com/api/v1/image/108337711-1784611875869-gettyimages-2286321572-3b9a0914.jpeg?v=1784611922&amp;w=1920&amp;h=1080" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>CNBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">商业</span></div>
+    <h3 class="hl"><a href="https://www.cnbc.com/2026/11/12/uk-gdp-third-quarter-2026.html" target="_blank" rel="noopener">英国经济第三季度增长0.7%，人工智能提供“额外增长引擎”</a></h3>
+<p class="dek">英国经济今年第三季度增长 0.7%，符合预期。</p>    <p class="meta">CNBC · 21 小时前 · <b>9 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.theguardian.com/uk-news/2026/nov/12/angela-rayner-grants-planning-approval-for-asylum-centre-in-piddington-despite-local-opposition" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/695a6431fe2e7b78ffe681e171e15126f6ac3fee/195_0_4120_3296/master/4120.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=23b1bb492b47993999fe0d4a6915ccd2" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">持续关注</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/uk-news/2026/nov/12/angela-rayner-grants-planning-approval-for-asylum-centre-in-piddington-despite-local-opposition" target="_blank" rel="noopener">尽管当地反对，安吉拉·雷纳还是批准了皮丁顿庇护中心的规划</a></h3>
+<p class="dek">牛津郡村庄附近投票离开英国的 1,200 名寻求庇护者的住所也需要内政部签署。社区秘书安吉拉·雷纳 (Angela Rayner) 已批准在…</p>    <p class="meta">The Guardian · 7 小时前 · <b>3 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.france24.com/en/americas/20261113-pope-leo-xiv-meets-abuse-victims-in-peru-says-church-must-make-amends" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://s.france24.com/media/display/74ed1b6a-ded2-11f1-a1e7-695cb59fade5/w:1024/p:16x9/e508fb7b23659b4d2a2f46189ca72db15c5d2dbc.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>France 24</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">最新</span></div>
+    <h3 class="hl"><a href="https://www.france24.com/en/americas/20261113-pope-leo-xiv-meets-abuse-victims-in-peru-says-church-must-make-amends" target="_blank" rel="noopener">教皇利奥十四世在秘鲁会见虐待受害者，称教会必须做出“弥补”</a></h3>
+<p class="dek">周四，教皇利奥十四世在秘鲁会见了六名神职人员虐待受害者，其中包括与解散的基督教社会组织有关的人。这位出生于美国的教宗还敦促天主教会向幸存者做出补偿并加强……</p>    <p class="meta">France 24 · 2 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.theguardian.com/politics/2026/nov/12/win-win-deal-with-eu-could-be-done-andy-burmham-says" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/784c2ab8d8cdd24c117ad4f5a75d285bddf0cfd9/104_0_5005_4005/master/5005.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=65617fa24e3446022608dabacfdd0d0c" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/politics/2026/nov/12/win-win-deal-with-eu-could-be-done-andy-burmham-says" target="_blank" rel="noopener">安迪·伯纳姆表示，可以与欧盟达成“双赢”协议</a></h3>
+<p class="dek">首相表示，重置可能是一项“就像英国脱欧人们认为他们在 2016 年投票支持的那样”的协议，安迪·伯纳姆 (Andy Burnham) 表示，他相信可以与欧盟达成一项“双赢”协议，这可能“更像人们认为的英国脱欧……”</p>    <p class="meta">The Guardian · 7 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/cr894w453e90o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/f53d/live/8b18a0e0-de90-11f1-b441-2b33b063138f.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">冲突</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/cr894w453e90o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">疑似炸弹恶作剧威胁迫使意大利学校重新疏散</a></h3>
+<p class="dek">意大利各地的学校连续第二天收到炸弹威胁，引发新的恐慌和疏散。</p>    <p class="meta">BBC · 9 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+</div>  </section>
+  <section class="section" id="economy" style="--c: #1e7d4f">
+    <header class="sec-head"><h2>经济</h2><span class="label">16 篇</span></header>
+    <div class="desks">
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇰🇿</span>哈萨克斯坦</h3>
+          <article class="card ">
+  <a class="media" href="https://astanatimes.com/2026/11/kazakhstan-launches-climate-investment-platform-at-cop31-with-up-to-1-billion-in-potential-ebrd-financing/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://astanatimes.com/wp-content/uploads/2026/11/e3f1981e7571d20b3d9d6541cb7df5aec46f463e65575dc1dc62e91b2a1ef16b_1280x720.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Astana Times</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">持续关注</span><span class="topic">气候</span></div>
+    <h3 class="hl"><a href="https://astanatimes.com/2026/11/kazakhstan-launches-climate-investment-platform-at-cop31-with-up-to-1-billion-in-potential-ebrd-financing/" target="_blank" rel="noopener">哈萨克斯坦在 COP31 上推出气候投资平台，欧洲复兴开发银行可能提供高达 10 亿美元的融资</a></h3>
+<p class="dek">阿斯塔纳——哈萨克斯坦在安塔利亚举行的第 31 届缔约方会议上正式启动了正义能源转型投资平台 (QaJET)，欧洲复兴开发银行 (EBRD) 提供高达 1 亿美元的优惠融资……</p>    <p class="meta">The Astana Times · 42 小时前 · <b>3 家媒体</b></p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://astanatimes.com/2026/11/kazakhstan-increases-renewable-energy-generation-more-than-16-fold-in-decade/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://astanatimes.com/wp-content/uploads/2026/11/фото.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Astana Times</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">气候</span></div>
+    <h3 class="hl"><a href="https://astanatimes.com/2026/11/kazakhstan-increases-renewable-energy-generation-more-than-16-fold-in-decade/" target="_blank" rel="noopener">哈萨克斯坦可再生能源发电量在十年内增加了 16 倍以上</a></h3>
+<p class="dek">阿斯塔纳——哈萨克斯坦的可再生能源发电量（不包括大型水力发电厂）在过去十年中增加了 16 倍以上，到 2025 年达到 87 亿千瓦时。到 2025 年底，可再生能源……</p>    <p class="meta">The Astana Times · 15 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMiggFBVV95cUxPbTgtWnB6ME1IYzJHcFNhMC1XTlBFdW9rRy1WNDRKZ2d5N3g0U0J3eVRIQzJXbVhRaWJpWUxvM0E4RGFrWTRrXzNxUnhQcHpWUV9vbGtGalFoTGhNamJxc1lYV1gwcUJCdTlVRDFTRWoxdVFjVEd0N2xOdEhJWUw2UERn?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>The Astana Times</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">最新</span><span class="topic">商业</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxPbTgtWnB6ME1IYzJHcFNhMC1XTlBFdW9rRy1WNDRKZ2d5N3g0U0J3eVRIQzJXbVhRaWJpWUxvM0E4RGFrWTRrXzNxUnhQcHpWUV9vbGtGalFoTGhNamJxc1lYV1gwcUJCdTlVRDFTRWoxdVFjVEd0N2xOdEhJWUw2UERn?oc=5" target="_blank" rel="noopener">哈萨克斯坦坚戈：2026 年的货币惊喜</a></h3>
+    <p class="meta">The Astana Times · 12 分钟前</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMihwFBVV95cUxNZkdOdkIwODl2WUVjZ0FrMzBadlF4cl9WZXFLbV9OSTk1c1VPU3BQYW5fUkFjellKcFlLSlNzbHI1LXoyNE5jTUpvSUxXYUNYejB0UExLcmxSRW8yQWlKVEttd19hX3FHSTBQZW11OVlBQ20tRVk3cU52S2FqbWJWaktkaG9FdUU?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>The Times Of Central Asia</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">商业</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxNZkdOdkIwODl2WUVjZ0FrMzBadlF4cl9WZXFLbV9OSTk1c1VPU3BQYW5fUkFjellKcFlLSlNzbHI1LXoyNE5jTUpvSUxXYUNYejB0UExLcmxSRW8yQWlKVEttd19hX3FHSTBQZW11OVlBQ20tRVk3cU52S2FqbWJWaktkaG9FdUU?oc=5" target="_blank" rel="noopener">哈萨克斯坦国家银行出售其第一批代币化票据</a></h3>
+    <p class="meta">The Times Of Central Asia · 42 小时前</p>
+  </div>
+</article>
+</div>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇬🇧</span>英国</h3>
+          <article class="card ">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/ck3rgd429zd5o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/b029/live/c4ae2930-de89-11f1-b441-2b33b063138f.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">持续关注</span><span class="topic">商业</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/ck3rgd429zd5o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">英国经济以两年多来最快速度增长</a></h3>
+<p class="dek">﻿根据官方数据，截至 9 月份的三个月里，英国经济增长了 0.7%。</p>    <p class="meta">BBC · 17 小时前 · <b>14 家媒体</b></p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://www.theguardian.com/business/2026/nov/12/home-sales-october-low" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/861fa365835f36d65c4fe3a0adf09f6b63ba43ad/142_0_2344_1875/master/2344.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=15aa077619dc9d50ee52c2911dd0f5e5" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">商业</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/business/2026/nov/12/home-sales-october-low" target="_blank" rel="noopener">抵押贷款利率创历史新高，10 月份房屋销售量创 16 年来新低</a></h3>
+<p class="dek">10月建成单元销售量降至375万套，较去年下降8.8%，抵押贷款利率创近三年高位美国成屋销售10月创16年新低，买家被创纪录的高抵押贷款利率赶走……</p>    <p class="meta">The Guardian · 11 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMijgFBVV95cUxOR2RHVFkweVZteHlTMG9HUWF3NEdLbzIzMlVSeks4LVN3TUZDdTZiQjFZMGpnd2lDTmRnUkF0bjlLaG9vNmZ5SVFrZV9lTlAzYnc2bHhVN0RqUDVGVVp1aUFNLXF0bXBjVDZIcldWVEhDbW9WbUM4bGptWnh2TllVOGcxa052QXozMWhCdGN3?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Sky News</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">商业</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxOR2RHVFkweVZteHlTMG9HUWF3NEdLbzIzMlVSeks4LVN3TUZDdTZiQjFZMGpnd2lDTmRnUkF0bjlLaG9vNmZ5SVFrZV9lTlAzYnc2bHhVN0RqUDVGVVp1aUFNLXF0bXBjVDZIcldWVEhDbW9WbUM4bGptWnh2TllVOGcxa052QXozMWhCdGN3?oc=5" target="_blank" rel="noopener">由于对经济放缓的担忧加剧，人工智能的推出提振了英国经济</a></h3>
+    <p class="meta">Sky News · 18 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/cwn70l1628l0o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/ad2c/live/98868060-de1f-11f1-a701-fddedf244c16.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/cwn70l1628l0o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">米尔本评论称，一些 25 岁以下的人应该获得更少的福利</a></h3>
+<p class="dek">拟议的福利制度彻底改革将使 25 岁以下的人不再享受主要的疾病福利。</p>    <p class="meta">BBC · 6 小时前</p>
+  </div>
+</article>
+</div>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇺🇸</span>美国</h3>
+          <article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMiswFBVV95cUxNTE81cGpBbTlkb3U5WDJ3LXhrSUJlbWJwT2RpTWoxNjZzN0FWaXlYVUh2SUlvTC1JSEszNjk2X0JCdWR0NTJacDU4LUFnNUI3dTJGWDh2YXlsMG1DTi1GUjlqMF9rZTVRY2VVUmViX3pjYkFXWjB0UWdyMUE0UjNfTEx2S1RRSGl6RVdWSUxCLUVHcG0yVDBEdklfOUlUMzBqcUhpTjM0SHVNNkp6UTNwaktUbw?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>FXStreet</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">持续关注</span><span class="topic">商业</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxNTE81cGpBbTlkb3U5WDJ3LXhrSUJlbWJwT2RpTWoxNjZzN0FWaXlYVUh2SUlvTC1JSEszNjk2X0JCdWR0NTJacDU4LUFnNUI3dTJGWDh2YXlsMG1DTi1GUjlqMF9rZTVRY2VVUmViX3pjYkFXWjB0UWdyMUE0UjNfTEx2S1RRSGl6RVdWSUxCLUVHcG0yVDBEdklfOUlUMzBqcUhpTjM0SHVNNkp6UTNwaktUbw?oc=5" target="_blank" rel="noopener">欧元下跌，美元因通胀担忧和美联储加息押注而上涨</a></h3>
+    <p class="meta">FXStreet · 4 小时前 · <b>12 家媒体</b></p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://www.npr.org/2026/11/12/nx-s1-6038940/punch-in-the-gut-homes-sales-fall-to-their-lowest-in-16-years" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://npr.brightspotcdn.com/dims3/default/strip/false/crop/8192x5308+0+0/resize/8192x5308!/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F04%2F99%2Fb8658ed24ce8afe9d884ffc536e5%2Fgettyimages-2270294552.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>NPR</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://www.npr.org/2026/11/12/nx-s1-6038940/punch-in-the-gut-homes-sales-fall-to-their-lowest-in-16-years" target="_blank" rel="noopener">“重拳出击”：房屋销量跌至 16 年来的最低水平</a></h3>
+<p class="dek">根据全国房地产经纪人协会的数据，10 月份现房销售量同比下降 8.8%。</p>    <p class="meta">NPR · 10 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPS09ONzhRcWgxeFF1TTJoSDlHbW9xRVZTZWozVm5EcWdNNTBJcUFnWS04V1V0X2Y2NDEtOFlhVnZSSUlKZ0N6U05GMG1TemRkLTRUNXhXVzhOSm5abVg3ajJlZEtCQ3hWc212Y3BOM3lwZUF6T0U2eGJ2bGNucWVaVjVlSERUNjlq?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Newsweek</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">商业</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPS09ONzhRcWgxeFF1TTJoSDlHbW9xRVZTZWozVm5EcWdNNTBJcUFnWS04V1V0X2Y2NDEtOFlhVnZSSUlKZ0N6U05GMG1TemRkLTRUNXhXVzhOSm5abVg3ajJlZEtCQ3hWc212Y3BOM3lwZUF6T0U2eGJ2bGNucWVaVjVlSERUNjlq?oc=5" target="_blank" rel="noopener">加拿大警告美国经济受损，特朗普关税适得其反</a></h3>
+    <p class="meta">Newsweek · 14 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.cnbc.com/2026/11/11/nvidia-jensen-huang-ai-financial-system-risk.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://image.cnbcfm.com/api/v1/image/108548918-1794403575214-gettyimages-2192346840-widak-nvidiasc250106_npmp9.jpeg?v=1794403600&amp;w=1920&amp;h=1080" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>CNBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-analysis">分析</span><span class="topic">科技</span></div>
+    <h3 class="hl"><a href="https://www.cnbc.com/2026/11/11/nvidia-jensen-huang-ai-financial-system-risk.html" target="_blank" rel="noopener">英伟达的领导力危机考验着这家芯片制造商作为“人工智能中央银行”的角色</a></h3>
+<p class="dek">这家科技巨头与其他公司的联系网络增加了其造成深远经济和金融损害的可能性。</p>    <p class="meta">CNBC · 6 小时前</p>
+  </div>
+</article>
+</div>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇪🇺</span>欧洲</h3>
+          <article class="card ">
+  <a class="media" href="https://www.euronews.com/2026/11/12/mercedes-benz-halts-new-investment-in-german-plants-considers-closures" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://images.euronews.com/articles/stories/09/99/05/80/1200x675_cmsv2_4d07e599-2054-5e5f-a4fb-d4289d856f07-9990580.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Euronews</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">商业</span></div>
+    <h3 class="hl"><a href="https://www.euronews.com/2026/11/12/mercedes-benz-halts-new-investment-in-german-plants-considers-closures" target="_blank" rel="noopener">梅赛德斯-奔驰停止对德国工厂的新投资，考虑关闭</a></h3>
+<p class="dek">这家斯图加特汽车制造商暂时停止在其德国工厂的所有进一步投资。工厂可能关闭的情况迫在眉睫，这给员工、劳资委员会和 IG Metall 带来了越来越大的压力。大众和奥迪也宣布大幅节省开支……</p>    <p class="meta">Euronews · 9 小时前</p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://www.euronews.com/2026/11/12/eu-household-electricity-and-gas-prices-fell-in-the-first-half-of-2026-who-pays-the-most" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://images.euronews.com/articles/stories/09/98/90/47/1200x675_cmsv2_45064017-539b-5073-a425-3042df0bb5d7-9989047.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Euronews</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">商业</span></div>
+    <h3 class="hl"><a href="https://www.euronews.com/2026/11/12/eu-household-electricity-and-gas-prices-fell-in-the-first-half-of-2026-who-pays-the-most" target="_blank" rel="noopener">2026年上半年欧盟家庭用电和天然气价格下跌：谁支付最多？</a></h3>
+<p class="dek">2026年上半年欧盟家庭用电和天然气价格较2025年同期下降。10月份欧洲许多国家首都的价格上涨，家庭可能在2027年初面临更高的电费。</p>    <p class="meta">Euronews · 22 小时前</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMihAFBVV95cUxQcEM5eXloRHJmSGR0TUYtdmh5b1FUQU1MTnZZeVhrRFhONXVMLURWR0gzN2hFb3VDMnN2S3BMYS1VYlVNRlRYVkFzdHM4YXg0NmF5TEdWdmhONUJGd1F2Y1VxUkVaTnNwSjZCMlpoQmpGMW1sdVZfSXZuWFVaMTI1djJ2enE?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Financial Times</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">最新</span><span class="topic">科技</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxQcEM5eXloRHJmSGR0TUYtdmh5b1FUQU1MTnZZeVhrRFhONXVMLURWR0gzN2hFb3VDMnN2S3BMYS1VYlVNRlRYVkFzdHM4YXg0NmF5TEdWdmhONUJGd1F2Y1VxUkVaTnNwSjZCMlpoQmpGMW1sdVZfSXZuWFVaMTI1djJ2enE?oc=5" target="_blank" rel="noopener">欧洲的人工智能热潮在哪里？</a></h3>
+    <p class="meta">Financial Times · 18 分钟前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMigAFBVV95cUxPSVRIQXpYazFRal95NkxfdEtWUFpVZ0syajdGMjhZZmppUWU3emlna2M4NnZ5RXBaa2g5SUtGUWs0Ull1WnhLSXlMOS1zNG9zV1JCVXVRTVZiZnprWjA0elRvbXVQOTZpYlhZeG5ONWNjUnM4MDJFOUJMQjNUVk80cw?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>kpmg.com</b></span></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxPSVRIQXpYazFRal95NkxfdEtWUFpVZ0syajdGMjhZZmppUWU3emlna2M4NnZ5RXBaa2g5SUtGUWs0Ull1WnhLSXlMOS1zNG9zV1JCVXVRTVZiZnprWjA0elRvbXVQOTZpYlhZeG5ONWNjUnM4MDJFOUJMQjNUVk80cw?oc=5" target="_blank" rel="noopener">德国经济要点</a></h3>
+    <p class="meta">kpmg.com · 7 小时前</p>
+  </div>
+</article>
+</div>      </div>
+    </div>
+  </section>
+  <section class="section" id="policy" style="--c: #7a4bc2">
+    <header class="sec-head"><h2>政策与新法规</h2><span class="label">16 篇</span></header>
+    <div class="desks">
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇰🇿</span>哈萨克斯坦</h3>
+          <article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMirwFBVV95cUxNMmlyYXpvRlFIZy1WWXN5bVFDRzNRa2pFaGNhNWk4MEJVd1MydXpQeWVtQURHMmdUQ3I3c2ZUWmhCVjFzaTE0UTJuckFGVC1hT0drNURTT29fWXpkcmRWLXZ4QU52NjlQck16b3B1MG9hQThBWmZsNzZyR0pmaWxhSU4tQmMzUlhuaUxQQUV3V1ZRaDVqbjhBeHpTT0VnRm5CS2dodGs0YjJvUEZnNFNz?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>The Astana Times</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">科技</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxNMmlyYXpvRlFIZy1WWXN5bVFDRzNRa2pFaGNhNWk4MEJVd1MydXpQeWVtQURHMmdUQ3I3c2ZUWmhCVjFzaTE0UTJuckFGVC1hT0drNURTT29fWXpkcmRWLXZ4QU52NjlQck16b3B1MG9hQThBWmZsNzZyR0pmaWxhSU4tQmMzUlhuaUxQQUV3V1ZRaDVqbjhBeHpTT0VnRm5CS2dodGs0YjJvUEZnNFNz?oc=5" target="_blank" rel="noopener">哈萨克斯坦荣获 Coursera 高等教育数字化转型奖</a></h3>
+    <p class="meta">The Astana Times · 37 小时前</p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxPSFM4UHZnd1JBRXgxelI2bE9CUzR2WV9heEQ3c1VXbWN6WW96ZExiVHVWMGc1MVlqWFZ6eUdFOGRnQTU1YnItWHExa0xhOW8yQ053cEtVS1dMQncwN2piU3VGQjFjTVZxOU9vRDlPXzNlWEt0WDVNMlJ1NTE2SDRLYURXZWZTdFNQN3kyU1J1X3RTN2ZXc1NNQjJsTnk0blg4VThyS01MOTRGcXQxSTJ2WFJQRmNjTlJO?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>The Astana Times</b></span></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxPSFM4UHZnd1JBRXgxelI2bE9CUzR2WV9heEQ3c1VXbWN6WW96ZExiVHVWMGc1MVlqWFZ6eUdFOGRnQTU1YnItWHExa0xhOW8yQ053cEtVS1dMQncwN2piU3VGQjFjTVZxOU9vRDlPXzNlWEt0WDVNMlJ1NTE2SDRLYURXZWZTdFNQN3kyU1J1X3RTN2ZXc1NNQjJsTnk0blg4VThyS01MOTRGcXQxSTJ2WFJQRmNjTlJO?oc=5" target="_blank" rel="noopener">根据新的在线试点，外国人可在哈萨克斯坦一个工作日内获得 IIN</a></h3>
+    <p class="meta">The Astana Times · 40 小时前</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMif0FVX3lxTE56MXNIUWN0MmpiemJFRWx6LVVNNV80dVo0QTZXZWRHalpPdjNmbVdDcGxaMldiRmFCZUlFNVVKeHIwWG1aMGtGZzN6dWRBU0NBazg4TzdCRXBTUkVoVnAyWHlvNDV2WGxVYVZiMml3NmpubWJpYUtLdUowaWg0R2c?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Substack</b></span></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE56MXNIUWN0MmpiemJFRWx6LVVNNV80dVo0QTZXZWRHalpPdjNmbVdDcGxaMldiRmFCZUlFNVVKeHIwWG1aMGtGZzN6dWRBU0NBazg4TzdCRXBTUkVoVnAyWHlvNDV2WGxVYVZiMml3NmpubWJpYUtLdUowaWg0R2c?oc=5" target="_blank" rel="noopener">哈萨克斯坦再次担心分裂主义、俄罗斯等</a></h3>
+    <p class="meta">Substack · 7 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMitwFBVV95cUxOdHFZdE96WHVSYTZhZVluckFXZW5qWVpYYmliMWVkdzBoZ3M5ekg3UjFQMWRId19ZU05MODBraEtxa0dVT2tUY0xvdVVVNVhySks1dTdfMkI1clI3NEQ0c0xWNXJpWS1ucmlKajZPZFRDRUdydXZtQ2RJalowTGxmZVB6dm91bmdBTDVJSmFZV0x2bzdTOEMtd3prTF9EalhjNmRibmxVQVZXWFN6a3dBdURDT3YzN0U?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>UA.NEWS</b></span></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxOdHFZdE96WHVSYTZhZVluckFXZW5qWVpYYmliMWVkdzBoZ3M5ekg3UjFQMWRId19ZU05MODBraEtxa0dVT2tUY0xvdVVVNVhySks1dTdfMkI1clI3NEQ0c0xWNXJpWS1ucmlKajZPZFRDRUdydXZtQ2RJalowTGxmZVB6dm91bmdBTDVJSmFZV0x2bzdTOEMtd3prTF9EalhjNmRibmxVQVZXWFN6a3dBdURDT3YzN0U?oc=5" target="_blank" rel="noopener">哈萨克斯坦提议建立一个联合国支持的水组织 — 阿纳多卢通讯社</a></h3>
+    <p class="meta">UA.NEWS · 30 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+</div>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇬🇧</span>英国、苏格兰与签证</h3>
+          <article class="card ">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/cmg46y7wev42o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/b233/live/7e5aee10-de7e-11f1-b88b-3f1671ea859d.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">气候</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/cmg46y7wev42o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">伯纳姆表示气候共识“已经消失”，但承诺“领导力的新时代”</a></h3>
+<p class="dek">安迪·伯纳姆总理在土耳其安塔利亚举行的 COP31 联合国气候峰会上向代表们发表讲话。</p>    <p class="meta">BBC · 18 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/c6y804lyemglo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/699f/live/93c64780-de93-11f1-93e1-3b657b665bcf.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/c6y804lyemglo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">斯温尼：NHS 格兰屏领导人在谴责报告中受到批评后，需要采取“重大行动”</a></h3>
+<p class="dek">苏格兰医疗保健改善组织表示，未能从错误中吸取教训，对患者造成了重复且可避免的伤害，首席部长对此做出了反应。</p>    <p class="meta">BBC · 13 小时前</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/c95y100nrm41o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/de16/live/ad3f4d10-dec0-11f1-8fb5-a771a656a227.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/c95y100nrm41o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">伯纳姆能否避免另一场工党福利叛乱？</a></h3>
+<p class="dek">国会议员之间的任何反抗都可能比严重损害凯尔·斯塔默政府的反抗要小。</p>    <p class="meta">BBC · 10 小时前</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.theguardian.com/politics/live/2026/nov/12/milburn-review-neets-young-people-welfare-work-latest-news-updates" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/e2feeff2390f42a9ffba7d9538bbe38b9f0b3821/1096_0_4763_3812/master/4763.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=480a8daa3c23f1b48a65dbd8c4b07d67" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-live">直播</span><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/politics/live/2026/nov/12/milburn-review-neets-young-people-welfare-work-latest-news-updates" target="_blank" rel="noopener">萨迪克·汗 (Sadiq Khan) 与工党人士一起敦促总理不要淡化电动汽车目标</a></h3>
+<p class="dek">该博客现已关闭 在今天早上的“今日”节目中，著名左翼人士、工党议员贝尔·里贝罗-阿迪表示，她可能会投票反对实施艾伦·米尔本提案的立法。她说她担心……</p>    <p class="meta">The Guardian · 11 小时前</p>
+  </div>
+</article>
+</div>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇺🇸</span>美国</h3>
+          <article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMi8AFBVV95cUxPRUVPT0NXWjg2aHBNcjRlaTk3TnM0RjBNNVh4UWg2ZGxwTVNzYm91TVV2bktMV2tKX1hGUnFpQ1d5OURwLVdXbGVNRkpQX3JvQS0zRVhyZ05aNVRQMXFnbUtLbnQ0M3d0Qy1XTHRxRG12Yk1xNWNnV2ZBUWdfX1FZSDdzcUpTUVNLVDc5WkJnRUE5S1N5bkp4bnVqZUVPMjNzMW1iM1RSamNkMjAwZXBCUTRGLTAyVktSRV81Rm1tN3MtX19nSEFHNzVOWVR4YjhwWm1XSlEtQi16aTV4YzNodVktaHBDMDNwUXdmcHpBUnDSAfYBQVVfeXFMUEtDOG5tUUR5dmE4REtEY0ZBS0lLODZqcThwejY3NWlRMXRENjhEWnNLU0tFWjdHUF9MbEZkRGhDSUJDZ0VhOXhGRXVBTEE2UEg5dmJSV0VhWFRkbGdNQ19rcWlKRlZFZXctS1JOb2I3eS1jWUlBTEFTUVNCWV9CM3Y0SzJYTU1fdUstZlRia0VOZ0tTQTVEWlBDWDY4ZkJkQnY0MWtFQjNPdGNJQUQ4S2dJWHNtdnNtSWdnYW1MQlZvNmxKUXZDU2IzcWoxUGY1OHlEd1gxRlZTYzdJZnJqdXhGSG83OFFRd1d3RFdxVUVoNTRLZkN3?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Malay Mail</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMi8AFBVV95cUxPRUVPT0NXWjg2aHBNcjRlaTk3TnM0RjBNNVh4UWg2ZGxwTVNzYm91TVV2bktMV2tKX1hGUnFpQ1d5OURwLVdXbGVNRkpQX3JvQS0zRVhyZ05aNVRQMXFnbUtLbnQ0M3d0Qy1XTHRxRG12Yk1xNWNnV2ZBUWdfX1FZSDdzcUpTUVNLVDc5WkJnRUE5S1N5bkp4bnVqZUVPMjNzMW1iM1RSamNkMjAwZXBCUTRGLTAyVktSRV81Rm1tN3MtX19nSEFHNzVOWVR4YjhwWm1XSlEtQi16aTV4YzNodVktaHBDMDNwUXdmcHpBUnDSAfYBQVVfeXFMUEtDOG5tUUR5dmE4REtEY0ZBS0lLODZqcThwejY3NWlRMXRENjhEWnNLU0tFWjdHUF9MbEZkRGhDSUJDZ0VhOXhGRXVBTEE2UEg5dmJSV0VhWFRkbGdNQ19rcWlKRlZFZXctS1JOb2I3eS1jWUlBTEFTUVNCWV9CM3Y0SzJYTU1fdUstZlRia0VOZ0tTQTVEWlBDWDY4ZkJkQnY0MWtFQjNPdGNJQUQ4S2dJWHNtdnNtSWdnYW1MQlZvNmxKUXZDU2IzcWoxUGY1OHlEd1gxRlZTYzdJZnJqdXhGSG83OFFRd1d3RFdxVUVoNTRLZkN3?oc=5" target="_blank" rel="noopener">Johari Ghani 表示，马来西亚将根据新法律要求数据中心运营商披露电力使用情况和 GPU 进口情况</a></h3>
+    <p class="meta">Malay Mail · 18 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://www.npr.org/2026/11/12/g-s1-151239/kansas-governor-midterms-holscher-masterson" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4500x3000+0+0/resize/4500x3000!/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F8a%2F54%2F5f034a3f48afb04565b5438e329b%2Fmdt-holscher.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>NPR</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://www.npr.org/2026/11/12/g-s1-151239/kansas-governor-midterms-holscher-masterson" target="_blank" rel="noopener">辛迪·霍尔舍 (Cindy Holscher) 在堪萨斯州获胜，代表民主党担任州长</a></h3>
+<p class="dek">霍尔舍尔是一名州参议员，他击败了一位更知名的共和党人，后者在该州得到了特朗普的支持，而在大多数其他全州竞选中，共和党人都支持了这位共和党人。</p>    <p class="meta">NPR · 5 小时前</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.npr.org/2026/11/12/nx-s1-6034539/democrats-congress-trump-arch-ballroom-funding-oversight" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://npr.brightspotcdn.com/dims3/default/strip/false/crop/7886x5257+0+0/resize/7886x5257!/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F7c%2F00%2F45ae5e5c4173a2bbdfc2feb574d7%2Fgettyimages-2303515786.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>NPR</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://www.npr.org/2026/11/12/nx-s1-6034539/democrats-congress-trump-arch-ballroom-funding-oversight" target="_blank" rel="noopener">民主党人希望阻止特朗普的拱门、高尔夫球场等。他们的选择是什么？</a></h3>
+<p class="dek">随着特朗普的拱门和其他项目进入法庭，许多批评者希望国会阻止它们。民主党有一些工具，包括资金和监督。</p>    <p class="meta">NPR · 12 小时前</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxOcExTSHdpY0EtUTVNNGZHZC1NX0ZtSHc5eEdrOFgwWW1SUGV4dmp6QkpfOFN6em9NeDZCNmM4NDFEbXZoVzVnM2QyNFFzbWZPZUJJTUpEVUtSbWl0VjlqRjNWbnp2Z0xzck1Da3U2Z1ZObjRpczFCZ1RxVlhTUmQycWpJX0g5Nk5uQXpwazVkSm5wYU5SV0NDMDIwR2diWmVrV2ltcFNFRW1mZVRhclpaNjdiQ3Y0VUM3ZHBGRlN2NEtXUQ?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>NPR</b></span></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxOcExTSHdpY0EtUTVNNGZHZC1NX0ZtSHc5eEdrOFgwWW1SUGV4dmp6QkpfOFN6em9NeDZCNmM4NDFEbXZoVzVnM2QyNFFzbWZPZUJJTUpEVUtSbWl0VjlqRjNWbnp2Z0xzck1Da3U2Z1ZObjRpczFCZ1RxVlhTUmQycWpJX0g5Nk5uQXpwazVkSm5wYU5SV0NDMDIwR2diWmVrV2ltcFNFRW1mZVRhclpaNjdiQ3Y0VUM3ZHBGRlN2NEtXUQ?oc=5" target="_blank" rel="noopener">新规定可能导致数万名美国儿童退出补贴住房</a></h3>
+    <p class="meta">NPR · 19 小时前</p>
+  </div>
+</article>
+</div>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇪🇺</span>欧洲</h3>
+          <article class="card ">
+  <a class="media" href="https://www.politico.eu/podcast/eu-confidential/who-is-britains-perfect-immigrant/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.politico.eu/cdn-cgi/image/width=1200,height=630,fit=crop,quality=80,onerror=redirect/wp-content/uploads/2026/10/15/Westminster-insider-new-photo-illo-scaled.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Politico Europe</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">最新</span><span class="badge b-explainer">解读</span><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://www.politico.eu/podcast/eu-confidential/who-is-britains-perfect-immigrant/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener">谁是英国“完美”移民？</a></h3>
+<p class="dek">沙巴纳·马哈茂德是最新一位试图改革英国复杂移民政策的内政大臣。她关于所谓“无限期居留”的最新提议旨在根据移民对……的贡献程度来评估他们。</p>    <p class="meta">Politico Europe · 1 小时前</p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://www.politico.eu/article/5-things-to-watch-dublin-eu-leaders-summit-european-council/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.politico.eu/wp-content/uploads/2026/11/13/GettyImages-2281716288-1024x683.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Politico Europe</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">最新</span><span class="topic">科技</span></div>
+    <h3 class="hl"><a href="https://www.politico.eu/article/5-things-to-watch-dublin-eu-leaders-summit-european-council/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener">都柏林欧盟领导人峰会值得关注的 5 件事</a></h3>
+<p class="dek">领导人将讨论欧洲的人工智能雄心。但谁在乌克兰谈判中代表欧洲、如何为基辅提供资金以及谁取代克里斯蒂娜·拉加德也都在考虑之中。</p>    <p class="meta">Politico Europe · 2 小时前</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.politico.eu/article/how-to-win-friends-and-throw-people-judos-big-impact-on-politics/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.politico.eu/wp-content/uploads/2026/11/12/14432952-1024x684.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Politico Europe</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">最新</span><span class="topic">政治</span></div>
+    <h3 class="hl"><a href="https://www.politico.eu/article/how-to-win-friends-and-throw-people-judos-big-impact-on-politics/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener">如何赢得朋友并扔人：柔道对政治的巨大影响</a></h3>
+<p class="dek">泰迪·里纳想成为法国总统。如果他获胜，他能成为与弗拉基米尔·普京通话的人吗？</p>    <p class="meta">Politico Europe · 2 小时前</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxNOUxWMmFsZ0hSYzh0b1BLNV8xWThZWTJiUHA1MWVpR2RSNkFYTWNocjdobHV2RFk1YUMtZ0NJdWwzRllvckJxRFl4cnRhRHBwbm9BX0NaNzcyZXdmR1IzRGNPWUJhUF9pd0ZGUEg2UlBWWk9Jb0RRMEEwbDZmZlNUTE5BeEFPZ1ZFTUJHcC1mRVlmRy1JQnhMZ2NOTElQbFdpOEVtUm9hU19TeVBMS3pwLXZVRklRX200UllkLTRwUzFjNVlsRGRxSmdiMWxKWFdrbFhpM0prWm1RWGpt?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>The Parliament Magazine</b></span></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxNOUxWMmFsZ0hSYzh0b1BLNV8xWThZWTJiUHA1MWVpR2RSNkFYTWNocjdobHV2RFk1YUMtZ0NJdWwzRllvckJxRFl4cnRhRHBwbm9BX0NaNzcyZXdmR1IzRGNPWUJhUF9pd0ZGUEg2UlBWWk9Jb0RRMEEwbDZmZlNUTE5BeEFPZ1ZFTUJHcC1mRVlmRy1JQnhMZ2NOTElQbFdpOEVtUm9hU19TeVBMS3pwLXZVRklRX200UllkLTRwUzFjNVlsRGRxSmdiMWxKWFdrbFhpM0prWm1RWGpt?oc=5" target="_blank" rel="noopener">深色图案和多巴胺循环：欧盟保护在线消费者新规则的简短指南</a></h3>
+    <p class="meta">The Parliament Magazine · 20 小时前 · <b>2 家媒体</b></p>
+  </div>
+</article>
+</div>      </div>
+    </div>
+  </section>
+
+  <section class="wish" aria-label="祝你今天愉快，KK">
+    <svg class="sun" aria-hidden="true"><use href="#sun"/></svg>
+    <h2>祝你今天愉快，KK</h2>
+    <p class="text">祝您度过美好的一天、美好的午餐和美好的夜晚。</p>
+<p class="signoff" lang="kk">Күнің сәтті өтсін!</p>  </section>
+  <section class="journal" id="journal" style="--c: #5a55c8" data-api="https://bot-woad-psi-33.vercel.app/api/journal" aria-labelledby="journal-title" hidden>
+    <div class="j-head">
+      <span class="label">你的一页</span>
+      <h2 id="journal-title">梦与思绪</h2>
+      <svg class="moon" aria-hidden="true"><use href="#moon"/></svg>
+    </div>
+    <div class="j-body">
+      <form class="j-write">
+        <div class="j-kind" role="radiogroup" aria-label="梦与思绪">
+          <label><input type="radio" name="kind" value="dream" checked><span><svg class="wi" aria-hidden="true"><use href="#moon"/></svg>梦</span></label>
+          <label><input type="radio" name="kind" value="thought"><span><svg class="wi" aria-hidden="true"><use href="#thought"/></svg>思绪</span></label>
+        </div>
+        <textarea name="text" maxlength="8000" placeholder="你梦见了什么？" aria-labelledby="journal-title"></textarea>
+        <div class="j-actions">
+          <button type="submit" class="j-save">保存</button>
+          <span class="j-status" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+      <div class="j-notes" hidden>
+        <h3 class="label"><span>你的记录</span><span class="j-total"></span></h3>
+        <ol></ol>
+        <button type="button" class="j-link j-all" hidden>显示全部</button>
+      </div>
+      <div class="j-tools" hidden>
+        <button type="button" class="j-link j-summary" aria-expanded="false">回顾</button>
+        <button type="button" class="j-link j-download">全部下载</button>
+        <button type="button" class="j-link j-forget">全部删除</button>
+      </div>
+      <div class="j-look" hidden aria-live="polite"></div>
+      <p class="j-privacy"><svg class="wi" aria-hidden="true"><use href="#lock"/></svg><span>记录加密保存，绝不会出现在这个公开网站上。机器人的主人在技术上可以接触到这些记录，但已承诺不会阅读。</span></p>
+    </div>
+  </section>
+  <p class="j-closed" id="journal-closed" hidden></p>
+  <script type="application/json" id="journal-text">{"Couldn\u2019t save. Please try again in a minute.": "\u4fdd\u5b58\u5931\u8d25\uff0c\u8bf7\u7a0d\u540e\u518d\u8bd5\u3002", "Delete": "\u5220\u9664", "Dream": "\u68a6", "Kept": "\u5df2\u4fdd\u5b58", "Saving\u2026": "\u4fdd\u5b58\u4e2d\u2026", "Sure?": "\u786e\u5b9a\u5417\uff1f", "Tap again to delete all {notes}": "\u518d\u70b9\u4e00\u6b21\uff0c\u5220\u9664\u5168\u90e8{notes}", "Thought": "\u601d\u7eea", "What did you dream about?": "\u4f60\u68a6\u89c1\u4e86\u4ec0\u4e48\uff1f", "What\u2019s on your mind?": "\u4f60\u5728\u60f3\u4ec0\u4e48\uff1f", "_date_long": "{year}\u5e74{month}{day}\u65e5 {weekday}", "_date_short": "{month}{day}\u65e5", "_date_year": "{year}\u5e74{month}{day}\u65e5", "_months": ["1\u6708", "2\u6708", "3\u6708", "4\u6708", "5\u6708", "6\u6708", "7\u6708", "8\u6708", "9\u6708", "10\u6708", "11\u6708", "12\u6708"], "_weekdays": ["\u5468\u4e00", "\u5468\u4e8c", "\u5468\u4e09", "\u5468\u56db", "\u5468\u4e94", "\u5468\u516d", "\u5468\u65e5"], "_weekdays_long": ["\u661f\u671f\u4e00", "\u661f\u671f\u4e8c", "\u661f\u671f\u4e09", "\u661f\u671f\u56db", "\u661f\u671f\u4e94", "\u661f\u671f\u516d", "\u661f\u671f\u65e5"], "j_afternoon": "\u591a\u5728\u4e0b\u5348\u5199\u4e0b", "j_ago_30": "\u4e00\u4e2a\u6708\u524d", "j_ago_365": "\u4e00\u5e74\u524d", "j_ago_7": "\u4e00\u5468\u524d", "j_best": "\u6700\u957f {days}", "j_best_only": "\u6700\u957f\u8fde\u7eed {days}", "j_days": "{n} \u5929", "j_days_one": "{n} \u5929", "j_dreams": "{n} \u4e2a\u68a6", "j_dreams_one": "{n} \u4e2a\u68a6", "j_early": "\u591a\u5199\u51e0\u6761\uff0c\u5c31\u80fd\u770b\u51fa\u89c4\u5f8b\u3002", "j_evening": "\u591a\u5728\u665a\u4e0a\u5199\u4e0b", "j_month": "\u8fd1 30 \u5929\uff1a{notes}\uff0c\u5206\u5e03\u5728 {days}", "j_morning": "\u591a\u5728\u65e9\u6668\u5199\u4e0b", "j_night": "\u591a\u5728\u6df1\u591c\u5199\u4e0b", "j_notes": "{n} \u6761\u8bb0\u5f55", "j_notes_one": "{n} \u6761\u8bb0\u5f55", "j_often_all": "\u8bb0\u5f55\u91cc\u5e38\u51fa\u73b0", "j_often_dream": "\u68a6\u91cc\u5e38\u51fa\u73b0", "j_often_thought": "\u601d\u7eea\u91cc\u5e38\u51fa\u73b0", "j_since": "\u5171 {notes}\uff0c\u59cb\u4e8e{date}", "j_streak": "\u8fde\u7eed {days}", "j_thoughts": "{n} \u6761\u601d\u7eea", "j_thoughts_one": "{n} \u6761\u601d\u7eea", "journal expired": "\u94fe\u63a5\u5df2\u8fc7\u671f\u3002\u8bf7\u4ece Telegram \u6253\u5f00\u4eca\u5929\u7684\u62a5\u7eb8\uff0c\u5728\u8fd9\u91cc\u5199\u4e0b\u8bb0\u5f55\u3002", "journal used": "\u6b64\u94fe\u63a5\u5df2\u5728\u53e6\u4e00\u53f0\u8bbe\u5907\u4e0a\u6253\u5f00\u8fc7\u65e5\u8bb0\u3002\u660e\u5929\u7684\u62a5\u7eb8\u4f1a\u5e26\u6765\u65b0\u7684\u94fe\u63a5\u3002"}</script>
+</main>
+
+<footer class="foot">
+  <div>
+    <h4 class="label">往期</h4>
+    <ul class="past"><li><a href="Nonearchive/2026-11-12.html">2026年11月12日 星期四</a></li><li><a href="Nonearchive/2026-11-11.html">2026年11月11日 星期三</a></li><li><a href="Nonearchive/2026-11-10.html">2026年11月10日 星期二</a></li><li><a href="Nonearchive/2026-11-09.html">2026年11月9日 星期一</a></li></ul>
+  </div>
+  <div>
+    <h4 class="label">关于本报</h4>
+    <p>本报于爱丁堡时间 05:19 根据公开新闻源自动生成。新闻按报道媒体的数量排序，每条标题都链接到原文。内容为机器翻译。</p>
+    <details><summary>本期共 327 个新闻来源</summary><p>A News, ABC News &amp; Headlines, AFP.com, AKIpress News Agency, AKM.RU, AL Circle, Al Jazeera, All Edinburgh Theatre.com, American Enterprise Institute, American Immigration Council, Anadolu Ajansı, AOL.co.uk, ArentFox Schiff, Armenpress, Army.mil, AskTraders.com, Australasian Leisure Management Magazine, Axios, AZ Family, AzerNews, Azərtac, Barron&#39;s, BBC, Beat Magazine, Bella Caledonia, BigGo Finance, Bioengineer.org, Bloomberg.com, Bloomsbury Intelligence and Security Institute (BISI), Bozeman Daily Chronicle, Breakingthenews.net, Breitbart News, Briefs Finance, Brookings, Buenos Aires Herald, Business Live, Business Matters, Business Standard, Caledonian Record, Caspian Post, CBN.com.cy, CEO Magazyn, ChemAnalyst, China Daily, City AM, City of Edinburgh Council, Clean Air Task Force, CNBC, CNBC TV18, Corr Blimey, Council on Foreign Relations, Courthouse News, Coventry Telegraph, CubaHeadlines, CurrencyNews.co.uk, Cyprus Inform, Cyprus Mail, Daily Business, Daily Express, Daily Hive, Daily Journal, Daily Mail, Daily Record, Daily Sabah, Dartsnews.com, Deadline News, Dealroom, Digital Watch Observatory, Director magazine, DKNews.kz, Dunfermline Press, DW, East Lothian Courier, East Midlands Business Link, Edinburgh Chamber of Commerce, Edinburgh Evening News, Edinburgh Festival Fringe, Edinburgh Live, Edinburgh Music Review, Edinburgh News, Edinburgh Reviews, Edinburgh Rugby, eKathimerini.com, Enbekshi QazaQ, Energy Intelligence, EnergyNow.com, EnergyWatch, ESS News, EU Law Live, EU Today, eu.36kr.com, Eurasia Business News, Eurasia Review, Eurasianet, Euronews, Euronews.com, Everything Edinburgh, Exchange Rates UK, fcbusiness, Financial Times, Financial-News.co.uk, Flightradar24, Football Whispers, Forbes, Forbes Middle East, Forex Factory, FOREX.com, Fox Business, FOX One, France 24, Freedom Broker, FreeJobAlert.Com, FT Adviser, fundsforNGOs News, FXStreet, GB News, Geo Super, Geopolitical Monitor, GK Today, Glasgow Times, Golf Business News, GOV.UK, Government of the United States Virgin Islands (.gov), Guido Fawkes, Halifax, Hart Energy, Hindustan Times, Hortidaily, Howl.Link, https://streamlinefeed.co.ke/, https://www.paramount-mediahub.co.uk/, IFA Magazine, Ilkley Gazette, IndexBox, Informat.ro, ing think, Inside The Games, Insider Media Ltd, INSIGHT EU MONITORING, IntelliNews, InteriorDaily, International Railway Journal, investingLive, Irish Independent, Irish Medical Times, ISPreview UK, ITVX, Japan Today, Jewish News, Kazakhstan Today, KFVS12, King&#39;s College London, Knoxville News Sentinel, kpmg.com, Kursiv Media, Landlord Today, Law Society of Scotland, LBC, Leesville Leader, Legacy, Legit News, LincolnshireWorld, Lloyd&#39;s List, Local Government Chronicle, London Business News, London Evening Standard, London South East, Magzter, Malay Mail, marketscreener.com, Mezha.net, Midlothian View, Mining.com, Mirage News, Mirror, MLQ.ai, MoneyAge, Morningstar, Mortgage Professional America, MUFG Research, Nacionale, Nation Thailand, News24, Newser, Newsweek, NIESR, Nikkei Asia, Nomura Connects, North Edinburgh News, Northern Ontario Business, Northern Scot, NPR, Office for National Statistics, Open Magazine, Phys.org, Police Oracle, Politico Europe, PravdaReport, Premier Construction News, Press and Journal, PressReader, PrimeMinister.kz, Prolific North, Public Finance Magazine, Punchline-Gloucester.com, Qazinform, Railway Gazette International, Railway PRO, Railway Supply, Rayo, RBC, Real Estate, REFORM.news, Renewables Now, Report.az, Resultsense, Reuters, Roanoke Times, Robin J Brooks, RTE.ie, Rutland Times, ScottishNews.com, SCOTUSblog, sectsco.org, Serrari Group, Shanghai Metals Market, Share Talk, Sharecast.com, Shetland News, Silicon UK, Silk Way TV, Simply Wall St, Sky News, Slaughter and May, Smartkarma, South China Morning Post, Southend Echo, Southern Living, STV News, STV Player, Substack, Sun Sentinel, Supply Chain Dive, TechRadar, Tehran Times, teiss, TengriNews, The 420.in, The Astana Times, The Bookseller, The Brussels Times, The Chartered Institute of Export &amp; International Trade, The Daily Dazzling Dawn, The Edge Malaysia, The Edinburgh Inquirer, The Edinburgh Reporter, The European Sting, The Guardian, The Herald, The Independent, The Jamestown Foundation, The Local Norway, The London Economic, The Motley Fool, The National Scot, The New Voice of Ukraine, The New York Times, The Parliament Magazine, The PIE News, The Real Economy Blog, The Record from Recorded Future News, The Scotsman, The Skinny, The Stage, The Star, The Sun, The Times, The Times Of Central Asia, The Times of Central Asia, The Times of India, The Times of Israel, The Tribune, The Washington Post, Theatre Weekly, TheBusinessDesk.com, ThePrint, Think Scotland, THP News, Traders Union, TradingKey, TradingNEWS, TradingView, Transfermarkt, Trend News Agency, Trending Now Infrastructure, Tribunemag.co.uk, Trustnet, TVGuide.co.uk, Técnicas Reunidas, UA.NEWS, uatv.ua, UkrAgroConsult, UkrMedia News, Unite.AI, Urban Realm, USA Today, UzDaily.uz, Vaping360, Vibe 107.6, VT Markets, World Fertilizer, WSJ, WSMH, www.marketplace.org, www.marketscreener.com, www.tmgm.com, Y100 WNCY, Yahoo, Yahoo Finance, Yahoo Finance Singapore, Yahoo Finance UK, Yahoo News Singapore, Yahoo News UK, Yahoo! Finance Canada, Yen News, Yorkshire Live, YourStory.com</p></details>
+  </div>
+</footer>
+
+</div>
+<script>
+// Live clock for home: keeps ticking after the page was built.
+document.querySelectorAll('[data-offset]').forEach(function (panel) {
+  var clock = panel.querySelector('.clock');
+  function tick() { clock.textContent = new Date(Date.now() + Number(panel.dataset.offset) * 36e5).toISOString().slice(11, 16); }
+  tick();
+  setInterval(tick, 20000);
+});
+
+// Her journal. The morning Telegram message links here with a one-time key after "#t=" (the part after #
+// never reaches a server); it is traded once for a device key kept in this browser. Without one, the
+// journal stays hidden: the site is public, the notes are not (they live encrypted with the bot).
+(() => {
+  const box = document.getElementById('journal');
+  if (!box) return;
+  const S = JSON.parse(document.getElementById('journal-text').textContent);
+  const lang = document.documentElement.lang === 'en' ? 'en-GB' : document.documentElement.lang;
+  const say = (key, values = {}) => (S[key] ?? key).replace(/\{(\w+)\}/g, (_, k) => values[k] ?? '');
+  const many = (key, n) => say(n === 1 ? key + '_one' : key, { n: n.toLocaleString(lang) });
+  const stored = {
+    get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+    drop(k) { try { localStorage.removeItem(k); } catch {} },
+  };
+  const $ = (sel) => box.querySelector(sel);
+  const form = $('.j-write'), area = form.elements.text, status = $('.j-status');
+  const list = $('.j-notes ol'), look = $('.j-look');
+  // dates: browsers know English well, Kazakh barely, so other editions use the paper's own month names
+  const clock = (d) => String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+  const weekday = (d) => (d.getDay() + 6) % 7;
+  const fill = (format, d) => format.replace('{year}', d.getFullYear()).replace('{month}', S._months[d.getMonth()])
+    .replace('{day}', d.getDate()).replace('{weekday}', S._weekdays_long[weekday(d)]);
+  const when = (t, full) => {
+    const d = new Date(t);
+    if (S._months) return full ? fill(S._date_long, d) + ', ' + clock(d) : S._weekdays[weekday(d)] + ' · ' + fill(S._date_short, d) + ' · ' + clock(d);
+    return new Intl.DateTimeFormat(lang, full ? { dateStyle: 'full', timeStyle: 'short' }
+      : { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }).format(d);
+  };
+  const day = (t) => {
+    const d = new Date(t);
+    const old = d.getFullYear() !== new Date().getFullYear();
+    if (S._months) return fill(old ? S._date_year : S._date_short, d);
+    return new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'long', ...(old && { year: 'numeric' }) }).format(d);
+  };
+  const SHOWN = 5;          // notes listed until "Show all"
+  let me = stored.get('journal'), total = 0, all = false;
+
+  const hash = new URLSearchParams(location.hash.slice(1));
+  const link = hash.get('t'), go = hash.get('go') === 'journal';
+  if (link || go) history.replaceState(null, '', location.pathname + location.search);   // the link is hers alone
+
+  async function call(action, data = {}) {
+    const headers = { 'Content-Type': 'application/json' };
+    if (me) headers.Authorization = 'Bearer ' + me.device;
+    const res = await fetch(box.dataset.api, { method: 'POST', headers, body: JSON.stringify({ action, ...data }) });
+    const body = await res.json().catch(() => ({}));
+    if (res.status === 401) { stored.drop('journal'); me = null; box.hidden = true; }
+    if (!res.ok) throw Object.assign(new Error(body.error || res.status), { code: body.error });
+    return body;
+  }
+
+  function closed(code) {
+    const note = document.getElementById('journal-closed');
+    if (code !== 'used' && code !== 'expired') return;
+    note.textContent = say('journal ' + code);
+    note.hidden = false;
+  }
+
+  function item(n) {
+    const li = document.createElement('li');
+    const kind = n.k === 'thought' ? 'thought' : 'dream';
+    li.className = 'j-note ' + kind;
+    li.innerHTML = '<div class="j-meta"><span class="j-tag"><svg class="wi" aria-hidden="true"><use href="#' + (kind === 'dream' ? 'moon' : 'thought') +
+      '"/></svg></span><time></time><button type="button" class="j-link"></button></div><p></p>';
+    li.querySelector('.j-tag').append(say(kind === 'dream' ? 'Dream' : 'Thought'));
+    li.querySelector('time').textContent = when(n.t);
+    li.querySelector('time').dateTime = new Date(n.t).toISOString();
+    li.querySelector('p').textContent = n.s;
+    const del = li.querySelector('button');
+    del.textContent = say('Delete');
+    del.addEventListener('click', () => arm(del, say('Sure?'), async () => {
+      const r = await call('remove', { id: n.id });
+      li.remove();
+      count(r.total);
+    }));
+    return li;
+  }
+
+  // a destructive button asks once more: the second tap within 5 seconds does it
+  function arm(button, question, action) {
+    if (button.classList.contains('armed')) {
+      button.classList.remove('armed');
+      return action().catch(() => { status.textContent = say('Couldn’t save. Please try again in a minute.'); });
+    }
+    const label = button.textContent;
+    button.classList.add('armed');
+    button.textContent = question;
+    setTimeout(() => { button.classList.remove('armed'); button.textContent = label; }, 5000);
+  }
+
+  function count(n) {
+    total = n;
+    $('.j-notes').hidden = $('.j-tools').hidden = !n;
+    $('.j-total').textContent = many('j_notes', n);
+    $('.j-all').hidden = list.children.length >= n;
+    if (!n) { look.hidden = true; summary.setAttribute('aria-expanded', 'false'); }
+  }
+
+  async function load(everything) {
+    all = Boolean(everything);
+    const r = await call('recent', all ? { all: true } : {});
+    list.replaceChildren(...r.notes.slice(0, all ? undefined : SHOWN).map(item));
+    count(r.total);
+  }
+
+  function lookBack(st) {
+    look.replaceChildren();
+    const p = (text) => look.appendChild(Object.assign(document.createElement('p'), { textContent: text }));
+    if (!st.total) return;
+    p(say('j_since', { notes: many('j_notes', st.total), date: day(st.first) }));
+    const kinds = [st.dreams && many('j_dreams', st.dreams), st.thoughts && many('j_thoughts', st.thoughts)].filter(Boolean);
+    if (kinds.length > 1) p(kinds.join(' · '));
+    if (st.month) p(say('j_month', { notes: many('j_notes', st.month.notes), days: many('j_days', st.month.days) }));
+    const { now, best } = st.streak || {};
+    if (now >= 2) p(say('j_streak', { days: many('j_days', now) }) + (best > now ? ' · ' + say('j_best', { days: many('j_days', best) }) : ''));
+    else if (best >= 2) p(say('j_best_only', { days: many('j_days', best) }));
+    if (st.when) p(say('j_' + st.when));
+    let words = 0;
+    for (const [kind, found] of Object.entries(st.themes || {})) {
+      if (!found.length) continue;
+      words += found.length;
+      look.appendChild(Object.assign(document.createElement('h3'), { className: 'label', textContent: say('j_often_' + kind) }));
+      const ul = Object.assign(document.createElement('ul'), { className: 'j-words' });
+      for (const w of found) {
+        const li = document.createElement('li');
+        li.append(w.word + ' ', Object.assign(document.createElement('b'), { textContent: '×' + w.n }));
+        ul.appendChild(li);
+      }
+      look.appendChild(ul);
+    }
+    if (!words) p(say('j_early'));
+    if (st.ago) {
+      look.appendChild(Object.assign(document.createElement('h3'), { className: 'label', textContent: say('j_ago_' + st.ago.days) + ' · ' + day(st.ago.t) }));
+      look.appendChild(Object.assign(document.createElement('blockquote'), { textContent: st.ago.s }));
+    }
+  }
+
+  // a draft survives closing the page
+  const draft = stored.get('journal-draft');
+  if (draft) { area.value = draft.text || ''; form.elements.kind.value = draft.kind || 'dream'; }
+  const hint = () => { area.placeholder = say(form.elements.kind.value === 'thought' ? 'What’s on your mind?' : 'What did you dream about?'); };
+  hint();
+  form.addEventListener('change', hint);
+  form.addEventListener('input', () => stored.set('journal-draft', { text: area.value, kind: form.elements.kind.value }));
+  area.addEventListener('keydown', (e) => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) form.requestSubmit(); });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const text = area.value.trim();
+    if (!text) return area.focus();
+    const button = $('.j-save');
+    button.disabled = true;
+    status.className = 'j-status';
+    status.textContent = say('Saving…');
+    try {
+      const r = await call('add', { text, kind: form.elements.kind.value });
+      list.prepend(item(r.note));
+      if (!all && list.children.length > SHOWN) list.lastElementChild.remove();
+      count(r.total);
+      area.value = '';
+      stored.drop('journal-draft');
+      status.className = 'j-status ok';
+      status.textContent = '✓ ' + say('Kept');
+      look.hidden = true;
+      summary.setAttribute('aria-expanded', 'false');
+    } catch {
+      status.className = 'j-status bad';
+      status.textContent = say('Couldn’t save. Please try again in a minute.');
+    } finally {
+      button.disabled = false;
+    }
+  });
+
+  $('.j-all').addEventListener('click', () => load(true));
+  const summary = $('.j-summary');
+  summary.addEventListener('click', async () => {
+    const open = look.hidden;
+    if (open) lookBack(await call('summary'));
+    look.hidden = !open;
+    summary.setAttribute('aria-expanded', String(open));
+  });
+  $('.j-download').addEventListener('click', async () => {
+    const r = await call('recent', { all: true });
+    const text = r.notes.slice().reverse()
+      .map((n) => say(n.k === 'thought' ? 'Thought' : 'Dream') + ' · ' + when(n.t, true) + '\n\n' + n.s)
+      .join('\n\n————\n\n');
+    const a = Object.assign(document.createElement('a'), {
+      href: URL.createObjectURL(new Blob([text + '\n'], { type: 'text/plain;charset=utf-8' })),
+      download: 'journal-' + new Date().toISOString().slice(0, 10) + '.txt',
+    });
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  });
+  const forget = $('.j-forget');
+  forget.addEventListener('click', () => arm(forget, say('Tap again to delete all {notes}', { notes: many('j_notes', total) }), async () => {
+    await call('forget');
+    list.replaceChildren();
+    count(0);
+  }));
+
+  (async () => {
+    const chat = link && link.split('.')[0];
+    if (link && (!me || me.chat !== chat)) {
+      try {
+        const { device } = await call('claim', { link });
+        me = { device, chat };
+        stored.set('journal', me);
+      } catch (err) {
+        if (!me) return closed(err.code);
+      }
+    }
+    if (!me) return;
+    box.hidden = false;
+    if (go) box.scrollIntoView({ block: 'start' });
+    load().catch(() => {});
+  })();
+})();
+</script>
+</body>
+</html>
