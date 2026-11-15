@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Утро — № 6, 15 ноября</title>
+<meta name="description" content="&#34;Ты можешь поверить?&#34;: SpaceX поймала часть своей ракеты Starship на обратном пути на Землю">
+<meta property="og:title" content="Утро · № 6 · 15 ноября 2026, воскресенье">
+<meta property="og:description" content="&#34;Ты можешь поверить?&#34;: SpaceX поймала часть своей ракеты Starship на обратном пути на Землю · &#34;Мы вернемся домой однажды&#34; - американские путешественники пострадали от общенациональной остановки · Microsoft объявила, что сервисы полностью восстановлены после длительного глобального отключения · Зеленский заявил, что США выдвинули вопрос об уступке Украины Донбасса для членства в НАТО. · Вашингтон разделен по поводу того, как справиться с последствиями дела Nvidia.">
+<meta property="og:image" content="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/aeb5/live/e1baf430-e074-11f1-a701-fddedf244c16.jpg"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;600;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fafaf7; --surface: #ffffff; --ink: #0e0e10; --ink-2: #44444c; --ink-3: #6b6b74; --line: #e4e4e8;
+  --display: "Unbounded", "Arial Black", sans-serif;
+  --text: "Onest", "Helvetica Neue", Arial, sans-serif;
+  --mix: #000; --mix-ink: 78%; --mix-soft: 12%;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c0c0f; --surface: #16161b; --ink: #f3f3f5; --ink-2: #c3c3cb; --ink-3: #93939c; --line: #2a2a31;
+    --mix: #fff; --mix-ink: 62%; --mix-soft: 20%; color-scheme: dark;
+  }
+}
+[style*="--c"] { --c-ink: color-mix(in srgb, var(--c) var(--mix-ink), var(--mix)); --c-soft: color-mix(in srgb, var(--c) var(--mix-soft), var(--surface)); }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 16px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 17px/1.55 var(--text); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; border-radius: 4px; }
+h2 a:hover, h3 a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .12em; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px 64px; }
+.small { font: 600 13px/1.4 var(--text); letter-spacing: .02em; }
+
+/* header */
+.meta-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; padding: 16px 0 0; color: var(--ink-2); }
+.meta-row b { font-variant-numeric: tabular-nums; color: var(--ink); }
+.mast { margin: 6px 0 0; font: 900 min(calc((100vw - 32px) / 3.45), 350px)/.86 var(--display); letter-spacing: -.045em; text-transform: uppercase; }
+.toc { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 18px 0 4px; margin: 0 -16px; padding-left: 16px; padding-right: 16px; }
+.toc::-webkit-scrollbar { display: none; }
+.toc a { flex: none; padding: 9px 14px; border-radius: 999px; background: var(--c-soft); color: var(--c-ink); font: 600 13px/1.2 var(--text); }
+.toc a:hover { background: var(--c); color: #fff; }
+
+/* status labels */
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { display: inline-flex; align-items: center; gap: 6px; padding: 4px 9px; border-radius: 999px; font: 700 13px/1.2 var(--text); letter-spacing: .04em; text-transform: uppercase; }
+.tag.solid { background: var(--c); color: #fff; }
+.b-live, .b-breaking { background: #e5172f; color: #fff; }
+.b-live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: pulse 1.4s ease-in-out infinite; }
+.b-developing { background: #ffb020; color: #261800; }
+.b-new { background: color-mix(in srgb, #12a150 var(--mix-soft), var(--surface)); color: color-mix(in srgb, #12a150 var(--mix-ink), var(--mix)); }
+.b-opinion { background: color-mix(in srgb, #a64dff var(--mix-soft), var(--surface)); color: color-mix(in srgb, #a64dff var(--mix-ink), var(--mix)); }
+.b-analysis, .b-explainer { background: color-mix(in srgb, #3a5bff var(--mix-soft), var(--surface)); color: color-mix(in srgb, #3a5bff var(--mix-ink), var(--mix)); }
+@keyframes pulse { 50% { opacity: .25; } }
+@media (prefers-reduced-motion: reduce) { .b-live::before { animation: none; } }
+
+/* cover */
+.cover { position: relative; display: flex; align-items: flex-end; min-height: min(78vh, 720px); margin-top: 20px; border-radius: 24px; overflow: hidden; background: var(--c); color: #fff; isolation: isolate; }
+.cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.cover::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgb(0 0 0 / .88), rgb(0 0 0 / .45) 48%, rgb(0 0 0 / 0) 78%); }
+.cover-text { display: grid; gap: 14px; padding: 28px 22px 26px; max-width: 980px; }
+.cover h2 { margin: 0; font: 600 clamp(24px, 4.8vw, 62px)/1.06 var(--display); letter-spacing: -.02em; text-wrap: balance; hyphens: auto; overflow-wrap: break-word; }
+.cover .dek { margin: 0; max-width: 60ch; font-size: 21px; color: rgb(255 255 255 / .86); }
+.cover .meta { margin: 0; color: rgb(255 255 255 / .75); }
+@media (min-width: 760px) { .cover-text { padding: 44px 44px 40px; } }
+
+/* today: weather, air, money, quote */
+.today { display: grid; gap: 14px; margin-top: 14px; }
+.tile { padding: 20px 22px; border-radius: 20px; background: var(--surface); border: 1px solid var(--line); }
+.tile .small { color: var(--ink-3); margin-bottom: 10px; }
+.big { font: 800 56px/1 var(--display); letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.big small { font: 600 17px/1.3 var(--text); letter-spacing: 0; color: var(--ink-2); }
+.money .big { font-size: 44px; }
+.sub { margin: 8px 0 0; color: var(--ink-2); }
+.days { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 13px; text-align: center; }
+.days b { display: block; font: 700 13px/1.4 var(--text); color: var(--ink-3); text-transform: uppercase; letter-spacing: .04em; }
+.aqi { display: inline-flex; align-items: center; gap: 10px; }
+.aqi i { width: 14px; height: 14px; border-radius: 50%; background: var(--aqi); box-shadow: 0 0 0 5px color-mix(in srgb, var(--aqi) 25%, transparent); }
+.fx { width: 100%; margin-top: 14px; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.fx td { padding: 6px 0; border-top: 1px solid var(--line); }
+.fx td:nth-child(2) { text-align: right; font-weight: 700; }
+.fx td:last-child { text-align: right; width: 64px; font-size: 13px; }
+.up { color: #e5172f; } .down { color: #12a150; } .flat { color: var(--ink-3); }
+.quote blockquote { margin: 0; font: 500 21px/1.35 var(--display); letter-spacing: -.01em; text-wrap: balance; }
+.quote .orig { margin: 0 0 6px; color: var(--ink-2); font-style: italic; }
+.quote .sub b { color: var(--ink); }
+@media (min-width: 720px) { .today { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) {
+  .today { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .today .weather { grid-column: span 4; } .today .air { grid-column: span 2; }
+  .today .money { grid-column: span 3; } .today .quote { grid-column: span 3; }
+}
+
+/* more top stories */
+.more { display: grid; gap: 0 32px; margin-top: 40px; }
+.more h2 { grid-column: 1 / -1; margin: 0 0 6px; font: 800 13px/1.2 var(--display); letter-spacing: .08em; text-transform: uppercase; }
+.more article { display: grid; grid-template-columns: auto 1fr 96px; gap: 16px; align-items: start; padding: 18px 0; border-top: 1px solid var(--line); }
+.more .n { font: 800 34px/1 var(--display); color: transparent; -webkit-text-stroke: 1.5px var(--ink); }
+.more h3 { margin: 0 0 6px; font: 600 21px/1.3 var(--text); text-wrap: balance; }
+.more img, .more .fill { width: 96px; aspect-ratio: 1; object-fit: cover; border-radius: 14px; }
+@media (min-width: 900px) { .more { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 639px) {
+  .more article { grid-template-columns: auto 1fr 72px; gap: 12px; }
+  .more .n { font-size: 21px; }
+  .more h3 { font-size: 17px; }
+  .more img, .more .fill { width: 72px; }
+}
+
+/* sections */
+.sec { margin-top: 72px; }
+.sec-open { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 16px; margin-bottom: 30px; padding: 30px 26px 24px; border-radius: 24px; background: var(--c); color: #fff; }
+.sec-open h2 { margin: 0; font: 800 clamp(34px, 6vw, 72px)/.95 var(--display); letter-spacing: -.03em; }
+.sec-open .small { color: rgb(255 255 255 / .85); }
+.lead { display: grid; gap: 18px; margin-bottom: 34px; }
+.lead h3 { margin: 0; font: 600 clamp(27px, 2.8vw, 34px)/1.12 var(--display); letter-spacing: -.015em; text-wrap: balance; }
+.lead .dek { font-size: 21px; -webkit-line-clamp: 5; }
+.lead .ph { aspect-ratio: 3 / 2; }
+@media (min-width: 860px) { .lead { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 32px; align-items: center; } }
+.ph { display: block; position: relative; aspect-ratio: 4 / 3; border-radius: 16px; overflow: hidden; background: var(--c-soft); }
+.ph img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.card:hover .ph img, .lead:hover .ph img { transform: scale(1.03); }
+@media (prefers-reduced-motion: reduce) { .ph img { transition: none; } }
+.fill { display: flex; align-items: flex-end; padding: 14px; width: 100%; height: 100%; background: linear-gradient(135deg, var(--c), color-mix(in srgb, var(--c) 55%, #000)); color: #fff; font: 600 21px/1.15 var(--display); }
+.txt { display: grid; gap: 10px; align-content: start; }
+.card h3 { margin: 0; font: 600 21px/1.28 var(--text); text-wrap: balance; }
+.dek { margin: 0; color: var(--ink-2); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+.meta { margin: 0; font: 500 13px/1.4 var(--text); color: var(--ink-3); }
+.grid { display: grid; gap: 34px 28px; }
+.card { display: grid; gap: 14px; align-content: start; }
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1020px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 639px) {
+  .grid { gap: 0; }
+  .grid .card { grid-template-columns: 1fr 88px; gap: 14px; padding: 16px 0; border-top: 1px solid var(--line); }
+  .grid .card .ph { order: 2; width: 88px; aspect-ratio: 1; border-radius: 12px; }
+  .grid .card .fill { font-size: 13px; padding: 8px; }
+  .grid .card h3 { font-size: 17px; }
+  .grid .card .dek { display: none; }
+}
+.empty { color: var(--ink-3); font-style: italic; }
+
+/* footer */
+.foot { display: grid; gap: 24px; margin-top: 80px; padding-top: 24px; border-top: 3px solid var(--ink); color: var(--ink-2); font-size: 13px; }
+.foot h4 { margin: 0 0 8px; font: 800 13px/1.2 var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
+.foot ul { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0; padding: 0; list-style: none; }
+.foot a { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: .2em; }
+@media (min-width: 760px) { .foot { grid-template-columns: 1fr 2fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="meta-row small">
+    <span>№ 6 · 15 ноября 2026, воскресенье</span>
+    <span>Астана, сейчас <b class="clock" data-offset="5">06:40</b></span>
+  </div>
+  <h1 class="mast"><a href="../index.html">Утро</a></h1>
+  <nav class="toc" aria-label="Разделы">
+<a href="#kazakhstan" style="--c: #00a3c4">Казахстан и Астана</a><a href="#politics" style="--c: #e0245e">Политика</a><a href="#world" style="--c: #ff4f00">Мир</a><a href="#tech" style="--c: #3a5bff">Технологии и ИИ</a><a href="#startups" style="--c: #12a150">Стартапы</a><a href="#design" style="--c: #a64dff">Дизайн и UX</a>  </nav>
+</header>
+
+<main>
+  <article class="cover" style="--c: #ff4f00">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/aeb5/live/e1baf430-e074-11f1-a701-fddedf244c16.jpg" alt="" referrerpolicy="no-referrer" onerror="this.remove()">    <div class="cover-text">
+      <div class="tags"><span class="tag solid">Главное</span><span class="tag b-developing">Развивается</span></div>
+      <h2><a href="https://www.bbc.co.uk/news/videos/cwlym2gy3y3eo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">&#34;Ты можешь поверить?&#34;: SpaceX поймала часть своей ракеты Starship на обратном пути на Землю</a></h2>
+<p class="dek">SpaceX провела историческую ловлю с помощью механических рук, прозванных палочками.</p>      <p class="meta">BBC · 3 ч назад · 8 изданий</p>
+    </div>
+  </article>
+
+<section class="today" aria-label="Сегодня в Астане">
+  <div class="tile weather">
+    <div class="small">Погода · Астана</div>
+    <div class="big">−1° <small>Пасмурно</small></div>
+    <p class="sub">Ощущается как −4° · ветер 1 м/с · восход 07:30, закат 16:26</p>
+    <div class="days"><div><b>Сегодня</b>1° / −2°<br><span class="meta">Небольшой снег</span></div><div><b>Пн</b>0° / −5°<br><span class="meta">Пасмурно</span></div><div><b>Вт</b>3° / −5°<br><span class="meta">Пасмурно</span></div><div><b>Ср</b>3° / −4°<br><span class="meta">Пасмурно</span></div></div>
+  </div>
+  <div class="tile air" style="--aqi: #2fb35a">
+    <div class="small">Воздух</div>
+    <div class="big aqi"><i aria-hidden="true"></i>46</div>
+    <p class="sub">AQI — хороший. PM2.5: 9 мкг/м³</p>
+  </div>
+  <div class="tile money">
+    <div class="small">Курс Нацбанка · 15.11.2026</div>
+    <div class="big">$444.30 <small class="flat">– 0.00</small></div>
+    <table class="fx"><tr><td>EUR</td><td>490.91 ₸</td><td class="flat">0.00</td></tr><tr><td>RUB</td><td>5.41 ₸</td><td class="flat">0.00</td></tr><tr><td>CNY</td><td>66.59 ₸</td><td class="flat">0.00</td></tr><tr><td>GBP</td><td>587.59 ₸</td><td class="flat">0.00</td></tr></table>
+  </div>
+  <div class="tile quote">
+    <div class="small">Цитата дня</div>
+    <blockquote>«Разве не приятно думать, что завтра будет новый день без ошибок?»</blockquote>
+    <p class="sub">— <b>L. M. Montgomery</b></p>
+  </div>
+</section>
+
+<section class="more" aria-label="Ещё главное">
+  <h2>Ещё главное</h2>
+  <article style="--c: #ff4f00">
+    <span class="n" aria-hidden="true">02</span>
+    <div class="txt"><div class="tags"><span class="tag b-developing">Развивается</span></div><h3><a href="https://www.bbc.co.uk/news/videos/c893ryz7lw33o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">&#34;Мы вернемся домой однажды&#34; - американские путешественники пострадали от общенациональной остановки</a></h3><p class="meta">BBC · 23 ч назад · 6 изданий</p></div>
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/41c9/live/7d390f90-dfcc-11f1-b441-2b33b063138f.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">  </article>
+  <article style="--c: #ff4f00">
+    <span class="n" aria-hidden="true">03</span>
+    <div class="txt"><div class="tags"><span class="tag b-developing">Развивается</span></div><h3><a href="https://www.bbc.co.uk/news/articles/c6rrg51rkz09o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Microsoft объявила, что сервисы полностью восстановлены после длительного глобального отключения</a></h3><p class="meta">BBC · 18 ч назад · 6 изданий</p></div>
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/5f18/live/9b3a5370-df98-11f1-a9ad-6774a3284d10.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">  </article>
+  <article style="--c: #ff4f00">
+    <span class="n" aria-hidden="true">04</span>
+    <div class="txt"><div class="tags"><span class="tag b-developing">Развивается</span></div><h3><a href="https://www.bbc.co.uk/news/articles/cwvg2l312ylqo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Зеленский заявил, что США выдвинули вопрос об уступке Украины Донбасса для членства в НАТО.</a></h3><p class="meta">BBC · 3 ч назад · 4 издания</p></div>
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/fc82/live/f8afbeb0-e087-11f1-b780-31cc9daf154a.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">  </article>
+  <article style="--c: #ff4f00">
+    <span class="n" aria-hidden="true">05</span>
+    <div class="txt"><div class="tags"><span class="tag b-developing">Развивается</span></div><h3><a href="https://www.france24.com/en/washington-divided-over-how-to-deal-with-fallout-from-the-nvidia-case" target="_blank" rel="noopener">Вашингтон разделен по поводу того, как справиться с последствиями дела Nvidia.</a></h3><p class="meta">France 24 · 8 ч назад · 4 издания</p></div>
+<img src="https://s.france24.com/media/display/de9eb5ba-e025-11f1-b03b-695cb59fade5/w:1024/p:16x9/EN-20261114-120954-121129-CS-01.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">  </article>
+</section>
+
+<section class="sec" id="kazakhstan" style="--c: #00a3c4">
+  <header class="sec-open">
+    <h2>Казахстан и Астана</h2>
+    <span class="small">7 материалов</span>
+  </header>
+  <article class="lead">
+    <a class="ph" href="https://tengrinews.kz/kazakhstan_news/mintrans-prokommentiroval-zayavleniya-zaprete-detskie-613092/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://tengrinews.kz/userdata/news/2026/news_613092/thumb_b/photo_558276.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Tengrinews'}))"></a>
+    <div class="txt"><h3><a href="https://tengrinews.kz/kazakhstan_news/mintrans-prokommentiroval-zayavleniya-zaprete-detskie-613092/" target="_blank" rel="noopener">Минтранс прокомментировал заявления о запрете на детские коляски в автобусах</a></h3><p class="dek">В Министерстве транспорта Казахстана прокомментировали распространяемые в сети заявления о якобы запрете входить в автобусы с детскими колясками,</p><p class="meta">Tengrinews · 7 ч назад · 4 издания</p></div>
+  </article>
+  <div class="grid">
+    <article class="card">
+      <a class="ph" href="https://tengrisport.kz/tnsport/kazahstan-razgromil-avstriyu-so-schtom-70-v-otbore-na-evro-613088/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://tengrinews.kz/userdata/news/2026/news_613088/thumb_b/photo_558272.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Tengrinews'}))"></a>
+      <div class="txt"><h3><a href="https://tengrisport.kz/tnsport/kazahstan-razgromil-avstriyu-so-schtom-70-v-otbore-na-evro-613088/" target="_blank" rel="noopener">Казахстан разгромил Австрию со счётом 7:0 в отборе на Евро</a></h3><p class="dek">Сборная Казахстана по футболу до 17 лет крупно обыграла команду Австрии в матче отборочного турнира чемпионата Европы-2027, передаёт Tengri</p><p class="meta">Tengrinews · 12 ч назад · 10 изданий</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://tengrinews.kz/news/temirtau-voditel-avtobusa-umer-rulm-salone-nahodilis-613082/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://tengrinews.kz/userdata/news/2026/news_613082/thumb_b/photo_558266.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Tengrinews'}))"></a>
+      <div class="txt"><div class="tags"><span class="tag b-developing">Развивается</span></div><h3><a href="https://tengrinews.kz/news/temirtau-voditel-avtobusa-umer-rulm-salone-nahodilis-613082/" target="_blank" rel="noopener">В Темиртау водитель автобуса умер за рулём: в салоне находились пассажиры</a></h3><p class="dek">В Темиртау пассажирский автобус врезался в дерево после того, как водителю стало плохо во время движения. Мужчина скончался на месте, передаёт</p><p class="meta">Tengrinews · 15 ч назад · 3 издания</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://kz.kursiv.media/2026-11-14/svvo-kasym-zhomart-tokaev-i-dimash-kudaibergen-voshli-v-spisok-500-vliyatelnyh-musulman-mira/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=svvo-kasym-zhomart-tokaev-i-dimash-kudaibergen-voshli-v-spisok-500-vliyatelnyh-musulman-mira" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="fill">Курсив</span></a>
+      <div class="txt"><div class="tags"><span class="tag b-developing">Развивается</span></div><h3><a href="https://kz.kursiv.media/2026-11-14/svvo-kasym-zhomart-tokaev-i-dimash-kudaibergen-voshli-v-spisok-500-vliyatelnyh-musulman-mira/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=svvo-kasym-zhomart-tokaev-i-dimash-kudaibergen-voshli-v-spisok-500-vliyatelnyh-musulman-mira" target="_blank" rel="noopener">Касым-Жомарт Токаев и Димаш Кудайберген вошли в список 500 влиятельных мусульман мира</a></h3><p class="dek">Президент Казахстана Касым-Жомарт Токаев и певец Димаш Кудайберген вошли в рейтинг The Muslim 500 за 2027 год, который объединяет 500 влиятельных представителей мусульманского мира. Главу государства отметили в категории «Политика», а…</p><p class="meta">Курсив · 14 ч назад · 16 изданий</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://kz.kursiv.media/2026-11-14/tsse-eshhe-odnogo-zhitelya-astany-arestovali-na-10-sutok-za-mat-v-tiktok/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=tsse-eshhe-odnogo-zhitelya-astany-arestovali-na-10-sutok-za-mat-v-tiktok" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="fill">Курсив</span></a>
+      <div class="txt"><h3><a href="https://kz.kursiv.media/2026-11-14/tsse-eshhe-odnogo-zhitelya-astany-arestovali-na-10-sutok-za-mat-v-tiktok/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=tsse-eshhe-odnogo-zhitelya-astany-arestovali-na-10-sutok-za-mat-v-tiktok" target="_blank" rel="noopener">Еще одного жителя Астаны арестовали на 10 суток за мат в TikTok</a></h3><p class="dek">В Астане еще одного молодого человека привлекли к административной ответственности за нецензурную брань во время прямого эфира в TikTok. Об этом сообщили в полиции столицы. Нарушение выявили в ходе мониторинга социальных сетей.…</p><p class="meta">Курсив · 11 ч назад · 3 издания</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://kz.kursiv.media/2026-11-14/tsse-samolet-air-astana-ne-smog-prizemlitsya-v-shymkente-i-uletel-v-turkestan/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=tsse-samolet-air-astana-ne-smog-prizemlitsya-v-shymkente-i-uletel-v-turkestan" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="fill">Курсив</span></a>
+      <div class="txt"><h3><a href="https://kz.kursiv.media/2026-11-14/tsse-samolet-air-astana-ne-smog-prizemlitsya-v-shymkente-i-uletel-v-turkestan/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=tsse-samolet-air-astana-ne-smog-prizemlitsya-v-shymkente-i-uletel-v-turkestan" target="_blank" rel="noopener">Самолет Air Astana не смог приземлиться в Шымкенте и улетел в Туркестан</a></h3><p class="dek">Самолет авиакомпании Air Astana, выполнявший рейс из Астаны в Шымкент, не смог приземлиться в аэропорту назначения из-за плохих погодных условий. Воздушное судно перенаправили в Туркестан, откуда пассажиров доставили автобусами, сообщает…</p><p class="meta">Курсив · 10 ч назад · 7 изданий</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://news.google.com/rss/articles/CBMihgFBVV95cUxQNzFGSm5qaWg5MlBWNDFZVU9qSUVNbUYyc09HQ2VJWTJsQl9fOUkxQXRRVmRweWxqa1NtWEx3MlZvaDcwWjV0V0FSakJ6dDg0RXJlZl96U3Z0TS05anl6N1QxMGN2d1RGU0pZaDFuREtSTU9majdvU2s3OWs2bkp2SXRZQnN4Z9IBSkFVX3lxTE5pa0dsdEZ4Qm9Lb2plWlFxcmw2WE83NGhVeTFGRC1nOWRoREpKclRDSnE1LUpKRDVvN3ptSnpiR0NZZ2tKQXVqb21R?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="fill">Вестник Кавказа</span></a>
+      <div class="txt"><h3><a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxQNzFGSm5qaWg5MlBWNDFZVU9qSUVNbUYyc09HQ2VJWTJsQl9fOUkxQXRRVmRweWxqa1NtWEx3MlZvaDcwWjV0V0FSakJ6dDg0RXJlZl96U3Z0TS05anl6N1QxMGN2d1RGU0pZaDFuREtSTU9majdvU2s3OWs2bkp2SXRZQnN4Z9IBSkFVX3lxTE5pa0dsdEZ4Qm9Lb2plWlFxcmw2WE83NGhVeTFGRC1nOWRoREpKclRDSnE1LUpKRDVvN3ptSnpiR0NZZ2tKQXVqb21R?oc=5" target="_blank" rel="noopener">Новый вид бабочек открыли ученые в Казахстане</a></h3><p class="meta">Вестник Кавказа · 7 ч назад · 2 издания</p></div>
+    </article>
+  </div>
+</section>
+<section class="sec" id="politics" style="--c: #e0245e">
+  <header class="sec-open">
+    <h2>Политика</h2>
+    <span class="small">5 материалов</span>
+  </header>
+  <article class="lead">
+    <a class="ph" href="https://news.google.com/rss/articles/CBMinwFBVV95cUxOTHhGWjhJVkNEOUx1ODZqRmFpWThRcXBvUmRoOTRKbENfajVON1dyblo3WFZjVUc3M2pubE1jLW55WC10aERGWEtHcDBKTnZCSEotVXlVWHFzVHBaQXJkS3lrbHprazJCdjVicEtnOERCd29aanA5Skg2TEpOVktVd3h2T0NUUmtjVjI0ek5FcHAyS2tMTS1aNVdLX0NtUDg?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="fill">TengriNews</span></a>
+    <div class="txt"><h3><a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxOTHhGWjhJVkNEOUx1ODZqRmFpWThRcXBvUmRoOTRKbENfajVON1dyblo3WFZjVUc3M2pubE1jLW55WC10aERGWEtHcDBKTnZCSEotVXlVWHFzVHBaQXJkS3lrbHprazJCdjVicEtnOERCd29aanA5Skg2TEpOVktVd3h2T0NUUmtjVjI0ek5FcHAyS2tMTS1aNVdLX0NtUDg?oc=5" target="_blank" rel="noopener">Опоздал на работу: когда за это могут уволить в Казахстане: 14 ноября 19:37 - новости на Tengri Life</a></h3><p class="meta">TengriNews · 11 ч назад · 2 издания</p></div>
+  </article>
+  <div class="grid">
+    <article class="card">
+      <a class="ph" href="https://news.google.com/rss/articles/CBMisgFBVV95cUxOc1dkU0VndkpJVUVhR0ktNHdOTXIwWFU5SUU3ZTAyZGQ4LXpudXphT0s5TmtLVlAwWVdoeGJPSkpYR2lacW9Kb2poNHh2MFBFZ2hOczFuZE9heVNxbVdGWEgtUlAtTGtDbFB6YmdYbkJuYjRaOFlyR3dxX0tycmhrOGZwTEJDSjloSU45dEhnOTlpUWRxemxTT0xUZEZ2WEpLMG56aGMwTHAydGtoNjhibG5B?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="fill">Kursiv Media</span></a>
+      <div class="txt"><h3><a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxOc1dkU0VndkpJVUVhR0ktNHdOTXIwWFU5SUU3ZTAyZGQ4LXpudXphT0s5TmtLVlAwWVdoeGJPSkpYR2lacW9Kb2poNHh2MFBFZ2hOczFuZE9heVNxbVdGWEgtUlAtTGtDbFB6YmdYbkJuYjRaOFlyR3dxX0tycmhrOGZwTEJDSjloSU45dEhnOTlpUWRxemxTT0xUZEZ2WEpLMG56aGMwTHAydGtoNjhibG5B?oc=5" target="_blank" rel="noopener">Google, Meta и TikTok выступили против предупреждений о вреде соцсетей</a></h3><p class="meta">Kursiv Media · 15 ч назад · 2 издания</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://news.google.com/rss/articles/CBMipAFBVV95cUxQeDVRV2xscHBrQ25TNm1PblMzOWNhTmwxZ3didGo5VFBBZ3o0aDd4a0lSRjNQRUVuSklaTHI0MmQ1NTE1Z3BOSm4taGVIMGsyRG5INHFYZUVlUWxrQXBrZ3dxTjN4bm5BRjd1a29hT0hWWW45VW5WbGVTY0w0VUZlM19zdEN6N2dJazVaWHJmTEhBS3NGeDZ0a015SXMySGNTclViTg?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="fill">Kursiv Media</span></a>
+      <div class="txt"><h3><a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxQeDVRV2xscHBrQ25TNm1PblMzOWNhTmwxZ3didGo5VFBBZ3o0aDd4a0lSRjNQRUVuSklaTHI0MmQ1NTE1Z3BOSm4taGVIMGsyRG5INHFYZUVlUWxrQXBrZ3dxTjN4bm5BRjd1a29hT0hWWW45VW5WbGVTY0w0VUZlM19zdEN6N2dJazVaWHJmTEhBS3NGeDZ0a015SXMySGNTclViTg?oc=5" target="_blank" rel="noopener">Заявление Токаева: что осталось за кадром громких задержаний</a></h3><p class="meta">Kursiv Media · 11 ч назад · 2 издания</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxPdnpKQ194NEZEMjlpZklpWWxWSkNtTTVrSTFzMmFwdUxGOEMtRUpKTXRneGpxTzZ1Q3ltaVpsLTdTcE5sMV9UdUkxOVFpTGZ4bUFhaXFLUnA2Sk1zV3k2ZFBFcmtpR2d1cXpvd0I1bURGLXM5SWdzWXI2RFhLTWQwVV9CMXc0amljOHZsXzI2RWtyNHJ5em1XdFdJYnhoME9Udjhqem9odFVoZ2tvd3pqSTZubDkzODJNZ0R0LUJrQ19PWWpSZUoxVXRWZXVPOWhWMTVFNUFZM3NSUFc30gHcAUFVX3lxTE92ekpDX3g0RkQyOWlmSWlZbFZKQ21NNWtJMXMyYXB1TEY4Qy1FSkpNdGd4anFPNnVDeW1pWmwtN1NwTmwxX1R1STE5UWlMZnhtQWFpcUtScDZKTXNXeTZkUEVya2lHZ3Vxem93QjVtREYtczlJZ3NZcjZEWEtNZDBVX0IxdzRqaWM4dmxfMjZFa3I0cnl6bVd0V0lieGgwT1R2OGp6b2h0VWhna293empJNm5sOTM4Mk1nRHQtQmtDX09ZalJlSjFVdFZldU85aFYxNUU1QVkzc1JQVzc?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="fill">El.kz</span></a>
+      <div class="txt"><h3><a href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxPdnpKQ194NEZEMjlpZklpWWxWSkNtTTVrSTFzMmFwdUxGOEMtRUpKTXRneGpxTzZ1Q3ltaVpsLTdTcE5sMV9UdUkxOVFpTGZ4bUFhaXFLUnA2Sk1zV3k2ZFBFcmtpR2d1cXpvd0I1bURGLXM5SWdzWXI2RFhLTWQwVV9CMXc0amljOHZsXzI2RWtyNHJ5em1XdFdJYnhoME9Udjhqem9odFVoZ2tvd3pqSTZubDkzODJNZ0R0LUJrQ19PWWpSZUoxVXRWZXVPOWhWMTVFNUFZM3NSUFc30gHcAUFVX3lxTE92ekpDX3g0RkQyOWlmSWlZbFZKQ21NNWtJMXMyYXB1TEY4Qy1FSkpNdGd4anFPNnVDeW1pWmwtN1NwTmwxX1R1STE5UWlMZnhtQWFpcUtScDZKTXNXeTZkUEVya2lHZ3Vxem93QjVtREYtczlJZ3NZcjZEWEtNZDBVX0IxdzRqaWM4dmxfMjZFa3I0cnl6bVd0V0lieGgwT1R2OGp6b2h0VWhna293empJNm5sOTM4Mk1nRHQtQmtDX09ZalJlSjFVdFZldU85aFYxNUU1QVkzc1JQVzc?oc=5" target="_blank" rel="noopener">Арман Кырыкбаев обсудил с творческим сообществом и молодежью Послание Президента и развитие культуры чтения</a></h3><p class="meta">El.kz · 18 ч назад · 2 издания</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxOMkwyd1R0MjBFVDZramZkZXFLVkJLWDViZE9BZ2Fyc2pWRm9LVlAzWnZtNEZkQm5TMzFBaEZ2VEViTW53eHYzUVBwVU81dlIxelZBZGF1Ny1FQWVkRjM5UmZsa0oxSHdQX05GakFSVTUzZ3U3My1pNWZkSXNtZXJxRHRjUDdWaUVuRXpCMlpYVk9GSldzWmxRQTB6alAyUDRCQUEwb1RGNFdCZ3lhNkFIUlhmZ3Z6M210WHpPZVlYNEw1ZThBUHA5N3ktb3RQSVFQZjE4UnVqbXY?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="fill">Регистр ТВ Казахстан</span></a>
+      <div class="txt"><h3><a href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxOMkwyd1R0MjBFVDZramZkZXFLVkJLWDViZE9BZ2Fyc2pWRm9LVlAzWnZtNEZkQm5TMzFBaEZ2VEViTW53eHYzUVBwVU81dlIxelZBZGF1Ny1FQWVkRjM5UmZsa0oxSHdQX05GakFSVTUzZ3U3My1pNWZkSXNtZXJxRHRjUDdWaUVuRXpCMlpYVk9GSldzWmxRQTB6alAyUDRCQUEwb1RGNFdCZ3lhNkFIUlhmZ3Z6M210WHpPZVlYNEw1ZThBUHA5N3ktb3RQSVFQZjE4UnVqbXY?oc=5" target="_blank" rel="noopener">Казахстан и Австрия нацелены на расширение инвестиционного и торгово-экономического и сотрудничества</a></h3><p class="meta">Регистр ТВ Казахстан · 9 ч назад · 4 издания</p></div>
+    </article>
+  </div>
+</section>
+<section class="sec" id="world" style="--c: #ff4f00">
+  <header class="sec-open">
+    <h2>Мир</h2>
+    <span class="small">6 материалов</span>
+  </header>
+  <article class="lead">
+    <a class="ph" href="https://www.bbc.co.uk/news/articles/ckz74jzpy18do?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/172e/live/be162960-dfc9-11f1-81be-1f9bcd2a4214.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'BBC'}))"></a>
+    <div class="txt"><h3><a href="https://www.bbc.co.uk/news/articles/ckz74jzpy18do?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Трамп, Путин и Си планируют историческую совместную встречу в Китае на следующей неделе, сообщает Белый дом.</a></h3><p class="dek">По словам пресс-секретаря, Трамп обсудит &#34;сокращение ядерного оружия&#34; во время беспрецедентных переговоров.</p><p class="meta">BBC · 9 ч назад · 3 издания</p></div>
+  </article>
+  <div class="grid">
+    <article class="card">
+      <a class="ph" href="https://www.bbc.co.uk/news/articles/cwn83gxemk35o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/d6be/live/f51842e0-e041-11f1-88e1-eb4e155225b3.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'BBC'}))"></a>
+      <div class="txt"><h3><a href="https://www.bbc.co.uk/news/articles/cwn83gxemk35o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Италия оштрафовала Meta на 805 млн евро за доступ к фотографиям пользователей</a></h3><p class="dek">Гигант социальных сетей обвиняется в том, что не сообщил 20 миллионам пользователей, что он имеет доступ к их фотографиям.</p><p class="meta">BBC · 7 ч назад · 3 издания</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://www.france24.com/en/middle-east/20261114-netanyahu-renews-call-for-israeli-government-unity-as-eisenkot-dismisses-tricks" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://s.france24.com/media/display/e9d87c1e-e06a-11f1-b45a-f71d22e7fea9/w:1024/p:16x9/eb428c66bf6978a929203d6ac1afd3964fb560b1.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'France 24'}))"></a>
+      <div class="txt"><h3><a href="https://www.france24.com/en/middle-east/20261114-netanyahu-renews-call-for-israeli-government-unity-as-eisenkot-dismisses-tricks" target="_blank" rel="noopener">Нетаньяху вновь призывает к правительству израильского единства.</a></h3><p class="dek">Временный премьер-министр Израиля Биньямин Нетаньяху в субботу возобновил свой призыв к правительству национального единства с Гади Эйзенкотом, который отверг призыв как политическую уловку. Это происходит в то время, как будущий премьер-министр находится в середине...</p><p class="meta">France 24 · 5 ч назад · 2 издания</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://www.bbc.co.uk/news/articles/cqrlgnx9dx6eo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/965c/live/69643890-e04f-11f1-8d5a-49633fbae59d.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'BBC'}))"></a>
+      <div class="txt"><h3><a href="https://www.bbc.co.uk/news/articles/cqrlgnx9dx6eo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Филиппины выигрывают первый конкурс песни Евровидение в Азии</a></h3><p class="dek">Лидер Кармель выходит победительницей со своим гимном женского расширения прав и возможностей &#34;Sobra-Sobra&#34;.</p><p class="meta">BBC · 7 ч назад · 2 издания</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://www.theguardian.com/technology/2026/nov/13/nvidia-scandal-sparks-us-national-security-concerns-china" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://i.guim.co.uk/img/media/5534caea091e39afe776168281e50dd327c8be8e/563_0_3334_2668/master/3334.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=d37605075250f78266914b0061ace318" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'The Guardian'}))"></a>
+      <div class="txt"><h3><a href="https://www.theguardian.com/technology/2026/nov/13/nvidia-scandal-sparks-us-national-security-concerns-china" target="_blank" rel="noopener">Скандал с Nvidia: глава казначейства США обвиняет министерство торговли Лутника в якобы отсутствии действий.</a></h3><p class="dek">Секретарь торговли США сталкивается с увольнением из-за возникновения вопросов по поводу высокопоставленных чиновников Трампа  ⁇  знания о предполагаемых связях китайских шпионов с политикой США  ⁇  прямые новости Секретарь торговли США Говард Лутник сталкивается с растущим давлением из-за...</p><p class="meta">The Guardian · 29 ч назад · 2 издания</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://www.theguardian.com/world/2026/nov/13/russia-ukraine-talks-kaja-kallas-eu-foreign-policy-dublin-summit" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://i.guim.co.uk/img/media/d169429d7a6f7e570a871b03d7a39e581e77f265/1443_446_3976_3181/master/3976.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=274186fa9c3558adb11b60de976b5042" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'The Guardian'}))"></a>
+      <div class="txt"><h3><a href="https://www.theguardian.com/world/2026/nov/13/russia-ukraine-talks-kaja-kallas-eu-foreign-policy-dublin-summit" target="_blank" rel="noopener">Глава внешней политики ЕС предупреждает, что Россия &#34;устанавливает ловушки&#34; в переговорах на Украине</a></h3><p class="dek">Кая Каллас говорит, что Москва пытается отвлечь внимание от своей агрессии, поднимая вопрос европейской безопасности Глава внешней политики ЕС предупредила о том, чтобы не &#34;впасть в ловушки, которые ставит Россия&#34;, по ее словам, Москва пытается...</p><p class="meta">The Guardian · 29 ч назад · 2 издания</p></div>
+    </article>
+  </div>
+</section>
+<section class="sec" id="tech" style="--c: #3a5bff">
+  <header class="sec-open">
+    <h2>Технологии и ИИ</h2>
+    <span class="small">7 материалов</span>
+  </header>
+  <article class="lead">
+    <a class="ph" href="https://zwischenzugs.com/2026/11/03/a-family-tree-of-software-job-titles/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="fill">Hacker News</span></a>
+    <div class="txt"><h3><a href="https://zwischenzugs.com/2026/11/03/a-family-tree-of-software-job-titles/" target="_blank" rel="noopener">Семейное дерево программных должностей</a></h3><p class="dek">URL статьи: https://zwischenzugs.com/2026/11/03/a-family-tree-of-software-job-titles/ Комментарии URL: https://news.ycombinator.com/item?id=50499038 Точки: 205 # Комментарии: 101</p><p class="meta">Hacker News · 7 ч назад · 2 издания</p></div>
+  </article>
+  <div class="grid">
+    <article class="card">
+      <a class="ph" href="https://www.theverge.com/podcast/1032907/helen-toner-openai-cset-ai-safety-policy-interview" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/DCD-Helen-Toner.jpg?quality=90&amp;strip=all&amp;crop=0,0,100,100" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'The Verge'}))"></a>
+      <div class="txt"><h3><a href="https://www.theverge.com/podcast/1032907/helen-toner-openai-cset-ai-safety-policy-interview" target="_blank" rel="noopener">Член совета директоров OpenAI, уволившего Сэма Олтмана, говорит, что мы все еще не можем доверять руководителям ИИ.</a></h3><p class="dek">Сегодня я разговариваю с Хелен Тонер, исполнительным директором Центра безопасности и новых технологий в Джорджтаунском университете. Этот эпизод - вторая часть нашей серии о ИИ в реальной жизни. Хелен - известная фигура в ИИ...</p><p class="meta">The Verge · 10 ч назад · 2 издания</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://habr.com/ru/articles/1107948/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1107948" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://habrastorage.org/extt/52/a1/34/52a1340fd5787205afd7cdcaf4b5ebef.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Хабр'}))"></a>
+      <div class="txt"><div class="tags"><span class="tag b-new">Новое</span></div><h3><a href="https://habr.com/ru/articles/1107948/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1107948" target="_blank" rel="noopener">Сборка AOSP на MacBook, или Приключения Android-разработчика</a></h3><p class="dek">Привет, Хабр! Я занимаюсь программированием под Android с 2015 года. За это время много где поработал и много чего повидал: галеры, крупный ритейл, потом долгий путь в банках и финтехе. Задачи были совершенно разнообразные: от бизнес-фич и…</p><p class="meta">Хабр · 57 мин назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://techcrunch.com/2026/11/14/where-was-nvidias-security-team/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://techcrunch.com/wp-content/uploads/2026/11/Jensen-Huang-1.jpg?w=1024" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'TechCrunch'}))"></a>
+      <div class="txt"><div class="tags"><span class="tag b-new">Новое</span></div><h3><a href="https://techcrunch.com/2026/11/14/where-was-nvidias-security-team/" target="_blank" rel="noopener">Где была охранная группа Nvidia?</a></h3><p class="dek">Глава службы безопасности Nvidia тихо ушел в августе, и теперь, когда генеральный директор Jensen Huang ушел из своих отношений, в том числе с руководителем компании, подозреваемой в поставке чипов в Китай, бывший офицер разведки говорит...</p><p class="meta">TechCrunch · 1 ч назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://habr.com/ru/articles/1107946/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1107946" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://habrastorage.org/extt/53/4d/b9/534db927bd9c8e1d5cb231d3ef3ed06c.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Хабр'}))"></a>
+      <div class="txt"><div class="tags"><span class="tag b-new">Новое</span></div><h3><a href="https://habr.com/ru/articles/1107946/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1107946" target="_blank" rel="noopener">Почему с ИИ мы всё ещё пишем плохой софт</a></h3><p class="dek">ИИ помогает искать баги и делать рефакторинг. Но к пятнице снова нужна новая фича, а разбор старого кода откладывают. После стрима про качество кода я решил разобраться, почему мы так используем болванчика. В расследовании главное не выйти…</p><p class="meta">Хабр · 2 ч назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://www.theverge.com/entertainment/1033909/magic-the-gathering-netflix-series" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/IefaLy5uPLc-HD.jpg?quality=90&amp;strip=all&amp;crop=0,0,100,100" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'The Verge'}))"></a>
+      <div class="txt"><h3><a href="https://www.theverge.com/entertainment/1033909/magic-the-gathering-netflix-series" target="_blank" rel="noopener">Magic: The Gathering получает анимационный сериал Netflix. На самом деле на этот раз.</a></h3><p class="dek">&#34;Это происходит на самом деле. Обещаю. Это первые слова Роя Грэма, руководителя сюжета в Magic: The Gathering, в видео, опубликованном вчера, объявляющем о Планезукаре, анимационном сериале, выходящем на Netflix в 2027 году. Это...</p><p class="meta">The Verge · 5 ч назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://arstechnica.com/science/2026/11/james-webb-telescope-finds-ice-older-than-the-star-it-orbits/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.arstechnica.net/wp-content/uploads/2026/11/image-1-989x648.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Ars Technica'}))"></a>
+      <div class="txt"><h3><a href="https://arstechnica.com/science/2026/11/james-webb-telescope-finds-ice-older-than-the-star-it-orbits/" target="_blank" rel="noopener">Телескоп Джеймса Уэбба обнаружил лед старше звезды, вокруг которой он вращается.</a></h3><p class="dek">Радиация и столкновения перестраивают планетарные строительные материалы.</p><p class="meta">Ars Technica · 13 ч назад</p></div>
+    </article>
+  </div>
+</section>
+<section class="sec" id="startups" style="--c: #12a150">
+  <header class="sec-open">
+    <h2>Стартапы</h2>
+    <span class="small">6 материалов</span>
+  </header>
+  <article class="lead">
+    <a class="ph" href="https://digitalbusiness.kz/2026-11-13/vo-chto-investiruyut-klienti-freedom-top-10-aktsiy-po-objemu-sdelok/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://digitalbusiness.kz/storage/post-images/lg16x9/LceILCTSAEbL9OEq.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Digital Business'}))"></a>
+    <div class="txt"><h3><a href="https://digitalbusiness.kz/2026-11-13/vo-chto-investiruyut-klienti-freedom-top-10-aktsiy-po-objemu-sdelok/" target="_blank" rel="noopener">Во что инвестируют клиенты Freedom: топ-10 акций по объему сделок</a></h3><p class="dek">Обороты увеличиваются на обеих основных биржах страны – KASE и AIX.</p><p class="meta">Digital Business · 37 ч назад · 2 издания</p></div>
+  </article>
+  <div class="grid">
+    <article class="card">
+      <a class="ph" href="https://digitalbusiness.kz/2026-11-14/eti-komedii-vi-mogli-zabit-5-filmov-dlya-uyutnogo-vechera-doma/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://digitalbusiness.kz/storage/post-images/lg16x9/UQzcDzF9C4OltLh9.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Digital Business'}))"></a>
+      <div class="txt"><h3><a href="https://digitalbusiness.kz/2026-11-14/eti-komedii-vi-mogli-zabit-5-filmov-dlya-uyutnogo-vechera-doma/" target="_blank" rel="noopener">Эти комедии вы могли забыть: 5 фильмов для уютного вечера дома</a></h3><p class="dek">Не знаете, что посмотреть в субботу вечером? Digital Business собрал пять комедий нулевых и начала 2010-х, которые помогут отвлечься и поднять настроение.</p><p class="meta">Digital Business · 18 ч назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://sifted.eu/articles/samsung-european-tech/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://images.sifted.eu/cdn-cgi/image/width=2048,quality=75,fit=cover,format=auto/wp-content/uploads/2026/11/13104311/Untitled-Design-3-scaled.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Sifted'}))"></a>
+      <div class="txt"><h3><a href="https://sifted.eu/articles/samsung-european-tech/" target="_blank" rel="noopener">Год заключения сделок Samsung в Европе</a></h3><p class="meta">Sifted · 38 ч назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://digitalbusiness.kz/2026-11-14/ekspert-objyasnil-kak-pravilno-ispolzovat-5-osnovnih-aktivov-dlya-investirovaniya/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://digitalbusiness.kz/storage/post-images/lg16x9/odmdrw2a8tcI9N62.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Digital Business'}))"></a>
+      <div class="txt"><h3><a href="https://digitalbusiness.kz/2026-11-14/ekspert-objyasnil-kak-pravilno-ispolzovat-5-osnovnih-aktivov-dlya-investirovaniya/" target="_blank" rel="noopener">Эксперт объяснил, как правильно использовать 5 основных активов для инвестирования</a></h3><p class="dek">Владимир Савенок рассказывает, как копить на пенсию, покупать квартиру или получать пассивный доход.</p><p class="meta">Digital Business · 20 ч назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://techcrunch.com/wp-content/uploads/2026/11/Raising-money.jpg?resize=1200,829" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'TechCrunch'}))"></a>
+      <div class="txt"><h3><a href="https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/" target="_blank" rel="noopener">Стартап-агент искусственного интеллекта LangChain достиг оценки в 3 миллиарда долларов</a></h3><p class="dek">LangChain теперь заявляет о 7000 клиентах своего инструмента управления агентами LangSmith, независимого от модели и платформы.</p><p class="meta">TechCrunch · 30 ч назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://news.crunchbase.com/venture/biggest-startup-funding-rounds-agentic-ai-infrastructure-mirendil-mercor/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://news.crunchbase.com/wp-content/uploads/Top_10_.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Crunchbase News'}))"></a>
+      <div class="txt"><h3><a href="https://news.crunchbase.com/venture/biggest-startup-funding-rounds-agentic-ai-infrastructure-mirendil-mercor/" target="_blank" rel="noopener">10 крупнейших раундов финансирования недели: агентный искусственный интеллект и инфраструктура все еще в работе</a></h3><p class="dek">Это была еще одна важная неделя для финансирования стартапов, связанных с ИИ. Мирендил, разработчик агентного ИИ для исследований и разработок, возглавил пакет с серией А стоимостью 1 миллиард долларов, за ним следует Mercor, получивший 750 миллионов долларов на соединение разработчиков ИИ с людьми-экспертами.</p><p class="meta">Crunchbase News · 30 ч назад</p></div>
+    </article>
+  </div>
+</section>
+<section class="sec" id="design" style="--c: #a64dff">
+  <header class="sec-open">
+    <h2>Дизайн и UX</h2>
+    <span class="small">6 материалов</span>
+  </header>
+  <article class="lead">
+    <a class="ph" href="https://uxdesign.cc/decision-theatre-or-decision-design-f1604f178685?source=rss----138adf9c44c---4" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn-images-1.medium.com/max/1024/1*jSm2wuX6DerL6DwhQFrLqA.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'UX Collective'}))"></a>
+    <div class="txt"><h3><a href="https://uxdesign.cc/decision-theatre-or-decision-design-f1604f178685?source=rss----138adf9c44c---4" target="_blank" rel="noopener">Театр решений или дизайн решений?</a></h3><p class="dek">ИИ упростил получение информации, но не упростил принятие решений. Поскольку машины производят больше, чем мы можем прочитать, наша работа смещается от создания знаний к принятию решений. Мы готовы? По данным опроса BetterUp Labs и…</p><p class="meta">UX Collective · 25 ч назад</p></div>
+  </article>
+  <div class="grid">
+    <article class="card">
+      <a class="ph" href="https://www.figma.com/blog/ai-role-in-the-creative-process/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.sanity.io/images/599r6htc/regionalized/4791f6c2acbf0d3121abf8a8f3e7aa3c6b7c4ae9-3264x1836.png?w=1200&amp;q=70&amp;fit=max&amp;auto=format" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Figma'}))"></a>
+      <div class="txt"><h3><a href="https://www.figma.com/blog/ai-role-in-the-creative-process/" target="_blank" rel="noopener">Роль ИИ в творческом процессе</a></h3><p class="dek">Какие части творческого процесса может сделать за нас ИИ, а какие мы настаиваем на сохранении для себя?</p><p class="meta">Figma · 29 ч назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://www.nngroup.com/articles/research-in-the-loop/?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-syndication" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://media.nngroup.com/media/articles/opengraph_images/Research-In-The-Loop__How_UXR_Adapts__to_Development_at__AI_Speed.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Nielsen Norman Group'}))"></a>
+      <div class="txt"><h3><a href="https://www.nngroup.com/articles/research-in-the-loop/?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-syndication" target="_blank" rel="noopener">Непрерывные исследования: как UXR адаптируется к разработке со скоростью ИИ</a></h3><p class="dek">Поскольку ИИ ускоряет развитие, исследованиям может быть сложно адаптироваться. Исследования могут определить, что должен измерять каждый релиз и что он может помочь командам обнаружить.</p><p class="meta">Nielsen Norman Group · 31 ч назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://agustinbarrientos.com/writing/senior-eye/interfaces-that-understand-what-we-want" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://agustinbarrientos.com/_astro/cover.dW8fEYz6.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Sidebar'}))"></a>
+      <div class="txt"><h3><a href="https://agustinbarrientos.com/writing/senior-eye/interfaces-that-understand-what-we-want" target="_blank" rel="noopener">Создание интерфейсов, которые понимают, что мы хотим делать</a></h3><p class="dek">Chrome создает API решений, который бесплатно и конфиденциально запускает модель принятия решений на вашем компьютере.</p><p class="meta">Sidebar · 44 ч назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://smashingmagazine.com/2026/11/should-you-add-ai-audit-product-teams/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="http://files.smashing.media/articles/should-you-add-au-audit-product-teams/should-you-add-ai-audit-product-teams.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Smashing Magazine'}))"></a>
+      <div class="txt"><h3><a href="https://smashingmagazine.com/2026/11/should-you-add-ai-audit-product-teams/" target="_blank" rel="noopener">Стоит ли добавлять к этому искусственный интеллект? Аудит из четырех вопросов для продуктовых команд</a></h3><p class="dek">Функция искусственного интеллекта может сэкономить время пользователей на выполнении задачи только для того, чтобы они потратили его на проверку результатов. Этот практический аудит помогает командам разработчиков решить, где ИИ займет свое место и что нужно пользователям для проверки его результатов.</p><p class="meta">Smashing Magazine · 2 дн. назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://www.nngroup.com/articles/journey-mapping-101/?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-syndication" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://media.nngroup.com/media/articles/opengraph_images/Journey_Mapping_101.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Nielsen Norman Group'}))"></a>
+      <div class="txt"><h3><a href="https://www.nngroup.com/articles/journey-mapping-101/?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-syndication" target="_blank" rel="noopener">Картирование путешествий 101</a></h3><p class="dek">Карта путешествия – это визуализация процесса, который проходит человек для достижения цели.</p><p class="meta">Nielsen Norman Group · 31 ч назад</p></div>
+    </article>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div>
+    <h4>Прошлые выпуски</h4>
+<ul><li><a href="../archive/2026-11-14.html">14 ноября 2026, суббота</a></li><li><a href="../archive/2026-11-13.html">13 ноября 2026, пятница</a></li><li><a href="../archive/2026-11-12.html">12 ноября 2026, четверг</a></li><li><a href="../archive/2026-11-11.html">11 ноября 2026, среда</a></li><li><a href="../archive/2026-11-10.html">10 ноября 2026, вторник</a></li></ul>  </div>
+  <div>
+    <h4>О журнале</h4>
+    <p>Собирается автоматически каждое утро в 06:40 по Астане из открытых новостных лент. Новости ранжируются по тому, сколько изданий о них пишут; каждый заголовок ведёт к первоисточнику. Материалы на английском переведены машинным переводом.</p>
+    <details><summary>113 источников в этом выпуске</summary><p>24.kz, 365Info.kz, 3DNews, 4Vlastinfo, airpress.kz, Al Jazeera, All Sports Media, amanvibe.kz, Anadolu Ajansı, Arbat media, Ars Technica, ASnews.kz, Azattyq Ruhy, Azerisport.com, BAQ.KZ, BBC, BES.media, Betonmobile.ru, Bilim.expert, Bluescreen.kz, Businessfm.kz, CentralAsia.media, check-point.kz, CNBC, Crunchbase News, Digital Business, DigitalBusiness.kz, DKNews.kz, El.kz, Exclusive.kz, Figma, Forbes.kz, France 24, Gismeteo, GURK.KZ, Hacker News, https://prov-telegraf.ru/, https://the-tech.kz/, https://vcentre.kz/, inAstana.kz, Inbusiness.kz, infohub.kz, Informburo.kz, Instagram, Kapital.kz, Kazakhstan Today, kff.kz, Kursiv Media, KZ24.NEWS, Lada.kz, legalbet.ru, Liter.kz, LiveResult, Media.az, Metaratings, NEWS.am, NEWS.ru, Newtimes.kz, Nielsen Norman Group, Noks.kz, NPR, NUR.KZ, Offside.kz, Qumash.kz, Ratel.kz, ru.elordainfo.kz, Sidebar, Sifted, Sky News, Smashing Magazine, Soccer365, sport+ qazaqstan, Sportarena.kz, Sports.kz, TechCrunch, Tengrinews, TengriNews, TengriSport, The Guardian, The Verge, Trend, UkrAgroConsult, Ulysmedia.kz, UX Collective, Vesti.kz, Администрация федеральной территории «Сириус, Азаттык Азия, Вестник Кавказа, Вечерняя Астана, Время — общественно-политическая газета, Газета, Газета армян России, Интерфакс, Казахстанская правда, Казинформ, КазТАГ, КАРАВАН, Каспийский вестник, Корё ильбо, Курсив, Новости Zakon.kz, Пkz Новости Казахстана, Поиск, Рамблер, Регистр ТВ Казахстан, Ритм Евразии, Ставка ТВ, Телеканал «Астана», ТулаСМИ, Финансы Mail, Хабр, Шайба.kz, Эксперт</p></details>
+  </div>
+</footer>
+
+</div>
+<script>
+// Astana clock keeps ticking after the page was built.
+document.querySelectorAll('.clock[data-offset]').forEach(function (el) {
+  function tick() { el.textContent = new Date(Date.now() + Number(el.dataset.offset) * 36e5).toISOString().slice(11, 16); }
+  tick();
+  setInterval(tick, 20000);
+});
+</script>
+</body>
+</html>
