@@ -1,0 +1,1355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Morning Edition — Tue, 17 Nov</title>
+<meta name="description" content="US to further curb China&#39;s access to Nvidia chips">
+<meta property="og:title" content="The Morning Edition · Tuesday, 17 November 2026">
+<meta property="og:description" content="US to further curb China&#39;s access to Nvidia chips · Landmark Crimea bridge hit as Russia reports biggest Ukrainian drone attack of war · Rogue AI: California sues OpenAI over &#34;Hugging Face&#34; and other cyberattacks · Robert Pattinson: Becoming James Bond is ‘the honour of a lifetime’ · Macron visits Malaysia as France seeks closer defence and rare earths ties">
+<meta property="og:image" content="https://e3.365dm.com/26/11/1920x1080/skynews-taiwan-nvidia-taipei_7404808.jpg?20261112101611"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400;1,6..72,500&family=PT+Sans:wght@400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f4f1ea; --card: #ffffff; --ink: #16161a; --ink-2: #45454f; --ink-3: #686872;
+  --line: #e4dfd4; --rule: #16161a;
+  --shadow: 0 1px 2px rgb(20 20 30 / .06), 0 6px 20px rgb(20 20 30 / .05);
+  --gold: #f2b705; --sky: #00a3c4; --saltire: #0065bd; --top: #c8102e;
+  --live: #d0021b; --amber: #e8890c; --green: #1e8e5a;
+  --serif: "Newsreader", "PT Serif", Georgia, "Times New Roman", serif;
+  --sans: "Libre Franklin", "PT Sans", "Helvetica Neue", Arial, sans-serif;
+  --black: "UnifrakturMaguntia", "Old English Text MT", Georgia, serif;
+  --mix: #000; --mix-ink: 72%; --mix-soft: 11%; --q-gold: 26%; --q-sky: 16%;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111114; --card: #1b1b20; --ink: #ecebe6; --ink-2: #c4c3bd; --ink-3: #9a99a1;
+    --line: #2d2d34; --rule: #ecebe6; --shadow: 0 1px 2px rgb(0 0 0 / .4);
+    --mix: #fff; --mix-ink: 58%; --mix-soft: 22%; --q-gold: 13%; --q-sky: 14%; color-scheme: dark;
+  }
+}
+/* Kazakh needs Cyrillic letters Newsreader doesn't have; Chinese needs CJK fonts */
+html[lang="kk"] { --serif: "PT Serif", Georgia, serif; --sans: "PT Sans", Arial, sans-serif; }
+html[lang^="zh"] { --serif: "Noto Serif SC", "Songti SC", serif; --sans: "Noto Sans SC", "PingFang SC", sans-serif; }
+html[lang^="zh"] .label, html[lang^="zh"] .badge, html[lang^="zh"] .topic { letter-spacing: .04em; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 64px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.5 var(--serif); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid var(--saltire); outline-offset: 2px; border-radius: 2px; }
+.page { max-width: 1200px; margin: 0 auto; padding: 0 16px 56px; }
+.label { font: 700 11px/1.4 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+/* every coloured block sets --c; these derive readable text and soft fills from it */
+[style*="--c"] { --c-ink: color-mix(in srgb, var(--c) var(--mix-ink), var(--mix)); --c-soft: color-mix(in srgb, var(--c) var(--mix-soft), var(--card)); }
+
+/* masthead */
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; color: var(--ink-2); }
+.langs { display: flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--card); box-shadow: var(--shadow); }
+.langs a { padding: 5px 12px; border-radius: 999px; font: 600 13px/1.3 var(--sans); color: var(--ink-2); }
+.langs a[aria-current] { background: var(--ink); color: var(--bg); }
+.mast { display: grid; align-items: center; gap: 16px; padding: 22px 0 14px; }
+.mast h1 { margin: 0; text-align: center; font: 400 clamp(36px, 11vw, 60px)/1.05 var(--black); }
+.ear { display: none; border: 1px solid var(--rule); padding: 8px 10px; font: 13px/1.4 var(--sans); color: var(--ink-2); }
+.ear b { display: block; color: var(--ink); margin-bottom: 2px; }
+@media (min-width: 640px) { .mast h1 { font-size: min(9vw, 96px); white-space: nowrap; } }
+@media (min-width: 1100px) {
+  .mast { grid-template-columns: 180px 1fr 180px; }
+  .mast h1 { font-size: min(6vw, 80px); }
+  .ear { display: block; }
+}
+.band { display: grid; gap: 2px; padding: 8px 0; text-align: center; border-top: 3px double var(--rule); border-bottom: 1px solid var(--rule); }
+.band .date { font: italic 500 20px/1.3 var(--serif); }
+.band .label { color: var(--ink-2); }
+@media (min-width: 720px) {
+  .band { grid-template-columns: 1fr auto 1fr; align-items: center; }
+  .band > :first-child { text-align: left; }
+  .band > :last-child { text-align: right; }
+}
+nav.index { position: sticky; top: 0; z-index: 5; display: flex; gap: 8px; padding: 10px 16px; margin: 0 -16px; overflow-x: auto; scrollbar-width: none; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+nav.index::-webkit-scrollbar { display: none; }
+@media (min-width: 900px) { nav.index { justify-content: center; } }
+.pill { flex: none; padding: 7px 12px; border-radius: 999px; background: var(--c-soft); color: var(--c-ink); white-space: nowrap; }
+.pill:hover { background: var(--c); color: #fff; }
+
+/* quote of the day */
+.quote { position: relative; overflow: hidden; margin-top: 18px; padding: 26px 22px 24px; border-radius: 14px; background: linear-gradient(135deg, color-mix(in srgb, var(--gold) var(--q-gold), var(--card)), color-mix(in srgb, var(--sky) var(--q-sky), var(--card))); }
+.quote::before { content: "“"; position: absolute; right: 22px; top: 10px; font: 700 180px/.8 var(--serif); color: var(--gold); opacity: .45; pointer-events: none; }
+.greet { display: flex; align-items: center; gap: 8px; margin: 0 0 14px; font: 700 13px/1.3 var(--sans); }
+.greet svg { width: 22px; height: 22px; color: #b88a00; }
+.quote .label { color: var(--ink-2); margin-bottom: 8px; }
+.quote .orig { margin: 0 0 4px; font: italic 500 20px/1.35 var(--serif); color: var(--ink-2); }
+.quote blockquote { margin: 0; max-width: 34ch; font: 500 clamp(25px, 3.4vw, 32px)/1.25 var(--serif); letter-spacing: -.01em; text-wrap: balance; }
+.quote .cite { margin: 12px 0 0; font: 13px/1.4 var(--sans); color: var(--ink-2); }
+.quote .cite b { color: var(--ink); }
+
+/* today: weather here, home, money */
+.today { display: grid; gap: 14px; margin-top: 14px; }
+@media (min-width: 760px) { .today { grid-template-columns: 1.35fr 1fr; } .today .money { grid-column: 1 / -1; } }
+@media (min-width: 1080px) { .today { grid-template-columns: 1.4fr 1fr 1fr; } .today .money { grid-column: auto; } }
+.panel { background: var(--card); border-radius: 14px; box-shadow: var(--shadow); padding: 0 18px 18px; overflow: hidden; }
+.panel > .label { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 12px; margin: 0 -18px 14px; padding: 12px 18px; background: var(--c-soft); color: var(--c-ink); }
+.panel > .label span:last-child { color: var(--ink-3); font-weight: 600; }
+.wi { width: 22px; height: 22px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.wi .occ { fill: var(--card); }
+.wi.big { width: 56px; height: 56px; stroke-width: 1.2; color: var(--c-ink); }
+.wx-now { display: flex; align-items: center; gap: 14px; }
+.wx-temp { font: 700 50px/1 var(--serif); }
+.wx-label { font: italic 20px/1.3 var(--serif); color: var(--ink-2); }
+.wx-facts { margin: 12px 0 14px; font: 13px/1.6 var(--sans); color: var(--ink-2); }
+.wx-days { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+.wx-days li { display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 12px 4px 0; font: 13px/1.3 var(--sans); text-align: center; }
+.wx-days li + li { border-left: 1px solid var(--line); }
+.wx-days .r { color: var(--ink-3); }
+.clock { font: 700 50px/1 var(--serif); font-variant-numeric: tabular-nums; }
+.ahead { margin: 4px 0 14px; font: 13px/1.4 var(--sans); color: var(--ink-2); }
+.home-wx { display: flex; align-items: center; gap: 12px; padding-top: 12px; border-top: 1px solid var(--line); font: 13px/1.5 var(--sans); color: var(--ink-2); }
+.home-wx .wi { width: 36px; height: 36px; color: var(--c-ink); }
+.home-wx b { display: block; font: 700 20px/1.2 var(--serif); color: var(--ink); }
+.big-rate { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; font: 700 40px/1.1 var(--serif); font-variant-numeric: tabular-nums; }
+.big-rate span { white-space: nowrap; }
+.big-rate small { font: 600 13px/1.4 var(--sans); }
+.cross { margin: 6px 0 12px; font: 13px/1.4 var(--sans); color: var(--ink-2); }
+.fx { width: 100%; border-collapse: collapse; font: 13px/1.3 var(--sans); font-variant-numeric: tabular-nums; }
+.fx th, .fx td { padding: 7px 0; border-top: 1px solid var(--line); }
+.fx th { text-align: left; font-weight: 700; }
+.fx th span { font-weight: 400; color: var(--ink-3); margin-left: 6px; }
+.fx td { text-align: right; padding-left: 10px; white-space: nowrap; }
+.fx .v { font: 700 16px/1.2 var(--serif); }
+.up { color: var(--live); } .down { color: var(--green); } .flat { color: var(--ink-3); }
+@media (prefers-color-scheme: dark) { .up { color: #ff7a7a; } .down { color: #6fd39c; } }
+.note { margin: 10px 0 0; font: 13px/1.4 var(--sans); color: var(--ink-3); }
+
+/* cards */
+.card { display: flex; flex-direction: column; background: var(--card); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+.media { display: block; position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--c-soft); }
+.media img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.card:hover .media img { transform: scale(1.03); }
+.tile { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; padding: 12px 14px; color: #fff; background: radial-gradient(circle at 85% 15%, color-mix(in srgb, var(--c) 55%, #fff) 0 18%, transparent 19%), linear-gradient(135deg, var(--c), color-mix(in srgb, var(--c) 55%, #000)); }
+.tile b { font: italic 600 20px/1.15 var(--serif); }
+.tile span { font: 700 11px/1.4 var(--sans); letter-spacing: .12em; text-transform: uppercase; opacity: .85; }
+.body { display: flex; flex-direction: column; gap: 8px; padding: 14px 16px 16px; flex: 1; }
+.tags { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 7px; border-radius: 4px; font: 800 11px/1.3 var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+.b-live, .b-breaking { background: var(--live); color: #fff; }
+.b-live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: pulse 1.4s ease-in-out infinite; }
+.b-developing { background: var(--amber); color: #221400; }
+.b-new { background: color-mix(in srgb, var(--green) var(--mix-soft), var(--card)); color: color-mix(in srgb, var(--green) var(--mix-ink), var(--mix)); }
+.b-opinion { background: color-mix(in srgb, #7a4bc2 var(--mix-soft), var(--card)); color: color-mix(in srgb, #7a4bc2 var(--mix-ink), var(--mix)); }
+.b-analysis, .b-explainer { background: color-mix(in srgb, #3d4db7 var(--mix-soft), var(--card)); color: color-mix(in srgb, #3d4db7 var(--mix-ink), var(--mix)); }
+@keyframes pulse { 50% { opacity: .25; } }
+@media (prefers-reduced-motion: reduce) { .b-live::before { animation: none; } .media img { transition: none; } }
+.topic { font: 700 11px/1.3 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--c-ink); }
+.hl { margin: 0; font: 700 20px/1.2 var(--serif); letter-spacing: -.005em; text-wrap: balance; }
+.hl a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .15em; }
+.dek { margin: 0; color: var(--ink-2); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+.meta { margin: auto 0 0; padding-top: 4px; font: 13px/1.4 var(--sans); color: var(--ink-3); }
+.meta b { color: var(--c-ink); font-weight: 700; }
+
+/* compact row: headline left, square picture right */
+.row { flex-direction: row-reverse; align-items: flex-start; gap: 12px; padding: 14px 0; background: none; border-radius: 0; box-shadow: none; overflow: visible; border-top: 1px solid var(--line); }
+.row .media { flex: none; width: 84px; aspect-ratio: 1; border-radius: 8px; }
+.row .tile { padding: 8px; justify-content: center; align-items: center; }
+.row .tile b { font-size: 25px; }
+.row .tile span { display: none; }
+.row .body { padding: 0; gap: 5px; }
+.row .hl { font-size: 16px; line-height: 1.3; }
+.row .dek { display: none; }
+
+/* front page */
+.front { display: grid; gap: 18px; margin-top: 28px; }
+.lead .media { aspect-ratio: 3 / 2; }
+.lead .body { padding: 18px 20px 20px; gap: 10px; }
+.lead .hl { font: 800 clamp(32px, 4.4vw, 50px)/1.05 var(--serif); letter-spacing: -.015em; }
+.lead .dek { font-size: 20px; line-height: 1.45; -webkit-line-clamp: 4; }
+.also { margin: 0; padding-top: 10px; border-top: 1px solid var(--line); font: 13px/1.5 var(--sans); color: var(--ink-3); }
+.side { background: var(--card); border-radius: 12px; box-shadow: var(--shadow); padding: 4px 18px; }
+.side .row:first-child { border-top: 0; }
+.side-head { padding: 14px 0 2px; color: var(--c-ink); }
+@media (min-width: 900px) { .front { grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr); align-items: start; } }
+
+/* sections */
+.section { margin-top: 56px; }
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 18px; padding-top: 10px; border-top: 4px solid var(--c); }
+.sec-head h2 { margin: 0; font: 800 32px/1.1 var(--serif); letter-spacing: -.01em; color: var(--c-ink); }
+.sec-head .label { color: var(--ink-3); }
+.feature { margin-bottom: 18px; }
+.feature .hl { font-size: 32px; line-height: 1.12; }
+.feature .body { padding: 18px 20px 20px; gap: 10px; }
+@media (min-width: 820px) {
+  .feature { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+  .feature .media { aspect-ratio: auto; min-height: 320px; }
+  .feature .body { padding: 26px 28px; justify-content: center; }
+}
+.grid { display: grid; gap: 18px; }
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 639px) {
+  /* phones: everything after the feature becomes a light list instead of stacked cards */
+  .grid { gap: 0; background: var(--card); border-radius: 12px; box-shadow: var(--shadow); padding: 0 16px; }
+  .grid .card { flex-direction: row-reverse; align-items: flex-start; gap: 12px; padding: 14px 0; background: none; border-radius: 0; box-shadow: none; overflow: visible; border-top: 1px solid var(--line); }
+  .grid .card:first-child { border-top: 0; }
+  .grid .media { flex: none; width: 84px; aspect-ratio: 1; border-radius: 8px; }
+  .grid .tile { padding: 8px; justify-content: center; align-items: center; }
+  .grid .tile b { font-size: 25px; }
+  .grid .tile span { display: none; }
+  .grid .body { padding: 0; gap: 5px; }
+  .grid .hl { font-size: 16px; line-height: 1.3; }
+  .grid .dek { display: none; }
+}
+.desks { display: grid; gap: 18px; }
+@media (min-width: 820px) { .desks { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.desk { background: var(--card); border-radius: 12px; box-shadow: var(--shadow); overflow: hidden; }
+.desk-title { display: flex; align-items: center; gap: 8px; margin: 0; padding: 12px 16px; background: var(--c-soft); color: var(--c-ink); }
+.desk-title .flag { font-size: 20px; line-height: 1; letter-spacing: 0; }
+.desk > .card:first-of-type { border-radius: 0; box-shadow: none; }
+.desk .rows { padding: 0 16px 4px; }
+.empty { margin: 0; padding: 16px; font-style: italic; color: var(--ink-3); }
+
+/* the wish */
+.wish { position: relative; overflow: hidden; margin-top: 64px; padding: 40px 24px 36px; border-radius: 18px; text-align: center; background: linear-gradient(160deg, color-mix(in srgb, #ff9a62 30%, var(--card)), color-mix(in srgb, var(--gold) 30%, var(--card)) 55%, color-mix(in srgb, var(--sky) 20%, var(--card))); }
+.wish .sun { width: 64px; height: 64px; color: #c98a00; }
+.wish h2 { margin: 10px 0 12px; font: italic 600 clamp(32px, 5vw, 50px)/1.1 var(--serif); letter-spacing: -.01em; }
+.wish p { margin: 0 auto; max-width: 40ch; }
+.wish .text { font: 400 20px/1.5 var(--serif); }
+.wish .tip { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; padding: 8px 14px; border-radius: 999px; background: color-mix(in srgb, var(--card) 70%, transparent); font: 600 13px/1.4 var(--sans); max-width: none; text-align: left; }
+.wish .signoff { margin-top: 18px; font: italic 500 25px/1.3 var(--serif); color: var(--ink-2); }
+
+/* her page: dreams and thoughts. Shown only in a browser her morning link has connected (see the script);
+   the notes themselves live encrypted with the bot, never on this site */
+.journal { max-width: 820px; margin: 28px auto 0; border-radius: 18px; background: var(--card); box-shadow: var(--shadow); overflow: hidden; }
+.journal [hidden] { display: none; }
+.j-head { position: relative; padding: 24px 22px 22px; color: #f4f2ff;
+  background: radial-gradient(circle at 62% 30%, #fff 0 1px, transparent 1.5px), radial-gradient(circle at 74% 72%, rgb(255 255 255 / .7) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 48% 64%, rgb(255 255 255 / .55) 0 1px, transparent 1.5px), radial-gradient(circle at 92% 84%, rgb(255 255 255 / .6) 0 1px, transparent 1.5px),
+    linear-gradient(160deg, #1b1a44, #34307f 65%, #5249a8); }
+.j-head .label { color: rgb(244 242 255 / .72); }
+.j-head h2 { margin: 6px 0 0; max-width: 14ch; font: italic 600 clamp(32px, 5vw, 50px)/1.1 var(--serif); letter-spacing: -.01em; }
+.j-head .moon { position: absolute; right: 22px; top: 20px; width: 56px; height: 56px; fill: currentColor; color: #ffe9a8; }
+.j-body { display: grid; gap: 18px; padding: 18px 22px 22px; }
+.j-kind { display: inline-flex; justify-self: start; gap: 2px; padding: 3px; border-radius: 999px; background: var(--bg); }
+.j-kind input { position: absolute; opacity: 0; pointer-events: none; }
+.j-kind span { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 6px 14px; border-radius: 999px; font: 600 13px/1.3 var(--sans); color: var(--ink-2); cursor: pointer; }
+.j-kind span .wi { width: 18px; height: 18px; }
+.j-kind input:checked + span { background: var(--ink); color: var(--bg); }
+.j-kind input:focus-visible + span { outline: 2px solid var(--c); outline-offset: 2px; }
+.j-write { display: grid; gap: 12px; }
+.j-write textarea { width: 100%; min-height: 168px; resize: vertical; margin: 0; padding: 0 14px; border: 1px solid var(--line); border-radius: 12px; color: var(--ink);
+  background: var(--card) repeating-linear-gradient(transparent 0 31px, var(--line) 31px 32px) local; font: 400 20px/32px var(--serif); }
+.j-write textarea::placeholder { color: var(--ink-3); font-style: italic; }
+.j-write textarea:focus { outline: 2px solid color-mix(in srgb, var(--c) 45%, transparent); outline-offset: 1px; border-color: var(--c); }
+.j-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.j-save { min-height: 44px; padding: 10px 22px; border: 0; border-radius: 999px; background: var(--ink); color: var(--bg); font: 700 16px/1.2 var(--sans); cursor: pointer; }
+.j-save:disabled { opacity: .55; cursor: default; }
+.j-save:focus-visible, .j-link:focus-visible { outline: 2px solid var(--c); outline-offset: 2px; }
+.j-status { font: 13px/1.4 var(--sans); color: var(--ink-3); }
+.j-status.ok { color: var(--green); }
+.j-status.bad { color: var(--live); }
+.j-notes > .label { display: flex; justify-content: space-between; gap: 12px; margin: 0; color: var(--ink-3); }
+.j-notes ol { list-style: none; margin: 8px 0 0; padding: 0; }
+.j-note { padding: 14px 0; border-top: 1px solid var(--line); }
+.j-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; font: 13px/1.4 var(--sans); color: var(--ink-3); }
+.j-tag { display: inline-flex; align-items: center; gap: 5px; font: 700 11px/1.3 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: color-mix(in srgb, var(--k) var(--mix-ink), var(--mix)); }
+.j-tag .wi { width: 16px; height: 16px; }
+.j-note.dream { --k: #5a55c8; }
+.j-note.thought { --k: #c27a0e; }
+.j-note p { margin: 6px 0 0; font: 400 16px/1.55 var(--serif); white-space: pre-wrap; overflow-wrap: anywhere; }
+.j-link { padding: 4px 0; border: 0; background: none; color: var(--ink-2); font: 13px/1.4 var(--sans); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: .2em; cursor: pointer; }
+.j-link:hover { color: var(--ink); text-decoration-color: currentColor; }
+.j-meta .j-link { margin-left: auto; padding: 0; color: var(--ink-3); }
+.j-link.armed { color: var(--live); text-decoration-color: currentColor; }
+.j-look { padding: 16px 18px; border-radius: 12px; background: var(--c-soft); }
+.j-look p { margin: 0 0 8px; font: 16px/1.5 var(--serif); }
+.j-look h3 { margin: 14px 0 6px; color: var(--c-ink); }
+.j-words { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.j-words li { padding: 4px 10px; border-radius: 999px; background: var(--card); font: 13px/1.4 var(--sans); }
+.j-words b { font-weight: 700; color: var(--c-ink); }
+.j-look blockquote { margin: 6px 0 0; padding-left: 12px; border-left: 2px solid var(--c); font: italic 16px/1.5 var(--serif); color: var(--ink-2); white-space: pre-wrap; }
+.j-tools { display: flex; flex-wrap: wrap; gap: 4px 18px; padding-top: 12px; border-top: 1px solid var(--line); }
+.j-privacy { display: flex; gap: 8px; margin: 0; font: 13px/1.5 var(--sans); color: var(--ink-3); }
+.j-privacy .wi { width: 16px; height: 16px; margin-top: 2px; }
+.j-closed { margin: 28px auto 0; max-width: 46ch; text-align: center; font: italic 16px/1.5 var(--serif); color: var(--ink-3); }
+@media (max-width: 520px) { .j-head, .j-body { padding-left: 16px; padding-right: 16px; } .j-head .moon { width: 44px; height: 44px; right: 16px; } }
+
+/* footer */
+.foot { display: grid; gap: 24px; margin-top: 56px; padding-top: 18px; border-top: 3px double var(--rule); font: 13px/1.6 var(--sans); color: var(--ink-2); }
+@media (min-width: 760px) { .foot { grid-template-columns: 1fr 2fr; gap: 40px; } }
+.foot .label { color: var(--ink); margin: 0 0 8px; }
+.foot p { margin: 0 0 8px; }
+.past { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.past a, .foot summary { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: .2em; cursor: pointer; }
+
+@media print {
+  body { background: #fff; }
+  nav.index, .foot { display: none; }
+  .card, .desk, .panel { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><path id="cloud" d="M7 15h10a3.5 3.5 0 0 0 .4-6.98A5 5 0 0 0 7.6 9.1 3 3 0 0 0 7 15z"/></defs>
+  <symbol id="w-clear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5V5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></symbol>
+  <symbol id="w-partly" viewBox="0 0 24 24"><circle cx="8.5" cy="8" r="3"/><path d="M8.5 2.5v1.2M3 8h1.2M4.6 4.1l.9.9M12.4 4.1l-.9.9"/><use href="#cloud" class="occ" transform="translate(1 4)"/></symbol>
+  <symbol id="w-cloudy" viewBox="0 0 24 24"><use href="#cloud" transform="translate(0 3)"/></symbol>
+  <symbol id="w-fog" viewBox="0 0 24 24"><path d="M4 8h16M6 12h12M4 16h16M8 20h8"/></symbol>
+  <symbol id="w-rain" viewBox="0 0 24 24"><use href="#cloud"/><path d="M9 18l-1 2.5M13 18l-1 2.5M17 18l-1 2.5"/></symbol>
+  <symbol id="w-snow" viewBox="0 0 24 24"><use href="#cloud"/><path d="M8.5 18.5h.01M12.5 18.5h.01M16.5 18.5h.01M10.5 21h.01M14.5 21h.01" stroke-width="2.2"/></symbol>
+  <symbol id="w-storm" viewBox="0 0 24 24"><use href="#cloud"/><path d="M12.5 15.5l-2 3.5h3l-2 3.5"/></symbol>
+  <symbol id="sun" viewBox="0 0 64 64"><circle cx="32" cy="32" r="11" fill="currentColor" stroke="none"/><g stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M32 9v7" transform="rotate(0 32 32)"/><path d="M32 9v7" transform="rotate(30 32 32)"/><path d="M32 9v7" transform="rotate(60 32 32)"/><path d="M32 9v7" transform="rotate(90 32 32)"/><path d="M32 9v7" transform="rotate(120 32 32)"/><path d="M32 9v7" transform="rotate(150 32 32)"/><path d="M32 9v7" transform="rotate(180 32 32)"/><path d="M32 9v7" transform="rotate(210 32 32)"/><path d="M32 9v7" transform="rotate(240 32 32)"/><path d="M32 9v7" transform="rotate(270 32 32)"/><path d="M32 9v7" transform="rotate(300 32 32)"/><path d="M32 9v7" transform="rotate(330 32 32)"/></g></symbol>
+  <symbol id="moon" viewBox="0 0 24 24"><path d="M20 14.6A8.5 8.5 0 0 1 9.4 4a8.5 8.5 0 1 0 10.6 10.6z"/></symbol>
+  <symbol id="thought" viewBox="0 0 24 24"><path d="M6.5 15.5a3.5 3.5 0 0 1-.4-7A5 5 0 0 1 15.6 7a3.8 3.8 0 0 1 2.4 7.2 3 3 0 0 1-2.5 1.3z"/><circle cx="6.5" cy="19" r="1.2"/><circle cx="4" cy="21.5" r=".6"/></symbol>
+  <symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+</svg>
+<div class="page">
+
+<header>
+  <div class="topbar">
+    <span class="label">Edinburgh · edition</span>
+    <nav class="langs" aria-label="Language">
+<a href="../index.html" hreflang="en" aria-current="page">English</a><a href="../kk/index.html" hreflang="kk">Қазақша</a><a href="../zh/index.html" hreflang="zh">中文</a>    </nav>
+  </div>
+  <div class="mast">
+    <div class="ear"><b>All the news that’s fit to rank.</b>Stories ordered by how many newsrooms are covering them.</div>
+    <h1><a href="{&#39;air&#39;: None, &#39;city&#39;: &#39;Astana&#39;, &#39;role&#39;: &#39;Home&#39;, &#39;utc_offset&#39;: 5, &#39;now&#39;: &#39;−3°&#39;, &#39;feels&#39;: &#39;−7°&#39;, &#39;label&#39;: &#39;Clear&#39;, &#39;kind&#39;: &#39;clear&#39;, &#39;wind&#39;: 3, &#39;humidity&#39;: 72, &#39;sunrise&#39;: &#39;07:34&#39;, &#39;sunset&#39;: &#39;16:23&#39;, &#39;days&#39;: [{&#39;date&#39;: datetime.date(2026, 11, 17), &#39;label&#39;: &#39;Clear&#39;, &#39;kind&#39;: &#39;clear&#39;, &#39;high&#39;: 2.0, &#39;hi&#39;: &#39;2°&#39;, &#39;lo&#39;: &#39;−6°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.08}, {&#39;date&#39;: datetime.date(2026, 11, 18), &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;high&#39;: 3.0, &#39;hi&#39;: &#39;3°&#39;, &#39;lo&#39;: &#39;−4°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.39}, {&#39;date&#39;: datetime.date(2026, 11, 19), &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;high&#39;: 1.2, &#39;hi&#39;: &#39;1°&#39;, &#39;lo&#39;: &#39;−4°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 3.13}, {&#39;date&#39;: datetime.date(2026, 11, 20), &#39;label&#39;: &#39;Fog&#39;, &#39;kind&#39;: &#39;fog&#39;, &#39;high&#39;: 3.0, &#39;hi&#39;: &#39;3°&#39;, &#39;lo&#39;: &#39;−5°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.06}]}index.html">The Morning Edition</a></h1>
+    <div class="ear">
+<b>Edinburgh: 5°, light drizzle</b>Today 6° / 3° · Astana −3°    </div>
+  </div>
+  <div class="band">
+    <span class="label">No. 9</span>
+    <span class="date">Tuesday, 17 November 2026</span>
+    <span class="label">Edinburgh 5° · Astana −3°</span>
+  </div>
+  <nav class="index label" aria-label="Sections">
+<a class="pill" style="--c: var(--top)" href="#top">Top stories</a><a class="pill" style="--c: #0065bd" href="#edinburgh">Edinburgh &amp; Scotland</a><a class="pill" style="--c: #b0306a" href="#whats-on">What’s on</a><a class="pill" style="--c: #00a3c4" href="#kazakhstan">Kazakhstan</a><a class="pill" style="--c: #3d4db7" href="#world">World</a><a class="pill" style="--c: #1e7d4f" href="#economy">Economy</a><a class="pill" style="--c: #7a4bc2" href="#policy">Policy &amp; New Laws</a>  </nav>
+</header>
+
+<main>
+  <section class="quote" aria-label="Quote of the day">
+<p class="greet"><svg aria-hidden="true"><use href="#sun"/></svg>Қайырлы таң, KK!</p>    <div class="label">Quote of the day</div>
+<p class="orig" lang="kk">Өнер алды — қызыл тіл.</p>    <blockquote>“The first of all the arts is the gift of words.”</blockquote>
+    <p class="cite">— <b>Kazakh proverb</b></p>
+  </section>
+
+  <section class="today" id="today" aria-label="Weather">
+    <div class="panel" style="--c: var(--saltire)">
+      <div class="label"><span>Here · Edinburgh</span><span>Sunrise 07:53 · Sunset 16:01</span></div>
+      <div class="wx-now">
+        <svg class="wi big" aria-hidden="true"><use href="#w-rain"/></svg>
+        <div><div class="wx-temp">5°</div><div class="wx-label">Light drizzle</div></div>
+      </div>
+      <p class="wx-facts">Feels like 1° · Wind 5 m/s · Humidity 81%</p>
+      <ol class="wx-days">
+        <li>
+          <span class="label">Today</span>
+          <svg class="wi" role="img" aria-label="Drizzle"><use href="#w-rain"/></svg>
+          <span><b>6°</b> 3°</span>
+          <span class="r">100% rain</span>
+        </li>
+        <li>
+          <span class="label">Wed</span>
+          <svg class="wi" role="img" aria-label="Light drizzle"><use href="#w-rain"/></svg>
+          <span><b>7°</b> 5°</span>
+          <span class="r">86% rain</span>
+        </li>
+        <li>
+          <span class="label">Thu</span>
+          <svg class="wi" role="img" aria-label="Light drizzle"><use href="#w-rain"/></svg>
+          <span><b>8°</b> 5°</span>
+          <span class="r">35% rain</span>
+        </li>
+        <li>
+          <span class="label">Fri</span>
+          <svg class="wi" role="img" aria-label="Overcast"><use href="#w-cloudy"/></svg>
+          <span><b>6°</b> 0°</span>
+          <span class="r">4% rain</span>
+        </li>
+      </ol>
+    </div>
+    <div class="panel" style="--c: var(--sky)" data-offset="5">
+      <div class="label"><span>Home · Astana</span><span>Local time</span></div>
+      <div class="clock">10:19</div>
+<p class="ahead">5 h ahead of Edinburgh</p>      <div class="home-wx">
+        <svg class="wi" aria-hidden="true"><use href="#w-clear"/></svg>
+        <div><b>−3° · Clear</b>Today 2° / −6° · Wind 3 m/s</div>
+      </div>
+    </div>
+    <div class="panel money" style="--c: var(--green)">
+      <div class="label"><span>Tenge · official rate</span><span>17.11.2026</span></div>
+      <div class="big-rate"><span>£1 = 585.81 ₸</span> <small class="down">▼ −1.78</small></div>
+<p class="cross">£1 = $1.32 · €1.20</p>      <table class="fx">
+        <tr>
+          <th scope="row">USD<span>US dollar</span></th>
+          <td class="v">444.40 ₸</td>
+          <td class="up">▲ +0.10</td>
+        </tr>
+        <tr>
+          <th scope="row">EUR<span>Euro</span></th>
+          <td class="v">488.97 ₸</td>
+          <td class="down">▼ −1.94</td>
+        </tr>
+        <tr>
+          <th scope="row">RUB<span>Russian rouble</span></th>
+          <td class="v">5.39 ₸</td>
+          <td class="down">▼ −0.02</td>
+        </tr>
+        <tr>
+          <th scope="row">CNY<span>Chinese yuan</span></th>
+          <td class="v">66.66 ₸</td>
+          <td class="up">▲ +0.07</td>
+        </tr>
+      </table>
+      <p class="note">National Bank of Kazakhstan</p>
+    </div>
+  </section>
+
+  <section class="front" id="top" style="--c: var(--top)" aria-label="Top stories">
+    <article class="card lead">
+      <a class="media" href="https://news.sky.com/story/us-to-further-curb-chinas-access-to-ai-chips-from-companies-like-nvidia-13612884" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://e3.365dm.com/26/11/1920x1080/skynews-taiwan-nvidia-taipei_7404808.jpg?20261112101611" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Sky News</b>'}))"></a>
+
+      <div class="body">
+        <div class="tags"><span class="badge b-breaking">Top story</span><span class="topic">Tech</span></div>
+        <h2 class="hl"><a href="https://news.sky.com/story/us-to-further-curb-chinas-access-to-ai-chips-from-companies-like-nvidia-13612884" target="_blank" rel="noopener">US to further curb China&#39;s access to Nvidia chips</a></h2>
+<p class="dek">The US government is set to further restrict China&#39;s access to the most powerful AI chips, such as the ones provided by tech giant Nvidia.</p>        <p class="meta">Sky News · 14 h ago · <b>5 outlets</b></p>
+<p class="also">Also reported by Al Jazeera, DW, NPR, WION.</p>      </div>
+    </article>
+    <div class="side">
+      <div class="side-head label">Also big today</div>
+<article class="card row">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/ckx27v6dpjz0o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/f174/live/bc6fa8f0-e1c4-11f1-a094-5fdc692f3e33.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">Developing</span><span class="topic">Conflict</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/ckx27v6dpjz0o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Landmark Crimea bridge hit as Russia reports biggest Ukrainian drone attack of war</a></h3>
+<p class="dek">Russia said Ukraine had launched over 2,000 drones over the course of a day, while Kyiv came under a record 17 air raid alerts.</p>    <p class="meta">BBC · 14 h ago · <b>5 outlets</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.france24.com/en/tv-shows/business/20261116-rogue-ai-california-sues-openai-over-hugging-face-and-other-cyberattacks" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://s.france24.com/media/display/6ceddd6e-e201-11f1-a43b-695cb59fade5/w:1024/p:16x9/EN-NW-IVS-ECO-CALIFORNIA-STATEMENT-OPENAI-LAWSUIT-ROYER-Yuka-transfer.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>France 24</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Tech</span></div>
+    <h3 class="hl"><a href="https://www.france24.com/en/tv-shows/business/20261116-rogue-ai-california-sues-openai-over-hugging-face-and-other-cyberattacks" target="_blank" rel="noopener">Rogue AI: California sues OpenAI over &#34;Hugging Face&#34; and other cyberattacks</a></h3>
+<p class="dek">The US state of California has filed a lawsuit against OpenAI over the &#34;Hugging Face&#34; and other cyberattacks, accusing the ChatGPT maker of knowingly testing dangerous advanced AI models without adequate safeguard. Meanwhile, the US…</p>    <p class="meta">France 24 · 7 h ago · <b>4 outlets</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.stv.tv/entertainment/robert-pattinson-becoming-james-bond-is-the-honour-of-a-lifetime" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://news.stv.tv/wp-content/uploads/2026/11/b5aa2c7a582604b6abba6f0ebe0efb05-1794858259-1120x720.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>STV News</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.stv.tv/entertainment/robert-pattinson-becoming-james-bond-is-the-honour-of-a-lifetime" target="_blank" rel="noopener">Robert Pattinson: Becoming James Bond is ‘the honour of a lifetime’</a></h3>
+<p class="dek">The actor has been unveiled as the seventh actor to play 007 on the big screen.</p>    <p class="meta">STV News · 9 h ago · <b>5 outlets</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.france24.com/en/asia-pacific/20261117-macron-malaysia-france-defence-rare-earths-trade-energy" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://s.france24.com/media/display/7f1d673a-e1ec-11f1-9596-f71d22e7fea9/w:1024/p:16x9/7f6d81c95ab87a584e5082fe94983065fe1e7685.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>France 24</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-breaking">Breaking</span><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://www.france24.com/en/asia-pacific/20261117-macron-malaysia-france-defence-rare-earths-trade-energy" target="_blank" rel="noopener">Macron visits Malaysia as France seeks closer defence and rare earths ties</a></h3>
+<p class="dek">French President Emmanuel Macron will meet Malaysian Prime Minister Anwar Ibrahim in Kuala Lumpur on Tuesday to discuss strengthening defence, trade, energy and critical minerals co-operation. Macron&#39;s two-day visit, his first since 2017…</p>    <p class="meta">France 24 · 1 h ago · <b>3 outlets</b></p>
+  </div>
+</article>
+    </div>
+  </section>
+
+  <section class="section" id="edinburgh" style="--c: #0065bd">
+    <header class="sec-head"><h2>Edinburgh &amp; Scotland</h2><span class="label">7 stories</span></header>
+    <article class="card feature">
+  <a class="media" href="https://www.edinburghnews.scotsman.com/news/crime/four-edinburgh-youths-charged-following-bonfire-night-disorder-in-oxgangs-9353349" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.edinburghnews.scotsman.com/jpim-static/image/2026/11/05/22/2026_11_05_22_04_00_180_stts%2520-lf%2520-%252005_11_2026%2520-edinburgh%2520bonfire%2520night%2520-%2520027.JPG?width=1200&amp;auto=webp&amp;crop=3%3A2" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Edinburgh Evening News</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Justice</span></div>
+    <h3 class="hl"><a href="https://www.edinburghnews.scotsman.com/news/crime/four-edinburgh-youths-charged-following-bonfire-night-disorder-in-oxgangs-9353349" target="_blank" rel="noopener">Four Edinburgh youths charged following Bonfire Night disorder in Oxgangs</a></h3>
+<p class="dek">Fireworks thrown at police in Oxgangs</p>    <p class="meta">Edinburgh Evening News · 16 h ago · <b>9 outlets</b></p>
+  </div>
+</article>
+
+<div class="grid"><article class="card ">
+  <a class="media" href="https://www.edinburghnews.scotsman.com/news/everlong-awaited-foo-fighters-confirm-2027-gig-at-murrayfield-stadium-9352787" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.edinburghnews.scotsman.com/jpim-static/image/2026/11/16/8/59/Foo-Fighters-2027-Tour-Murrayfield-Stadium-Edinburgh-Getty-Images.png?width=1200&amp;auto=webp&amp;trim=0%2C0%2C0%2C0" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Edinburgh Evening News</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Culture</span></div>
+    <h3 class="hl"><a href="https://www.edinburghnews.scotsman.com/news/everlong-awaited-foo-fighters-confirm-2027-gig-at-murrayfield-stadium-9352787" target="_blank" rel="noopener">Foo Fighters announce 2027 gig at Murrayfield Stadium in Edinburgh - when and how to get tickets</a></h3>
+<p class="dek">The Foo Fighters will perform at Scottish Gas Murrayfield Stadium in Edinburgh next year.</p>    <p class="meta">Edinburgh Evening News · 19 h ago · <b>10 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.edinburghnews.scotsman.com/travel/travel-news/travel-chaos-on-east-coast-line-as-signalling-fault-causes-delays-and-cancellations-9352656" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.edinburghnews.scotsman.com/webimg/b25lY21zOjI5MTU4Y2E4LTgxYTYtNDY3ZS05NjQ5LTg5MzYxNmVmODhlYjo1MmExODlkMC1hODlkLTQ0MDYtOGRhMC01MTJjYzNkMzNhYTU=.jpg?width=1200&amp;auto=webp&amp;trim=0%2C0%2C0%2C0" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Edinburgh Evening News</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://www.edinburghnews.scotsman.com/travel/travel-news/travel-chaos-on-east-coast-line-as-signalling-fault-causes-delays-and-cancellations-9352656" target="_blank" rel="noopener">Travel chaos continues on East Coast line as signalling fault causes delays and cancellations</a></h3>
+<p class="dek">Trains have been cancelled and delayed since a signalling fault was discovered yesterday</p>    <p class="meta">Edinburgh Evening News · 19 h ago · <b>5 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/crgqx11wkzy8o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/74c2/live/cb325680-e1b5-11f1-9a3f-99aca912798e.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Culture</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/crgqx11wkzy8o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Tourette&#39;s film I Swear wins three Scottish Baftas</a></h3>
+<p class="dek">The film about Tourette syndrome campaigner John Davidson won Best Film, Best Director and Best Actor.</p>    <p class="meta">BBC · 17 h ago · <b>4 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://news.stv.tv/entertainment/raye-leads-grammy-awards-race-with-11-nominations" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://news.stv.tv/wp-content/uploads/2026/11/9a99eeb7b4700ad6383c73bb06256ddc-1794842037-1080x720.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>STV News</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Culture</span></div>
+    <h3 class="hl"><a href="https://news.stv.tv/entertainment/raye-leads-grammy-awards-race-with-11-nominations" target="_blank" rel="noopener">Raye leads Grammy Awards race with 11 nominations</a></h3>
+<p class="dek">She has been nominated alongside fellow British artist Olivia Dean for song of the year, album of the year and record of the year</p>    <p class="meta">STV News · 14 h ago · <b>3 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://news.stv.tv/west-central/glasgow-means-the-world-to-me-kevin-bridges-breaks-ovo-hydro-record" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://news.stv.tv/wp-content/uploads/2026/11/15ed47e7883938488f6ed9701e505a1b-1794834920-1200x720.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>STV News</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.stv.tv/west-central/glasgow-means-the-world-to-me-kevin-bridges-breaks-ovo-hydro-record" target="_blank" rel="noopener">‘Glasgow means the world to me’: Kevin Bridges breaks OVO Hydro record</a></h3>
+<p class="dek">The comedian is now the record-holder for the highest number of shows at the venue.</p>    <p class="meta">STV News · 15 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/cm79218jjpg3o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/f0bf/live/e8b50d30-e1d1-11f1-99b6-a35a62fa4264.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/cm79218jjpg3o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Will the &#39;powerful men&#39; debate change Scotland&#39;s sexual consent law?</a></h3>
+<p class="dek">Scotland&#39;s justice secretary says ministers will consider &#34;evidence-based&#34; proposals in the wake of Russell Brand&#39;s rape conviction.</p>    <p class="meta">BBC · 12 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+</div>  </section>
+  <section class="section" id="whats-on" style="--c: #b0306a">
+    <header class="sec-head"><h2>What’s on</h2><span class="label">6 stories</span></header>
+    <article class="card feature">
+  <a class="media" href="https://www.edinburghnews.scotsman.com/news/scotlands-new-national-centre-for-music-in-edinburgh-hits-a-highnote-as-it-reveals-its-brand-identity-9354413" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.edinburghnews.scotsman.com/jpim-static/image/2026/11/16/16/57/DSC_3495.jpeg?width=1200&amp;auto=webp&amp;trim=0%2C1%2C0%2C0" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Edinburgh Evening News</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Culture</span></div>
+    <h3 class="hl"><a href="https://www.edinburghnews.scotsman.com/news/scotlands-new-national-centre-for-music-in-edinburgh-hits-a-highnote-as-it-reveals-its-brand-identity-9354413" target="_blank" rel="noopener">Scotland’s new National Centre for Music in Edinburgh hits a ‘Highnote’ as it reveals its brand identity</a></h3>
+<p class="dek">New name for the former Royal High School on Calton Hill</p>    <p class="meta">Edinburgh Evening News · 10 h ago · <b>4 outlets</b></p>
+  </div>
+</article>
+
+<div class="grid"><article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMipAFBVV95cUxNMFlkZkpWNkJUTEJacHp5Q3FpTDlRc1oyOERmZXhlRGNucUd0QjM3RnV2Y3ZBY015b2x5aFp6VDdKbXY3bnZ3c1VBb3dyWC1hX2lyLWJ6YkxYX3BIY1JyZTRzVWZkSkY0OVRxcXFHQV9ZRXNIUjJnS1l3RmIyUmxTWWhTVHRDTEJnVU01VGVOYVBvNzVuOUlGcTQ3Zmsza08waHdYZw?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Edinburgh News</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">Developing</span><span class="topic">Business</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxNMFlkZkpWNkJUTEJacHp5Q3FpTDlRc1oyOERmZXhlRGNucUd0QjM3RnV2Y3ZBY015b2x5aFp6VDdKbXY3bnZ3c1VBb3dyWC1hX2lyLWJ6YkxYX3BIY1JyZTRzVWZkSkY0OVRxcXFHQV9ZRXNIUjJnS1l3RmIyUmxTWWhTVHRDTEJnVU01VGVOYVBvNzVuOUlGcTQ3Zmsza08waHdYZw?oc=5" target="_blank" rel="noopener">11 photos of Edinburgh Christmas Market as world-famous attraction opens</a></h3>
+    <p class="meta">Edinburgh News · 37 h ago · <b>5 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.edinburghnews.scotsman.com/whats-on/edinburgh-diwali-2026-brings-colour-and-light-to-edinburghs-winter-festival-9353214" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.edinburghnews.scotsman.com/jpim-static/image/2026/11/16/11/28/Diwali.jpeg?width=1200&amp;auto=webp&amp;trim=218%2C4%2C118%2C0" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Edinburgh Evening News</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">Developing</span><span class="topic">Culture</span></div>
+    <h3 class="hl"><a href="https://www.edinburghnews.scotsman.com/whats-on/edinburgh-diwali-2026-brings-colour-and-light-to-edinburghs-winter-festival-9353214" target="_blank" rel="noopener">10 brilliant photos as Edinburgh Diwali 2026 brings colour and light to Edinburgh’s Winter Festival</a></h3>
+<p class="dek">Festival brightens up Edinburgh city centre during showers</p>    <p class="meta">Edinburgh Evening News · 17 h ago · <b>3 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMi3wFBVV95cUxNSWxIVnNWdXRKNFVQM3huMFNKV2VJRzNvZ0Nxd3NIenlCZWZENHZSQXZVY09xRnhFYl9SS3FfMldOT3NQWlBvNHRxRjVkVnIyVlNvZWtlYVlYdUlpSXlPelhwUTZJNno1RU5haE9VbHZSeHRyeS1rUTViX2Nfa29kdF81bWJvTVdUMThCUVpmMm81RS1uQmlKZWFiNkwwVmRLZnhfeWZiNC1BSlBRdTBObkt3OGFhdGFmeE5za2lKanR5MDhERFg4UTkxajZmeGR5dFdUTmkyVW5EcE9FTEdB?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Edinburgh News</b></span></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMi3wFBVV95cUxNSWxIVnNWdXRKNFVQM3huMFNKV2VJRzNvZ0Nxd3NIenlCZWZENHZSQXZVY09xRnhFYl9SS3FfMldOT3NQWlBvNHRxRjVkVnIyVlNvZWtlYVlYdUlpSXlPelhwUTZJNno1RU5haE9VbHZSeHRyeS1rUTViX2Nfa29kdF81bWJvTVdUMThCUVpmMm81RS1uQmlKZWFiNkwwVmRLZnhfeWZiNC1BSlBRdTBObkt3OGFhdGFmeE5za2lKanR5MDhERFg4UTkxajZmeGR5dFdUTmkyVW5EcE9FTEdB?oc=5" target="_blank" rel="noopener">Hibs savour ‘unreal’ derby triumph over Hearts as Tynecastle experience leaves ace thrilled</a></h3>
+    <p class="meta">Edinburgh News · 11 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMilwFBVV95cUxOWldBTTIwamsyVTNWQzBaRGt2cHRjMnd5dXdOS0pzRmNDZlFVX0FWa3F3TUExTTgxUmlBSTlPRjlNOGxDeW5OeWRma0kxelA5LU5WRzJaWl9YOHdMRzFhekFYMWpxWEhta2Rpd2w2MW41d2tsdktXdE1JdE5hNTBaa1BDV19ZUVpja1NHNld5OEdxZTBzNWQ00gGcAUFVX3lxTE5WLWIwemt6Q1JydGc1Um5UOGJTbHBjT0xLY25jc1lLSmZwUldmbnhKUXotX2NsRFlkRHpUQXVFOVNjRkJvTlJtZF96VjFaYmMzY1FyeEVzR2NtcEpjRVBpMTg0YTBiclp2NmNzY0lMWWdSbFc5Vi00UzFfVEFNaEFQdlJrLUN0UG41TnNneHY0al9CZFJXa0lxNlhvVg?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Edinburgh Live</b></span></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxOWldBTTIwamsyVTNWQzBaRGt2cHRjMnd5dXdOS0pzRmNDZlFVX0FWa3F3TUExTTgxUmlBSTlPRjlNOGxDeW5OeWRma0kxelA5LU5WRzJaWl9YOHdMRzFhekFYMWpxWEhta2Rpd2w2MW41d2tsdktXdE1JdE5hNTBaa1BDV19ZUVpja1NHNld5OEdxZTBzNWQ00gGcAUFVX3lxTE5WLWIwemt6Q1JydGc1Um5UOGJTbHBjT0xLY25jc1lLSmZwUldmbnhKUXotX2NsRFlkRHpUQXVFOVNjRkJvTlJtZF96VjFaYmMzY1FyeEVzR2NtcEpjRVBpMTg0YTBiclp2NmNzY0lMWWdSbFc5Vi00UzFfVEFNaEFQdlJrLUN0UG41TnNneHY0al9CZFJXa0lxNlhvVg?oc=5" target="_blank" rel="noopener">East Lothian couple ordered to cut hedge &#39;blocking neighbour&#39;s light&#39;</a></h3>
+    <p class="meta">Edinburgh Live · 16 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMi1gFBVV95cUxOUkU4TXdILU95MklXTzRBTGZWaEI3U1JuZUY3Mm9zLXU0NVM0YWJZXzVBYkVMWUxQejJYb2ZYSG13Q3NnbVlzOXp0NlhIUWFndFJoWFp1dTllUDFieDRnNW5DalhmU2hwZjhTRlpEcEdiUHNIV0hyc3IzTk01VlBXc3JCSHJGQjNhZTMyV0Z1N0VNamRnYkxGSHF2SFBxU29XeUNDcF9mckk3UnlsTWhNakZZeVhvZjJCa0lnV3lEdE5RYUZHT0VjMnRTNGhMN1JiLW1icDhn?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Edinburgh News</b></span></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMi1gFBVV95cUxOUkU4TXdILU95MklXTzRBTGZWaEI3U1JuZUY3Mm9zLXU0NVM0YWJZXzVBYkVMWUxQejJYb2ZYSG13Q3NnbVlzOXp0NlhIUWFndFJoWFp1dTllUDFieDRnNW5DalhmU2hwZjhTRlpEcEdiUHNIV0hyc3IzTk01VlBXc3JCSHJGQjNhZTMyV0Z1N0VNamRnYkxGSHF2SFBxU29XeUNDcF9mckk3UnlsTWhNakZZeVhvZjJCa0lnV3lEdE5RYUZHT0VjMnRTNGhMN1JiLW1icDhn?oc=5" target="_blank" rel="noopener">Monaco star declares transfer exit intentions pre-Hearts clash</a></h3>
+    <p class="meta">Edinburgh News · 20 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+</div>  </section>
+  <section class="section" id="kazakhstan" style="--c: #00a3c4">
+    <header class="sec-head"><h2>Kazakhstan</h2><span class="label">7 stories</span></header>
+    <article class="card feature">
+  <a class="media" href="https://timesca.com/kazakhstan-tokenized-government-bonds-2027/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://timesca.com/wp-content/uploads/2026/11/photo_2026-11-16_16-00-40.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Times of Central Asia</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">Developing</span><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://timesca.com/kazakhstan-tokenized-government-bonds-2027/" target="_blank" rel="noopener">Kazakhstan Tokenized Government Bonds to be Issued in 2027</a></h3>
+<p class="dek">Kazakhstan plans to issue government bonds in the form of digital tokens in the first quarter of 2027, allowing ownership</p>    <p class="meta">The Times of Central Asia · 17 h ago · <b>8 outlets</b></p>
+  </div>
+</article>
+
+<div class="grid"><article class="card ">
+  <a class="media" href="https://timesca.com/kazakhstan-online-child-safety-bill-games-apps/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://timesca.com/wp-content/uploads/2026/11/2-13.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Times of Central Asia</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://timesca.com/kazakhstan-online-child-safety-bill-games-apps/" target="_blank" rel="noopener">Kazakhstan’s Child Online Safety Bill Proposes Restrictions on Games and Apps</a></h3>
+<p class="dek">Kazakhstan is proposing mandatory government checks for online games and apps before children can download them. A new bill would</p>    <p class="meta">The Times of Central Asia · 17 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://timesca.com/uzbekistan-nuclear-power-plant-dry-cooling/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://timesca.com/wp-content/uploads/2026/11/photo_2026-11-16_15-57-46-1024x682.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Times of Central Asia</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://timesca.com/uzbekistan-nuclear-power-plant-dry-cooling/" target="_blank" rel="noopener">Uzbekistan Nuclear Power Plant to Use Dry Cooling to Conserve Water</a></h3>
+<p class="dek">Uzbekistan plans to use a dry cooling system at its first nuclear power plant, under construction in Jizzakh region, to</p>    <p class="meta">The Times of Central Asia · 17 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://astanatimes.com/2026/11/kazakhstan-seeks-to-develop-middle-corridor-as-green-trade-route-between-asia-and-europe/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://astanatimes.com/wp-content/uploads/2026/11/image-21.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Astana Times</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Business</span></div>
+    <h3 class="hl"><a href="https://astanatimes.com/2026/11/kazakhstan-seeks-to-develop-middle-corridor-as-green-trade-route-between-asia-and-europe/" target="_blank" rel="noopener">Kazakhstan Seeks to Develop Middle Corridor as Green Trade Route Between Asia and Europe</a></h3>
+<p class="dek">ASTANA – Kazakhstan plans to strengthen the Trans-Caspian International Transport Route (TITR), also known as the Middle Corridor, as a key trade link between Asia and Europe, focusing on increasing freight volumes, digitalizing logistics…</p>    <p class="meta">The Astana Times · 16 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMiY0FVX3lxTE1lbHZzTkhaVkhWb0RlTXhvMVpFdzRGeS01d2tsNVc1SFk5QjNxVHVEaWpUaEVTaWxJSWRud0NKNlFSTXJ0YXFwWjZvdU93UWdhSVBlU2hONUtkUXlxb2hmMTVtaw?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>BBC</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Sport</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMiY0FVX3lxTE1lbHZzTkhaVkhWb0RlTXhvMVpFdzRGeS01d2tsNVc1SFk5QjNxVHVEaWpUaEVTaWxJSWRud0NKNlFSTXJ0YXFwWjZvdU93UWdhSVBlU2hONUtkUXlxb2hmMTVtaw?oc=5" target="_blank" rel="noopener">Kazakhstan vs Slovakia: UEFA Nations League stats &amp; head-to-head</a></h3>
+    <p class="meta">BBC · 4 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://astanatimes.com/2026/11/who-is-designing-kazakhstans-future/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://astanatimes.com/wp-content/uploads/2026/11/IMG_0691-2-218x300.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Astana Times</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">New</span><span class="badge b-explainer">Explainer</span></div>
+    <h3 class="hl"><a href="https://astanatimes.com/2026/11/who-is-designing-kazakhstans-future/" target="_blank" rel="noopener">Who Is Designing Kazakhstan’s Future?</a></h3>
+<p class="dek">A country may have abundant natural resources, ambitious strategies and individual technological achievements. But sustainable development begins with the capacity to turn scientific thought into working industries, new sectors, modern…</p>    <p class="meta">The Astana Times · 31 min ago</p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://astanatimes.com/2026/11/tokayev-meets-central-election-commission-chairman-ahead-of-nov-29-maslikhat-elections/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://astanatimes.com/wp-content/uploads/2026/11/photo-5.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Astana Times</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://astanatimes.com/2026/11/tokayev-meets-central-election-commission-chairman-ahead-of-nov-29-maslikhat-elections/" target="_blank" rel="noopener">Tokayev Meets Central Election Commission Chairman Ahead of Nov. 29 Maslikhat Elections</a></h3>
+<p class="dek">ASTANA — President Kassym-Jomart Tokayev met with Chairman of the Central Election Commission Nurlan Abdirov to discuss preparations for early elections of deputies to maslikhats at all levels, scheduled for Nov. 29, according to the…</p>    <p class="meta">The Astana Times · 14 h ago</p>
+  </div>
+</article>
+</div>  </section>
+  <section class="section" id="world" style="--c: #3d4db7">
+    <header class="sec-head"><h2>World</h2><span class="label">7 stories</span></header>
+    <article class="card feature">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/cw5y1v8de35go?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/0f3a/live/c50f43d0-e1dd-11f1-99a1-253766e7ad8b.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Justice</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/cw5y1v8de35go?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Lindsay Clancy to face retrial next year for deaths of her three children</a></h3>
+<p class="dek">The 36-year-old&#39;s first trial this year fell apart when a 12-person jury failed to reach a verdict.</p>    <p class="meta">BBC · 9 h ago · <b>3 outlets</b></p>
+  </div>
+</article>
+
+<div class="grid"><article class="card ">
+  <a class="media" href="https://www.france24.com/en/uefa-backs-france-s-diallo-to-stand-against-infantino-in-fifa-election" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://s.france24.com/media/display/3290138c-e1f5-11f1-8f2a-3f371022a770/w:1024/p:16x9/EN-20261116-201828-202731-CS.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>France 24</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://www.france24.com/en/uefa-backs-france-s-diallo-to-stand-against-infantino-in-fifa-election" target="_blank" rel="noopener">UEFA backs France&#39;s Diallo to stand against Infantino in FIFA election</a></h3>
+<p class="dek">European football&#39;s governing body UEFA has given its &#34;unanimous&#34; backing to French Football Federation chief Philippe Diallo to stand against incumbent Gianni Infantino in March&#39;s FIFA presidential election, it said in a statement Monday.…</p>    <p class="meta">France 24 · 9 h ago · <b>3 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/cw987343352go?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/7397/live/2ac14ca0-e1d9-11f1-b8c8-67fa35f5afdb.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/cw987343352go?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Five EU countries announce migrant deportation centre in Rwanda</a></h3>
+<p class="dek">Germany, Denmark, Austria, Greece and the Netherlands have announced a &#34;return hub&#34; for failed asylum seekers.</p>    <p class="meta">BBC · 5 h ago · <b>3 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.aljazeera.com/video/newsfeed/2026/11/16/trump-departs-for-asean-on-summit-with-xi-and-putin?traffic_source=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.aljazeera.com/wp-content/uploads/2026/11/image-1794872451.jpg?resize=1338%2C1080&amp;quality=80" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Al Jazeera</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">Developing</span><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://www.aljazeera.com/video/newsfeed/2026/11/16/trump-departs-for-asean-on-summit-with-xi-and-putin?traffic_source=rss" target="_blank" rel="noopener">Trump departs for ASEAN on summit with Xi and Putin</a></h3>
+<p class="dek">Donald Trump is heading to the Philippines where he’s scheduled to speak at a meeting of ASEAN leaders in Manila.</p>    <p class="meta">Al Jazeera · 5 h ago · <b>3 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.theguardian.com/world/2026/nov/16/eu-states-immigration-return-hubs-rwanda" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/d668e44ea9f6f3fb2d88cfee76bb772cccada10f/456_0_4053_3243/master/4053.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=62388fc28b1e9867cb79eee6dc589b06" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/world/2026/nov/16/eu-states-immigration-return-hubs-rwanda" target="_blank" rel="noopener">Five EU states announce plans for immigration ‘return hubs’ in Rwanda</a></h3>
+<p class="dek">Germany, Austria, Netherlands, Denmark and Greece likely to face challenges to policy criticised as ‘grave moral failing’ Five EU member states have announced plans to set up an offshore centre in Rwanda for people with no legal right to…</p>    <p class="meta">The Guardian · 4 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/cry49plv8v3go?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/78e4/live/4bc24280-e1d2-11f1-b8c8-67fa35f5afdb.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-breaking">Breaking</span><span class="topic">Tech</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/cry49plv8v3go?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Nvidia dismisses &#39;Bring Jensen Back&#39; campaign as Trump backs effort to reinstate ex CEO</a></h3>
+<p class="dek">A number of tech figures have backed an effort asking the AI chip giant to give Jensen Huang his job back.</p>    <p class="meta">BBC · 2 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card ">
+  <a class="media" href="https://www.theguardian.com/uk-news/2026/nov/16/failed-uk-asylum-seekers-to-lose-five-day-grace-period-and-face-immediate-removal" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/26d456813260a71cc5a24d0234d78199c8f8c003/535_59_1388_1110/master/1388.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=ddecc20df3d1172d38281c4e77f49178" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://www.theguardian.com/uk-news/2026/nov/16/failed-uk-asylum-seekers-to-lose-five-day-grace-period-and-face-immediate-removal" target="_blank" rel="noopener">Refused UK asylum seekers to lose five-day grace period and face immediate removal</a></h3>
+<p class="dek">Home Office plans will cause unnecessary distress and anxiety, say refugee charities Asylum seekers who have exhausted the formal appeals process will be stripped of a five-day grace period and become eligible for immediate removal under…</p>    <p class="meta">The Guardian · 9 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+</div>  </section>
+  <section class="section" id="economy" style="--c: #1e7d4f">
+    <header class="sec-head"><h2>Economy</h2><span class="label">16 stories</span></header>
+    <div class="desks">
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇰🇿</span>Kazakhstan</h3>
+          <article class="card ">
+  <a class="media" href="https://astanatimes.com/2026/11/beyond-crypto-will-tokenization-democratize-access-to-investment-markets/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://astanatimes.com/wp-content/uploads/2026/11/e5a7aeca-00c3-4a3c-9dff-6a9c33c749a2.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Astana Times</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Business</span></div>
+    <h3 class="hl"><a href="https://astanatimes.com/2026/11/beyond-crypto-will-tokenization-democratize-access-to-investment-markets/" target="_blank" rel="noopener">Beyond Crypto: Will Tokenization Democratize Access to Investment Markets?</a></h3>
+<p class="dek">ASTANA – A government bond and a shipment of grain may seem worlds apart. But both are among the assets Kazakhstan is looking to bring onto digital platforms as it tests whether tokenization can open new financing channels and make…</p>    <p class="meta">The Astana Times · 22 h ago</p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMiywFBVV95cUxQQkl4aE9zRmxsN2RaUjBLQ1QwM1NPRkw1ejR6N2dlTUZieTlFbWhtdDZfZG43RnU2Ty12WDN5dFhRaDZseUU5UUpITUl2MG1CQWRMUFczUWtQMHBIcFp6WTlsTzBRT19PUW1XZkI3Q2RQZTlZbDhuRV9UWjRXV2hQY2UyaVRhRHlOVHVpM0JqaHpvUkR5NVBhQlZ5SG11blVZLTFweVFVblh2MjRidURhY09EY2Zfa2RnQ0lyVFZWSzhTUldWYTNtYTV5Zw?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>The Astana Times</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Business</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxQQkl4aE9zRmxsN2RaUjBLQ1QwM1NPRkw1ejR6N2dlTUZieTlFbWhtdDZfZG43RnU2Ty12WDN5dFhRaDZseUU5UUpITUl2MG1CQWRMUFczUWtQMHBIcFp6WTlsTzBRT19PUW1XZkI3Q2RQZTlZbDhuRV9UWjRXV2hQY2UyaVRhRHlOVHVpM0JqaHpvUkR5NVBhQlZ5SG11blVZLTFweVFVblh2MjRidURhY09EY2Zfa2RnQ0lyVFZWSzhTUldWYTNtYTV5Zw?oc=5" target="_blank" rel="noopener">Kazakhstan Discusses Healthcare Investment, Pharmaceutical Production With International Businesses</a></h3>
+    <p class="meta">The Astana Times · 16 h ago</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMi2wFBVV95cUxOMzNPendQZENuaVJtTm1rakl6UmRXWGFxdko4QVVRdERmeGNUUmowdjZ6QU8tOE04ZUtTRnFCQjZRVkhUVlRKaUFiVUZBQk5CaHB0LUdQTXBqaUFIdGhhMjlZcGU5SVJwSWZKZW95Z2l0VnNBQTQ0TVdRUEE2bEtlQktRY2pvZ1VEa1AtLWwtWWpac3MzQWhHLUlseFB1dUV4QmlDbFpyRkxJYjVvZGxIRGxNcFZXSWg2MWc2OUZGMFVsSzRCLV9pNFNlZHJqUmZfQjViREZYdFF5Um8?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>PrimeMinister.kz</b></span></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMi2wFBVV95cUxOMzNPendQZENuaVJtTm1rakl6UmRXWGFxdko4QVVRdERmeGNUUmowdjZ6QU8tOE04ZUtTRnFCQjZRVkhUVlRKaUFiVUZBQk5CaHB0LUdQTXBqaUFIdGhhMjlZcGU5SVJwSWZKZW95Z2l0VnNBQTQ0TVdRUEE2bEtlQktRY2pvZ1VEa1AtLWwtWWpac3MzQWhHLUlseFB1dUV4QmlDbFpyRkxJYjVvZGxIRGxNcFZXSWg2MWc2OUZGMFVsSzRCLV9pNFNlZHJqUmZfQjViREZYdFF5Um8?oc=5" target="_blank" rel="noopener">Olzhas Bektenov Discusses Mission Outcomes and Further Cooperation with IMF Mission Chief Amina Lahreche</a></h3>
+    <p class="meta">PrimeMinister.kz · 18 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE1CZVJEUTN5XzhjdW8xWmQzS2Fqbm9rMmhlSVRiZHhwUzUyZkdlLWtwMnlCbVV0NDdsckdPUk40d0FSTHlzWjNueFVlQ3ZscTRLQ0tuQjEzWlp3enM0eC1R?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Trend News Agency</b></span></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE1CZVJEUTN5XzhjdW8xWmQzS2Fqbm9rMmhlSVRiZHhwUzUyZkdlLWtwMnlCbVV0NDdsckdPUk40d0FSTHlzWjNueFVlQ3ZscTRLQ0tuQjEzWlp3enM0eC1R?oc=5" target="_blank" rel="noopener">IMF expects Kazakhstan&#39;s economic growth to accelerate in 2027</a></h3>
+    <p class="meta">Trend News Agency · 19 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+</div>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇬🇧</span>United Kingdom</h3>
+          <article class="card ">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/c9x2elzm047po?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/015f/live/3d2a7950-e190-11f1-b441-2b33b063138f.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/c9x2elzm047po?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Gas starts flowing from Jackdaw after government green light</a></h3>
+<p class="dek">Ministers last month announced the Jackdaw gas field, which lies 150 miles east of Aberdeen, had been approved after years of uncertainty.</p>    <p class="meta">BBC · 22 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/cm4gnlz2p61ko?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/4f34/live/a04a1d00-e1c3-11f1-99b6-a35a62fa4264.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Business</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/cm4gnlz2p61ko?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Avoid this Black Friday scam - how to check it&#39;s a real deal</a></h3>
+<p class="dek">Sales and the looming tax deadline mean more scams - here&#39;s how to make sure you don&#39;t get caught out.</p>    <p class="meta">BBC · 19 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/c38xzy980924o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/1a76/live/fbd49eb0-e1e2-11f1-9f14-b33806cfd783.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/c38xzy980924o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">&#39;Complete system reset&#39; needed to get 440,000 young people into work, says major review</a></h3>
+<p class="dek">Alan Milburn&#39;s review will call for sweeping reforms to the education, work and welfare systems.</p>    <p class="meta">BBC · 6 h ago</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.theguardian.com/society/2026/nov/16/alan-milburn-urges-burnham-spend-billions-new-deal-young-people-youth-jobs-crisis-welfare-employment" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/a86708b5e4debf383f4b49fc72cc08d1c91043ac/869_0_4344_3475/master/4344.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=fc28f64014732c4ff1ddf712d7ee9e66" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/society/2026/nov/16/alan-milburn-urges-burnham-spend-billions-new-deal-young-people-youth-jobs-crisis-welfare-employment" target="_blank" rel="noopener">Alan Milburn urges Burnham to spend billions on ‘new deal’ for young people</a></h3>
+<p class="dek">Report on Britain’s youth jobs crisis calls for welfare, education, health and employment policy shake-up Andy Burnham is being urged to spend billions of pounds on a “new deal” for the next generation that would fund guaranteed jobs…</p>    <p class="meta">The Guardian · 6 h ago</p>
+  </div>
+</article>
+</div>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇺🇸</span>United States</h3>
+          <article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMiywFBVV95cUxQeDMwTURhdFdGR2tRSUJxMmNFS3pHQ0VQcHl0ZzFUTmFiUU9FQ0JEb1RfNW5YVzhsUk1uejBJZXlZampQaFhlNkxKWGVsLVdyZkMzSUlmUjFkcVYyRW5NV0I2d3EzNGR1aHg2WjY5WUVvenJRQzhua1V3MWtFWHZmdHlISVVCQzlDRzhvb2xhUkFtUW9GdEdQSmVNcW4xNnVwYkRQZjN0RmlKQkU2LXlmUXFESVo0d01LTWFqSVlCYndXY1J1ZVlSWnNCdw?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>The Motley Fool</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">Developing</span><span class="topic">Business</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxQeDMwTURhdFdGR2tRSUJxMmNFS3pHQ0VQcHl0ZzFUTmFiUU9FQ0JEb1RfNW5YVzhsUk1uejBJZXlZampQaFhlNkxKWGVsLVdyZkMzSUlmUjFkcVYyRW5NV0I2d3EzNGR1aHg2WjY5WUVvenJRQzhua1V3MWtFWHZmdHlISVVCQzlDRzhvb2xhUkFtUW9GdEdQSmVNcW4xNnVwYkRQZjN0RmlKQkU2LXlmUXFESVo0d01LTWFqSVlCYndXY1J1ZVlSWnNCdw?oc=5" target="_blank" rel="noopener">This Is a Huge Week for the Stock Market: Nvidia Earnings, Fed Minutes, and Anthropic’s IPO</a></h3>
+    <p class="meta">The Motley Fool · 4 h ago · <b>4 outlets</b></p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMivwFBVV95cUxON3ZTNF9kMDk1QlhTNGxBZi1BTkI1M0dOclhXV1Nlb3FKM1h5VnBEekJFR0xOSWRkY1pUUGhoQ0R5ZFB6c3RyQkhNSUNKaTRlMElIcThWc2lmc2s0UnhmRGREekZQd283RE5EYkVwQmhnV0lOaXVzOGlKQXFOTHhJY3hJZ1Y1bTJ2cWtMZFlKTXh1QmNLR3cyZGQ2dUNxVGx0OUZXajB6cTVFSnRwSEJCSTJNbDBVazVCN3Ntbk5xNA?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>FXStreet</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Business</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxON3ZTNF9kMDk1QlhTNGxBZi1BTkI1M0dOclhXV1Nlb3FKM1h5VnBEekJFR0xOSWRkY1pUUGhoQ0R5ZFB6c3RyQkhNSUNKaTRlMElIcThWc2lmc2s0UnhmRGREekZQd283RE5EYkVwQmhnV0lOaXVzOGlKQXFOTHhJY3hJZ1Y1bTJ2cWtMZFlKTXh1QmNLR3cyZGQ2dUNxVGx0OUZXajB6cTVFSnRwSEJCSTJNbDBVazVCN3Ntbk5xNA?oc=5" target="_blank" rel="noopener">RBA Minutes: Members debate raising cash rate target by 25 bps or holding steady</a></h3>
+    <p class="meta">FXStreet · 4 h ago · <b>3 outlets</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMihAFBVV95cUxPX3h5VmhlVnFXRnoyYTFyd2dVbDhrRlNKT1gzNEoxQ01CQ1hJYW53UXRDMkhnUndZX21zWGpMaHNDZ2FIUHl2TGdpX2N1emdJY19jZmY3RzZjdnQwTUswbldMLS1pOUQ2d2ZiNjFDbVU5elc2elN5OTVYZGFyYXBnQVBiZzM?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Financial Times</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Tech</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxPX3h5VmhlVnFXRnoyYTFyd2dVbDhrRlNKT1gzNEoxQ01CQ1hJYW53UXRDMkhnUndZX21zWGpMaHNDZ2FIUHl2TGdpX2N1emdJY19jZmY3RzZjdnQwTUswbldMLS1pOUQ2d2ZiNjFDbVU5elc2elN5OTVYZGFyYXBnQVBiZzM?oc=5" target="_blank" rel="noopener">Fed chair Kevin Warsh says AI boom could help sustain ‘substantially higher’ US growth</a></h3>
+    <p class="meta">Financial Times · 11 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.cnbc.com/2026/11/16/kevin-warsh-fed-ai-jobs-productivity-interest-rateshtml.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://image.cnbcfm.com/api/v1/image/108552211-1794850759211-gettyimages-2304954172-FEDERAL_RESERVE_CONFERENCE.jpeg?v=1794850787&amp;w=1920&amp;h=1080" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>CNBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-analysis">Analysis</span><span class="topic">Business</span></div>
+    <h3 class="hl"><a href="https://www.cnbc.com/2026/11/16/kevin-warsh-fed-ai-jobs-productivity-interest-rateshtml.html" target="_blank" rel="noopener">The Fed&#39;s chairman sees an AI revolution coming. Now he has to figure out what it means</a></h3>
+<p class="dek">Kevin Warsh sees AI at a turning point. He faces tough questions on jobs and interest rates.</p>    <p class="meta">CNBC · 4 h ago</p>
+  </div>
+</article>
+</div>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇪🇺</span>Europe</h3>
+          <article class="card ">
+  <a class="media" href="https://www.euronews.com/2026/11/16/canada-ready-to-turn-to-chinese-carmakers-if-us-trade-talks-fail-to-protect-auto-sector-pm" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://images.euronews.com/articles/stories/09/99/35/42/1200x675_cmsv2_6bd1657c-1947-53bb-b09c-4ec40cb9f170-9993542.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Euronews</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://www.euronews.com/2026/11/16/canada-ready-to-turn-to-chinese-carmakers-if-us-trade-talks-fail-to-protect-auto-sector-pm" target="_blank" rel="noopener">Canada ready to turn to Chinese carmakers if US trade talks fail to protect auto sector, PM Carney says</a></h3>
+<p class="dek">Carney&#39;s remarks come days before a planned meeting with Chinese President Xi Jinping in Shenzhen, where auto manufacturing is expected to be on the agenda.</p>    <p class="meta">Euronews · 24 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://www.euronews.com/2026/11/16/ecb-warns-ai-share-boom-could-end-in-abrupt-repricing" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://images.euronews.com/articles/stories/09/99/46/50/1200x675_cmsv2_4c738ef7-2327-5090-a72a-d097f8bd4178-9994650.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Euronews</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Business</span></div>
+    <h3 class="hl"><a href="https://www.euronews.com/2026/11/16/ecb-warns-ai-share-boom-could-end-in-abrupt-repricing" target="_blank" rel="noopener">ECB warns AI share boom could end in &#39;abrupt repricing&#39;</a></h3>
+<p class="dek">Eurozone funds have bought heavily into the technology, leaving European savers exposed if the boom turns to bust in the US.</p>    <p class="meta">Euronews · 14 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.euronews.com/2026/11/16/eu-clears-unicredit-takeover-of-germanys-commerzbank" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://images.euronews.com/articles/stories/09/91/35/79/1200x675_cmsv2_01fb76f5-d4bd-5e3d-a993-4613397e114e-9913579.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Euronews</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://www.euronews.com/2026/11/16/eu-clears-unicredit-takeover-of-germanys-commerzbank" target="_blank" rel="noopener">EU clears UniCredit takeover of Germany&#39;s Commerzbank</a></h3>
+<p class="dek">The EU has approved UniCredit’s takeover of Germany’s Commerzbank, a cross-border deal aimed at strengthening Europe’s banking sector.</p>    <p class="meta">Euronews · 18 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQWW1QeXM2VWpHZ3NFU2pYU2xfUHR3NGRMeHFVRkxMYlBuLUZkUGtHVUh3dGJ5OXdzbjRxdHJqNFMtX0ZJN1ZUTmZHeGxXN1pvVGx6SEJYWWtZT18zdU9xYzBIV2cyMktoM1dvZ2hmRy1ocjBXanZpSldpVkk0eUV4dUNrSHlMUms4Slg3SlBGTUxHTjZ0UTV5bi14QlpoaDFTbkM2WkxWT25zZw?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>FXStreet</b></span></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQWW1QeXM2VWpHZ3NFU2pYU2xfUHR3NGRMeHFVRkxMYlBuLUZkUGtHVUh3dGJ5OXdzbjRxdHJqNFMtX0ZJN1ZUTmZHeGxXN1pvVGx6SEJYWWtZT18zdU9xYzBIV2cyMktoM1dvZ2hmRy1ocjBXanZpSldpVkk0eUV4dUNrSHlMUms4Slg3SlBGTUxHTjZ0UTV5bi14QlpoaDFTbkM2WkxWT25zZw?oc=5" target="_blank" rel="noopener">ECB&#39;s Lagarde speaks three times with the Euro at a 19-month low</a></h3>
+    <p class="meta">FXStreet · 6 h ago · <b>2 outlets</b></p>
+  </div>
+</article>
+</div>      </div>
+    </div>
+  </section>
+  <section class="section" id="policy" style="--c: #7a4bc2">
+    <header class="sec-head"><h2>Policy &amp; New Laws</h2><span class="label">12 stories</span></header>
+    <div class="desks">
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇰🇿</span>Kazakhstan</h3>
+<p class="empty">A quiet day — nothing new here.</p>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇬🇧</span>UK, Scotland &amp; visas</h3>
+          <article class="card ">
+  <a class="media" href="https://www.theguardian.com/business/2026/nov/17/invest-international-rail-services-boost-uk-eu-reset-andy-burnham" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/73462068d8df30f56420b8afb97c6004264f88e6/0_632_3531_2824/master/3531.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=34123e275713ae02bdbee87fc208c33d" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">New</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/business/2026/nov/17/invest-international-rail-services-boost-uk-eu-reset-andy-burnham" target="_blank" rel="noopener">Invest in international rail services to boost UK-EU reset, Burnham urged</a></h3>
+<p class="dek">Campaigners call for reopening of high-speed Eurostar stations and new infrastructure for London St Pancras Britain should throw its weight behind international rail services to reset the UK-EU relationship, transport campaigners have…</p>    <p class="meta">The Guardian · 19 min ago</p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/crvg2n8vwyqdo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/f57a/live/6be5a010-e1bf-11f1-99a1-253766e7ad8b.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/crvg2n8vwyqdo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Miliband says he won&#39;t resign if government approves Rosebank oil field</a></h3>
+<p class="dek">Energy Secretary Miatta Fahnbulleh is to make a decision on Britain&#39;s largest untapped oil field.</p>    <p class="meta">BBC · 13 h ago</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.bbc.co.uk/news/articles/cje39lx9267vo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/6e5e/live/0f686c70-e20d-11f1-b023-f7d19fda92c1.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>BBC</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://www.bbc.co.uk/news/articles/cje39lx9267vo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Children dropping out of school: What can politicians do about it?</a></h3>
+<p class="dek">The government believes around a third of young people who are persistently absent in Years 10 and 11 in England go on to be not in education, employment or training.</p>    <p class="meta">BBC · 6 h ago</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.theguardian.com/politics/2026/nov/17/burnham-says-brexit-has-dramatically-diminished-britains-global-standing" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://i.guim.co.uk/img/media/3721c33ca111baf98a1bf83a1b3aaaaca0f8c840/835_6_2106_1685/master/2106.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=8db9f6fb0dfdbf3d08caa496556cd946" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>The Guardian</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">New</span><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://www.theguardian.com/politics/2026/nov/17/burnham-says-brexit-has-dramatically-diminished-britains-global-standing" target="_blank" rel="noopener">Burnham says Brexit has dramatically diminished Britain’s global standing</a></h3>
+<p class="dek">Prime minister signals Labour could drop its Brexit red lines in major foreign policy speech Britain’s global standing has diminished in the decade since Brexit, Andy Burnham has said, as he again signalled that Labour could drop its red…</p>    <p class="meta">The Guardian · 19 min ago</p>
+  </div>
+</article>
+</div>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇺🇸</span>United States</h3>
+          <article class="card ">
+  <a class="media" href="https://news.google.com/rss/articles/CBMiggFBVV95cUxPbUhOOWRZcFVOVWh1ZkFBc1VKcmFvb2owdWoxb01IeURLZzJXSUV6WTJJTzluVG9NX1BFU3hNZEZPeDlYRThlVzFYd1NJc1NDNDlwU2dVX3kzWWltYjdlT0tnczlXSUhiMmFmbmt6SkJtcndpaF9RSkZnQkJaa21pUkZn?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Hankyoreh : English Edition</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">New</span><span class="topic">Conflict</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxPbUhOOWRZcFVOVWh1ZkFBc1VKcmFvb2owdWoxb01IeURLZzJXSUV6WTJJTzluVG9NX1BFU3hNZEZPeDlYRThlVzFYd1NJc1NDNDlwU2dVX3kzWWltYjdlT0tnczlXSUhiMmFmbmt6SkJtcndpaF9RSkZnQkJaa21pUkZn?oc=5" target="_blank" rel="noopener">US court strikes down DHS rule that would’ve limited stays for foreign students, journalists</a></h3>
+    <p class="meta">Hankyoreh : English Edition · 21 min ago · <b>2 outlets</b></p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://www.npr.org/2026/11/16/nx-s1-6042548/un-killer-robots-ai-weapons-drones" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://npr.brightspotcdn.com/dims3/default/strip/false/crop/8256x5504+0+0/resize/8256x5504!/quality/85/format/webp/?url=https%3A%2F%2Fnpr-production-npr.s3.us-east-1.amazonaws.com%2Fbrightspot%2F47%2Fdc%2Fbe428cfe43728dcf909ce499cadf%2Fgettyimages-2273123489.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>NPR</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Tech</span></div>
+    <h3 class="hl"><a href="https://www.npr.org/2026/11/16/nx-s1-6042548/un-killer-robots-ai-weapons-drones" target="_blank" rel="noopener">U.N. talks seek to rein in &#39;killer robots&#39; as fears over AI weapons grow</a></h3>
+<p class="dek">Countries are meeting in Geneva to negotiate rules on weapons that can select and kill targets without human intervention. But with the U.S., Russia and Israel resisting legally binding controls, campaigners fear the window to act is…</p>    <p class="meta">NPR · 11 h ago</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.npr.org/2026/11/16/nx-s1-6042432/nearly-two-million-people-are-behind-bars-in-the-us-how-did-we-get-here" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://media.npr.org/include/images/facebook-default-wide-s1400-c85.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>NPR</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="topic">Justice</span></div>
+    <h3 class="hl"><a href="https://www.npr.org/2026/11/16/nx-s1-6042432/nearly-two-million-people-are-behind-bars-in-the-us-how-did-we-get-here" target="_blank" rel="noopener">Nearly two million people are behind bars in the US. How did we get here?</a></h3>
+<p class="dek">Lynn Novick&#39;s new, four-part PBS documentary series, Crime and Punishment in America , goes inside the U.S. prison system and explores how our approach to criminals has changed over time.</p>    <p class="meta">NPR · 11 h ago</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.npr.org/2026/11/16/nx-s1-6041687/chris-van-hollen-chuck-schumer-senate-leader" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://npr.brightspotcdn.com/dims3/default/strip/false/crop/5032x3355+0+0/resize/5032x3355!/quality/85/format/webp/?url=https%3A%2F%2Fnpr-production-npr.s3.us-east-1.amazonaws.com%2Fbrightspot%2Fb4%2F05%2F7f6a1f3e41a89d8061f70224b69a%2Fgettyimages-2305000048-1.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>NPR</b>'}))"></a>
+
+  <div class="body">
+    
+    <h3 class="hl"><a href="https://www.npr.org/2026/11/16/nx-s1-6041687/chris-van-hollen-chuck-schumer-senate-leader" target="_blank" rel="noopener">Chris Van Hollen says he can beat Chuck Schumer. Here&#39;s his case</a></h3>
+<p class="dek">Sen. Chris Van Hollen told NPR&#39;s Morning Edition why he believes he can defeat Sen. Chuck Schumer and what he would change about Senate Democratic leadership.</p>    <p class="meta">NPR · 17 h ago</p>
+  </div>
+</article>
+</div>      </div>
+      <div class="desk">
+        <h3 class="desk-title label"><span class="flag" aria-hidden="true">🇪🇺</span>Europe</h3>
+          <article class="card ">
+  <a class="media" href="https://www.politico.eu/article/eu-kaja-kallas-fights-to-find-a-role-in-ukraine-peace-talks/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.politico.eu/cdn-cgi/image/width=1200,height=630,fit=crop,quality=80,onerror=redirect/wp-content/uploads/2026/11/16/GettyImages-2299722566.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Politico Europe</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-breaking">Breaking</span><span class="topic">Politics</span></div>
+    <h3 class="hl"><a href="https://www.politico.eu/article/eu-kaja-kallas-fights-to-find-a-role-in-ukraine-peace-talks/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener">EU’s Kallas fights to find a role in Ukraine peace talks</a></h3>
+<p class="dek">Bloc&#39;s top diplomat said foreign ministers want a more direct role in Ukraine peace talks after leaders selected a team of national security advisers for the job.</p>    <p class="meta">Politico Europe · 2 h ago · <b>3 outlets</b></p>
+  </div>
+</article>
+
+<div class="rows"><article class="card row">
+  <a class="media" href="https://www.politico.eu/podcast/brussels-playbook-podcast/will-the-eus-next-russia-sanctions-bite/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.politico.eu/cdn-cgi/image/width=1200,height=630,fit=crop,quality=80,onerror=redirect/wp-content/uploads/2026/10/06/Zoya-homepage-image.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Politico Europe</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">New</span></div>
+    <h3 class="hl"><a href="https://www.politico.eu/podcast/brussels-playbook-podcast/will-the-eus-next-russia-sanctions-bite/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener">Will the EU’s next Russia sanctions bite?</a></h3>
+<p class="dek">Europe’s sports rulebook is getting an update. EU Sports Commissioner Glenn Micallef joins us to discuss illegal sports streaming, the future of FIFA President Gianni Infantino and the controversy over Russian athletes returning to…</p>    <p class="meta">Politico Europe · 14 min ago</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://www.politico.eu/sponsored-content/what-the-eu-can-learn-from-mark-carney-on-digital-sovereignty/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<img src="https://www.politico.eu/cdn-cgi/image/width=1200,height=630,fit=crop,quality=80,onerror=redirect/wp-content/uploads/2026/11/16/AdobeStock_1313870106-scaled.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'tile',innerHTML:'<b>Politico Europe</b>'}))"></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-new">New</span><span class="topic">Tech</span></div>
+    <h3 class="hl"><a href="https://www.politico.eu/sponsored-content/what-the-eu-can-learn-from-mark-carney-on-digital-sovereignty/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication" target="_blank" rel="noopener">What the EU can learn from Mark Carney on digital sovereignty</a></h3>
+<p class="dek">Building autonomy does not mean countries need to isolate.</p>    <p class="meta">Politico Europe · 1 h ago</p>
+  </div>
+</article>
+<article class="card row">
+  <a class="media" href="https://news.google.com/rss/articles/CBMikAFBVV95cUxOREFlVVVkbkg0V3RJLUpJYUt1THo5ckVtRXl5TzhwT2FzZk1kODNCWjR6aWFnUlFwQk1jN0xZOGUyVlJCcDN5SjFSWmRJWmNwbTFmcE5MR25IWVZTbUZUaUpJSHdHYkZKN1J1Q2xpZ1F4Sml3M3hJczN1VjRVOERaUWk2b25BUXZmcnk5YkZwbVU?oc=5" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+<span class="tile" aria-hidden="true"><b>Yahoo</b></span></a>
+
+  <div class="body">
+    <div class="tags"><span class="badge b-developing">Developing</span></div>
+    <h3 class="hl"><a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxOREFlVVVkbkg0V3RJLUpJYUt1THo5ckVtRXl5TzhwT2FzZk1kODNCWjR6aWFnUlFwQk1jN0xZOGUyVlJCcDN5SjFSWmRJWmNwbTFmcE5MR25IWVZTbUZUaUpJSHdHYkZKN1J1Q2xpZ1F4Sml3M3hJczN1VjRVOERaUWk2b25BUXZmcnk5YkZwbVU?oc=5" target="_blank" rel="noopener">European Commission imposes anti-dumping duties on steel imports</a></h3>
+    <p class="meta">Yahoo · 16 h ago · <b>4 outlets</b></p>
+  </div>
+</article>
+</div>      </div>
+    </div>
+  </section>
+
+  <section class="wish" aria-label="Have a lovely day, KK">
+    <svg class="sun" aria-hidden="true"><use href="#sun"/></svg>
+    <h2>Have a lovely day, KK</h2>
+    <p class="text">Wishing you the kind of day that ends with “that went well”.</p>
+<p class="tip"><svg class="wi" aria-hidden="true"><use href="#w-rain"/></svg>Rain on the way — take an umbrella and the good waterproof boots.</p><p class="signoff" lang="kk">Күнің сәтті өтсін!</p>  </section>
+  <section class="journal" id="journal" style="--c: #5a55c8" data-api="https://bot-woad-psi-33.vercel.app/api/journal" aria-labelledby="journal-title" hidden>
+    <div class="j-head">
+      <span class="label">Your page</span>
+      <h2 id="journal-title">Dreams &amp; thoughts</h2>
+      <svg class="moon" aria-hidden="true"><use href="#moon"/></svg>
+    </div>
+    <div class="j-body">
+      <form class="j-write">
+        <div class="j-kind" role="radiogroup" aria-label="Dreams &amp; thoughts">
+          <label><input type="radio" name="kind" value="dream" checked><span><svg class="wi" aria-hidden="true"><use href="#moon"/></svg>Dream</span></label>
+          <label><input type="radio" name="kind" value="thought"><span><svg class="wi" aria-hidden="true"><use href="#thought"/></svg>Thought</span></label>
+        </div>
+        <textarea name="text" maxlength="8000" placeholder="What did you dream about?" aria-labelledby="journal-title"></textarea>
+        <div class="j-actions">
+          <button type="submit" class="j-save">Keep it</button>
+          <span class="j-status" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+      <div class="j-notes" hidden>
+        <h3 class="label"><span>Your notes</span><span class="j-total"></span></h3>
+        <ol></ol>
+        <button type="button" class="j-link j-all" hidden>Show all</button>
+      </div>
+      <div class="j-tools" hidden>
+        <button type="button" class="j-link j-summary" aria-expanded="false">Look back</button>
+        <button type="button" class="j-link j-download">Download all</button>
+        <button type="button" class="j-link j-forget">Delete everything</button>
+      </div>
+      <div class="j-look" hidden aria-live="polite"></div>
+      <p class="j-privacy"><svg class="wi" aria-hidden="true"><use href="#lock"/></svg><span>Kept encrypted and never shown on this public site. The bot’s owner could technically reach your notes, and has promised not to read them.</span></p>
+    </div>
+  </section>
+  <p class="j-closed" id="journal-closed" hidden></p>
+  <script type="application/json" id="journal-text">{"Couldn\u2019t save. Please try again in a minute.": "Couldn\u2019t save. Please try again in a minute.", "Delete": "Delete", "Dream": "Dream", "Kept": "Kept", "Saving\u2026": "Saving\u2026", "Sure?": "Sure?", "Tap again to delete all {notes}": "Tap again to delete all {notes}", "Thought": "Thought", "What did you dream about?": "What did you dream about?", "What\u2019s on your mind?": "What\u2019s on your mind?", "j_afternoon": "Mostly written in the afternoon", "j_ago_30": "A month ago", "j_ago_365": "A year ago", "j_ago_7": "A week ago", "j_best": "best: {days}", "j_best_only": "Best run: {days} in a row", "j_days": "{n} days", "j_days_one": "{n} day", "j_dreams": "{n} dreams", "j_dreams_one": "{n} dream", "j_early": "Patterns show up once there are a few more notes.", "j_evening": "Mostly written in the evening", "j_month": "Last 30 days: {notes} on {days}", "j_morning": "Mostly written in the morning", "j_night": "Mostly written at night", "j_notes": "{n} notes", "j_notes_one": "{n} note", "j_often_all": "Often in notes", "j_often_dream": "Often in dreams", "j_often_thought": "Often in thoughts", "j_since": "{notes} since {date}", "j_streak": "{days} in a row", "j_thoughts": "{n} thoughts", "j_thoughts_one": "{n} thought", "journal expired": "This link has expired. Open today\u2019s paper from Telegram to write here.", "journal used": "This link has already opened the journal on another device. Tomorrow\u2019s paper brings a fresh one."}</script>
+</main>
+
+<footer class="foot">
+  <div>
+    <h4 class="label">Past editions</h4>
+    <ul class="past"><li><a href="{&#39;air&#39;: None, &#39;city&#39;: &#39;Astana&#39;, &#39;role&#39;: &#39;Home&#39;, &#39;utc_offset&#39;: 5, &#39;now&#39;: &#39;−3°&#39;, &#39;feels&#39;: &#39;−7°&#39;, &#39;label&#39;: &#39;Clear&#39;, &#39;kind&#39;: &#39;clear&#39;, &#39;wind&#39;: 3, &#39;humidity&#39;: 72, &#39;sunrise&#39;: &#39;07:34&#39;, &#39;sunset&#39;: &#39;16:23&#39;, &#39;days&#39;: [{&#39;date&#39;: datetime.date(2026, 11, 17), &#39;label&#39;: &#39;Clear&#39;, &#39;kind&#39;: &#39;clear&#39;, &#39;high&#39;: 2.0, &#39;hi&#39;: &#39;2°&#39;, &#39;lo&#39;: &#39;−6°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.08}, {&#39;date&#39;: datetime.date(2026, 11, 18), &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;high&#39;: 3.0, &#39;hi&#39;: &#39;3°&#39;, &#39;lo&#39;: &#39;−4°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.39}, {&#39;date&#39;: datetime.date(2026, 11, 19), &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;high&#39;: 1.2, &#39;hi&#39;: &#39;1°&#39;, &#39;lo&#39;: &#39;−4°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 3.13}, {&#39;date&#39;: datetime.date(2026, 11, 20), &#39;label&#39;: &#39;Fog&#39;, &#39;kind&#39;: &#39;fog&#39;, &#39;high&#39;: 3.0, &#39;hi&#39;: &#39;3°&#39;, &#39;lo&#39;: &#39;−5°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.06}]}archive/2026-11-16.html">Monday, 16 November 2026</a></li><li><a href="{&#39;air&#39;: None, &#39;city&#39;: &#39;Astana&#39;, &#39;role&#39;: &#39;Home&#39;, &#39;utc_offset&#39;: 5, &#39;now&#39;: &#39;−3°&#39;, &#39;feels&#39;: &#39;−7°&#39;, &#39;label&#39;: &#39;Clear&#39;, &#39;kind&#39;: &#39;clear&#39;, &#39;wind&#39;: 3, &#39;humidity&#39;: 72, &#39;sunrise&#39;: &#39;07:34&#39;, &#39;sunset&#39;: &#39;16:23&#39;, &#39;days&#39;: [{&#39;date&#39;: datetime.date(2026, 11, 17), &#39;label&#39;: &#39;Clear&#39;, &#39;kind&#39;: &#39;clear&#39;, &#39;high&#39;: 2.0, &#39;hi&#39;: &#39;2°&#39;, &#39;lo&#39;: &#39;−6°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.08}, {&#39;date&#39;: datetime.date(2026, 11, 18), &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;high&#39;: 3.0, &#39;hi&#39;: &#39;3°&#39;, &#39;lo&#39;: &#39;−4°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.39}, {&#39;date&#39;: datetime.date(2026, 11, 19), &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;high&#39;: 1.2, &#39;hi&#39;: &#39;1°&#39;, &#39;lo&#39;: &#39;−4°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 3.13}, {&#39;date&#39;: datetime.date(2026, 11, 20), &#39;label&#39;: &#39;Fog&#39;, &#39;kind&#39;: &#39;fog&#39;, &#39;high&#39;: 3.0, &#39;hi&#39;: &#39;3°&#39;, &#39;lo&#39;: &#39;−5°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.06}]}archive/2026-11-15.html">Sunday, 15 November 2026</a></li><li><a href="{&#39;air&#39;: None, &#39;city&#39;: &#39;Astana&#39;, &#39;role&#39;: &#39;Home&#39;, &#39;utc_offset&#39;: 5, &#39;now&#39;: &#39;−3°&#39;, &#39;feels&#39;: &#39;−7°&#39;, &#39;label&#39;: &#39;Clear&#39;, &#39;kind&#39;: &#39;clear&#39;, &#39;wind&#39;: 3, &#39;humidity&#39;: 72, &#39;sunrise&#39;: &#39;07:34&#39;, &#39;sunset&#39;: &#39;16:23&#39;, &#39;days&#39;: [{&#39;date&#39;: datetime.date(2026, 11, 17), &#39;label&#39;: &#39;Clear&#39;, &#39;kind&#39;: &#39;clear&#39;, &#39;high&#39;: 2.0, &#39;hi&#39;: &#39;2°&#39;, &#39;lo&#39;: &#39;−6°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.08}, {&#39;date&#39;: datetime.date(2026, 11, 18), &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;high&#39;: 3.0, &#39;hi&#39;: &#39;3°&#39;, &#39;lo&#39;: &#39;−4°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.39}, {&#39;date&#39;: datetime.date(2026, 11, 19), &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;high&#39;: 1.2, &#39;hi&#39;: &#39;1°&#39;, &#39;lo&#39;: &#39;−4°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 3.13}, {&#39;date&#39;: datetime.date(2026, 11, 20), &#39;label&#39;: &#39;Fog&#39;, &#39;kind&#39;: &#39;fog&#39;, &#39;high&#39;: 3.0, &#39;hi&#39;: &#39;3°&#39;, &#39;lo&#39;: &#39;−5°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.06}]}archive/2026-11-14.html">Saturday, 14 November 2026</a></li><li><a href="{&#39;air&#39;: None, &#39;city&#39;: &#39;Astana&#39;, &#39;role&#39;: &#39;Home&#39;, &#39;utc_offset&#39;: 5, &#39;now&#39;: &#39;−3°&#39;, &#39;feels&#39;: &#39;−7°&#39;, &#39;label&#39;: &#39;Clear&#39;, &#39;kind&#39;: &#39;clear&#39;, &#39;wind&#39;: 3, &#39;humidity&#39;: 72, &#39;sunrise&#39;: &#39;07:34&#39;, &#39;sunset&#39;: &#39;16:23&#39;, &#39;days&#39;: [{&#39;date&#39;: datetime.date(2026, 11, 17), &#39;label&#39;: &#39;Clear&#39;, &#39;kind&#39;: &#39;clear&#39;, &#39;high&#39;: 2.0, &#39;hi&#39;: &#39;2°&#39;, &#39;lo&#39;: &#39;−6°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.08}, {&#39;date&#39;: datetime.date(2026, 11, 18), &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;high&#39;: 3.0, &#39;hi&#39;: &#39;3°&#39;, &#39;lo&#39;: &#39;−4°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.39}, {&#39;date&#39;: datetime.date(2026, 11, 19), &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;high&#39;: 1.2, &#39;hi&#39;: &#39;1°&#39;, &#39;lo&#39;: &#39;−4°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 3.13}, {&#39;date&#39;: datetime.date(2026, 11, 20), &#39;label&#39;: &#39;Fog&#39;, &#39;kind&#39;: &#39;fog&#39;, &#39;high&#39;: 3.0, &#39;hi&#39;: &#39;3°&#39;, &#39;lo&#39;: &#39;−5°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.06}]}archive/2026-11-13.html">Friday, 13 November 2026</a></li><li><a href="{&#39;air&#39;: None, &#39;city&#39;: &#39;Astana&#39;, &#39;role&#39;: &#39;Home&#39;, &#39;utc_offset&#39;: 5, &#39;now&#39;: &#39;−3°&#39;, &#39;feels&#39;: &#39;−7°&#39;, &#39;label&#39;: &#39;Clear&#39;, &#39;kind&#39;: &#39;clear&#39;, &#39;wind&#39;: 3, &#39;humidity&#39;: 72, &#39;sunrise&#39;: &#39;07:34&#39;, &#39;sunset&#39;: &#39;16:23&#39;, &#39;days&#39;: [{&#39;date&#39;: datetime.date(2026, 11, 17), &#39;label&#39;: &#39;Clear&#39;, &#39;kind&#39;: &#39;clear&#39;, &#39;high&#39;: 2.0, &#39;hi&#39;: &#39;2°&#39;, &#39;lo&#39;: &#39;−6°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.08}, {&#39;date&#39;: datetime.date(2026, 11, 18), &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;high&#39;: 3.0, &#39;hi&#39;: &#39;3°&#39;, &#39;lo&#39;: &#39;−4°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.39}, {&#39;date&#39;: datetime.date(2026, 11, 19), &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;high&#39;: 1.2, &#39;hi&#39;: &#39;1°&#39;, &#39;lo&#39;: &#39;−4°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 3.13}, {&#39;date&#39;: datetime.date(2026, 11, 20), &#39;label&#39;: &#39;Fog&#39;, &#39;kind&#39;: &#39;fog&#39;, &#39;high&#39;: 3.0, &#39;hi&#39;: &#39;3°&#39;, &#39;lo&#39;: &#39;−5°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.06}]}archive/2026-11-12.html">Thursday, 12 November 2026</a></li><li><a href="{&#39;air&#39;: None, &#39;city&#39;: &#39;Astana&#39;, &#39;role&#39;: &#39;Home&#39;, &#39;utc_offset&#39;: 5, &#39;now&#39;: &#39;−3°&#39;, &#39;feels&#39;: &#39;−7°&#39;, &#39;label&#39;: &#39;Clear&#39;, &#39;kind&#39;: &#39;clear&#39;, &#39;wind&#39;: 3, &#39;humidity&#39;: 72, &#39;sunrise&#39;: &#39;07:34&#39;, &#39;sunset&#39;: &#39;16:23&#39;, &#39;days&#39;: [{&#39;date&#39;: datetime.date(2026, 11, 17), &#39;label&#39;: &#39;Clear&#39;, &#39;kind&#39;: &#39;clear&#39;, &#39;high&#39;: 2.0, &#39;hi&#39;: &#39;2°&#39;, &#39;lo&#39;: &#39;−6°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.08}, {&#39;date&#39;: datetime.date(2026, 11, 18), &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;high&#39;: 3.0, &#39;hi&#39;: &#39;3°&#39;, &#39;lo&#39;: &#39;−4°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.39}, {&#39;date&#39;: datetime.date(2026, 11, 19), &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;high&#39;: 1.2, &#39;hi&#39;: &#39;1°&#39;, &#39;lo&#39;: &#39;−4°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 3.13}, {&#39;date&#39;: datetime.date(2026, 11, 20), &#39;label&#39;: &#39;Fog&#39;, &#39;kind&#39;: &#39;fog&#39;, &#39;high&#39;: 3.0, &#39;hi&#39;: &#39;3°&#39;, &#39;lo&#39;: &#39;−5°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.06}]}archive/2026-11-11.html">Wednesday, 11 November 2026</a></li><li><a href="{&#39;air&#39;: None, &#39;city&#39;: &#39;Astana&#39;, &#39;role&#39;: &#39;Home&#39;, &#39;utc_offset&#39;: 5, &#39;now&#39;: &#39;−3°&#39;, &#39;feels&#39;: &#39;−7°&#39;, &#39;label&#39;: &#39;Clear&#39;, &#39;kind&#39;: &#39;clear&#39;, &#39;wind&#39;: 3, &#39;humidity&#39;: 72, &#39;sunrise&#39;: &#39;07:34&#39;, &#39;sunset&#39;: &#39;16:23&#39;, &#39;days&#39;: [{&#39;date&#39;: datetime.date(2026, 11, 17), &#39;label&#39;: &#39;Clear&#39;, &#39;kind&#39;: &#39;clear&#39;, &#39;high&#39;: 2.0, &#39;hi&#39;: &#39;2°&#39;, &#39;lo&#39;: &#39;−6°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.08}, {&#39;date&#39;: datetime.date(2026, 11, 18), &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;high&#39;: 3.0, &#39;hi&#39;: &#39;3°&#39;, &#39;lo&#39;: &#39;−4°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.39}, {&#39;date&#39;: datetime.date(2026, 11, 19), &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;high&#39;: 1.2, &#39;hi&#39;: &#39;1°&#39;, &#39;lo&#39;: &#39;−4°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 3.13}, {&#39;date&#39;: datetime.date(2026, 11, 20), &#39;label&#39;: &#39;Fog&#39;, &#39;kind&#39;: &#39;fog&#39;, &#39;high&#39;: 3.0, &#39;hi&#39;: &#39;3°&#39;, &#39;lo&#39;: &#39;−5°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.06}]}archive/2026-11-10.html">Tuesday, 10 November 2026</a></li><li><a href="{&#39;air&#39;: None, &#39;city&#39;: &#39;Astana&#39;, &#39;role&#39;: &#39;Home&#39;, &#39;utc_offset&#39;: 5, &#39;now&#39;: &#39;−3°&#39;, &#39;feels&#39;: &#39;−7°&#39;, &#39;label&#39;: &#39;Clear&#39;, &#39;kind&#39;: &#39;clear&#39;, &#39;wind&#39;: 3, &#39;humidity&#39;: 72, &#39;sunrise&#39;: &#39;07:34&#39;, &#39;sunset&#39;: &#39;16:23&#39;, &#39;days&#39;: [{&#39;date&#39;: datetime.date(2026, 11, 17), &#39;label&#39;: &#39;Clear&#39;, &#39;kind&#39;: &#39;clear&#39;, &#39;high&#39;: 2.0, &#39;hi&#39;: &#39;2°&#39;, &#39;lo&#39;: &#39;−6°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.08}, {&#39;date&#39;: datetime.date(2026, 11, 18), &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;high&#39;: 3.0, &#39;hi&#39;: &#39;3°&#39;, &#39;lo&#39;: &#39;−4°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.39}, {&#39;date&#39;: datetime.date(2026, 11, 19), &#39;label&#39;: &#39;Overcast&#39;, &#39;kind&#39;: &#39;cloudy&#39;, &#39;high&#39;: 1.2, &#39;hi&#39;: &#39;1°&#39;, &#39;lo&#39;: &#39;−4°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 3.13}, {&#39;date&#39;: datetime.date(2026, 11, 20), &#39;label&#39;: &#39;Fog&#39;, &#39;kind&#39;: &#39;fog&#39;, &#39;high&#39;: 3.0, &#39;hi&#39;: &#39;3°&#39;, &#39;lo&#39;: &#39;−5°&#39;, &#39;rain&#39;: 0, &#39;wind&#39;: 4.06}]}archive/2026-11-09.html">Monday, 9 November 2026</a></li></ul>
+  </div>
+  <div>
+    <h4 class="label">About this paper</h4>
+    <p>Put together automatically at 05:19 Edinburgh time from public news feeds. Stories are ranked by how many outlets cover them, and every headline links to its publisher.</p>
+    <details><summary>211 sources in today’s edition</summary><p>112.ua, ABC News, Al Jazeera, All Edinburgh Theatre.com, Anadolu Ajansı, Arab News PK, Atlantic Council, Aviation International News, Bank Policy Institute, BBC, BigGo Finance, Bloomberg.com, Briefs Finance, Bristol24/7, British Theatre, Brussels Signal, Built Offsite, BurgasMedia, Bybit, Báo VietNamNet, CBC, ChiniMandi, Chronicle Live, CNBC, Coin Gabbar, CoinMarketCap, Colorado Springs Gazette, Corr Blimey, Daily Express, Daily Record, Dailyhunt, Defence Industry Europe, Demócrata, DW, DW.com, East Lothian Courier, Economist.kg, Edinburgh Chamber of Commerce, Edinburgh Evening News, Edinburgh Live, Edinburgh Music Review, Edinburgh News, Edinburgh Reviews, Energy, EnterpriseAM, Essential Business, EU Perspectives, EUalive, EUobserver, Eurasia Business News, Euronews, Euronews Albania, Euronews.com, European Interest, EUWID Recycling and Waste Management, Federal Reserve Bank of San Francisco, Financial Times, Finimize, Flightradar24, Forex Factory, Foro3D, France 24, FreshPlaza, FXStreet, Gazeta Express, Geo News, Glasgow Warriors, GMK Center, GOV.KZ, grafa.com, Greek City Times, Guelph News, GuruFocus, Hankyoreh : English Edition, Hargreaves Lansdown, Hibernian FC, HR News, https://www.islands.com/, Hyperallergic, IDNFinancials, Idéal Investisseur, Independent Institute, India Today, Informat.ro, Inside Croydon, IntelliNews, Investing.com, Investing.com Canada, investingLive, Investment Executive, Investor&#39;s Business Daily, Irish Examiner, jiji press, Kitco, Kursiv Media, Largs and Millport News, LBB, Le Monde.fr, Legacy, Lesprom Network, LIGA.net, logos-pres.md, London Daily News, London South East, Louder, LSM, marketscreener.com, MarketWatch, Mashable, Mezha.net, Midlothian View, Mirage News, Moldpres, Moneycontrol.com, Moomoo, Morningstar, Nacionale, NDTV, Newcastle United, North Edinburgh News, NPR, OLBG, Opera Now, PBS, Peterson Institute for International Economics, Pluang, Politico Europe, Poultry News, PrimeMinister.kz, PYMNTS.com, Qazinform, Quantum Commodity Intelligence, RailAdvent, RAILMARKET.com, RBC, RBC-Ukraine, rdnewsnow.com, Report.az, Resident Advisor, Retail Technology Innovation Hub, Reuters, Romania Insider, Saddleworth Independent -, Scottish Rugby, ScottishNews.com, SeeNews, Senator Patty Murray (.gov), SFG Media, Silk Way TV, Sky News, ssbulten.com.tr, Stirling Council, Stuff.co.nz, STV News, TaxiPoint Taxi News, The Astana Times, The Conversation, The Corner .eu, The Edinburgh Inquirer, The Edinburgh Reporter, The Guardian, The Herald, The Independent, THE LIST.co.uk, The Manila Times, The Mirror, The Moshville Times, The Motley Fool, The National Law Review, The National Scot, The New Voice of Ukraine, The New York Times, The Poultry Site, The Scotsman, The Scottish Sun, The Skinny, The Straits Times, The Telegraph, The Times, The Times Of Central Asia, The Times of Central Asia, The Washington Post, The West Australian, Ticker News, Ticketmaster Discover, Time Out Worldwide, ToffeeWeb, tovima.com, Traders Union, TradingView, Travel Daily News Asia-Pacific, Trend News Agency, Trentonian, UA.NEWS, UB, UBS, Ukrainian News Agency, Upstream Online, Vlast.kz, vreme.com, WION, World Coffee Portal, WSJ, WTTW News, WWD, www.tmgm.com, Yahoo, Yahoo Finance, Yahoo Finance Australia, Yorkshire Live, zsu.gov.ua</p></details>
+  </div>
+</footer>
+
+</div>
+<script>
+// Live clock for home: keeps ticking after the page was built.
+document.querySelectorAll('[data-offset]').forEach(function (panel) {
+  var clock = panel.querySelector('.clock');
+  function tick() { clock.textContent = new Date(Date.now() + Number(panel.dataset.offset) * 36e5).toISOString().slice(11, 16); }
+  tick();
+  setInterval(tick, 20000);
+});
+
+// Her journal. The morning Telegram message links here with a one-time key after "#t=" (the part after #
+// never reaches a server); it is traded once for a device key kept in this browser. Without one, the
+// journal stays hidden: the site is public, the notes are not (they live encrypted with the bot).
+(() => {
+  const box = document.getElementById('journal');
+  if (!box) return;
+  const S = JSON.parse(document.getElementById('journal-text').textContent);
+  const lang = document.documentElement.lang === 'en' ? 'en-GB' : document.documentElement.lang;
+  const say = (key, values = {}) => (S[key] ?? key).replace(/\{(\w+)\}/g, (_, k) => values[k] ?? '');
+  const many = (key, n) => say(n === 1 ? key + '_one' : key, { n: n.toLocaleString(lang) });
+  const stored = {
+    get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+    drop(k) { try { localStorage.removeItem(k); } catch {} },
+  };
+  const $ = (sel) => box.querySelector(sel);
+  const form = $('.j-write'), area = form.elements.text, status = $('.j-status');
+  const list = $('.j-notes ol'), look = $('.j-look');
+  // dates: browsers know English well, Kazakh barely, so other editions use the paper's own month names
+  const clock = (d) => String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+  const weekday = (d) => (d.getDay() + 6) % 7;
+  const fill = (format, d) => format.replace('{year}', d.getFullYear()).replace('{month}', S._months[d.getMonth()])
+    .replace('{day}', d.getDate()).replace('{weekday}', S._weekdays_long[weekday(d)]);
+  const when = (t, full) => {
+    const d = new Date(t);
+    if (S._months) return full ? fill(S._date_long, d) + ', ' + clock(d) : S._weekdays[weekday(d)] + ' · ' + fill(S._date_short, d) + ' · ' + clock(d);
+    return new Intl.DateTimeFormat(lang, full ? { dateStyle: 'full', timeStyle: 'short' }
+      : { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }).format(d);
+  };
+  const day = (t) => {
+    const d = new Date(t);
+    const old = d.getFullYear() !== new Date().getFullYear();
+    if (S._months) return fill(old ? S._date_year : S._date_short, d);
+    return new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'long', ...(old && { year: 'numeric' }) }).format(d);
+  };
+  const SHOWN = 5;          // notes listed until "Show all"
+  let me = stored.get('journal'), total = 0, all = false;
+
+  const hash = new URLSearchParams(location.hash.slice(1));
+  const link = hash.get('t'), go = hash.get('go') === 'journal';
+  if (link || go) history.replaceState(null, '', location.pathname + location.search);   // the link is hers alone
+
+  async function call(action, data = {}) {
+    const headers = { 'Content-Type': 'application/json' };
+    if (me) headers.Authorization = 'Bearer ' + me.device;
+    const res = await fetch(box.dataset.api, { method: 'POST', headers, body: JSON.stringify({ action, ...data }) });
+    const body = await res.json().catch(() => ({}));
+    if (res.status === 401) { stored.drop('journal'); me = null; box.hidden = true; }
+    if (!res.ok) throw Object.assign(new Error(body.error || res.status), { code: body.error });
+    return body;
+  }
+
+  function closed(code) {
+    const note = document.getElementById('journal-closed');
+    if (code !== 'used' && code !== 'expired') return;
+    note.textContent = say('journal ' + code);
+    note.hidden = false;
+  }
+
+  function item(n) {
+    const li = document.createElement('li');
+    const kind = n.k === 'thought' ? 'thought' : 'dream';
+    li.className = 'j-note ' + kind;
+    li.innerHTML = '<div class="j-meta"><span class="j-tag"><svg class="wi" aria-hidden="true"><use href="#' + (kind === 'dream' ? 'moon' : 'thought') +
+      '"/></svg></span><time></time><button type="button" class="j-link"></button></div><p></p>';
+    li.querySelector('.j-tag').append(say(kind === 'dream' ? 'Dream' : 'Thought'));
+    li.querySelector('time').textContent = when(n.t);
+    li.querySelector('time').dateTime = new Date(n.t).toISOString();
+    li.querySelector('p').textContent = n.s;
+    const del = li.querySelector('button');
+    del.textContent = say('Delete');
+    del.addEventListener('click', () => arm(del, say('Sure?'), async () => {
+      const r = await call('remove', { id: n.id });
+      li.remove();
+      count(r.total);
+    }));
+    return li;
+  }
+
+  // a destructive button asks once more: the second tap within 5 seconds does it
+  function arm(button, question, action) {
+    if (button.classList.contains('armed')) {
+      button.classList.remove('armed');
+      return action().catch(() => { status.textContent = say('Couldn’t save. Please try again in a minute.'); });
+    }
+    const label = button.textContent;
+    button.classList.add('armed');
+    button.textContent = question;
+    setTimeout(() => { button.classList.remove('armed'); button.textContent = label; }, 5000);
+  }
+
+  function count(n) {
+    total = n;
+    $('.j-notes').hidden = $('.j-tools').hidden = !n;
+    $('.j-total').textContent = many('j_notes', n);
+    $('.j-all').hidden = list.children.length >= n;
+    if (!n) { look.hidden = true; summary.setAttribute('aria-expanded', 'false'); }
+  }
+
+  async function load(everything) {
+    all = Boolean(everything);
+    const r = await call('recent', all ? { all: true } : {});
+    list.replaceChildren(...r.notes.slice(0, all ? undefined : SHOWN).map(item));
+    count(r.total);
+  }
+
+  function lookBack(st) {
+    look.replaceChildren();
+    const p = (text) => look.appendChild(Object.assign(document.createElement('p'), { textContent: text }));
+    if (!st.total) return;
+    p(say('j_since', { notes: many('j_notes', st.total), date: day(st.first) }));
+    const kinds = [st.dreams && many('j_dreams', st.dreams), st.thoughts && many('j_thoughts', st.thoughts)].filter(Boolean);
+    if (kinds.length > 1) p(kinds.join(' · '));
+    if (st.month) p(say('j_month', { notes: many('j_notes', st.month.notes), days: many('j_days', st.month.days) }));
+    const { now, best } = st.streak || {};
+    if (now >= 2) p(say('j_streak', { days: many('j_days', now) }) + (best > now ? ' · ' + say('j_best', { days: many('j_days', best) }) : ''));
+    else if (best >= 2) p(say('j_best_only', { days: many('j_days', best) }));
+    if (st.when) p(say('j_' + st.when));
+    let words = 0;
+    for (const [kind, found] of Object.entries(st.themes || {})) {
+      if (!found.length) continue;
+      words += found.length;
+      look.appendChild(Object.assign(document.createElement('h3'), { className: 'label', textContent: say('j_often_' + kind) }));
+      const ul = Object.assign(document.createElement('ul'), { className: 'j-words' });
+      for (const w of found) {
+        const li = document.createElement('li');
+        li.append(w.word + ' ', Object.assign(document.createElement('b'), { textContent: '×' + w.n }));
+        ul.appendChild(li);
+      }
+      look.appendChild(ul);
+    }
+    if (!words) p(say('j_early'));
+    if (st.ago) {
+      look.appendChild(Object.assign(document.createElement('h3'), { className: 'label', textContent: say('j_ago_' + st.ago.days) + ' · ' + day(st.ago.t) }));
+      look.appendChild(Object.assign(document.createElement('blockquote'), { textContent: st.ago.s }));
+    }
+  }
+
+  // a draft survives closing the page
+  const draft = stored.get('journal-draft');
+  if (draft) { area.value = draft.text || ''; form.elements.kind.value = draft.kind || 'dream'; }
+  const hint = () => { area.placeholder = say(form.elements.kind.value === 'thought' ? 'What’s on your mind?' : 'What did you dream about?'); };
+  hint();
+  form.addEventListener('change', hint);
+  form.addEventListener('input', () => stored.set('journal-draft', { text: area.value, kind: form.elements.kind.value }));
+  area.addEventListener('keydown', (e) => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) form.requestSubmit(); });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const text = area.value.trim();
+    if (!text) return area.focus();
+    const button = $('.j-save');
+    button.disabled = true;
+    status.className = 'j-status';
+    status.textContent = say('Saving…');
+    try {
+      const r = await call('add', { text, kind: form.elements.kind.value });
+      list.prepend(item(r.note));
+      if (!all && list.children.length > SHOWN) list.lastElementChild.remove();
+      count(r.total);
+      area.value = '';
+      stored.drop('journal-draft');
+      status.className = 'j-status ok';
+      status.textContent = '✓ ' + say('Kept');
+      look.hidden = true;
+      summary.setAttribute('aria-expanded', 'false');
+    } catch {
+      status.className = 'j-status bad';
+      status.textContent = say('Couldn’t save. Please try again in a minute.');
+    } finally {
+      button.disabled = false;
+    }
+  });
+
+  $('.j-all').addEventListener('click', () => load(true));
+  const summary = $('.j-summary');
+  summary.addEventListener('click', async () => {
+    const open = look.hidden;
+    if (open) lookBack(await call('summary'));
+    look.hidden = !open;
+    summary.setAttribute('aria-expanded', String(open));
+  });
+  $('.j-download').addEventListener('click', async () => {
+    const r = await call('recent', { all: true });
+    const text = r.notes.slice().reverse()
+      .map((n) => say(n.k === 'thought' ? 'Thought' : 'Dream') + ' · ' + when(n.t, true) + '\n\n' + n.s)
+      .join('\n\n————\n\n');
+    const a = Object.assign(document.createElement('a'), {
+      href: URL.createObjectURL(new Blob([text + '\n'], { type: 'text/plain;charset=utf-8' })),
+      download: 'journal-' + new Date().toISOString().slice(0, 10) + '.txt',
+    });
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  });
+  const forget = $('.j-forget');
+  forget.addEventListener('click', () => arm(forget, say('Tap again to delete all {notes}', { notes: many('j_notes', total) }), async () => {
+    await call('forget');
+    list.replaceChildren();
+    count(0);
+  }));
+
+  (async () => {
+    const chat = link && link.split('.')[0];
+    if (link && (!me || me.chat !== chat)) {
+      try {
+        const { device } = await call('claim', { link });
+        me = { device, chat };
+        stored.set('journal', me);
+      } catch (err) {
+        if (!me) return closed(err.code);
+      }
+    }
+    if (!me) return;
+    box.hidden = false;
+    if (go) box.scrollIntoView({ block: 'start' });
+    load().catch(() => {});
+  })();
+})();
+</script>
+</body>
+</html>
