@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Утро — № 16, 25 ноября</title>
+<meta name="description" content="Чему возвращение Йенсена Хуана учит китайского Си о Трампе">
+<meta property="og:title" content="Утро · № 16 · 25 ноября 2026, среда">
+<meta property="og:description" content="Чему возвращение Йенсена Хуана учит китайского Си о Трампе · Генеральный прокурор США уклоняется от вопросов о расследовании Nvidia · Huawei признан виновным в краже коммерческих секретов, но оправдан от вымогательства · Вооруженные мужчины удерживают заложников в супермаркете главного туристического направления Колумбии . · Зимбабвийца осудили в Южной Африке за попытку воевать на Украине">
+<meta property="og:image" content="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/47a8/live/2d61caf0-e7d5-11f1-939f-471cde339c0e.jpg"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;600;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fafaf7; --surface: #ffffff; --ink: #0e0e10; --ink-2: #44444c; --ink-3: #6b6b74; --line: #e4e4e8;
+  --display: "Unbounded", "Arial Black", sans-serif;
+  --text: "Onest", "Helvetica Neue", Arial, sans-serif;
+  --mix: #000; --mix-ink: 78%; --mix-soft: 12%;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c0c0f; --surface: #16161b; --ink: #f3f3f5; --ink-2: #c3c3cb; --ink-3: #93939c; --line: #2a2a31;
+    --mix: #fff; --mix-ink: 62%; --mix-soft: 20%; color-scheme: dark;
+  }
+}
+[style*="--c"] { --c-ink: color-mix(in srgb, var(--c) var(--mix-ink), var(--mix)); --c-soft: color-mix(in srgb, var(--c) var(--mix-soft), var(--surface)); }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 16px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 17px/1.55 var(--text); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; border-radius: 4px; }
+h2 a:hover, h3 a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .12em; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px 64px; }
+.small { font: 600 13px/1.4 var(--text); letter-spacing: .02em; }
+
+/* header */
+.meta-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; padding: 16px 0 0; color: var(--ink-2); }
+.meta-row b { font-variant-numeric: tabular-nums; color: var(--ink); }
+.mast { margin: 6px 0 0; font: 900 min(calc((100vw - 32px) / 3.45), 350px)/.86 var(--display); letter-spacing: -.045em; text-transform: uppercase; }
+.toc { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 18px 0 4px; margin: 0 -16px; padding-left: 16px; padding-right: 16px; }
+.toc::-webkit-scrollbar { display: none; }
+.toc a { flex: none; padding: 9px 14px; border-radius: 999px; background: var(--c-soft); color: var(--c-ink); font: 600 13px/1.2 var(--text); }
+.toc a:hover { background: var(--c); color: #fff; }
+
+/* status labels */
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { display: inline-flex; align-items: center; gap: 6px; padding: 4px 9px; border-radius: 999px; font: 700 13px/1.2 var(--text); letter-spacing: .04em; text-transform: uppercase; }
+.tag.solid { background: var(--c); color: #fff; }
+.b-live, .b-breaking { background: #e5172f; color: #fff; }
+.b-live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: pulse 1.4s ease-in-out infinite; }
+.b-developing { background: #ffb020; color: #261800; }
+.b-new { background: color-mix(in srgb, #12a150 var(--mix-soft), var(--surface)); color: color-mix(in srgb, #12a150 var(--mix-ink), var(--mix)); }
+.b-opinion { background: color-mix(in srgb, #a64dff var(--mix-soft), var(--surface)); color: color-mix(in srgb, #a64dff var(--mix-ink), var(--mix)); }
+.b-analysis, .b-explainer { background: color-mix(in srgb, #3a5bff var(--mix-soft), var(--surface)); color: color-mix(in srgb, #3a5bff var(--mix-ink), var(--mix)); }
+@keyframes pulse { 50% { opacity: .25; } }
+@media (prefers-reduced-motion: reduce) { .b-live::before { animation: none; } }
+
+/* cover */
+.cover { position: relative; display: flex; align-items: flex-end; min-height: min(78vh, 720px); margin-top: 20px; border-radius: 24px; overflow: hidden; background: var(--c); color: #fff; isolation: isolate; }
+.cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.cover::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgb(0 0 0 / .88), rgb(0 0 0 / .45) 48%, rgb(0 0 0 / 0) 78%); }
+.cover-text { display: grid; gap: 14px; padding: 28px 22px 26px; max-width: 980px; }
+.cover h2 { margin: 0; font: 600 clamp(24px, 4.8vw, 62px)/1.06 var(--display); letter-spacing: -.02em; text-wrap: balance; hyphens: auto; overflow-wrap: break-word; }
+.cover .dek { margin: 0; max-width: 60ch; font-size: 21px; color: rgb(255 255 255 / .86); }
+.cover .meta { margin: 0; color: rgb(255 255 255 / .75); }
+@media (min-width: 760px) { .cover-text { padding: 44px 44px 40px; } }
+
+/* today: weather, air, money, quote */
+.today { display: grid; gap: 14px; margin-top: 14px; }
+.tile { padding: 20px 22px; border-radius: 20px; background: var(--surface); border: 1px solid var(--line); }
+.tile .small { color: var(--ink-3); margin-bottom: 10px; }
+.big { font: 800 56px/1 var(--display); letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.big small { font: 600 17px/1.3 var(--text); letter-spacing: 0; color: var(--ink-2); }
+.money .big { font-size: 44px; }
+.sub { margin: 8px 0 0; color: var(--ink-2); }
+.days { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 13px; text-align: center; }
+.days b { display: block; font: 700 13px/1.4 var(--text); color: var(--ink-3); text-transform: uppercase; letter-spacing: .04em; }
+.aqi { display: inline-flex; align-items: center; gap: 10px; }
+.aqi i { width: 14px; height: 14px; border-radius: 50%; background: var(--aqi); box-shadow: 0 0 0 5px color-mix(in srgb, var(--aqi) 25%, transparent); }
+.fx { width: 100%; margin-top: 14px; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.fx td { padding: 6px 0; border-top: 1px solid var(--line); }
+.fx td:nth-child(2) { text-align: right; font-weight: 700; }
+.fx td:last-child { text-align: right; width: 64px; font-size: 13px; }
+.up { color: #e5172f; } .down { color: #12a150; } .flat { color: var(--ink-3); }
+.quote blockquote { margin: 0; font: 500 21px/1.35 var(--display); letter-spacing: -.01em; text-wrap: balance; }
+.quote .orig { margin: 0 0 6px; color: var(--ink-2); font-style: italic; }
+.quote .sub b { color: var(--ink); }
+@media (min-width: 720px) { .today { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) {
+  .today { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .today .weather { grid-column: span 4; } .today .air { grid-column: span 2; }
+  .today .money { grid-column: span 3; } .today .quote { grid-column: span 3; }
+}
+
+/* more top stories */
+.more { display: grid; gap: 0 32px; margin-top: 40px; }
+.more h2 { grid-column: 1 / -1; margin: 0 0 6px; font: 800 13px/1.2 var(--display); letter-spacing: .08em; text-transform: uppercase; }
+.more article { display: grid; grid-template-columns: auto 1fr 96px; gap: 16px; align-items: start; padding: 18px 0; border-top: 1px solid var(--line); }
+.more .n { font: 800 34px/1 var(--display); color: transparent; -webkit-text-stroke: 1.5px var(--ink); }
+.more h3 { margin: 0 0 6px; font: 600 21px/1.3 var(--text); text-wrap: balance; }
+.more img, .more .fill { width: 96px; aspect-ratio: 1; object-fit: cover; border-radius: 14px; }
+@media (min-width: 900px) { .more { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 639px) {
+  .more article { grid-template-columns: auto 1fr 72px; gap: 12px; }
+  .more .n { font-size: 21px; }
+  .more h3 { font-size: 17px; }
+  .more img, .more .fill { width: 72px; }
+}
+
+/* sections */
+.sec { margin-top: 72px; }
+.sec-open { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 16px; margin-bottom: 30px; padding: 30px 26px 24px; border-radius: 24px; background: var(--c); color: #fff; }
+.sec-open h2 { margin: 0; font: 800 clamp(34px, 6vw, 72px)/.95 var(--display); letter-spacing: -.03em; }
+.sec-open .small { color: rgb(255 255 255 / .85); }
+.lead { display: grid; gap: 18px; margin-bottom: 34px; }
+.lead h3 { margin: 0; font: 600 clamp(27px, 2.8vw, 34px)/1.12 var(--display); letter-spacing: -.015em; text-wrap: balance; }
+.lead .dek { font-size: 21px; -webkit-line-clamp: 5; }
+.lead .ph { aspect-ratio: 3 / 2; }
+@media (min-width: 860px) { .lead { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 32px; align-items: center; } }
+.ph { display: block; position: relative; aspect-ratio: 4 / 3; border-radius: 16px; overflow: hidden; background: var(--c-soft); }
+.ph img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.card:hover .ph img, .lead:hover .ph img { transform: scale(1.03); }
+@media (prefers-reduced-motion: reduce) { .ph img { transition: none; } }
+.fill { display: flex; align-items: flex-end; padding: 14px; width: 100%; height: 100%; background: linear-gradient(135deg, var(--c), color-mix(in srgb, var(--c) 55%, #000)); color: #fff; font: 600 21px/1.15 var(--display); }
+.txt { display: grid; gap: 10px; align-content: start; }
+.card h3 { margin: 0; font: 600 21px/1.28 var(--text); text-wrap: balance; }
+.dek { margin: 0; color: var(--ink-2); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+.meta { margin: 0; font: 500 13px/1.4 var(--text); color: var(--ink-3); }
+.grid { display: grid; gap: 34px 28px; }
+.card { display: grid; gap: 14px; align-content: start; }
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1020px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 639px) {
+  .grid { gap: 0; }
+  .grid .card { grid-template-columns: 1fr 88px; gap: 14px; padding: 16px 0; border-top: 1px solid var(--line); }
+  .grid .card .ph { order: 2; width: 88px; aspect-ratio: 1; border-radius: 12px; }
+  .grid .card .fill { font-size: 13px; padding: 8px; }
+  .grid .card h3 { font-size: 17px; }
+  .grid .card .dek { display: none; }
+}
+.empty { color: var(--ink-3); font-style: italic; }
+
+/* footer */
+.foot { display: grid; gap: 24px; margin-top: 80px; padding-top: 24px; border-top: 3px solid var(--ink); color: var(--ink-2); font-size: 13px; }
+.foot h4 { margin: 0 0 8px; font: 800 13px/1.2 var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
+.foot ul { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0; padding: 0; list-style: none; }
+.foot a { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: .2em; }
+@media (min-width: 760px) { .foot { grid-template-columns: 1fr 2fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="meta-row small">
+    <span>№ 16 · 25 ноября 2026, среда</span>
+    <span>Астана, сейчас <b class="clock" data-offset="5">06:40</b></span>
+  </div>
+  <h1 class="mast"><a href="../index.html">Утро</a></h1>
+  <nav class="toc" aria-label="Разделы">
+<a href="#kazakhstan" style="--c: #00a3c4">Казахстан и Астана</a><a href="#politics" style="--c: #e0245e">Политика</a><a href="#world" style="--c: #ff4f00">Мир</a><a href="#tech" style="--c: #3a5bff">Технологии и ИИ</a><a href="#startups" style="--c: #12a150">Стартапы</a><a href="#design" style="--c: #a64dff">Дизайн и UX</a>  </nav>
+</header>
+
+<main>
+  <article class="cover" style="--c: #ff4f00">
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/47a8/live/2d61caf0-e7d5-11f1-939f-471cde339c0e.jpg" alt="" referrerpolicy="no-referrer" onerror="this.remove()">    <div class="cover-text">
+      <div class="tags"><span class="tag solid">Главное</span><span class="tag b-developing">Развивается</span></div>
+      <h2><a href="https://www.bbc.co.uk/news/articles/c63rgpy50x98o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Чему возвращение Йенсена Хуана учит китайского Си о Трампе</a></h2>
+<p class="dek">Возвращение Хуана к руководству Nvidia не гарантирует облегчения для Пекина.</p>      <p class="meta">BBC · 18 ч назад · 7 изданий</p>
+    </div>
+  </article>
+
+<section class="today" aria-label="Сегодня в Астане">
+  <div class="tile weather">
+    <div class="small">Погода · Астана</div>
+    <div class="big">−1° <small>Переменная облачность</small></div>
+    <p class="sub">Ощущается как −5° · ветер 4 м/с · восход 07:46, закат 16:15</p>
+    <div class="days"><div><b>Сегодня</b>3° / −1°<br><span class="meta">Пасмурно</span></div><div><b>Чт</b>7° / −1°<br><span class="meta">Ливни</span></div><div><b>Пт</b>0° / −4°<br><span class="meta">Снежные заряды</span></div><div><b>Сб</b>−3° / −6°<br><span class="meta">Снежные заряды</span></div></div>
+  </div>
+  <div class="tile air" style="--aqi: #2fb35a">
+    <div class="small">Воздух</div>
+    <div class="big aqi"><i aria-hidden="true"></i>19</div>
+    <p class="sub">AQI — хороший. PM2.5: 6 мкг/м³</p>
+  </div>
+  <div class="tile money">
+    <div class="small">Курс Нацбанка · 25.11.2026</div>
+    <div class="big">$458.28 <small class="up">▲ +3.16</small></div>
+    <table class="fx"><tr><td>EUR</td><td>501.45 ₸</td><td class="up">+2.46</td></tr><tr><td>RUB</td><td>5.59 ₸</td><td class="up">+0.04</td></tr><tr><td>CNY</td><td>68.77 ₸</td><td class="up">+0.48</td></tr><tr><td>GBP</td><td>598.93 ₸</td><td class="up">+2.50</td></tr></table>
+  </div>
+  <div class="tile quote">
+    <div class="small">Цитата дня</div>
+    <blockquote>«Как замечательно, что никто не должен ждать ни минуты, прежде чем начать улучшать мир.»</blockquote>
+    <p class="sub">— <b>Anne Frank</b></p>
+  </div>
+</section>
+
+<section class="more" aria-label="Ещё главное">
+  <h2>Ещё главное</h2>
+  <article style="--c: #ff4f00">
+    <span class="n" aria-hidden="true">02</span>
+    <div class="txt"><div class="tags"><span class="tag b-developing">Развивается</span></div><h3><a href="https://www.bbc.co.uk/news/articles/crpdw1qx7jgxo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Генеральный прокурор США уклоняется от вопросов о расследовании Nvidia</a></h3><p class="meta">BBC · 4 ч назад · 5 изданий</p></div>
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/067a/live/dc6baca0-e839-11f1-a094-5fdc692f3e33.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">  </article>
+  <article style="--c: #ff4f00">
+    <span class="n" aria-hidden="true">03</span>
+    <div class="txt"><div class="tags"><span class="tag b-breaking">Срочно</span></div><h3><a href="https://www.bbc.co.uk/news/articles/cmy49ngydqzpo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Huawei признан виновным в краже коммерческих секретов, но оправдан от вымогательства</a></h3><p class="meta">BBC · 28 мин назад · 5 изданий</p></div>
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/c0cb/live/da83bf80-e849-11f1-aa88-031e8213533d.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">  </article>
+  <article style="--c: #ff4f00">
+    <span class="n" aria-hidden="true">04</span>
+    <div class="txt"><h3><a href="https://www.theguardian.com/world/2026/nov/24/cartagena-colombia-hostages-supermarket" target="_blank" rel="noopener">Вооруженные мужчины удерживают заложников в супермаркете главного туристического направления Колумбии .</a></h3><p class="meta">The Guardian · 4 ч назад · 4 издания</p></div>
+<img src="https://i.guim.co.uk/img/media/f8a8fb8355ddb1ecdb881d8269bc5511bc8d29a1/501_0_4354_3482/master/4354.jpg?width=700&amp;quality=85&amp;auto=format&amp;fit=max&amp;s=680982ba1ea2ae246faf14cfd0dc3c48" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">  </article>
+  <article style="--c: #ff4f00">
+    <span class="n" aria-hidden="true">05</span>
+    <div class="txt"><div class="tags"><span class="tag b-developing">Развивается</span></div><h3><a href="https://www.bbc.co.uk/news/articles/cmqj5qlj5yz9o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Зимбабвийца осудили в Южной Африке за попытку воевать на Украине</a></h3><p class="meta">BBC · 8 ч назад · 4 издания</p></div>
+<img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/e688/live/d1155630-e820-11f1-99a1-253766e7ad8b.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">  </article>
+</section>
+
+<section class="sec" id="kazakhstan" style="--c: #00a3c4">
+  <header class="sec-open">
+    <h2>Казахстан и Астана</h2>
+    <span class="small">6 материалов</span>
+  </header>
+  <article class="lead">
+    <a class="ph" href="https://tengrinews.kz/world_news/vernuvshiysya-post-glavyi-nvidia-djensen-huang-rasskazal-613826/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://tengrinews.kz/userdata/news/2026/news_613826/thumb_b/photo_559087.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Tengrinews'}))"></a>
+    <div class="txt"><div class="tags"><span class="tag b-breaking">Срочно</span></div><h3><a href="https://tengrinews.kz/world_news/vernuvshiysya-post-glavyi-nvidia-djensen-huang-rasskazal-613826/" target="_blank" rel="noopener">Вернувшийся на пост главы Nvidia Дженсен Хуанг рассказал о жизни после скандала</a></h3><p class="dek">Глава Nvidia Дженсен Хуанг извинился перед всеми сотрудниками компании за нарушение кодекса поведения и признался, что ежедневно проходит 90-минутные</p><p class="meta">Tengrinews · 30 мин назад · 2 издания</p></div>
+  </article>
+  <div class="grid">
+    <article class="card">
+      <a class="ph" href="https://kz.kursiv.media/2026-11-24/ml-school-kazakhstan-gotovit-pervyh-32-speczialistov-po-ai-dlya-nauki-it-i-ekonomiki/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=ml-school-kazakhstan-gotovit-pervyh-32-speczialistov-po-ai-dlya-nauki-it-i-ekonomiki" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="fill">Курсив</span></a>
+      <div class="txt"><h3><a href="https://kz.kursiv.media/2026-11-24/ml-school-kazakhstan-gotovit-pervyh-32-speczialistov-po-ai-dlya-nauki-it-i-ekonomiki/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=ml-school-kazakhstan-gotovit-pervyh-32-speczialistov-po-ai-dlya-nauki-it-i-ekonomiki" target="_blank" rel="noopener">ML School Kazakhstan готовит первых 32 специалистов по AI: для науки, IT и экономики</a></h3><p class="dek">ML School Kazakhstan, совместная образовательная программа Yandex Qazaqstan, Astana Hub и Alem.ai Foundation, начала обучение первого потока. Из более чем 800 претендентов двухэтапный конкурсный отбор с испытаниями по математике и…</p><p class="meta">Курсив · 14 ч назад · 2 издания</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://tengrinews.kz/world_news/voennyiy-vertolet-razbilsya-turtsii-pogibli-pyatero-voennyih-613821/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://tengrinews.kz/userdata/news/2026/news_613821/thumb_b/photo_559082.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Tengrinews'}))"></a>
+      <div class="txt"><h3><a href="https://tengrinews.kz/world_news/voennyiy-vertolet-razbilsya-turtsii-pogibli-pyatero-voennyih-613821/" target="_blank" rel="noopener">Военный вертолет разбился в Турции, погибли пятеро военных</a></h3><p class="dek">На западе Турции, в провинции Эскишехир, разбился военный вертолет, погибли пять военнослужащих, передаёт Tengrinews.kz со ссылкой на Türkiye</p><p class="meta">Tengrinews · 5 ч назад · 2 издания</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://tengrisport.kz/tnsport/angelina-lukas-podnyalas-mirovom-reytinge-pobedyi-nokaktom-613738/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://tengrinews.kz/userdata/news/2026/news_613738/thumb_b/photo_558999.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Tengrinews'}))"></a>
+      <div class="txt"><h3><a href="https://tengrisport.kz/tnsport/angelina-lukas-podnyalas-mirovom-reytinge-pobedyi-nokaktom-613738/" target="_blank" rel="noopener">Ангелина Лукас поднялась в мировом рейтинге после победы нокаутом</a></h3><p class="dek">Портал Boxrec поместил боксёра-профессионала из Казахстана Ангелину Лукас на вторую строчку рейтинга легчайшего веса после досрочной победы</p><p class="meta">Tengrinews · 19 ч назад · 2 издания</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://kz.kursiv.media/2026-11-25/mlts-liga-chempionov-real-oderzhal-pyatuyu-pobedu-v-pyati-igrah-mbappe-sdelal-dubl/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=mlts-liga-chempionov-real-oderzhal-pyatuyu-pobedu-v-pyati-igrah-mbappe-sdelal-dubl" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="fill">Курсив</span></a>
+      <div class="txt"><div class="tags"><span class="tag b-new">Новое</span></div><h3><a href="https://kz.kursiv.media/2026-11-25/mlts-liga-chempionov-real-oderzhal-pyatuyu-pobedu-v-pyati-igrah-mbappe-sdelal-dubl/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=mlts-liga-chempionov-real-oderzhal-pyatuyu-pobedu-v-pyati-igrah-mbappe-sdelal-dubl" target="_blank" rel="noopener">Лига чемпионов: «Реал» одержал пятую победу в пяти играх, Мбаппе сделал дубль</a></h3><p class="dek">Мадридский «Реал» устроил на «Сантьяго Бернабеу» волевой разгром голландскому ПСВ. Проигрывая 0:1, команда Жозе Моуринью победила 5:1. Дубль на счету Килиана Мбаппе. В Европе состоялись первые матчи 5-го тура футбольной Лиги чемпионов.…</p><p class="meta">Курсив · 2 мин назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://kz.kursiv.media/2026-11-25/nvbr-kak-shahmatistka-asaubaeva-podderzhala-sindarova-v-borbe-za-zvanie-chempiona-mira/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=nvbr-kak-shahmatistka-asaubaeva-podderzhala-sindarova-v-borbe-za-zvanie-chempiona-mira" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="fill">Курсив</span></a>
+      <div class="txt"><div class="tags"><span class="tag b-new">Новое</span></div><h3><a href="https://kz.kursiv.media/2026-11-25/nvbr-kak-shahmatistka-asaubaeva-podderzhala-sindarova-v-borbe-za-zvanie-chempiona-mira/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=nvbr-kak-shahmatistka-asaubaeva-podderzhala-sindarova-v-borbe-za-zvanie-chempiona-mira" target="_blank" rel="noopener">Как шахматистка Асаубаева поддержала Синдарова в борьбе за звание чемпиона мира</a></h3><p class="dek">Казахстанская шахматистка Бибисара Асаубаева пожелала удачи своему жениху из Узбекистана 20-летнему Жавохиру Синдарову перед стартом матча за мировую шахматную корону. Она написала в Instagram: «С Богом», выложив его фото за игровым столом…</p><p class="meta">Курсив · 2 ч назад</p></div>
+    </article>
+  </div>
+</section>
+<section class="sec" id="politics" style="--c: #e0245e">
+  <header class="sec-open">
+    <h2>Политика</h2>
+    <span class="small">0 материалов</span>
+  </header>
+<p class="empty">Сегодня здесь тихо.</p></section>
+<section class="sec" id="world" style="--c: #ff4f00">
+  <header class="sec-open">
+    <h2>Мир</h2>
+    <span class="small">6 материалов</span>
+  </header>
+  <article class="lead">
+    <a class="ph" href="https://www.bbc.co.uk/news/articles/cm894p88jzxpo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/363b/live/dab0da20-e771-11f1-99a1-253766e7ad8b.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'BBC'}))"></a>
+    <div class="txt"><div class="tags"><span class="tag b-developing">Развивается</span></div><h3><a href="https://www.bbc.co.uk/news/articles/cm894p88jzxpo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Какой удар по российскому кораблю в Ливии говорит о распространении войны на Украине</a></h3><p class="dek">Потопление Украиной российского линкора в порту Ливии повышает ставки в войне на ступеньку выше, пишет Фрэнк Гарднер.</p><p class="meta">BBC · 28 ч назад · 4 издания</p></div>
+  </article>
+  <div class="grid">
+    <article class="card">
+      <a class="ph" href="https://www.cnbc.com/2026/11/24/anthropic-options-trading-ipo-price.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://image.cnbcfm.com/api/v1/image/108556475-1795186492969-gettyimages-2305372283-AFP_D8394NG.jpeg?v=1795186549&amp;w=1920&amp;h=1080" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'CNBC'}))"></a>
+      <div class="txt"><h3><a href="https://www.cnbc.com/2026/11/24/anthropic-options-trading-ipo-price.html" target="_blank" rel="noopener">Акции Anthropic падают ниже цены IPO. Торговцы видят еще большую боль</a></h3><p class="dek">Акции Anthropic упали ниже 83 долларов по мере роста активности опционов, с большими покупками, покупками и продажами, указывающими на разделение рынка.</p><p class="meta">CNBC · 5 ч назад · 3 издания</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://www.bbc.co.uk/news/articles/cjqlq2n4np7do?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/17c0/live/f8f77110-e811-11f1-99a1-253766e7ad8b.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'BBC'}))"></a>
+      <div class="txt"><h3><a href="https://www.bbc.co.uk/news/articles/cjqlq2n4np7do?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Автомобильная бомба прорывается по колумбийскому городу, ранит более 20 человек.</a></h3><p class="dek">Взрыв является последним из серии атак на здания, в которых размещаются силы безопасности и правительственные учреждения.</p><p class="meta">BBC · 13 ч назад · 3 издания</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://www.bbc.co.uk/news/articles/c65y17pwv1z7o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/84cb/live/68cc7a10-e81e-11f1-ab42-55d8d8278025.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'BBC'}))"></a>
+      <div class="txt"><h3><a href="https://www.bbc.co.uk/news/articles/c65y17pwv1z7o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Бывший президент Франции Саркози и его жена Карла Бруни предстанут перед судом</a></h3><p class="dek">Это последний случай, связанный с Николасом Саркози, который в прошлом году стал первым бывшим президентом Франции, попавшим в тюрьму.</p><p class="meta">BBC · 8 ч назад · 2 издания</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://www.france24.com/en/sport/20261124-champions-league-real-madrid-thrash-psv-5-1-in-comeback-win-as-manchester-city-held-by-napoli" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://s.france24.com/media/display/16447d6a-e85a-11f1-b652-1991d4929b54/w:1024/p:16x9/AP26328810233650.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'France 24'}))"></a>
+      <div class="txt"><div class="tags"><span class="tag b-new">Новое</span></div><h3><a href="https://www.france24.com/en/sport/20261124-champions-league-real-madrid-thrash-psv-5-1-in-comeback-win-as-manchester-city-held-by-napoli" target="_blank" rel="noopener">Лига чемпионов: &#34;Реал Мадрид&#34; победил &#34;ПСВ&#34; со счетом 5:1, в результате чего &#34;Манчестер Сити&#34; выиграл &#34;Наполи&#34;.</a></h3><p class="dek">Реал Мадрид продлил свою победную линию до 10 матчей во всех соревнованиях во вторник, преодолев ранний дефицит, чтобы разгромить ПСВ Эйндховен 5-1 в Лиге чемпионов, с Джудом Беллингемом, забившим впечатляющий гол, и Килианом Мбаппе, забившим в сетку...</p><p class="meta">France 24 · 2 ч назад · 2 издания</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://www.cnbc.com/2026/11/24/meta-instagram-muse-ad-revenue.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://image.cnbcfm.com/api/v1/image/108372027-1790964949550-gettyimages-2296314757-META_CONNECT.jpeg?v=1790964985&amp;w=1920&amp;h=1080" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'CNBC'}))"></a>
+      <div class="txt"><h3><a href="https://www.cnbc.com/2026/11/24/meta-instagram-muse-ad-revenue.html" target="_blank" rel="noopener">Как Meta использует Instagram, чтобы получить рекламу от своего персонального агента Muse по ИИ</a></h3><p class="dek">Meta не показывает рекламу в своем персональном агенте Muse, но инструмент уже стимулирует рекламный бизнес компании, сказал CNBC старший руководитель.</p><p class="meta">CNBC · 5 ч назад · 2 издания</p></div>
+    </article>
+  </div>
+</section>
+<section class="sec" id="tech" style="--c: #3a5bff">
+  <header class="sec-open">
+    <h2>Технологии и ИИ</h2>
+    <span class="small">7 материалов</span>
+  </header>
+  <article class="lead">
+    <a class="ph" href="https://techcrunch.com/2026/11/24/why-a-crusoe-investor-is-betting-on-solar-and-batteries-to-power-future-ai-data-centers/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://techcrunch.com/wp-content/uploads/2024/05/GettyImages-1373266060.jpg?resize=1200,800" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'TechCrunch'}))"></a>
+    <div class="txt"><h3><a href="https://techcrunch.com/2026/11/24/why-a-crusoe-investor-is-betting-on-solar-and-batteries-to-power-future-ai-data-centers/" target="_blank" rel="noopener">Почему инвестор Крузо делает ставку на солнечные и батареи для питания будущих центров обработки данных ИИ</a></h3><p class="dek">Центры обработки данных нового поколения будут потреблять десятки гигаватт электроэнергии каждый год. Один из инвесторов Крузо считает, что солнечная энергия и хранение энергии - очевидный выбор.</p><p class="meta">TechCrunch · 9 ч назад · 2 издания</p></div>
+  </article>
+  <div class="grid">
+    <article class="card">
+      <a class="ph" href="https://arstechnica.com/ai/2026/11/tidal-will-ban-fully-ai-generated-music-on-december-9/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.arstechnica.net/wp-content/uploads/2026/11/GettyImages-1083228790-1152x648.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Ars Technica'}))"></a>
+      <div class="txt"><h3><a href="https://arstechnica.com/ai/2026/11/tidal-will-ban-fully-ai-generated-music-on-december-9/" target="_blank" rel="noopener">Tidal объявляет о запрете на музыку, созданную искусственным интеллектом; 27 миллионов треков будут удалены</a></h3><p class="dek">ИИ-песни составляют 6,3% каталога Tidal, но это почти ноль.</p><p class="meta">Ars Technica · 8 ч назад · 2 издания</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://www.theverge.com/policy/1041957/fincen-treasury-cybersecurity-incident" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/STKS533_AI_AGENTS_HACKING_B.png?quality=90&amp;strip=all&amp;crop=0,0,100,100" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'The Verge'}))"></a>
+      <div class="txt"><div class="tags"><span class="tag b-new">Новое</span></div><h3><a href="https://www.theverge.com/policy/1041957/fincen-treasury-cybersecurity-incident" target="_blank" rel="noopener">Бюро финансовых преступлений США раскрывает  ⁇ инцидент кибербезопасности ⁇ </a></h3><p class="dek">Сеть по борьбе с финансовыми преступлениями (FinCEN) объявила во вторник, что расследует &#34;инцидент с кибербезопасностью&#34;.</p><p class="meta">The Verge · 40 мин назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://techcrunch.com/2026/11/24/yales-sonnenfeld-nvidia-is-a-detriment-to-u-s-industrial-might-not-a-champion/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://techcrunch.com/wp-content/uploads/2026/11/Jensen-ChatGPT.png?resize=1200,675" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'TechCrunch'}))"></a>
+      <div class="txt"><div class="tags"><span class="tag b-new">Новое</span></div><h3><a href="https://techcrunch.com/2026/11/24/yales-sonnenfeld-nvidia-is-a-detriment-to-u-s-industrial-might-not-a-champion/" target="_blank" rel="noopener">Сонненфельд из Йельского университета: Nvidia является &#34;в ущерб&#34; промышленному могуществу США, а не чемпионом</a></h3><p class="dek">Джеффри Сонненфельд из Йельского университета предупреждает, что то, что рынок приветствовал в понедельник, возвращение Йенсена Хуана из Белого дома в качестве генерального директора и члена совета директоров Nvidia, может оказаться огромной ошибкой, подвергая директоров &#34;исторической&#34; личной ответственности от...</p><p class="meta">TechCrunch · 1 ч назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://habr.com/ru/articles/1111988/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1111988" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://habrastorage.org/extt/98/cd/3a/98cd3a98c419435295c8661bc6cff5bc.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Хабр'}))"></a>
+      <div class="txt"><div class="tags"><span class="tag b-new">Новое</span></div><h3><a href="https://habr.com/ru/articles/1111988/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1111988" target="_blank" rel="noopener">Прачечная AudiA6: они отмыли 10 333 BTC. Интервью с подельником специальный выпуск для habr (эксклюзив)</a></h3><p class="dek">Всех приветствую, этот эксклюзивный материал подготовлен специально для habr. Вы узнаете какие ошибки в opsec совершили операторы криптовалютного миксера AudiA6. Вам точно понравится! Читать далее</p><p class="meta">Хабр · 1 ч назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://arstechnica.com/space/2026/11/half-of-nasas-aging-mars-fleet-knocked-offline-by-technical-issues/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.arstechnica.net/wp-content/uploads/2026/11/PIA26752-1152x648-1795552223.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Ars Technica'}))"></a>
+      <div class="txt"><div class="tags"><span class="tag b-new">Новое</span></div><h3><a href="https://arstechnica.com/space/2026/11/half-of-nasas-aging-mars-fleet-knocked-offline-by-technical-issues/" target="_blank" rel="noopener">Половина устаревшего флота НАСА на Марсе отключена из-за технических проблем.</a></h3><p class="dek">У Терпения проблемы с передачей на Землю. &#34;Одиссей&#34; быстро сгорает из-за истощения запасов топлива.</p><p class="meta">Ars Technica · 2 ч назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://techcrunch.com/2026/11/24/maple-raises-5-3m-to-build-ai-products-that-protect-your-data-even-from-itself/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://techcrunch.com/wp-content/uploads/2026/11/01-maple-hero-chargebacks-photo-16x9-1.png?resize=1200,675" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'TechCrunch'}))"></a>
+      <div class="txt"><h3><a href="https://techcrunch.com/2026/11/24/maple-raises-5-3m-to-build-ai-products-that-protect-your-data-even-from-itself/" target="_blank" rel="noopener">Мэйпл собрал 5,3 миллиона долларов для создания продуктов ИИ, которые защищают ваши данные, даже от себя</a></h3><p class="dek">Зашифрованная архитектура ИИ стартапа предназначена для того, чтобы даже сама компания не могла получить доступ к частным данным пользователей.</p><p class="meta">TechCrunch · 4 ч назад</p></div>
+    </article>
+  </div>
+</section>
+<section class="sec" id="startups" style="--c: #12a150">
+  <header class="sec-open">
+    <h2>Стартапы</h2>
+    <span class="small">6 материалов</span>
+  </header>
+  <article class="lead">
+    <a class="ph" href="https://sifted.eu/articles/europes-sovereignty-debate-luxembourg-brnd/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://images.sifted.eu/cdn-cgi/image/width=2048,quality=75,fit=cover,format=auto/wp-content/uploads/2026/11/20153415/NEXUS2027-SIFTED01-scaled.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Sifted'}))"></a>
+    <div class="txt"><h3><a href="https://sifted.eu/articles/europes-sovereignty-debate-luxembourg-brnd/" target="_blank" rel="noopener">Почему в марте в Люксембурге пройдет дебат по вопросу о суверенитете Европы</a></h3><p class="meta">Sifted · 11 ч назад</p></div>
+  </article>
+  <div class="grid">
+    <article class="card">
+      <a class="ph" href="https://digitalbusiness.kz/2026-11-24/v-aktobe-zapustili-ochen-tepliy-zavod-analogov-v-kazahstane-net/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://digitalbusiness.kz/storage/post-images/lg16x9/QfaaUbpjEm6e74ob.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Digital Business'}))"></a>
+      <div class="txt"><h3><a href="https://digitalbusiness.kz/2026-11-24/v-aktobe-zapustili-ochen-tepliy-zavod-analogov-v-kazahstane-net/" target="_blank" rel="noopener">В Актобе запустили очень теплый завод. Аналогов в Казахстане нет</a></h3><p class="dek">У этого бизнеса неожиданно много общего со строительством, мебелью и даже пожарной безопасностью.</p><p class="meta">Digital Business · 12 ч назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://news.crunchbase.com/workplace/ai-bias-in-hr-hiring-job-applications/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://news.crunchbase.com/wp-content/uploads/hot-tech-jobsfeature.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Crunchbase News'}))"></a>
+      <div class="txt"><h3><a href="https://news.crunchbase.com/workplace/ai-bias-in-hr-hiring-job-applications/" target="_blank" rel="noopener">Предвзятость ИИ в HR: почему отполированная работа переоценивается и что с этим делать</a></h3><p class="dek">Сотрудники и ищущие работу используют ИИ для создания отполированной работы и приложений, которые выглядят идеально. В такой среде, как мы можем продвигать и нанимать нужных людей?</p><p class="meta">Crunchbase News · 13 ч назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://sifted.eu/articles/starling-veteran-to-take-over-as-ceo/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://images.sifted.eu/cdn-cgi/image/width=2048,quality=75,fit=cover,format=auto/wp-content/uploads/2026/11/24135431/starling-new-ceo--scaled.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Sifted'}))"></a>
+      <div class="txt"><h3><a href="https://sifted.eu/articles/starling-veteran-to-take-over-as-ceo/" target="_blank" rel="noopener">Эксклюзив: ветеран Старлинга займет пост генерального директора</a></h3><p class="meta">Sifted · 11 ч назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://digitalbusiness.kz/2026-11-24/neftyaniki-nachnut-vnedryat-ii-na-proizvodstve-i-platit-za-eto-budut-iz-deneg-kotorie-i-tak-obyazani-videlyat/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://digitalbusiness.kz/storage/post-images/lg16x9/qslrCdGpPkOlhAvY.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Digital Business'}))"></a>
+      <div class="txt"><h3><a href="https://digitalbusiness.kz/2026-11-24/neftyaniki-nachnut-vnedryat-ii-na-proizvodstve-i-platit-za-eto-budut-iz-deneg-kotorie-i-tak-obyazani-videlyat/" target="_blank" rel="noopener">Нефтяники начнут внедрять ИИ на производстве, и платить за это будут из денег, которые и так обязаны выделять</a></h3><p class="dek">Нефтегазовые компании Казахстана теперь могут тратить часть обязательных расходов на ИТ-проекты. Подобрать разработчиков поможет Astana Hub.</p><p class="meta">Digital Business · 13 ч назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://news.crunchbase.com/startups/startup-name-trends-2026-ai/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://news.crunchbase.com/wp-content/uploads/nametag.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Crunchbase News'}))"></a>
+      <div class="txt"><h3><a href="https://news.crunchbase.com/startups/startup-name-trends-2026-ai/" target="_blank" rel="noopener">Стартапы выбирают имена, которые могут работать, даже если первоначальная бизнес-модель не работает</a></h3><p class="dek">Название стартапа имеет тенденцию быть циклическим. В течение нескольких лет основатели могут быть в восторге от глупых прозвищ, выдуманных слов и творческих орфографических ошибок. Затем маятник раскачивается, и стартапы откладывают на простые названия, которые описывают то, что они...</p><p class="meta">Crunchbase News · 13 ч назад</p></div>
+    </article>
+  </div>
+</section>
+<section class="sec" id="design" style="--c: #a64dff">
+  <header class="sec-open">
+    <h2>Дизайн и UX</h2>
+    <span class="small">6 материалов</span>
+  </header>
+  <article class="lead">
+    <a class="ph" href="https://uxdesign.cc/futures-thinking-as-an-everyday-design-practice-465146ee6db8?source=rss----138adf9c44c---4" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn-images-1.medium.com/max/1024/1*iFnTPmilWyRlempO2F6pHg.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'UX Collective'}))"></a>
+    <div class="txt"><div class="tags"><span class="tag b-new">Новое</span></div><h3><a href="https://uxdesign.cc/futures-thinking-as-an-everyday-design-practice-465146ee6db8?source=rss----138adf9c44c---4" target="_blank" rel="noopener">Мышление о будущем как повседневная практика проектирования</a></h3><p class="dek">Пересмотр трех горизонтов и изучение того, как мы организуемся для того, что будет дальше Иллюстрация, созданная с Gemini На протяжении всей моей карьеры я использовал дизайнерские практики, чтобы помочь организациям ориентироваться в изменениях и предоставлять новые возможности и опыт....</p><p class="meta">UX Collective · 3 ч назад</p></div>
+  </article>
+  <div class="grid">
+    <article class="card">
+      <a class="ph" href="https://medium.com/design-bootcamp/are-we-actually-building-better-things-the-great-software-bazaar-c2494d208934" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="fill">Sidebar</span></a>
+      <div class="txt"><h3><a href="https://medium.com/design-bootcamp/are-we-actually-building-better-things-the-great-software-bazaar-c2494d208934" target="_blank" rel="noopener">Действительно ли мы строим что-то лучше?</a></h3><p class="dek">Самым успешным продуктом может быть не тот продукт, который лучше всего решает проблему, а тот, который имеет наиболее убедительное описание решения проблемы.</p><p class="meta">Sidebar · 18 ч назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://www.figma.com/blog/introducing-figma-agent-in-figjam-and-slides/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.sanity.io/images/599r6htc/regionalized/788c8b94cba16df5c795728f974aca117a196962-1694x948.png?w=1200&amp;q=70&amp;fit=max&amp;auto=format" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Figma'}))"></a>
+      <div class="txt"><h3><a href="https://www.figma.com/blog/introducing-figma-agent-in-figjam-and-slides/" target="_blank" rel="noopener">Агент Figma теперь доступен в FigJam и Slides</a></h3><p class="dek">Независимо от того, изучаете ли вы идею, готовитесь к встрече или представляете свои проекты, агент Figma может помочь вам продвинуть работу вперед.</p><p class="meta">Figma · 28 ч назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://www.nngroup.com/articles/qual-research-methods/?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-syndication" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://media.nngroup.com/media/articles/opengraph_images/Qualitative_User_Research_Card.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'Nielsen Norman Group'}))"></a>
+      <div class="txt"><h3><a href="https://www.nngroup.com/articles/qual-research-methods/?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-syndication" target="_blank" rel="noopener">Качественные методы исследования пользователей: обзор</a></h3><p class="dek">Хотите знать, почему пользователи испытывают затруднения или что им нужно? Начните с выбора правильного метода. Вот 4 самых популярных метода качественного UX-исследования.</p><p class="meta">Nielsen Norman Group · 4 дн. назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://uxdesign.cc/four-hidden-dimensions-of-effective-teams-be268c61cf44?source=rss----138adf9c44c---4" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn-images-1.medium.com/max/1024/1*jqMb68bYFQP35rg_Ssomcg.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fill',textContent:'UX Collective'}))"></a>
+      <div class="txt"><div class="tags"><span class="tag b-new">Новое</span></div><h3><a href="https://uxdesign.cc/four-hidden-dimensions-of-effective-teams-be268c61cf44?source=rss----138adf9c44c---4" target="_blank" rel="noopener">Четыре скрытых измерения эффективных команд</a></h3><p class="dek">Успех компании заключается не в том, чтобы следовать волшебной формуле или взломать корпоративную игру, а в том, чтобы использовать контекст и информацию вокруг нас с целью. Создание этого простого нового инструмента помогло мне подтвердить давние личные убеждения...</p><p class="meta">UX Collective · 3 ч назад</p></div>
+    </article>
+    <article class="card">
+      <a class="ph" href="https://www.chimera.audio/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="fill">Sidebar</span></a>
+      <div class="txt"><h3><a href="https://www.chimera.audio/" target="_blank" rel="noopener">Химера</a></h3><p class="dek">Физически смоделированный синтезатор голоса. Каждый звук исходит из симулированных дыхательных путей.</p><p class="meta">Sidebar · 18 ч назад</p></div>
+    </article>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div>
+    <h4>Прошлые выпуски</h4>
+<ul><li><a href="../archive/2026-11-24.html">24 ноября 2026, вторник</a></li><li><a href="../archive/2026-11-23.html">23 ноября 2026, понедельник</a></li><li><a href="../archive/2026-11-22.html">22 ноября 2026, воскресенье</a></li><li><a href="../archive/2026-11-21.html">21 ноября 2026, суббота</a></li><li><a href="../archive/2026-11-20.html">20 ноября 2026, пятница</a></li><li><a href="../archive/2026-11-19.html">19 ноября 2026, четверг</a></li><li><a href="../archive/2026-11-18.html">18 ноября 2026, среда</a></li><li><a href="../archive/2026-11-17.html">17 ноября 2026, вторник</a></li><li><a href="../archive/2026-11-16.html">16 ноября 2026, понедельник</a></li><li><a href="../archive/2026-11-15.html">15 ноября 2026, воскресенье</a></li><li><a href="../archive/2026-11-14.html">14 ноября 2026, суббота</a></li><li><a href="../archive/2026-11-13.html">13 ноября 2026, пятница</a></li><li><a href="../archive/2026-11-12.html">12 ноября 2026, четверг</a></li><li><a href="../archive/2026-11-11.html">11 ноября 2026, среда</a></li></ul>  </div>
+  <div>
+    <h4>О журнале</h4>
+    <p>Собирается автоматически каждое утро в 06:40 по Астане из открытых новостных лент. Новости ранжируются по тому, сколько изданий о них пишут; каждый заголовок ведёт к первоисточнику. Материалы на английском переведены машинным переводом.</p>
+    <details><summary>23 источника в этом выпуске</summary><p>Al Jazeera, Ars Technica, BBC, CNBC, Crunchbase News, Digital Business, Figma, France 24, Hacker News, MIT Technology Review, Nielsen Norman Group, NPR, Profit.kz, Sidebar, Sifted, Sky News, TechCrunch, Tengrinews, The Guardian, The Verge, UX Collective, Курсив, Хабр</p></details>
+  </div>
+</footer>
+
+</div>
+<script>
+// Astana clock keeps ticking after the page was built.
+document.querySelectorAll('.clock[data-offset]').forEach(function (el) {
+  function tick() { el.textContent = new Date(Date.now() + Number(el.dataset.offset) * 36e5).toISOString().slice(11, 16); }
+  tick();
+  setInterval(tick, 20000);
+});
+</script>
+</body>
+</html>
